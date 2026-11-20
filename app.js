@@ -23,8 +23,8 @@ const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
 const ROOMS = [
   { key: "jisho", label: "辞書の部屋", icon: "📖",
     desc: "語句を検索できます（実施中はロック）" },
-  { key: "result", label: "結果の部屋", icon: "📊",
-    desc: "過去の結果と間違えた語句の復習リスト" },
+  { key: "prep", label: "テスト対策の部屋", icon: "📝",
+    desc: "週間テスト範囲の間違い中心・即時〇✕判定" },
   { key: "wtest", label: "週間テストの部屋", icon: "📋", gold: true,
     desc: "週間ノルマ達成で解放・25問×4点・間違い中心" },
 ];
@@ -153,11 +153,11 @@ function fmtTs(ts) {
   const p = (n) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 }
-function stdmAward(pts) { // テスト(100点満点)のstdm付与
-  if (pts >= 100) return 500;
-  if (pts >= 85) return 200;
-  if (pts >= 70) return 100;
-  return 10;
+function stdmAward(pts) { // 週間テスト(100点満点)のstdm付与
+  if (pts >= 100) return 1000;
+  if (pts >= 80) return 500;
+  if (pts >= 65) return 300;
+  return 100;
 }
 const RUN_VIEWS = new Set(["quizrun", "testrun", "card"]);
 const IDLE_MS = 120000; // 2分無操作でタイムロック
@@ -272,6 +272,7 @@ function schedMark(id, ok, fast) {
     const before = s.cc;
     s.cc = Math.min(4, s.cc + 1);
     if (fast) s.fast++;
+    s.wok = (s.wok || 0) + 1; // 誤答後の連続正解(ストック克服判定用)
     // 1〜3周すべて正解かつ3秒以内 → 4周目をスキップして完全定着
     if (s.cc === 3 && s.w === 0 && s.fast >= 3) { s.cc = 4; s.plat = true; }
     d.clears += s.cc - before; // プラチナは免除された4周目分も加算
@@ -282,8 +283,16 @@ function schedMark(id, ok, fast) {
       toast("🎉 今日のノルマ達成！ +100 stdm");
     }
   } else {
-    s.w++;
+    s.w++; s.wok = 0;
   }
+  saveSched();
+}
+// 対策練習での正誤: 周回(cc)は動かさずストック克服カウント(wok)のみ更新
+function prepMark(id, ok) {
+  let s = SCHED.items[id];
+  if (!s) s = SCHED.items[id] = { cc: 0, w: 0, fast: 0 };
+  if (ok) s.wok = (s.wok || 0) + 1;
+  else { s.w++; s.wok = 0; }
   saveSched();
 }
 // 10問セット生成: 今日出た問題は後回しにしつつ、各周をラウンドロビンで混合
@@ -323,16 +332,21 @@ function weeklyStatus() {
   const avail = Math.max(0, completed - taken);
   return { per, avail, need: avail ? 0 : (completed + 1) * per - schedDone() };
 }
+// 直近7日(今日含む)に出題した問題id集合(週間テスト・対策部屋の範囲)
+function seen7Set() {
+  const s7 = new Set();
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    (SCHED.days[k]?.seen || []).forEach(id => s7.add(id));
+  }
+  return s7;
+}
 // 25問×4点: 間違えた問題を中心に、直近7日の出題済み+周回プールで補充
 function weeklyTestStart() {
   const st = weeklyStatus();
   if (!st.avail) { toast(`🔒 週間ノルマ達成で解放されます（あと${st.need}クリア）`); return; }
-  const seen7 = new Set();
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(); d.setDate(d.getDate() - i);
-    const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
-    (SCHED.days[k]?.seen || []).forEach(id => seen7.add(id));
-  }
+  const seen7 = seen7Set();
   const wrongs = shuffle(ITEMS.filter(it => {
     const s = SCHED.items[it.id];
     return s && s.w > 0 && (s.cc || 0) < 4;
@@ -347,6 +361,75 @@ function weeklyTestStart() {
     cat: "週間テスト", range: [1, 25], kind: "wtest" };
   go("testrun");
 }
+// ---------- テスト対策の部屋 ----------
+// 週間テスト範囲(直近7日の出題)の間違いを中心に10問練習・即時〇✕判定。
+// プランの周回記録(cc)には影響せず、通常の学習記録のみ更新。
+// 間違いストック: 誤答のあと連続2回正解(克服)するまで蓄積
+function prepWrongs() {
+  return ITEMS.filter(it => {
+    const s = SCHED.items[it.id];
+    return s && s.w > 0 && (s.wok || 0) < 2;
+  });
+}
+function prepStart(mode) {
+  const s7 = seen7Set();
+  const wrongs = prepWrongs();
+  let p;
+  if (mode === "week") { // 今週の範囲をまとめて
+    p = shuffle(ITEMS.filter(it => s7.has(it.id))).slice(0, 10);
+    if (p.length < 10) {
+      const ids = new Set(p.map(i => i.id));
+      p = p.concat(shuffle(wrongs.filter(i => !ids.has(i.id))).slice(0, 10 - p.length));
+    }
+  } else { // 間違えた問題中心(今週分→その他の順)
+    const w7 = wrongs.filter(it => s7.has(it.id));
+    const wRest = wrongs.filter(it => !s7.has(it.id));
+    p = shuffle(w7).concat(shuffle(wRest)).slice(0, 10);
+    if (p.length < 10) {
+      const ids = new Set(p.map(i => i.id));
+      p = p.concat(shuffle(ITEMS.filter(it => s7.has(it.id) && !ids.has(it.id)))
+        .slice(0, 10 - p.length));
+    }
+  }
+  if (p.length < 4) { toast("練習できる問題がありません"); return; }
+  quiz = { list: shuffle(p), idx: 0, mode: "q4", answers: [], judged: null, prep: true,
+    prepMode: mode, pool: ITEMS, cat: "テスト対策", range: [1, p.length] };
+  go("quizrun");
+}
+function vPrep() {
+  const s7 = seen7Set();
+  const wrongs = prepWrongs();
+  const w7 = wrongs.filter(it => s7.has(it.id));
+  const weekItems = ITEMS.filter(it => s7.has(it.id));
+  return `<div class="card">
+    <h2>📝 テスト対策の部屋</h2>
+    <p class="muted">週間テストの範囲（直近7日に出た問題 ${weekItems.length}問）を練習します。
+    10問セット・解答した時点で〇✕判定と正解・解説が表示されます。</p>
+    <div class="mission">
+      <div class="mission-l"><b>❌ 間違えた問題</b><span class="muted small">今週${w7.length}問・全${wrongs.length}問</span></div>
+      <div class="mission-m"></div>
+      <button class="primary" data-act="prepset" data-mode="wrong" ${wrongs.length ? "" : "disabled"}>10問練習 ▶</button>
+    </div>
+    <div class="mission">
+      <div class="mission-l"><b>📋 今週の範囲まとめ</b><span class="muted small">${weekItems.length}問</span></div>
+      <div class="mission-m"></div>
+      <button class="primary" data-act="prepset" data-mode="week" ${weekItems.length ? "" : "disabled"}>10問練習 ▶</button>
+    </div>
+    <div class="btnrow"><button class="ghost" data-nav="result">📊 過去の結果・進捗を見る →</button></div>
+    <hr>
+    <h3>❌ 間違いストック（${wrongs.length}問）</h3>
+    <p class="muted small">誤答した問題が蓄積されます。連続2回正解で克服となりリストから外れます。タップで詳細を確認。</p>
+    ${wrongs.length ? wrongs.slice(0, 200).map(it =>
+      `<div class="listrow" data-act="edit" data-id="${it.id}" style="cursor:pointer">
+        <span class="t">${esc(qt(it))}</span>
+        <span class="y">${esc(it.sub || it.cat)}</span>
+        <span class="m">✕${(SCHED.items[it.id] || {}).w || 0}回${s7.has(it.id) ? "・今週" : ""}</span>
+      </div>`).join("")
+        + (wrongs.length > 200 ? `<p class="muted">…残り${wrongs.length - 200}件</p>` : "")
+      : `<p class="muted">ストックはありません。間違えた問題はここに蓄積されます。</p>`}
+  </div>`;
+}
+
 // ホームのプランパネル(前半6セット/後半の2分割表示＋先取り)
 function vSchedCard() {
   if (!ITEMS.length) return "";
@@ -416,7 +499,9 @@ function render() {
   const room = ROOMS.find(r => r.key === view.room);
   $("#backbtn").style.display = inRoom ? "" : "none";
   $("#headtitle").textContent = inRoom
-    ? (room ? `${room.icon} ${room.label}` : (view.name === "admin" ? "管理者" : view.name === "earnlog" ? "🪙 stdm履歴" : ""))
+    ? (room ? `${room.icon} ${room.label}` : (view.name === "admin" ? "管理者"
+      : view.name === "earnlog" ? "🪙 stdm履歴"
+      : (view.name === "result" || view.name === "resultdetail") ? "📊 結果・進捗" : ""))
     : "";
   const el = $("#app");
   const v = view.name;
@@ -428,6 +513,7 @@ function render() {
   else if (v === "card") el.innerHTML = vCard();
   else if (v === "testrun") el.innerHTML = vTestRun();
   else if (v === "testend") el.innerHTML = vTestEnd();
+  else if (v === "prep") el.innerHTML = vPrep();
   else if (v === "result") el.innerHTML = vResult();
   else if (v === "resultdetail") el.innerHTML = vResultDetail();
   else if (v === "list") el.innerHTML = vList();
@@ -692,11 +778,15 @@ function vQuizEnd() {
            <button class="bigbtn" data-act="schedset" data-mission="extra" data-n="10">明日以降の分を先取りする（10問セット）</button>`
         : `<button class="bigbtn" data-act="schedset" data-mission="extra" data-n="10">続けて10問セット ▶</button>`}`;
   })() : "";
+  const prepInfo = quiz.prep ? `<hr>
+    <button class="bigbtn" data-act="prepset" data-mode="${esc(quiz.prepMode || "wrong")}">続けて10問練習 ▶</button>
+    <div class="btnrow"><button data-nav="prep">テスト対策の部屋へ</button></div>` : "";
   return `<div class="card">
     <h2>結果: ${ok} / ${quiz.answers.length} 問正解</h2>
     ${wrongs.length ? `<h3>間違えた問題 (${wrongs.length})</h3>${rows}
       <div class="btnrow"><button class="primary" data-act="retry" data-src="quiz">間違えた問題だけやり直す</button></div>` : `<p>全問正解！</p>`}
     ${schedInfo}
+    ${prepInfo}
     <div class="btnrow">
       <button data-nav="home">ホームへ</button>
     </div>
@@ -977,6 +1067,7 @@ document.addEventListener("click", (e) => {
     else if (k === "admin") go("admin");
     else if (k === "earnlog") go("earnlog", { room: "earnlog" });
     else if (k === "jisho") go("list", { room: "jisho" });
+    else if (k === "prep") go("prep", { room: "prep" });
     else if (k === "result") go("result", { room: "result", cat: view.cat });
     else go("catpick", { room: k });
     return;
@@ -1032,6 +1123,7 @@ document.addEventListener("click", (e) => {
     }
     else if (act === "schedset") schedStart(a.dataset.mission, +(a.dataset.n || 10));
     else if (act === "wtest") weeklyTestStart();
+    else if (act === "prepset") prepStart(a.dataset.mode);
     else if (act === "scheddate") {
       const v2 = $("#s_start")?.value;
       if (!v2) { toast("開始日を入力してください"); return; }
@@ -1061,6 +1153,7 @@ document.addEventListener("click", (e) => {
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
       if (quiz.sched)
         schedMark(quiz.list[quiz.idx].id, ok, Date.now() - (quiz.qStart || Date.now()) <= 3000);
+      else if (quiz.prep) prepMark(quiz.list[quiz.idx].id, ok);
       mark(quiz.list[quiz.idx].id, ok, "quiz");
       document.querySelectorAll(".choice").forEach((b, i) => {
         const v = quiz.cur.options[i];
@@ -1093,6 +1186,7 @@ document.addEventListener("click", (e) => {
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
       if (quiz.sched)
         schedMark(quiz.list[quiz.idx].id, ok, Date.now() - (quiz.qStart || Date.now()) <= 3000);
+      else if (quiz.prep) prepMark(quiz.list[quiz.idx].id, ok);
       mark(quiz.list[quiz.idx].id, ok, "quiz");
       render();
     }
