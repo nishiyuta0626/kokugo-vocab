@@ -9,6 +9,7 @@
 
 const LS_PROGRESS = "kv_progress_v1";
 const LS_OVERRIDE = "kv_item_override_v1";
+const LS_HIDDEN = "kv_hidden_v1";
 const LS_RESULTS = "kv_results_v1";
 const LS_stdm = "kv_stdm_v1";
 const LS_TIME = "kv_study_time_v1";
@@ -37,6 +38,7 @@ let ITEMS = [];
 let PROGRESS = {};   // id -> {c,w,s,tc,tw,ts,last}
 let RESULTS = [];    // {ts,kind,cat,range:[a,b],n,ok,wrongIds,pts?}
 let OVERRIDES = {};
+let HIDDEN = { ids: [], items: {} }; // 辞書の部屋で✕した項目(アプリから消える)
 let stdm = 0;
 let POWER_ON = false; // 管理者の実力テスト解放スイッチ
 // 勉強時間: 問題を解いている時間のみ計測。2分無操作/離席で一時停止。
@@ -56,6 +58,7 @@ function loadJSON(k, d) {
 const saveProgress = () => localStorage.setItem(LS_PROGRESS, JSON.stringify(PROGRESS));
 const saveResults = () => localStorage.setItem(LS_RESULTS, JSON.stringify(RESULTS));
 const saveOverrides = () => localStorage.setItem(LS_OVERRIDE, JSON.stringify(OVERRIDES));
+const saveHidden = () => localStorage.setItem(LS_HIDDEN, JSON.stringify(HIDDEN));
 const savestdm = () => localStorage.setItem(LS_stdm, String(stdm));
 const savePower = () => localStorage.setItem(LS_POWER, POWER_ON ? "1" : "0");
 const saveStudy = () => localStorage.setItem(LS_TIME, JSON.stringify(study));
@@ -64,6 +67,12 @@ function applyOverrides() {
     const o = OVERRIDES[it.id];
     if (o) Object.assign(it, o);
   }
+}
+const catRank = (c) => { const i = CAT_ORDER.indexOf(c); return i < 0 ? 99 : i; };
+function resortItems() { ITEMS.sort((x, y) => catRank(x.cat) - catRank(y.cat)); }
+function applyHidden() {
+  const hid = new Set(HIDDEN.ids);
+  ITEMS = ITEMS.filter(i => !hid.has(i.id));
 }
 
 // ---------- 記録 ----------
@@ -661,7 +670,8 @@ function vList() {
     `<div class="listrow" data-act="edit" data-id="${it.id}" style="cursor:pointer">
       <span class="t">${esc(it.text)}${STATUS_BADGE[statusOf(it.id)]}</span>
       <span class="y">${esc(it.yomi)}</span>
-      <span class="m">${esc(it.meaning)}</span></div>`).join("");
+      <span class="m">${esc(it.meaning)}</span>
+      <button class="delx" data-act="hide" data-id="${it.id}" title="この項目を削除">✕</button></div>`).join("");
   return `<div class="card">
     <div class="btnrow" style="margin-top:0">
       <select id="l_cat"><option value="">全カテゴリ</option>
@@ -778,6 +788,16 @@ function vData() {
     <h3>項目の修正内容</h3>
     <p class="muted">辞書で編集した項目: ${Object.keys(OVERRIDES).length}件
       <button class="ghost" id="d_ovexport">修正をエクスポート</button></p>
+    <hr>
+    <h3>削除した項目</h3>
+    <p class="muted">辞書で✕した項目: ${HIDDEN.ids.length}件（アプリ上から非表示）
+      ${HIDDEN.ids.length ? `<button class="ghost" data-act="unhide_all">すべて復元</button>` : ""}</p>
+    ${HIDDEN.ids.slice(0, 500).map(id => {
+      const it = HIDDEN.items[id];
+      return it ? `<div class="listrow"><span class="t">${esc(it.text)}</span>
+        <span class="y">${esc(it.yomi)}</span><span class="m">${esc(it.cat)}</span>
+        <button class="ghost" data-act="unhide" data-id="${id}" style="padding:2px 10px">復元</button></div>` : "";
+    }).join("")}
     <div class="btnrow"><button class="ghost" data-nav="home">← ホームへ</button></div>
   </div>`;
 }
@@ -825,6 +845,31 @@ document.addEventListener("click", (e) => {
     }
     else if (act === "tile") {
       go("list", { room: "jisho", cat: a.dataset.cat, sec: +a.dataset.sec, kw: "", filt: "" });
+    }
+    else if (act === "hide") {
+      const it = ITEMS.find(i => i.id === a.dataset.id);
+      if (it) {
+        HIDDEN.ids.push(it.id);
+        HIDDEN.items[it.id] = it;
+        ITEMS = ITEMS.filter(i => i.id !== it.id);
+        saveHidden(); toast(`「${it.text}」を削除しました`); render();
+      }
+    }
+    else if (act === "unhide") {
+      const id = a.dataset.id;
+      const it = HIDDEN.items[id];
+      HIDDEN.ids = HIDDEN.ids.filter(x => x !== id);
+      delete HIDDEN.items[id];
+      if (it && !ITEMS.find(i => i.id === id)) { ITEMS.push(it); resortItems(); }
+      saveHidden(); render();
+    }
+    else if (act === "unhide_all") {
+      for (const id of HIDDEN.ids) {
+        const it = HIDDEN.items[id];
+        if (it && !ITEMS.find(i => i.id === id)) ITEMS.push(it);
+      }
+      HIDDEN = { ids: [], items: {} };
+      resortItems(); saveHidden(); toast("すべて復元しました"); render();
     }
     else if (act === "power") {
       POWER_ON = a.dataset.v === "1"; savePower();
@@ -1003,7 +1048,7 @@ document.addEventListener("click", (e) => {
     saveOverrides(); toast("保存しました"); go("list", { room: "jisho" });
   }
   if (e.target.id === "d_export") {
-    const blob = new Blob([JSON.stringify({ progress: PROGRESS, results: RESULTS, overrides: OVERRIDES, stdm: stdm }, null, 1)],
+    const blob = new Blob([JSON.stringify({ progress: PROGRESS, results: RESULTS, overrides: OVERRIDES, stdm: stdm, hidden: HIDDEN }, null, 1)],
       { type: "application/json" });
     const a2 = document.createElement("a");
     a2.href = URL.createObjectURL(blob);
@@ -1036,6 +1081,7 @@ document.addEventListener("change", (e) => {
         if (d.progress) PROGRESS = d.progress;
         if (d.results) RESULTS = d.results;
         if (d.overrides) { OVERRIDES = d.overrides; applyOverrides(); saveOverrides(); }
+        if (d.hidden && d.hidden.ids) { HIDDEN = d.hidden; saveHidden(); applyHidden(); resortItems(); }
         if (typeof d.stdm === "number") { stdm = d.stdm; savestdm(); }
         saveProgress(); saveResults(); toast("インポートしました"); render();
       } catch { toast("読み込めませんでした"); }
@@ -1058,6 +1104,7 @@ async function boot() {
   PROGRESS = loadJSON(LS_PROGRESS, {});
   RESULTS = loadJSON(LS_RESULTS, []);
   OVERRIDES = loadJSON(LS_OVERRIDE, {});
+  HIDDEN = loadJSON(LS_HIDDEN, { ids: [], items: {} });
   stdm = +(localStorage.getItem(LS_stdm) || 0);
   POWER_ON = localStorage.getItem(LS_POWER) === "1";
   study = Object.assign({ day: todayStr(), sec: 0, total: 0, paidStdm: 0 }, loadJSON(LS_TIME, {}));
@@ -1078,9 +1125,9 @@ async function boot() {
     return;
   }
   applyOverrides();
+  applyHidden();
   // 全体通し番号用にカテゴリ順で並べ替え
-  const rank = (c) => { const i = CAT_ORDER.indexOf(c); return i < 0 ? 99 : i; };
-  ITEMS.sort((x, y) => rank(x.cat) - rank(y.cat));
+  resortItems();
   render();
   if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
     navigator.serviceWorker.register("sw.js").catch(() => {});
