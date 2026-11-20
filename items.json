@@ -2548,5 +2548,350 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「諸行無常（しょぎょうむじょう）」です。"
+  },
+  {
+    "id": "yoji_176",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）言実行」",
+    "options": [
+      "不",
+      "無",
+      "非",
+      "未"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「不」で「不言実行（ふげんじっこう）」と書きます。"
+  },
+  {
+    "id": "yoji_177",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「海（　）山千」",
+    "options": [
+      "百",
+      "千",
+      "万",
+      "十"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「千」で「海千山千（うみせんやません）」と書きます。"
+  },
+  {
+    "id": "yoji_178",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）死一生」",
+    "options": [
+      "七",
+      "八",
+      "九",
+      "十"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「九」で「九死一生（きゅうしいっしょう）」と書きます。"
+  },
+  {
+    "id": "yoji_179",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）方美人」",
+    "options": [
+      "四",
+      "六",
+      "八",
+      "十"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「八」で「八方美人（はっぽうびじん）」と書きます。"
+  },
+  {
+    "id": "yoji_181",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）人十色」",
+    "options": [
+      "十",
+      "百",
+      "千",
+      "万"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「十」で「十人十色（じゅうにんといろ）」と書きます。"
+  },
+  {
+    "id": "yoji_182",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）戦即決」",
+    "options": [
+      "早",
+      "急",
+      "速",
+      "短"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「速」で「速戦即決（そくせんそっけつ）」と書きます。"
+  },
+  {
+    "id": "yoji_183",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）中模索」",
+    "options": [
+      "闇",
+      "暗",
+      "霧",
+      "雲"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「暗」で「暗中模索（あんちゅうもさく）」と書きます。"
+  },
+  {
+    "id": "yoji_184",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）転直下」",
+    "options": [
+      "急",
+      "速",
+      "直",
+      "大"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「急」で「急転直下（きゅうてんちょっか）」と書きます。"
+  },
+  {
+    "id": "yoji_185",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）頭徹尾」",
+    "options": [
+      "徹",
+      "貫",
+      "通",
+      "一"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「徹」で「徹頭徹尾（てっとうてつび）」と書きます。"
+  },
+  {
+    "id": "yoji_186",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「有言実行」と反対の意味を表す四字熟語を次から選びなさい。",
+    "options": [
+      "不言実行",
+      "口先三寸",
+      "朝令暮改"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「不言実行（ふげんじっこう）」です。"
+  },
+  {
+    "id": "yoji_187",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「一石二鳥」とほぼ同じ意味を表す四字熟語を次から選びなさい。",
+    "options": [
+      "一挙両得",
+      "一長一短",
+      "一喜一憂"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一挙両得（いっきょりょうとく）」です。"
+  },
+  {
+    "id": "yoji_188",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「異口同音」とほぼ同じ意味を表す四字熟語を次から選びなさい。",
+    "options": [
+      "満場一致",
+      "賛否両論",
+      "諸説紛々"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「満場一致（まんじょういっち）」です。"
+  },
+  {
+    "id": "yoji_189",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「絶体絶命」と似た状況を表す四字熟語を次から選びなさい。",
+    "options": [
+      "危機一髪",
+      "順風満帆",
+      "平穏無事"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「危機一髪（ききいっぱつ）」です。"
+  },
+  {
+    "id": "yoji_190",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「一心不乱」とほぼ同じ意味を表す四字熟語を次から選びなさい。",
+    "options": [
+      "一意専心",
+      "右往左往",
+      "半信半疑"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一意専心（いちいせんしん）」です。"
+  },
+  {
+    "id": "yoji_191",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択（別形式）",
+    "question": "「意気投合」の最も適切な意味を選びなさい。",
+    "options": [
+      "お互いの気持ちや考えがぴったりと一致すること。",
+      "たくさんの人が口をそろえて同じことを言うこと。",
+      "言葉に出さなくても、心から心へ気持ちが通じ合うこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「意気投合（いきとうごう）」お互いの気持ちや考えがぴったりと一致すること。"
+  },
+  {
+    "id": "yoji_192",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択（別形式）",
+    "question": "「賛否両論」の最も適切な意味を選びなさい。",
+    "options": [
+      "賛成する意見と反対する意見の両方が出ること。",
+      "その場にいる全員が、ひとつの意見に賛成すること。",
+      "自分の意見がなく、他人の意見にすぐ賛成すること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「賛否両論（さんぴりょうろん）」賛成する意見と反対する意見の両方が出ること。"
+  },
+  {
+    "id": "yoji_193",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択（別形式）",
+    "question": "「一目瞭然」の最も適切な意味を選びなさい。",
+    "options": [
+      "ひと目見ただけで、はっきりとよく分かる様子。",
+      "見通しがまったく立たず、どうすればよいか分からない様子。",
+      "細かい点では少し違いがあるが、全体としてはほぼ同じ様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「一目瞭然（いちもくりょうぜん）」ひと目見ただけで、はっきりとよく分かる様子。"
+  },
+  {
+    "id": "yoji_194",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択（別形式）",
+    "question": "「不言実行」の最も適切な意味を選びなさい。",
+    "options": [
+      "あれこれ理屈を言わず、黙ってやるべきことを実行すること。",
+      "口に出して言ったことを、責任をもって必ず実行すること。",
+      "口先だけで立派なことを言い、行動が伴わないこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「不言実行（ふげんじっこう）」あれこれ理屈を言わず、黙ってやるべきことを実行すること。"
+  },
+  {
+    "id": "yoji_195",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択（別形式）",
+    "question": "「八方美人」の最も適切な意味を選びなさい。",
+    "options": [
+      "誰に対しても気に入られるように、愛想よく振る舞う人のこと。",
+      "顔立ちが美しく、性格も優しい完璧な人のこと。",
+      "周りの人のことをまったく気にせず、勝手気ままに振る舞う人のこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「八方美人（はっぽうびじん）」誰に対しても気に入られるように、愛想よく振る舞う人のこと。"
+  },
+  {
+    "id": "yoji_196",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充（別角度）",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「暗闇の中で手探りするように、解決策を（　）で探し続けた。」",
+    "options": [
+      "暗中模索",
+      "五里霧中",
+      "試行錯誤"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「暗中模索（あんちゅうもさく）」です。"
+  },
+  {
+    "id": "yoji_197",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充（別角度）",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「順調に進んでいた計画が、突然のトラブルによって（　）の展開になった。」",
+    "options": [
+      "急転直下",
+      "順風満帆",
+      "千変万化"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「急転直下（きゅうてんちょっか）」です。"
+  },
+  {
+    "id": "yoji_198",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充（別角度）",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「彼は最初から最後まで（　）自分の主張を変えなかった。」",
+    "options": [
+      "徹頭徹尾",
+      "朝令暮改",
+      "優柔不断"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「徹頭徹尾（てっとうてつび）」です。"
+  },
+  {
+    "id": "yoji_199",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充（別角度）",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「大きな事故に巻き込まれたが、（　）を得て無事に助かった。」",
+    "options": [
+      "九死一生",
+      "絶体絶命",
+      "危機一髪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「九死一生（きゅうしいっしょう）」です。"
+  },
+  {
+    "id": "yoji_200",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充（別角度）",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「文句を言わずに黙々と作業をこなす、彼女の（　）の姿勢を見習いたい。」",
+    "options": [
+      "不言実行",
+      "有言実行",
+      "大言壮語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「不言実行（ふげんじっこう）」です。"
   }
 ]

@@ -1,4 +1,5 @@
 import json
+import re
 
 YOMI = {
 "一期一会":"いちごいちえ","馬耳東風":"ばじとうふう","以心伝心":"いしんでんしん","同心協力":"どうしんきょうりょく",
@@ -34,6 +35,7 @@ YOMI = {
 "賛否両論":"さんぴりょうろん","始終一貫":"しじゅういっかん","諸行無常":"しょぎょうむじょう","心機一転":"しんきいってん",
 "新陳代謝":"しんちんたいしゃ","青天白日":"せいてんはくじつ","善悪正邪":"ぜんあくせいじゃ","前途洋々":"ぜんとようよう",
 "相思相愛":"そうしそうあい","大胆不敵":"だいたんふてき","男女平等":"だんじょびょうどう","天変地異":"てんぺんちい",
+"不言実行":"ふげんじっこう","海千山千":"うみせんやません","速戦即決":"そくせんそっけつ",
 }
 
 def conv(src_file="batch_in.json", category="yojijukugo", categoryName="四字熟語"):
@@ -56,7 +58,15 @@ def conv(src_file="batch_in.json", category="yojijukugo", categoryName="四字�
             q = it["question"]
             w2 = it["answer"]
             y2 = YOMI.get(w2) or ""
-            ex = f"正解は「{w2}（{y2}）」です。" if y2 else f"正解は「{w2}」です。"
+            if y2:
+                ex = f"正解は「{w2}（{y2}）」です。"
+            else:
+                quoted = re.findall(r"「(.+?)」", it["question"])
+                ty = quoted and YOMI.get(quoted[0]) or ""
+                if ty:
+                    ex = f"「{quoted[0]}（{ty}）」{w2}"
+                else:
+                    ex = f"正解は「{w2}」です。"
         items.append({
             "id": f"yoji_{it['id']}",
             "category": category,
