@@ -663,7 +663,7 @@ function vList() {
       <select id="l_filt"><option value="">全状態</option>
         ${["new", "weak", "master", "good"].map(s =>
           `<option value="${s}" ${s === filt ? "selected" : ""}>${STATUS_JP[s]}</option>`).join("")}</select>
-      <input type="text" id="l_kw" placeholder="検索(語句・読み・意味)" value="${esc(view.kw || "")}">
+
     </div>
     ${view.sec != null ? `<p class="muted">未習得の残り（タイルから）</p>` : ""}
     <p class="muted">${p.length}件${p.length > 500 ? " (先頭500件表示)" : ""} — タップで詳細・編集</p>
@@ -1035,7 +1035,6 @@ document.addEventListener("change", (e) => {
   }
 });
 document.addEventListener("input", (e) => {
-  if (e.target.id === "l_kw") { view.kw = e.target.value; render(); }
 });
 document.addEventListener("keydown", (e) => { // 入力式でEnter=回答
   if (e.key !== "Enter" || e.target.id !== "ans_in") return;
