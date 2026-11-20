@@ -14787,5 +14787,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「解説」です。"
+  },
+  {
+    "id": "dou_1046",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「創造」",
+    "options": [
+      "模倣",
+      "破壊",
+      "複製"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「模倣」です。"
+  },
+  {
+    "id": "dou_1047",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「公的」",
+    "options": [
+      "私的",
+      "個人的",
+      "秘密"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「私的」です。"
+  },
+  {
+    "id": "dou_1048",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「絶対」",
+    "options": [
+      "相対",
+      "反対",
+      "比較"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「相対」です。"
+  },
+  {
+    "id": "dou_1049",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「精神」",
+    "options": [
+      "物質",
+      "肉体",
+      "物体"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「物質」です。"
+  },
+  {
+    "id": "dou_1050",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「原因」",
+    "options": [
+      "結果",
+      "理由",
+      "経過"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「結果」です。"
+  },
+  {
+    "id": "dou_1051",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「攻撃」",
+    "options": [
+      "防御",
+      "守備",
+      "退却"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「防御」です。"
+  },
+  {
+    "id": "dou_1052",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「発見」",
+    "options": [
+      "喪失",
+      "紛失",
+      "消滅"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「喪失」です。"
+  },
+  {
+    "id": "dou_1053",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「秩序」",
+    "options": [
+      "混乱",
+      "無秩序",
+      "破壊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「混乱」です。"
+  },
+  {
+    "id": "dou_1054",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「独立」",
+    "options": [
+      "従属",
+      "依存",
+      "協力"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「従属」です。"
+  },
+  {
+    "id": "dou_1055",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「安定」",
+    "options": [
+      "動揺",
+      "不安",
+      "変化"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「動揺」です。"
+  },
+  {
+    "id": "dou_1056",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「獲得」",
+    "options": [
+      "取得",
+      "喪失",
+      "譲渡"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「取得」です。"
+  },
+  {
+    "id": "dou_1057",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「規則」",
+    "options": [
+      "規律",
+      "自由",
+      "例外"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「規律」です。"
+  },
+  {
+    "id": "dou_1058",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「希望」",
+    "options": [
+      "願望",
+      "絶望",
+      "諦め"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「願望」です。"
+  },
+  {
+    "id": "dou_1059",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「修正」",
+    "options": [
+      "訂正",
+      "放置",
+      "改悪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「訂正」です。"
+  },
+  {
+    "id": "dou_1060",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「発見」",
+    "options": [
+      "見出",
+      "隠匿",
+      "忘却"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「見出」です。"
+  },
+  {
+    "id": "dou_1061",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【反対の意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "売買",
+      "森林",
+      "登山"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「売買」です。"
+  },
+  {
+    "id": "dou_1062",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【反対の意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "勝敗",
+      "岩石",
+      "読書"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「勝敗」です。"
+  },
+  {
+    "id": "dou_1063",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【似た意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "寒冷",
+      "高低",
+      "晴雨"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「寒冷」です。"
+  },
+  {
+    "id": "dou_1064",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【似た意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "増加",
+      "増減",
+      "前後"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「増加」です。"
+  },
+  {
+    "id": "dou_1065",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【反対の意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "善悪",
+      "幸福",
+      "道路"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「善悪」です。"
+  },
+  {
+    "id": "dou_1066",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「防御」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "攻撃",
+      "進撃",
+      "反撃"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「攻撃」です。"
+  },
+  {
+    "id": "dou_1067",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「模倣」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "創造",
+      "発明",
+      "制作"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「創造」です。"
+  },
+  {
+    "id": "dou_1068",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「混乱」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "秩序",
+      "整理",
+      "平和"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「秩序」です。"
+  },
+  {
+    "id": "dou_1069",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「スポーツでは、攻める力だけでなく相手の攻撃を防ぐ（　）の力も重要だ。」",
+    "options": [
+      "防御",
+      "抵抗",
+      "撤退"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「防御」です。"
+  },
+  {
+    "id": "dou_1070",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・類義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「作文の誤字を見つけたので、正しい漢字に（　）して提出した。」",
+    "options": [
+      "訂正",
+      "改定",
+      "変更"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「訂正」です。"
   }
 ]
