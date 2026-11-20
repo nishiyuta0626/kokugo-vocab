@@ -13,7 +13,6 @@ const LS_HIDDEN = "kv_hidden_v1";
 const LS_RESULTS = "kv_results_v1";
 const LS_stdm = "kv_stdm_v1";
 const LS_TIME = "kv_study_time_v1";
-const LS_POWER = "kv_power_unlock_v1";
 const LS_ADJUST = "kv_stdm_adjust_v1";
 const LS_SCHED = "kv_sched_v1";
 const LS_EARN = "kv_earn_v1";
@@ -24,12 +23,10 @@ const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
 const ROOMS = [
   { key: "jisho", label: "辞書の部屋", icon: "📖",
     desc: "語句を検索できます（実施中はロック）" },
-  { key: "test", label: "テストの部屋", icon: "🖊️",
-    desc: "番号範囲を選んでまとめてテスト" },
   { key: "result", label: "結果の部屋", icon: "📊",
     desc: "過去の結果と間違えた語句の復習リスト" },
-  { key: "power", label: "実力テストの部屋", icon: "🏆", gold: true,
-    desc: "全範囲ランダム・点数に応じてstdm付与" },
+  { key: "wtest", label: "週間テストの部屋", icon: "📋", gold: true,
+    desc: "週間ノルマ達成で解放・25問×4点・間違い中心" },
 ];
 const KIND_JP = { quiz: "クイズ", test: "テスト", power: "実力テスト", sched: "50日プラン", wtest: "週間テスト" };
 
@@ -39,7 +36,6 @@ let RESULTS = [];    // {ts,kind,cat,range:[a,b],n,ok,wrongIds,pts?}
 let OVERRIDES = {};
 let HIDDEN = { ids: [], items: {} }; // 辞書の部屋で✕した項目(アプリから消える)
 let stdm = 0;
-let POWER_ON = false; // 管理者の実力テスト解放スイッチ
 // 勉強時間: 問題を解いている時間のみ計測。2分無操作/離席で一時停止。
 // 2分勉強 = 1stdm
 let study = { day: "", sec: 0, total: 0, paidStdm: 0 };
@@ -64,7 +60,6 @@ const saveResults = () => localStorage.setItem(LS_RESULTS, JSON.stringify(RESULT
 const saveOverrides = () => localStorage.setItem(LS_OVERRIDE, JSON.stringify(OVERRIDES));
 const saveHidden = () => localStorage.setItem(LS_HIDDEN, JSON.stringify(HIDDEN));
 const savestdm = () => localStorage.setItem(LS_stdm, String(stdm));
-const savePower = () => localStorage.setItem(LS_POWER, POWER_ON ? "1" : "0");
 const saveStudy = () => localStorage.setItem(LS_TIME, JSON.stringify(study));
 const saveSched = () => localStorage.setItem(LS_SCHED, JSON.stringify(SCHED));
 const saveEarn = () => localStorage.setItem(LS_EARN, JSON.stringify(EARN));
@@ -111,8 +106,7 @@ function mark(id, ok, kind) {
   r.last = new Date().toISOString();
   PROGRESS[id] = r; saveProgress();
 }
-// テスト系で直近が✕かどうか(次のテストに混入する復習対象)
-function testWeak(id) { return rec(id).tlast === "ng"; }
+
 function statusOf(id) {
   const r = rec(id);
   if (r.c === 0 && r.w === 0) return "new";
@@ -159,29 +153,11 @@ function fmtTs(ts) {
   const p = (n) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 }
-function stdmAward(pts) { // 実力テスト(100点満点)のstdm付与
+function stdmAward(pts) { // テスト(100点満点)のstdm付与
   if (pts >= 100) return 500;
   if (pts >= 85) return 200;
   if (pts >= 70) return 100;
   return 10;
-}
-// 実力テストの構成: 全カテゴリから計60問・各1点・100点満点換算
-function powerSpec() {
-  const cs = cats().filter(c => byCat(c).length > 0);
-  if (!cs.length) return [];
-  const base = Math.floor(60 / cs.length), rem = 60 % cs.length;
-  return cs.map((c, i) => [c, base + (i < rem ? 1 : 0), 1]);
-}
-function powerWeight() { return 1; }
-function powerScore(ansList) { // 加重得点を100点満点に換算
-  let earned = 0, max = 0;
-  for (const x of ansList) {
-    const it = ITEMS.find(i => i.id === x.id);
-    if (!it) continue;
-    const w = powerWeight(it);
-    max += w; if (x.ok) earned += w;
-  }
-  return max ? Math.round(earned / max * 100) : 0;
 }
 const RUN_VIEWS = new Set(["quizrun", "testrun", "card"]);
 const IDLE_MS = 120000; // 2分無操作でタイムロック
@@ -339,19 +315,36 @@ function schedStart(mission, n) {
     mission, pool: ITEMS, cat: "50日プラン", range: [1, p.length] };
   go("quizrun");
 }
-// 週間テスト(7日ごと): 直近7日に出題した問題を50問・不足分は周回プールから補充
+// 週間テスト: 1週間分のノルマ(基準ノルマ×7)達成ごとに1回解放
+function weeklyStatus() {
+  const per = 7 * (SCHED.base || Math.ceil(ITEMS.length * 4 / SCHED_DAYS));
+  const completed = SCHED.start ? Math.floor(schedDone() / per) : 0;
+  const taken = SCHED.wcount || 0;
+  const avail = Math.max(0, completed - taken);
+  return { per, avail, need: avail ? 0 : (completed + 1) * per - schedDone() };
+}
+// 25問×4点: 間違えた問題を中心に、直近7日の出題済み+周回プールで補充
 function weeklyTestStart() {
+  const st = weeklyStatus();
+  if (!st.avail) { toast(`🔒 週間ノルマ達成で解放されます（あと${st.need}クリア）`); return; }
   const seen7 = new Set();
   for (let i = 0; i < 7; i++) {
     const d = new Date(); d.setDate(d.getDate() - i);
     const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
     (SCHED.days[k]?.seen || []).forEach(id => seen7.add(id));
   }
-  let p = shuffle(ITEMS.filter(it => seen7.has(it.id))).slice(0, 50);
-  if (p.length < 50) p = p.concat(schedPick(50 - p.length));
-  if (p.length < 4) { toast("まだ週間テストに出せる問題がありません"); return; }
-  test = { list: shuffle(p), idx: 0, mode: "q4", answers: [], pool: ITEMS,
-    cat: "週間テスト", range: [1, p.length], kind: "wtest" };
+  const wrongs = shuffle(ITEMS.filter(it => {
+    const s = SCHED.items[it.id];
+    return s && s.w > 0 && (s.cc || 0) < 4;
+  })).slice(0, 15);
+  const wrongIds = new Set(wrongs.map(i => i.id));
+  const rest = shuffle(ITEMS.filter(it => seen7.has(it.id) && !wrongIds.has(it.id)))
+    .slice(0, 25 - wrongs.length);
+  let p = wrongs.concat(rest);
+  if (p.length < 25) p = p.concat(schedPick(25 - p.length));
+  if (p.length < 4) { toast("まだ出題できる問題がありません"); return; }
+  test = { list: shuffle(p.slice(0, 25)), idx: 0, mode: "q4", answers: [], pool: ITEMS,
+    cat: "週間テスト", range: [1, 25], kind: "wtest" };
   go("testrun");
 }
 // ホームのプランパネル(前半6セット/後半の2分割表示＋先取り)
@@ -390,13 +383,14 @@ function vSchedCard() {
         ? `<span class="mdone">✓ 完了</span>`
         : `<button class="primary" data-act="schedset" data-mission="${m}" data-n="10">10問セット ▶</button>`}
     </div>`;
-  const wDay = st.dayNo % 7 === 0 && st.dayNo <= SCHED_DAYS;
-  const wDone = !!SCHED.days[todayStr()]?.wtest;
-  const wRow = wDay ? `<div class="mission wtest">
-      <div class="mission-l"><b>📋 週間テスト</b><span class="muted small">今週の復習50問・得点分stdm</span></div>
+  const wk = weeklyStatus();
+  const wRow = `<div class="mission wtest">
+      <div class="mission-l"><b>📋 週間テスト</b><span class="muted small">週間ノルマ(${wk.per}クリア)達成ごとに解放</span></div>
       <div class="mission-m"></div>
-      ${wDone ? `<span class="mdone">✓ 完了</span>` : `<button class="primary" data-act="wtest">テスト開始 ▶</button>`}
-    </div>` : "";
+      ${wk.avail
+        ? `<button class="primary" data-act="wtest">受験可能 ${wk.avail}回 ▶</button>`
+        : `<span class="muted small">🔒 あと${wk.need}クリア</span>`}
+    </div>`;
   return `<div class="card schedcard">
     <h2>📅 50日・4周プラン <span class="muted small">${st.dayNo}日目/${SCHED_DAYS}日・残り${st.daysLeft}日</span></h2>
     <div class="muted small">全体 ${st.done}/${st.total}クリア（${pct}%）
@@ -432,8 +426,6 @@ function render() {
   else if (v === "quizrun") el.innerHTML = vQuizRun();
   else if (v === "quizend") el.innerHTML = vQuizEnd();
   else if (v === "card") el.innerHTML = vCard();
-  else if (v === "testpick") el.innerHTML = vTestPick();
-  else if (v === "testsetup") el.innerHTML = vTestSetup();
   else if (v === "testrun") el.innerHTML = vTestRun();
   else if (v === "testend") el.innerHTML = vTestEnd();
   else if (v === "result") el.innerHTML = vResult();
@@ -485,27 +477,13 @@ function vEarnLog() {
 }
 
 // ---------- ホーム ----------
-function powerProgress() { // 実力テスト解放状況: 全単元が「合格」(46件以上習得)
-  let total = 0, cleared = 0;
-  for (const b of globalBlocks()) {
-    total++;
-    if (blockStat(b.blk).done >= b.blk.length - 4) cleared++;
-  }
-  return { total, cleared };
-}
-function powerUnlocked() {
-  if (POWER_ON) return true;
-  const pw = powerProgress();
-  return pw.total > 0 && pw.cleared === pw.total;
-}
 function vHome() {
-  const pw = powerProgress();
-  const unlocked = powerUnlocked();
+  const wk = weeklyStatus();
   const rooms = `<div class="card roombox"><div class="roombox-ttl">🏠 学習ルーム</div>` +
     ROOMS.map(r => {
-      const lock = r.gold && !unlocked;
+      const lock = r.gold && !wk.avail;
       const sub = r.gold
-        ? (unlocked ? "全範囲60問・最大500stdm 🔓" : `🔒 全単元合格で解放（合格 ${pw.cleared}/${pw.total} 単元）`)
+        ? (wk.avail ? `受験可能 ${wk.avail}回・間違い中心 🔓` : `🔒 週間ノルマ達成で解放（あと${wk.need}クリア）`)
         : r.desc;
       return `<div class="roomrow ${r.gold ? "gold" : ""}" data-nav="${r.key}">
         <span class="ri">${r.icon}</span><span class="rt">${r.label}${lock ? " 🔒" : ""}</span>
@@ -647,55 +625,6 @@ function vRanking() {
   </div>`;
 }
 
-// ---------- テストの部屋 ----------
-const TEST_PASS = 0.9; // 90%以上で合格
-function passedBlock(b) {
-  return RESULTS.some(r => r.kind === "test" &&
-    r.range[0] === b.gs && r.range[1] === b.ge && r.ok / r.n >= TEST_PASS);
-}
-function vTestPick() { // 結果の部屋と同じ1ページ全タイル(合格で次へ進む)
-  const blks = globalBlocks();
-  const parts = [];
-  let cur = "";
-  blks.forEach((b, i) => {
-    if (b.cat !== cur) { cur = b.cat; parts.push(`<h4 class="cathead">${esc(b.cat)}</h4><div class="tiles">`); }
-    const s = blockStat(b.blk);
-    const unlocked = i === 0 || passedBlock(blks[i - 1]);
-    const pass = passedBlock(b);
-    parts.push(`<div class="tile ${pass ? "gold" : s.cls}${unlocked ? "" : " locked"}"
-      data-act="${unlocked ? "tblk" : "locked"}"
-      data-cat="${esc(b.cat)}" data-sec="${b.sec}" data-gs="${b.gs}" data-ge="${b.ge}">
-      <div class="muted small">No.${b.gs}-${b.ge}${unlocked ? "" : " 🔒"}</div>
-      <div class="tile-n">${s.done}<span class="muted">/${b.blk.length}</span></div>
-      <div class="tile-l">${pass ? "テスト合格✓" : s.label}${s.weak ? ` / ✕${s.weak}` : ""}</div>
-    </div>`);
-    const next = blks[i + 1];
-    if (!next || next.cat !== cur) parts.push(`</div>`);
-  });
-  return `<div class="card">
-    <h2>テストを始める</h2>
-    <p class="muted">テストは50問構成(範囲45問以上＋前の枠の✕を5問以内)。<b>90%以上で合格</b>、合格すると次の枠が開きます。</p>
-    ${parts.join("")}
-  </div>
-  ${recentRows("test")}`;
-}
-function vTestSetup() {
-  const power = view.room === "power";
-  const blk = power ? null : ITEMS.slice(view.gs - 1, view.ge);
-  return `<div class="card">
-    <h2>${power ? "実力テスト" : `テストを始める — No.${view.gs}-${view.ge}`}</h2>
-    ${power ? `<p class="muted">全範囲からランダム出題・100点満点換算。</p>
-      <table class="awardtbl"><tr><th>カテゴリ</th><th>問数</th><th>配点</th><th>stdm付与</th></tr>
-      ${powerSpec().map(([c, n, p], i) =>
-        `<tr><td>${esc(c)}</td><td>${Math.min(n, byCat(c).length)}問</td><td>${p}点/問</td>${i === 0 ? `<td rowspan="${powerSpec().length}">100点:500<br>85〜99点:200<br>70〜84点:100<br>69点以下:10</td>` : ""}</tr>`).join("")}</table>`
-      : `<p class="muted">${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。</p>`}
-    <p class="muted small">出題形式: 4択問題（選択肢は問題ごとに固定）</p>
-    <button class="bigbtn" id="t_go">テストを開始</button>
-    <div class="btnrow"><button class="ghost" data-act="quit">${power ? "← ホームへ" : "← 範囲選択へ"}</button></div>
-  </div>
-  ${recentRows(power ? "power" : "test", view.cat)}`;
-}
-
 // ---------- 4択クイズ実行 ----------
 // 新形式: 問題は固定の選択肢(options)とanswerIndexを持つ
 function fixedQ(it) {
@@ -815,7 +744,7 @@ function vTestRun() {
   const opts = options.map((o, i) =>
     `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o.v)}</button>`).join("");
   return `<div class="panes"><div class="card">
-      <div class="muted">${test.kind === "power" ? "🏆 実力テスト" : test.kind === "wtest" ? "📋 週間テスト" : "🖊️ テスト"}　${idx + 1} / ${list.length}　${esc(test.cat)}</div>
+      <div class="muted">📋 週間テスト　${idx + 1} / ${list.length}　${esc(test.cat)}</div>
       <div class="progress">${list.map((_, i) =>
         `<i class="${i < idx ? "f" : ""}"></i>`).join("")}</div>
       ${qPrompt(it)}
@@ -828,31 +757,19 @@ function vTestRun() {
 
 function vTestEnd() {
   const ok = test.answers.filter(a => a.ok).length;
-  const pct = Math.round(ok / test.answers.length * 100);
-  const pts = test.kind === "power" ? powerScore(test.answers) : null;
-  const got = test.kind === "power" ? stdmAward(pts)
-    : test.kind === "wtest" ? Math.round(ok / test.answers.length * 100) : 0;
-  const passed = test.kind === "test" && pct >= TEST_PASS * 100;
-  // 次の枠(合格していれば解放されている)
-  const blks = globalBlocks();
-  const curIdx = blks.findIndex(b => b.gs === test.range[0] && b.ge === test.range[1]);
-  const next = curIdx >= 0 ? blks[curIdx + 1] : null;
+  const pts = ok * 4; // 25問×4点=100点満点
+  const got = stdmAward(pts);
   const wrongs = test.answers.filter(a => !a.ok)
     .map(a => ITEMS.find(i => i.id === a.id)).filter(Boolean);
   const rows = wrongs.map(it =>
     `<div class="listrow"><span class="t">${esc(qt(it))}</span>
      <span class="y">${esc(it.sub || it.cat)}</span><span class="m"></span></div>`).join("");
   return `<div class="card">
-    <h2>${test.kind === "power"
-      ? `実力テスト結果: ${pts}点 / 100点満点 (${ok}/${test.answers.length}問正解)`
-      : `${test.kind === "wtest" ? "週間テスト" : "テスト"}結果: ${ok} / ${test.answers.length} 問正解(${pct}点)`}</h2>
-    ${test.kind === "test" ? `<p style="font-size:20px;font-weight:700;color:${passed ? "#16a34a" : "var(--ng)"}">${passed ? "合格！次の枠が解放されました" : `不合格(合格は${TEST_PASS * 100}%以上)`}</p>` : ""}
-    ${got ? `<p class="stdm">+${got} stdm 獲得！(所有: ${stdm} stdm)</p>` : ""}
+    <h2>週間テスト結果: ${pts}点 / 100点満点 (${ok}/${test.answers.length}問正解)</h2>
+    <p class="stdm">+${got} stdm 獲得！(所有: ${stdm} stdm)</p>
     ${wrongs.length ? `<h3>間違えた問題 (${wrongs.length})</h3>${rows}
       <div class="btnrow"><button class="primary" data-act="retry" data-src="test">間違えた問題だけクイズで練習</button></div>` : `<p>全問正解！</p>`}
     <div class="btnrow">
-      ${passed && next ? `<button class="primary" data-act="nexttest" data-gs="${next.gs}" data-ge="${next.ge}" data-cat="${esc(next.cat)}" data-sec="${next.sec}">次のテストへ →</button>` : ""}
-      <button data-act="tosetup">${test.kind === "power" ? "もう一度" : "枠の選択へ"}</button>
       <button data-nav="result">結果の部屋へ</button>
       <button data-nav="home">ホームへ</button>
     </div>
@@ -957,9 +874,8 @@ function vEdit() {
 }
 
 // ---------- 管理者 ----------
-const ATABS = [["quiz", "クイズ管理"], ["test", "テスト管理"], ["power", "実力テスト管理"]];
+const ATABS = [["quiz", "クイズ管理"], ["test", "テスト管理"], ["wtest", "週間テスト"], ["sched", "50日プラン"]];
 function vAdmin() {
-  const pw = powerProgress();
   const m = Math.floor(study.sec / 60);
   const totalH = Math.floor(study.total / 3600), totalM = Math.floor(study.total / 60) % 60;
   // stdm手動増減ログ(直近10件)
@@ -998,13 +914,6 @@ function vAdmin() {
     <h3>進捗票（${SEC_SIZE}件ブロック）</h3>
     <p class="muted small">タップで残りの語句を確認できます</p>
     ${allBlockTiles("tile")}
-    <hr>
-    <h3>実力テスト</h3>
-    <p class="muted">ONにすると、全単元合格を待たずに実力テストの部屋が解放されます。現在: 合格 ${pw.cleared}/${pw.total} 単元。</p>
-    <div class="chips">
-      <button class="chip ${POWER_ON ? "on" : ""}" data-act="power" data-v="1">実力テスト ON</button>
-      <button class="chip ${POWER_ON ? "" : "on"}" data-act="power" data-v="0">実力テスト OFF</button>
-    </div>
     <hr>
     <h3>📅 50日・4周プラン</h3>
     <p class="muted">${SCHED.start
@@ -1062,42 +971,20 @@ document.addEventListener("click", (e) => {
   const nav = e.target.closest("[data-nav]");
   if (nav) {
     const k = nav.dataset.nav;
-    if (k === "power") {
-      if (!powerUnlocked()) {
-        const pw = powerProgress();
-        toast(`🔒 まだ入れません（合格 ${pw.cleared}/${pw.total} 単元）`);
-        return;
-      }
-    }
+    if (k === "wtest") { weeklyTestStart(); return; }
     if (k === "home") go("home");
     else if (k === "data") go("data");
     else if (k === "admin") go("admin");
     else if (k === "earnlog") go("earnlog", { room: "earnlog" });
     else if (k === "jisho") go("list", { room: "jisho" });
     else if (k === "result") go("result", { room: "result", cat: view.cat });
-    else if (k === "test") go("testpick", { room: "test" });
-    else if (k === "power") go("testsetup", { room: "power" });
     else go("catpick", { room: k });
     return;
   }
   const a = e.target.closest("[data-act]");
   if (a) {
     const act = a.dataset.act;
-    if (act === "cat") { // 実力テストのカテゴリ選択のみで使用
-      go("testsetup", { cat: a.dataset.cat || null, room: "power" });
-    }
-    else if (act === "qscope") { view.qscope = a.dataset.cat; render(); }
-    else if (act === "tblk") {
-      go("testsetup", { room: "test", cat: a.dataset.cat,
-        sec: +a.dataset.sec, gs: +a.dataset.gs, ge: +a.dataset.ge });
-    }
-    else if (act === "nexttest") {
-      go("testsetup", { room: "test", cat: a.dataset.cat,
-        sec: +a.dataset.sec, gs: +a.dataset.gs, ge: +a.dataset.ge });
-    }
-    else if (act === "locked") {
-      toast("🔒 前の枠のテストに合格(90%以上)すると開きます");
-    }
+    if (act === "qscope") { view.qscope = a.dataset.cat; render(); }
     else if (act === "tile") {
       go("list", { room: "jisho", cat: a.dataset.cat, sec: +a.dataset.sec, kw: "", filt: "" });
     }
@@ -1126,11 +1013,6 @@ document.addEventListener("click", (e) => {
       }
       HIDDEN = { ids: [], items: {} };
       resortItems(); saveHidden(); toast("すべて復元しました"); render();
-    }
-    else if (act === "power") {
-      POWER_ON = a.dataset.v === "1"; savePower();
-      toast(POWER_ON ? "実力テストを解放しました" : "実力テストをロックしました");
-      render();
     }
     else if (act === "atab") { view.atab = a.dataset.k; render(); }
     else if (act === "adj") {
@@ -1163,26 +1045,8 @@ document.addEventListener("click", (e) => {
         saveSched(); toast("プランをリセットしました"); render();
       }
     }
-    else if (act === "quit") {
-      if (quiz && quiz.sched && (view.name === "quizrun" || view.name === "quizend")) go("home");
-      else if (view.name === "testsetup") {
-        if (view.room === "power") go("home");
-        else go("testpick", { room: "test" });
-      }
-      else if (view.room === "quiz" || view.name === "card") go("home");
-      else if (view.room === "power") go("home");
-      else if (test && test.kind === "wtest") go("home");
-      else go("testpick", { room: "test" });
-    }
-    else if (act === "tosetup") {
-      if ((quiz && quiz.sched && view.name === "quizend") ||
-          view.name === "quizend" || view.name === "card" || view.room === "quiz") go("home");
-      else if (test && test.kind === "power") {
-        go("testsetup", { room: "power" });
-      } else if (test && test.kind === "wtest") {
-        go("home");
-      } else go("testpick", { room: "test" });
-    }
+    else if (act === "quit") go("home");
+    else if (act === "tosetup") go("home");
     else if (act === "flip") { cardSet.flipped = !cardSet.flipped; render(); }
     else if (act === "skip") { cardSet.flipped = false; cardSet.idx++; render(); }
     else if (act === "mark") {
@@ -1245,15 +1109,11 @@ document.addEventListener("click", (e) => {
       test.idx++;
       if (test.idx >= test.list.length) {
         const nOk = test.answers.filter(x => x.ok).length;
-        // 実力テスト: 加重得点を100点満点に換算してstdm付与
-        const pts = test.kind === "power" ? powerScore(test.answers) : null;
-        if (test.kind === "power") stdmEarn(stdmAward(pts), "実力テスト");
-        if (test.kind === "wtest") {
-          schedToday().wtest = true; saveSched();
-          stdmEarn(Math.round(nOk / test.answers.length * 100), "週間テスト");
-        }
+        const pts = nOk * 4;
+        SCHED.wcount = (SCHED.wcount || 0) + 1; saveSched();
+        stdmEarn(stdmAward(pts), "週間テスト");
         RESULTS.push({
-          ts: new Date().toISOString(), kind: test.kind, cat: test.cat,
+          ts: new Date().toISOString(), kind: "wtest", cat: "週間テスト",
           range: test.range, n: test.answers.length, ok: nOk, pts,
           secs: Math.round(study.total - runStartTotal),
           wrongIds: test.answers.filter(x => !x.ok).map(x => x.id),
@@ -1304,32 +1164,6 @@ document.addEventListener("click", (e) => {
       pool: ITEMS, cat: scope || "全カテゴリ",
       range: [blks[0]?.gs ?? 1, blks[blks.length - 1]?.ge ?? ITEMS.length] };
     go("quizrun");
-  }
-  if (e.target.id === "t_go") {
-    const mode = "m2t";
-    const power = view.room === "power";
-    let p;
-    if (power) {
-      // 全カテゴリから計60問を均等抽出(各1点・100点満点換算)
-      const take = (cat, n) => shuffle([...byCat(cat)]).slice(0, n);
-      p = shuffle(powerSpec().flatMap(([c, n]) => take(c, n)));
-    } else {
-      // 50問構成: 範囲から45問以上 + 前の枠の✕を5問以内(先の問題は出ない)
-      const blockItems = ITEMS.slice(view.gs - 1, view.ge);
-      const earlierWrongs = ITEMS.slice(0, view.gs - 1)
-        .filter(i => testWeak(i.id)); // クイズ・カードの✕は混入しない
-      const review = shuffle([...earlierWrongs]).slice(0, 5);
-      const nRange = Math.min(blockItems.length, 50 - review.length);
-      p = shuffle(shuffle([...blockItems]).slice(0, nRange).concat(review));
-    }
-    if (p.length < 4) { toast("4件以上必要です"); return; }
-    test = { list: p, idx: 0, mode, answers: [],
-      modes: pickModes(p),
-      pool: ITEMS,
-      cat: power ? "全カテゴリ" : view.cat,
-      range: power ? [1, ITEMS.length] : [view.gs, view.ge],
-      kind: power ? "power" : "test" };
-    go("testrun");
   }
   if (e.target.id === "d_export") {
     const blob = new Blob([JSON.stringify({ progress: PROGRESS, results: RESULTS, overrides: OVERRIDES, stdm: stdm, hidden: HIDDEN, sched: SCHED, earn: EARN }, null, 1)],
@@ -1393,7 +1227,6 @@ async function boot() {
   OVERRIDES = loadJSON(LS_OVERRIDE, {});
   HIDDEN = loadJSON(LS_HIDDEN, { ids: [], items: {} });
   stdm = +(localStorage.getItem(LS_stdm) || 0);
-  POWER_ON = localStorage.getItem(LS_POWER) === "1";
   study = Object.assign({ day: todayStr(), sec: 0, total: 0, paidStdm: 0 }, loadJSON(LS_TIME, {}));
   ADJUSTS = loadJSON(LS_ADJUST, []);
   SCHED = loadJSON(LS_SCHED, { start: "", base: 0, items: {}, days: {} });
