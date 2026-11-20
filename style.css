@@ -167,12 +167,12 @@ label.f { display: block; font-size: 13px; color: var(--sub); margin: 10px 0 2px
 
 /* 一覧 */
 .listrow {
-  display: flex; align-items: baseline; gap: 10px;
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
   padding: 8px 4px; border-bottom: 1px solid var(--line);
 }
-.listrow .t { font-size: 19px; font-weight: 600; min-width: 7em; }
-.listrow .y { color: var(--acc); font-size: 14px; }
-.listrow .m { color: var(--sub); font-size: 13px; flex: 1; }
+.listrow .t { font-size: 19px; font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+.listrow .y { color: var(--acc); font-size: 14px; min-width: 0; overflow-wrap: anywhere; }
+.listrow .m { color: var(--sub); font-size: 13px; flex: 1 1 14em; min-width: 0; overflow-wrap: anywhere; }
 .listrow .rank { font-weight: 700; color: var(--acc); min-width: 3.5em; font-size: 14px; }
 .badge {
   display: inline-block; font-size: 11px; border-radius: 6px;
