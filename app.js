@@ -1068,6 +1068,14 @@ function vData() {
       <input type="file" id="d_file" accept=".json" style="display:none">
       <button id="d_reset" style="border-color:var(--ng);color:var(--ng)">記録を全消去</button>
     </div>
+    <p class="muted small">↑ 現在ログイン中のユーザーの記録のみ対象</p>
+    <h3>全ユーザーのバックアップ(別URL・別端末への移行用)</h3>
+    <div class="btnrow">
+      <button id="d_bexport">全ユーザーの記録をエクスポート</button>
+      <button id="d_bimport">全ユーザーの記録をインポート</button>
+      <input type="file" id="d_bfile" accept=".json" style="display:none">
+    </div>
+    <p class="muted small">こはる・管理者の両方の記録と、項目修正・削除設定をまとめて保存/復元します。</p>
     <hr>
     <h3>項目の修正内容</h3>
     <p class="muted">辞書で編集した項目: ${Object.keys(OVERRIDES).length}件
@@ -1314,6 +1322,18 @@ document.addEventListener("click", (e) => {
     a2.download = "kokugo_progress.json"; a2.click();
   }
   if (e.target.id === "d_import") $("#d_file").click();
+  if (e.target.id === "d_bexport") {
+    const dump = {};
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k.startsWith("kv_")) dump[k] = localStorage.getItem(k);
+    }
+    const blob = new Blob([JSON.stringify({ kv_backup: 1, keys: dump })], { type: "application/json" });
+    const a2 = document.createElement("a");
+    a2.href = URL.createObjectURL(blob);
+    a2.download = "kokugo_backup.json"; a2.click();
+  }
+  if (e.target.id === "d_bimport") $("#d_bfile").click();
   if (e.target.id === "d_reset") {
     if (confirm("学習記録・履歴・stdm・50日プランをすべて消去しますか？")) {
       PROGRESS = {}; RESULTS = []; stdm = 0;
@@ -1346,6 +1366,19 @@ document.addEventListener("change", (e) => {
         if (Array.isArray(d.earn)) { EARN = d.earn; saveEarn(); }
         if (typeof d.stdm === "number") { stdm = d.stdm; savestdm(); }
         saveProgress(); saveResults(); toast("インポートしました"); render();
+      } catch { toast("読み込めませんでした"); }
+    };
+    r.readAsText(e.target.files[0]);
+  }
+  if (e.target.id === "d_bfile" && e.target.files[0]) {
+    const r = new FileReader();
+    r.onload = () => {
+      try {
+        const d = JSON.parse(r.result);
+        if (!d.kv_backup || !d.keys || typeof d.keys !== "object") { toast("読み込めませんでした"); return; }
+        if (!confirm("両ユーザーの記録を上書きしてよいですか？")) return;
+        for (const [k, v] of Object.entries(d.keys)) if (k.startsWith("kv_")) localStorage.setItem(k, v);
+        location.reload();
       } catch { toast("読み込めませんでした"); }
     };
     r.readAsText(e.target.files[0]);
