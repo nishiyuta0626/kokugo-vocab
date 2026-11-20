@@ -11576,5 +11576,367 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「図書館の本を傷つけないように大切に【観賞】する。」です。"
+  },
+  {
+    "id": "dou_821",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「問題解決のために、みんなで対策をハカる。」",
+    "options": [
+      "図",
+      "測",
+      "計",
+      "量"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「図」です。"
+  },
+  {
+    "id": "dou_822",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「巻尺を使って、教室の横の長さをハカる。」",
+    "options": [
+      "測",
+      "図",
+      "計",
+      "量"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「測」です。"
+  },
+  {
+    "id": "dou_823",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「ストップウォッチで、五十メートル走のタイムをハカる。」",
+    "options": [
+      "計",
+      "測",
+      "図",
+      "量"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「計」です。"
+  },
+  {
+    "id": "dou_824",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「はかりを使って、小麦粉の重さをハカる。」",
+    "options": [
+      "量",
+      "測",
+      "計",
+      "図"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「量」です。"
+  },
+  {
+    "id": "dou_825",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「夏休みの思い出をカメラの写真にオサめる。」",
+    "options": [
+      "収",
+      "納",
+      "治",
+      "修"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「収」です。"
+  },
+  {
+    "id": "dou_826",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「国民の義務として、毎年きちんと税金をオサめる。」",
+    "options": [
+      "納",
+      "収",
+      "治",
+      "修"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「納」です。"
+  },
+  {
+    "id": "dou_827",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「優れたリーダーが国を平和にオサめる。」",
+    "options": [
+      "治",
+      "収",
+      "納",
+      "修"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「治」です。"
+  },
+  {
+    "id": "dou_828",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「大学で専門の学問をオサめる。」",
+    "options": [
+      "修",
+      "収",
+      "納",
+      "治"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「修」です。"
+  },
+  {
+    "id": "dou_829",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「赤信号が見えたので、急いで自転車をトめる。」",
+    "options": [
+      "止",
+      "留",
+      "泊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「止」です。"
+  },
+  {
+    "id": "dou_830",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「先生の大切なアドバイスをしっかりと心にトめる。」",
+    "options": [
+      "留",
+      "止",
+      "泊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「留」です。"
+  },
+  {
+    "id": "dou_831",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「旅行先で、海の見えるホテルにトまる。」",
+    "options": [
+      "泊",
+      "止",
+      "留"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「泊」です。"
+  },
+  {
+    "id": "dou_832",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「休日の朝に、家族全員分の朝ごはんをツクる。」",
+    "options": [
+      "作",
+      "造",
+      "創"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「作」です。"
+  },
+  {
+    "id": "dou_833",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「港の工場で、大きな船をツクる。」",
+    "options": [
+      "造",
+      "作",
+      "創"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「造」です。"
+  },
+  {
+    "id": "dou_834",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「新しい物語の世界をゼロからツクり出す。」",
+    "options": [
+      "創",
+      "作",
+      "造"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「創」です。"
+  },
+  {
+    "id": "dou_835",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「体重計に乗って、自分の体重をハカる。」",
+    "options": [
+      "量",
+      "測",
+      "計",
+      "図"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「量」です。"
+  },
+  {
+    "id": "dou_836",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「体温計を使って、朝の体温をハカる。」",
+    "options": [
+      "測",
+      "量",
+      "計",
+      "図"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「測」です。"
+  },
+  {
+    "id": "dou_837",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「試合で大きな成功をオサめて優勝する。」",
+    "options": [
+      "収",
+      "納",
+      "治",
+      "修"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「収」です。"
+  },
+  {
+    "id": "dou_838",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「おなかの激しい痛みがようやくオサまる。」",
+    "options": [
+      "治",
+      "収",
+      "納",
+      "修"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「治」です。"
+  },
+  {
+    "id": "dou_839",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：身長をハカる ／ B：砂糖の重さをハカる」",
+    "options": [
+      "A：測　B：量",
+      "A：量　B：測",
+      "A：図　B：計"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：測　B：量」です。"
+  },
+  {
+    "id": "dou_840",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：合理化をハカる ／ B：時間をハカる」",
+    "options": [
+      "A：図　B：計",
+      "A：計　B：図",
+      "A：測　B：量"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：図　B：計」です。"
+  },
+  {
+    "id": "dou_841",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：品物をオサめる ／ B：勝利をオサめる」",
+    "options": [
+      "A：納　B：収",
+      "A：収　B：納",
+      "A：修　B：治"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：納　B：収」です。"
+  },
+  {
+    "id": "dou_842",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：シャツのボタンをトめる ／ B：旅館にトまる」",
+    "options": [
+      "A：留　B：泊",
+      "A：止　B：留",
+      "A：泊　B：止"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：留　B：泊」です。"
+  },
+  {
+    "id": "dou_843",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "計量カップで牛乳の量を【図る】。",
+      "山の高さを最新の機械で【測る】。",
+      "完成までの日数を正確に【計る】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「計量カップで牛乳の量を【図る】。」です。"
+  },
+  {
+    "id": "dou_844",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "注文した教科書を学校に【収める】。",
+      "歴史や文化の知識を深く【修める】。",
+      "混乱していたクラスの雰囲気をうまく【治める】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「注文した教科書を学校に【収める】。」です。"
+  },
+  {
+    "id": "dou_845",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "友だちの家に一晩【止まる】ことになった。",
+      "水道の蛇口をしっかり閉めて水を【止める】。",
+      "美しい庭園を時間をかけて【造る】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「友だちの家に一晩【止まる】ことになった。」です。"
   }
 ]
