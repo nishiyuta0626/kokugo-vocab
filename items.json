@@ -3623,5 +3623,665 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「傍若無人（ぼうじゃくぶじん）」です。"
+  },
+  {
+    "id": "yoji_251",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）薪嘗胆」",
+    "options": [
+      "臥",
+      "寝",
+      "伏",
+      "眠"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「臥」で「臥薪嘗胆（がしんしょうたん）」と書きます。"
+  },
+  {
+    "id": "yoji_252",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）水之陣」",
+    "options": [
+      "背",
+      "後",
+      "逆",
+      "対"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「背」で「背水之陣（はいすいのじん）」と書きます。"
+  },
+  {
+    "id": "yoji_253",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「三（　）之礼」",
+    "options": [
+      "顧",
+      "訪",
+      "拝",
+      "請"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「顧」で「三顧之礼（さんこのれい）」と書きます。"
+  },
+  {
+    "id": "yoji_254",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「明鏡（　）水」",
+    "options": [
+      "止",
+      "静",
+      "清",
+      "澄"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「止」で「明鏡止水（めいきょうしすい）」と書きます。"
+  },
+  {
+    "id": "yoji_255",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）然自若」",
+    "options": [
+      "泰",
+      "平",
+      "安",
+      "静"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「泰」で「泰然自若（たいぜんじじゃく）」と書きます。"
+  },
+  {
+    "id": "yoji_256",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）心協力」",
+    "options": [
+      "戮",
+      "協",
+      "合",
+      "全"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「戮」で「戮力協心（りくりょくきょうしん）」と書きます。"
+  },
+  {
+    "id": "yoji_261",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「紆余曲折」",
+    "options": [
+      "うよきょくせつ",
+      "うよきょくおり",
+      "およきょくせつ"
+    ],
+    "answerIndex": 0,
+    "explanation": "「紆余曲折（うよきょくせつ）」うよきょくせつ"
+  },
+  {
+    "id": "yoji_262",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「百花繚乱」",
+    "options": [
+      "ひゃっかりょうらん",
+      "ひゃかそうらん",
+      "ひゃっかりょうだん"
+    ],
+    "answerIndex": 0,
+    "explanation": "「百花繚乱（ひゃっかりょうらん）」ひゃっかりょうらん"
+  },
+  {
+    "id": "yoji_263",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「森羅万象」",
+    "options": [
+      "しんらばんしょう",
+      "しんらまんぞう",
+      "もりらばんしょう"
+    ],
+    "answerIndex": 0,
+    "explanation": "「森羅万象（しんらばんしょう）」しんらばんしょう"
+  },
+  {
+    "id": "yoji_264",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「画竜点睛」",
+    "options": [
+      "がりょうてんせい",
+      "がりゅうてんせい",
+      "がりょうてんしょう"
+    ],
+    "answerIndex": 0,
+    "explanation": "「画竜点睛（がりょうてんせい）」がりょうてんせい"
+  },
+  {
+    "id": "yoji_265",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「言語道断」",
+    "options": [
+      "ごんごどうだん",
+      "げんごどうだん",
+      "ごんごどうたん"
+    ],
+    "answerIndex": 0,
+    "explanation": "「言語道断（ごんごどうだん）」ごんごどうだん"
+  },
+  {
+    "id": "yoji_266",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「傍若無人」",
+    "options": [
+      "ぼうじゃくぶじん",
+      "ぼうじゃくむじん",
+      "ぼうにゃくぶじん"
+    ],
+    "answerIndex": 0,
+    "explanation": "「傍若無人（ぼうじゃくぶじん）」ぼうじゃくぶじん"
+  },
+  {
+    "id": "yoji_267",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「切磋琢磨」",
+    "options": [
+      "せっさたくま",
+      "せつさたくま",
+      "せっさたくば"
+    ],
+    "answerIndex": 0,
+    "explanation": "「切磋琢磨（せっさたくま）」せっさたくま"
+  },
+  {
+    "id": "yoji_268",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「臥薪嘗胆」",
+    "options": [
+      "がしんしょうたん",
+      "がしんじょうたん",
+      "かしんしょうたん"
+    ],
+    "answerIndex": 0,
+    "explanation": "「臥薪嘗胆（がしんしょうたん）」がしんしょうたん"
+  },
+  {
+    "id": "yoji_269",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「興味津々」",
+    "options": [
+      "きょうみしんしん",
+      "きょうみつつ",
+      "きょうみじんじん"
+    ],
+    "answerIndex": 0,
+    "explanation": "「興味津々（きょうみしんしん）」きょうみしんしん"
+  },
+  {
+    "id": "yoji_270",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "読み方選択",
+    "question": "次の四字熟語の正しい読み方を選びなさい。「天衣無縫」",
+    "options": [
+      "てんいむほう",
+      "てんいぶほう",
+      "てんえむほう"
+    ],
+    "answerIndex": 0,
+    "explanation": "「天衣無縫（てんいむほう）」てんいむほう"
+  },
+  {
+    "id": "yoji_271",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「あとがない状況で、（　）の覚悟を決めて最後の試合に臨んだ。」",
+    "options": [
+      "背水之陣",
+      "三顧之礼",
+      "明鏡止水"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「背水之陣（はいすいのじん）」です。"
+  },
+  {
+    "id": "yoji_272",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「どんなピンチが訪れても、彼は（　）としてまったく慌てなかった。」",
+    "options": [
+      "泰然自若",
+      "右往左往",
+      "意気消沈"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「泰然自若（たいぜんじじゃく）」です。"
+  },
+  {
+    "id": "yoji_273",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「社長が何度も足を運び、（　）をもって優秀な技術者を迎え入れた。」",
+    "options": [
+      "三顧之礼",
+      "問答無用",
+      "付和雷同"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「三顧之礼（さんこのれい）」です。"
+  },
+  {
+    "id": "yoji_274",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「雑念を払い、（　）の心境で静かに筆をとった。」",
+    "options": [
+      "明鏡止水",
+      "疑心暗鬼",
+      "五里霧中"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「明鏡止水（めいきょうしすい）」です。"
+  },
+  {
+    "id": "yoji_275",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「去年の悔しさをバネに、（　）の思いで一年間厳しい練習に耐えた。」",
+    "options": [
+      "臥薪嘗胆",
+      "自暴自棄",
+      "三日坊主"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「臥薪嘗胆（がしんしょうたん）」です。"
+  },
+  {
+    "id": "yoji_276",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「整理整（　）」",
+    "options": [
+      "頓",
+      "順",
+      "調",
+      "列"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「頓」で「整理整頓（せいりせいとん）」と書きます。"
+  },
+  {
+    "id": "yoji_277",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）暴自棄」",
+    "options": [
+      "自",
+      "他",
+      "乱",
+      "荒"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「自」で「自暴自棄（じぼうじき）」と書きます。"
+  },
+  {
+    "id": "yoji_278",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「独立独（　）」",
+    "options": [
+      "歩",
+      "行",
+      "立",
+      "道"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「歩」で「独立独歩（どくりつどっぽ）」と書きます。"
+  },
+  {
+    "id": "yoji_279",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「二人三（　）」",
+    "options": [
+      "脚",
+      "足",
+      "歩",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「脚」で「二人三脚（ににんさんきゃく）」と書きます。"
+  },
+  {
+    "id": "yoji_280",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）中八九」",
+    "options": [
+      "十",
+      "百",
+      "九",
+      "八"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「十」で「十中八九（じゅっちゅうはっく）」と書きます。"
+  },
+  {
+    "id": "yoji_281",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）花繚乱」",
+    "options": [
+      "百",
+      "千",
+      "万",
+      "全"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「百」で「百花繚乱（ひゃっかりょうらん）」と書きます。"
+  },
+  {
+    "id": "yoji_282",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）余曲折」",
+    "options": [
+      "紆",
+      "迂",
+      "曲",
+      "折"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「紆」で「紆余曲折（うよきょくせつ）」と書きます。"
+  },
+  {
+    "id": "yoji_283",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）外不出」",
+    "options": [
+      "門",
+      "家",
+      "国",
+      "世"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「門」で「門外不出（もんがいふしゅつ）」と書きます。"
+  },
+  {
+    "id": "yoji_284",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）骨砕身」",
+    "options": [
+      "粉",
+      "砕",
+      "全",
+      "骨"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「粉」で「粉骨砕身（ふんこつさいしん）」と書きます。"
+  },
+  {
+    "id": "yoji_285",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「森羅万（　）」",
+    "options": [
+      "象",
+      "物",
+      "事",
+      "界"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「象」で「森羅万象（しんらばんしょう）」と書きます。"
+  },
+  {
+    "id": "yoji_286",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤字訂正・表記選択",
+    "question": "次のうち、漢字の使い方が正しい四字熟語を1つ選びなさい。",
+    "options": [
+      "絶体絶命",
+      "絶対絶命",
+      "絶体絶対"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「絶体絶命（ぜったいぜつめい）」です。"
+  },
+  {
+    "id": "yoji_287",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤字訂正・表記選択",
+    "question": "次のうち、漢字の使い方が正しい四字熟語を1つ選びなさい。",
+    "options": [
+      "危機一髪",
+      "危機一発",
+      "危険一髪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「危機一髪（ききいっぱつ）」です。"
+  },
+  {
+    "id": "yoji_288",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤字訂正・表記選択",
+    "question": "次のうち、漢字の使い方が正しい四字熟語を1つ選びなさい。",
+    "options": [
+      "一心不乱",
+      "一身不乱",
+      "一心不爛"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一心不乱（いっしんふらん）」です。"
+  },
+  {
+    "id": "yoji_289",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤字訂正・表記選択",
+    "question": "次のうち、漢字の使い方が正しい四字熟語を1つ選びなさい。",
+    "options": [
+      "全身全霊",
+      "全心全霊",
+      "全身全礼"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「全身全霊（ぜんしんぜんれい）」です。"
+  },
+  {
+    "id": "yoji_290",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤字訂正・表記選択",
+    "question": "次のうち、漢字の使い方が正しい四字熟語を1つ選びなさい。",
+    "options": [
+      "意気投合",
+      "意気統合",
+      "意気当合"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「意気投合（いきとうごう）」です。"
+  },
+  {
+    "id": "yoji_291",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤用チェック",
+    "question": "次の文のうち、四字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "宿題をサボって先生に叱られたが、まさに自画自賛だ。",
+      "彼はどんな状況でも臨機応変に対応することができる。",
+      "クラスのみんなが異口同音に「楽しかった」と答えた。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「宿題をサボって先生に叱られたが、まさに自画自賛だ。」です。"
+  },
+  {
+    "id": "yoji_292",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤用チェック",
+    "question": "次の文のうち、四字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "テストで100点をとって、彼は意気消沈として教室に戻ってきた。",
+      "10人いれば考え方も好みも十人十色だ。",
+      "練習の成果が出て、試合は順風満帆に進んだ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「テストで100点をとって、彼は意気消沈として教室に戻ってきた。」です。"
+  },
+  {
+    "id": "yoji_293",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤用チェック",
+    "question": "次の文のうち、四字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "大切な試合の前に、本末転倒な準備をして万全を期した。",
+      "最初は勢いがよかったのに、結局は竜頭蛇尾に終わってしまった。",
+      "一度疑い始めると、疑心暗鬼になって何もかも怪しく見える。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「大切な試合の前に、本末転倒な準備をして万全を期した。」です。"
+  },
+  {
+    "id": "yoji_294",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤用チェック",
+    "question": "次の文のうち、四字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "ルールを守って公明正大に振る舞う人は、周りから嫌われる。",
+      "毎日少しずつでも努力を続ければ、日進月歩で成長できる。",
+      "複雑な問題を快刀乱麻を断つように見事に解決した。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ルールを守って公明正大に振る舞う人は、周りから嫌われる。」です。"
+  },
+  {
+    "id": "yoji_295",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "誤用チェック",
+    "question": "次の文のうち、四字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "語学の習得は一朝一夕で簡単に身につくものだ。",
+      "ライバルと切磋琢磨して、お互いに実力を高めた。",
+      "道に迷ってしまい、どちらへ進めばよいか五里霧中だ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「語学の習得は一朝一夕で簡単に身につくものだ。」です。"
+  },
+  {
+    "id": "yoji_296",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "総合演習（構成・意味）",
+    "question": "次の四字熟語のうち、「同じ漢字を2回使わない」ものはどれですか。",
+    "options": [
+      "一期一会",
+      "十人十色",
+      "異口同音"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「異口同音（いくどうおん）」です。"
+  },
+  {
+    "id": "yoji_297",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "総合演習（構成・意味）",
+    "question": "次の四字熟語のうち、上の二字と下の二字が「反対の意味」の組み合わせになっているものはどれですか。",
+    "options": [
+      "一長一短",
+      "誠心誠意",
+      "悪戦苦闘"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一長一短（いっちょういったん）」です。"
+  },
+  {
+    "id": "yoji_298",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "総合演習（構成・意味）",
+    "question": "次の四字熟語のうち、「良い意味・ほめ言葉」として使われるものはどれですか。",
+    "options": [
+      "才色兼備",
+      "傍若無人",
+      "優柔不断"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「才色兼備（さいしょくけんび）」です。"
+  },
+  {
+    "id": "yoji_299",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "総合演習（構成・意味）",
+    "question": "次の四字熟語のうち、「悪い意味・批判するとき」に使われるものはどれですか。",
+    "options": [
+      "付和雷同",
+      "質実剛健",
+      "温故知新"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「付和雷同（ふわらいどう）」です。"
+  },
+  {
+    "id": "yoji_300",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "総合演習（構成・意味）",
+    "question": "次の四字熟語のうち、「自然の美しい景色」を表すものはどれですか。",
+    "options": [
+      "山紫水明",
+      "支離滅裂",
+      "単刀直入"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「山紫水明（さんしすいめい）」です。"
   }
 ]
