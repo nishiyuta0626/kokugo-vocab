@@ -238,7 +238,8 @@ function vHome() {
   const learned = ITEMS.filter(i => statusOf(i.id) !== "new").length;
   const mastered = ITEMS.filter(i => statusOf(i.id) === "master").length;
   const correct = Object.values(PROGRESS).reduce((a, r) => a + r.c, 0);
-  return `<div class="roomlist">${rooms}</div>
+  return `<div class="stdmbar">所有 stdm <b>${stdm}</b></div>
+    <div class="roomlist">${rooms}</div>
     <p class="muted mt">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
     <p class="muted">所有：<b class="stdm">${stdm} stdm</b>　<button class="ghost" data-nav="data">データ管理 →</button>
     <button class="ghost adminbtn" data-nav="admin">管理者</button></p>`;
