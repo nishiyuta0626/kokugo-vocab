@@ -1,5 +1,5 @@
 // PWA用サービスワーカー: ネットワーク優先・オフライン時はキャッシュ
-const CACHE = "kokugo-vocab-v8";
+const CACHE = "kokugo-vocab-v9";
 const ASSETS = [
   "./",
   "./index.html",
