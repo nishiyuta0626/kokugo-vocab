@@ -175,8 +175,6 @@ function studyTick() {
   if (!active) return;
   if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }
   study.sec += dt / 1000; study.total += dt / 1000;
-  const earned = Math.floor(study.total / 120); // 2分=1stdm
-  if (earned > study.paidStdm) { stdmEarn(earned - study.paidStdm, "勉強時間", true); study.paidStdm = earned; }
   saveStudy();
 }
 function fmtStudy() {
@@ -290,26 +288,36 @@ function schedMark(id, ok, fast) {
   saveSched();
 }
 
-// 10問セット生成: 今日出た問題は後回しにしつつ、各周をラウンドロビンで混合
+// 10問セット生成: 今日出た問題(および同一問題文)は原則出さず、
+// 未出題プールが尽きた場合のみ最終手段として再利用する
 function schedPick(n) {
   const seen = new Set(schedToday().seen);
-  const pools = [[], [], [], [], []], extra = [[], [], [], [], []];
+  const seenText = new Set();
+  for (const it of ITEMS) if (seen.has(it.id)) seenText.add(it.question.trim());
+  const pools = [[], [], [], [], []], last = [[], [], [], [], []];
   for (const it of ITEMS) {
     const b = schedBucket(it.id);
     if (!b) continue;
-    (seen.has(it.id) ? extra : pools)[b].push(it);
+    (seen.has(it.id) || seenText.has(it.question.trim()) ? last : pools)[b].push(it);
   }
-  for (let b = 1; b <= 4; b++) {
-    shuffle(pools[b]); shuffle(extra[b]);
-    pools[b].push(...extra[b]);
-  }
-  const out = [];
-  while (out.length < n) {
-    let took = false;
-    for (let b = 1; b <= 4 && out.length < n; b++)
-      if (pools[b].length) { out.push(pools[b].shift()); took = true; }
-    if (!took) break;
-  }
+  for (let b = 1; b <= 4; b++) { shuffle(pools[b]); shuffle(last[b]); }
+  const out = [], pickedText = new Set();
+  const take = pool => {
+    while (out.length < n) {
+      let took = false;
+      for (let b = 1; b <= 4 && out.length < n; b++)
+        if (pool[b].length) {
+          const it = pool[b].shift();
+          if (!pickedText.has(it.question.trim())) {
+            out.push(it); pickedText.add(it.question.trim());
+          }
+          took = true;
+        }
+      if (!took) break;
+    }
+  };
+  take(pools);
+  if (out.length < n) take(last);
   return shuffle(out);
 }
 function schedStart(mission, n) {
@@ -693,9 +701,15 @@ function vRanking() {
 }
 
 // ---------- 4択クイズ実行 ----------
-// 新形式: 問題は固定の選択肢(options)とanswerIndexを持つ
+// 新形式: 問題は固定の選択肢(options)とanswerIndexを持つ。
+// 正解が先頭に偏るデータのため表示時にシャッフル(同じ問題はセッション内で順序固定)
+const _optCache = new WeakMap();
 function fixedQ(it) {
-  const options = it.options.map(v => ({ v, yomi: v }));
+  let options = _optCache.get(it);
+  if (!options) {
+    options = shuffle(it.options.map(v => ({ v, yomi: v })));
+    _optCache.set(it, options);
+  }
   return { options, answer: it.options[it.answerIndex] };
 }
 // 一覧・結果表示用の短いタイトル(問題文の最終行=実際の設問文)
@@ -1152,13 +1166,14 @@ document.addEventListener("click", (e) => {
       if (quiz.idx >= quiz.list.length) {
         RESULTS.push({
           ts: new Date().toISOString(), kind: quiz.sched ? "sched" : quiz.prep ? "prep" : "quiz", cat: quiz.cat,
-          range: quiz.range, n: quiz.answers.length,
+          range: quiz.range, n: quiz.answers.length, mission: quiz.mission,
           ok: quiz.answers.filter(x => x.ok).length,
           secs: Math.round(study.total - runStartTotal),
           wrongIds: quiz.answers.filter(x => !x.ok).map(x => x.id),
         });
         saveResults();
-        if (quiz.sched) stdmEarn(10, "50日プラン・10問セット");
+        if (quiz.sched) stdmEarn(quiz.mission === "extra" ? 5 : 3,
+          quiz.mission === "extra" ? "先取り10問セット" : "10問セット");
         go("quizend");
       } else render();
     }
@@ -1300,6 +1315,12 @@ $("#brand").addEventListener("click", () => go("home"));
 
 // ---------- 起動 ----------
 async function boot() {
+  if (new URLSearchParams(location.search).has("reset")) {
+    for (const k of [LS_PROGRESS, LS_RESULTS, LS_stdm, LS_TIME, LS_ADJUST, LS_SCHED, LS_EARN, "kv_stdm_recalc_v1"])
+      localStorage.removeItem(k);
+    location.replace("./");
+    return;
+  }
   PROGRESS = loadJSON(LS_PROGRESS, {});
   RESULTS = loadJSON(LS_RESULTS, []);
   OVERRIDES = loadJSON(LS_OVERRIDE, {});
@@ -1310,6 +1331,25 @@ async function boot() {
   SCHED = loadJSON(LS_SCHED, { start: "", base: 0, items: {}, days: {} });
   SCHED.items = SCHED.items || {}; SCHED.days = SCHED.days || {}; SCHED.prepOk = SCHED.prepOk || {};
   EARN = loadJSON(LS_EARN, []);
+  // stdm報酬改訂(セット3/先取り5)に伴う残高・履歴の1回限りの再計算
+  if (!localStorage.getItem("kv_stdm_recalc_v1")) {
+    const dayOf = ts => { const d = ts ? new Date(ts) : new Date(); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
+    const earn2 = [];
+    for (const r of RESULTS) {
+      if (r.kind === "sched") earn2.push({ ts: r.ts, day: dayOf(r.ts),
+        amount: r.mission === "extra" ? 5 : 3,
+        label: r.mission === "extra" ? "先取り10問セット" : "10問セット" });
+      else if (r.kind === "wtest") earn2.push({ ts: r.ts, day: dayOf(r.ts),
+        amount: stdmAward(r.pts || 0), label: "週間テスト" });
+    }
+    for (const k in SCHED.days)
+      if (SCHED.days[k].bonus) earn2.push({ ts: k, day: k, amount: 100, label: "ノルマ達成ボーナス" });
+    for (const e of EARN) if ((e.label || "").startsWith("手動")) earn2.push(e);
+    EARN = earn2.sort((a, b) => String(a.ts).localeCompare(String(b.ts)));
+    stdm = Math.max(0, EARN.reduce((a, x) => a + x.amount, 0));
+    saveEarn(); savestdm();
+    localStorage.setItem("kv_stdm_recalc_v1", "1");
+  }
   lastStdmShown = stdm; // 初回表示はアニメなし
   if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }
   setInterval(studyTick, 1000);

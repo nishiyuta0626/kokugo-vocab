@@ -2580,51 +2580,6 @@
     "explanation": "正解は「千」で「海千山千（うみせんやません）」と書きます。"
   },
   {
-    "id": "yoji_178",
-    "category": "yojijukugo",
-    "categoryName": "四字熟語",
-    "subCategory": "漢字穴埋め",
-    "question": "（　）に入る漢字を選びなさい。\n「（　）死一生」",
-    "options": [
-      "七",
-      "八",
-      "九",
-      "十"
-    ],
-    "answerIndex": 2,
-    "explanation": "正解は「九」で「九死一生（きゅうしいっしょう）」と書きます。"
-  },
-  {
-    "id": "yoji_179",
-    "category": "yojijukugo",
-    "categoryName": "四字熟語",
-    "subCategory": "漢字穴埋め",
-    "question": "（　）に入る漢字を選びなさい。\n「（　）方美人」",
-    "options": [
-      "四",
-      "六",
-      "八",
-      "十"
-    ],
-    "answerIndex": 2,
-    "explanation": "正解は「八」で「八方美人（はっぽうびじん）」と書きます。"
-  },
-  {
-    "id": "yoji_181",
-    "category": "yojijukugo",
-    "categoryName": "四字熟語",
-    "subCategory": "漢字穴埋め",
-    "question": "（　）に入る漢字を選びなさい。\n「（　）人十色」",
-    "options": [
-      "十",
-      "百",
-      "千",
-      "万"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「十」で「十人十色（じゅうにんといろ）」と書きます。"
-  },
-  {
     "id": "yoji_182",
     "category": "yojijukugo",
     "categoryName": "四字熟語",
@@ -2638,51 +2593,6 @@
     ],
     "answerIndex": 2,
     "explanation": "正解は「速」で「速戦即決（そくせんそっけつ）」と書きます。"
-  },
-  {
-    "id": "yoji_183",
-    "category": "yojijukugo",
-    "categoryName": "四字熟語",
-    "subCategory": "漢字穴埋め",
-    "question": "（　）に入る漢字を選びなさい。\n「（　）中模索」",
-    "options": [
-      "闇",
-      "暗",
-      "霧",
-      "雲"
-    ],
-    "answerIndex": 1,
-    "explanation": "正解は「暗」で「暗中模索（あんちゅうもさく）」と書きます。"
-  },
-  {
-    "id": "yoji_184",
-    "category": "yojijukugo",
-    "categoryName": "四字熟語",
-    "subCategory": "漢字穴埋め",
-    "question": "（　）に入る漢字を選びなさい。\n「（　）転直下」",
-    "options": [
-      "急",
-      "速",
-      "直",
-      "大"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「急」で「急転直下（きゅうてんちょっか）」と書きます。"
-  },
-  {
-    "id": "yoji_185",
-    "category": "yojijukugo",
-    "categoryName": "四字熟語",
-    "subCategory": "漢字穴埋め",
-    "question": "（　）に入る漢字を選びなさい。\n「（　）頭徹尾」",
-    "options": [
-      "徹",
-      "貫",
-      "通",
-      "一"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「徹」で「徹頭徹尾（てっとうてつび）」と書きます。"
   },
   {
     "id": "yoji_186",
@@ -7422,21 +7332,6 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「鼻」で「鼻につく」です。"
-  },
-  {
-    "id": "kan_530",
-    "category": "idiom",
-    "categoryName": "慣用句・ことわざ",
-    "subCategory": "慣用句穴埋め（鼻）",
-    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が利く」",
-    "options": [
-      "鼻",
-      "目",
-      "耳",
-      "手"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「鼻」で「鼻が利く」です。"
   },
   {
     "id": "kan_531",
@@ -13850,20 +13745,6 @@
     "explanation": "正解は「損害」です。"
   },
   {
-    "id": "dou_980",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「原因」",
-    "options": [
-      "結果",
-      "理由",
-      "動機"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「結果」です。"
-  },
-  {
     "id": "dou_981",
     "category": "kanji",
     "categoryName": "漢字",
@@ -14560,20 +14441,6 @@
     "explanation": "正解は「病気」です。"
   },
   {
-    "id": "dou_1030",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「温暖」",
-    "options": [
-      "寒冷",
-      "冷気",
-      "寒波"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「寒冷」です。"
-  },
-  {
     "id": "dou_1031",
     "category": "kanji",
     "categoryName": "漢字",
@@ -14843,20 +14710,6 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「物質」です。"
-  },
-  {
-    "id": "dou_1050",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「原因」",
-    "options": [
-      "結果",
-      "理由",
-      "経過"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「結果」です。"
   },
   {
     "id": "dou_1051",
@@ -15165,20 +15018,6 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「反対」です。"
-  },
-  {
-    "id": "dou_1073",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「開始」",
-    "options": [
-      "終了",
-      "閉会",
-      "完了"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「終了」です。"
   },
   {
     "id": "dou_1074",
@@ -15517,34 +15356,6 @@
     "explanation": "正解は「複雑」です。"
   },
   {
-    "id": "dou_1098",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「勝利」",
-    "options": [
-      "敗北",
-      "失敗",
-      "後退"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「敗北」です。"
-  },
-  {
-    "id": "dou_1099",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「過去」",
-    "options": [
-      "未来",
-      "現在",
-      "将来"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「未来」です。"
-  },
-  {
     "id": "dou_1100",
     "category": "kanji",
     "categoryName": "漢字",
@@ -15557,62 +15368,6 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「消滅」です。"
-  },
-  {
-    "id": "dou_1101",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「優秀」",
-    "options": [
-      "劣等",
-      "平凡",
-      "普通"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「劣等」です。"
-  },
-  {
-    "id": "dou_1102",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「緊張」",
-    "options": [
-      "緩和",
-      "油断",
-      "安心"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「緩和」です。"
-  },
-  {
-    "id": "dou_1103",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「節約」",
-    "options": [
-      "浪費",
-      "消費",
-      "費用"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「浪費」です。"
-  },
-  {
-    "id": "dou_1104",
-    "category": "kanji",
-    "categoryName": "漢字",
-    "subCategory": "二字熟語（対義語選択）",
-    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「肯定」",
-    "options": [
-      "否定",
-      "反対",
-      "拒否"
-    ],
-    "answerIndex": 0,
-    "explanation": "正解は「否定」です。"
   },
   {
     "id": "dou_1105",
