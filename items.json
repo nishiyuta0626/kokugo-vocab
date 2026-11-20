@@ -2893,5 +2893,380 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「不言実行（ふげんじっこう）」です。"
+  },
+  {
+    "id": "yoji_201",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「文武（　）道」",
+    "options": [
+      "両",
+      "二",
+      "双",
+      "全"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「両」で「文武両道（ぶんぶりょうどう）」と書きます。"
+  },
+  {
+    "id": "yoji_202",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「質実（　）健」",
+    "options": [
+      "剛",
+      "強",
+      "堅",
+      "硬"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「剛」で「質実剛健（しつじつごうけん）」と書きます。"
+  },
+  {
+    "id": "yoji_203",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「整理（　）頓」",
+    "options": [
+      "整",
+      "正",
+      "清",
+      "斉"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「整」で「整理整頓（せいりせいとん）」と書きます。"
+  },
+  {
+    "id": "yoji_204",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「興味（　）々」",
+    "options": [
+      "津",
+      "深",
+      "満",
+      "湧"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「津」で「興味津々（きょうみしんしん）」と書きます。"
+  },
+  {
+    "id": "yoji_205",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「自暴（　）棄」",
+    "options": [
+      "自",
+      "他",
+      "無",
+      "放"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「自」で「自暴自棄（じぼうじき）」と書きます。"
+  },
+  {
+    "id": "yoji_206",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「意気（　）沈」",
+    "options": [
+      "消",
+      "減",
+      "低",
+      "落"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「消」で「意気消沈（いきしょうちん）」と書きます。"
+  },
+  {
+    "id": "yoji_207",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「独立（　）歩」",
+    "options": [
+      "独",
+      "一",
+      "自",
+      "単"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「独」で「独立独歩（どくりつどっぽ）」と書きます。"
+  },
+  {
+    "id": "yoji_208",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）人三脚」",
+    "options": [
+      "二",
+      "一",
+      "三",
+      "四"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「二」で「二人三脚（ににんさんきゃく）」と書きます。"
+  },
+  {
+    "id": "yoji_209",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「四方（　）方」",
+    "options": [
+      "八",
+      "六",
+      "十",
+      "全"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「八」で「四方八方（しほうはっぽう）」と書きます。"
+  },
+  {
+    "id": "yoji_210",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「十中（　）九」",
+    "options": [
+      "八",
+      "七",
+      "九",
+      "六"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「八」で「十中八九（じゅっちゅうはっく）」と書きます。"
+  },
+  {
+    "id": "yoji_211",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）差万別」",
+    "options": [
+      "千",
+      "百",
+      "十",
+      "億"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「千」で「千差万別（せんさばんべつ）」と書きます。"
+  },
+  {
+    "id": "yoji_212",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「百花（　）乱」",
+    "options": [
+      "繚",
+      "満",
+      "咲",
+      "絢"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「繚」で「百花繚乱（ひゃっかりょうらん）」と書きます。"
+  },
+  {
+    "id": "yoji_213",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「紆余（　）折」",
+    "options": [
+      "曲",
+      "屈",
+      "折",
+      "波"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「曲」で「紆余曲折（うよきょくせつ）」と書きます。"
+  },
+  {
+    "id": "yoji_214",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「門外（　）出」",
+    "options": [
+      "不",
+      "無",
+      "非",
+      "禁"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「不」で「門外不出（もんがいふしゅつ）」と書きます。"
+  },
+  {
+    "id": "yoji_215",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「虎視（　）々」",
+    "options": [
+      "眈",
+      "狙",
+      "見",
+      "察"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「眈」で「虎視眈々（こしたんたん）」と書きます。"
+  },
+  {
+    "id": "yoji_216",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「風林（　）山」",
+    "options": [
+      "火",
+      "水",
+      "土",
+      "雷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「火」で「風林火山（ふうりんかざん）」と書きます。"
+  },
+  {
+    "id": "yoji_217",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「雲散（　）消」",
+    "options": [
+      "霧",
+      "雨",
+      "雪",
+      "風"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「霧」で「雲散霧消（うんさんむしょう）」と書きます。"
+  },
+  {
+    "id": "yoji_218",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「粉骨（　）身」",
+    "options": [
+      "砕",
+      "粉",
+      "散",
+      "全"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「砕」で「粉骨砕身（ふんこつさいしん）」と書きます。"
+  },
+  {
+    "id": "yoji_219",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「森羅（　）象」",
+    "options": [
+      "万",
+      "千",
+      "百",
+      "全"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「万」で「森羅万象（しんらばんしょう）」と書きます。"
+  },
+  {
+    "id": "yoji_220",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「唯（　）独尊」",
+    "options": [
+      "我",
+      "自",
+      "一",
+      "人"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「我」で「唯我独尊（ゆいがどくそん）」と書きます。"
+  },
+  {
+    "id": "yoji_221",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「切磋（　）磨」",
+    "options": [
+      "琢",
+      "研",
+      "練",
+      "鍛"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「琢」で「切磋琢磨（せっさたくま）」と書きます。"
+  },
+  {
+    "id": "yoji_222",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「大器（　）成」",
+    "options": [
+      "晩",
+      "遅",
+      "大",
+      "完"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「晩」で「大器晩成（たいきばんせい）」と書きます。"
+  },
+  {
+    "id": "yoji_223",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「東奔（　）走」",
+    "options": [
+      "西",
+      "南",
+      "北",
+      "中"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「西」で「東奔西走（とうほんせいそう）」と書きます。"
+  },
+  {
+    "id": "yoji_224",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「優柔（　）断」",
+    "options": [
+      "不",
+      "無",
+      "非",
+      "未"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「不」で「優柔不断（ゆうじゅうふだん）」と書きます。"
+  },
+  {
+    "id": "yoji_225",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「呉越（　）舟」",
+    "options": [
+      "同",
+      "共",
+      "合",
+      "相"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「同」で「呉越同舟（ごえつどうしゅう）」と書きます。"
   }
 ]
