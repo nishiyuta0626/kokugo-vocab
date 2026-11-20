@@ -13722,5 +13722,360 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「維持」です。"
+  },
+  {
+    "id": "dou_971",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「成功」",
+    "options": [
+      "失敗",
+      "敗北",
+      "挫折"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「失敗」です。"
+  },
+  {
+    "id": "dou_972",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「前進」",
+    "options": [
+      "後退",
+      "退歩",
+      "停止"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「後退」です。"
+  },
+  {
+    "id": "dou_973",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「集中」",
+    "options": [
+      "分散",
+      "散漫",
+      "分裂"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「分散」です。"
+  },
+  {
+    "id": "dou_974",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「集合」",
+    "options": [
+      "解散",
+      "分離",
+      "分散"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「解散」です。"
+  },
+  {
+    "id": "dou_975",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「参加」",
+    "options": [
+      "不参",
+      "欠席",
+      "辞退"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「不参」です。"
+  },
+  {
+    "id": "dou_976",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「出席」",
+    "options": [
+      "欠席",
+      "不在",
+      "退席"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「欠席」です。"
+  },
+  {
+    "id": "dou_977",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「許可」",
+    "options": [
+      "禁止",
+      "拒否",
+      "反対"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「禁止」です。"
+  },
+  {
+    "id": "dou_978",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「公開」",
+    "options": [
+      "秘密",
+      "非公開",
+      "隠蔽"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「秘密」です。"
+  },
+  {
+    "id": "dou_979",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「利益」",
+    "options": [
+      "損害",
+      "損失",
+      "赤字"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「損害」です。"
+  },
+  {
+    "id": "dou_980",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「原因」",
+    "options": [
+      "結果",
+      "理由",
+      "動機"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「結果」です。"
+  },
+  {
+    "id": "dou_981",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「節約」",
+    "options": [
+      "倹約",
+      "浪費",
+      "消費"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「倹約」です。"
+  },
+  {
+    "id": "dou_982",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「創造」",
+    "options": [
+      "創作",
+      "模倣",
+      "破壊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「創作」です。"
+  },
+  {
+    "id": "dou_983",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「協力」",
+    "options": [
+      "共同",
+      "対立",
+      "競争"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「共同」です。"
+  },
+  {
+    "id": "dou_984",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「調査」",
+    "options": [
+      "研究",
+      "放置",
+      "無視"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「研究」です。"
+  },
+  {
+    "id": "dou_985",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「感謝」",
+    "options": [
+      "謝意",
+      "不満",
+      "恨み"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「謝意」です。"
+  },
+  {
+    "id": "dou_986",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「前進 ⇔ （　）退」",
+    "options": [
+      "後",
+      "逆",
+      "戻",
+      "下"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「後」です。"
+  },
+  {
+    "id": "dou_987",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「集中 ⇔ （　）散」",
+    "options": [
+      "分",
+      "離",
+      "別",
+      "散"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「分」です。"
+  },
+  {
+    "id": "dou_988",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「出席 ⇔ （　）席」",
+    "options": [
+      "欠",
+      "不",
+      "休",
+      "無"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「欠」です。"
+  },
+  {
+    "id": "dou_989",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「許可 ⇔ （　）止」",
+    "options": [
+      "禁",
+      "停",
+      "防",
+      "制"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「禁」です。"
+  },
+  {
+    "id": "dou_990",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・類義）",
+    "question": "類義語になるように（　）に入る漢字を選びなさい。「節約 ＝ （　）約」",
+    "options": [
+      "倹",
+      "検",
+      "験",
+      "険"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「倹」です。"
+  },
+  {
+    "id": "dou_991",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「失敗」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "成功",
+      "達成",
+      "完成"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「成功」です。"
+  },
+  {
+    "id": "dou_992",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「解散」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "集合",
+      "団結",
+      "合同"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「集合」です。"
+  },
+  {
+    "id": "dou_993",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「損害」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "利益",
+      "収入",
+      "得策"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「利益」です。"
+  },
+  {
+    "id": "dou_994",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「朝礼のために校庭へ（　）し、終わったらすぐに解散する。」",
+    "options": [
+      "集合",
+      "集中",
+      "参加"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「集合」です。"
+  },
+  {
+    "id": "dou_995",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「危険な場所への立ち入りは（　）されているが、先生に許可をもらえば入ることができる。」",
+    "options": [
+      "禁止",
+      "否定",
+      "制限"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「禁止」です。"
   }
 ]
