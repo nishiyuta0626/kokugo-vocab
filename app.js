@@ -24,8 +24,6 @@ const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
 const ROOMS = [
   { key: "jisho", label: "辞書の部屋", icon: "📖",
     desc: "語句を検索できます（実施中はロック）" },
-  { key: "quiz", label: "クイズの部屋", icon: "🎯",
-    desc: "番号範囲を選んでランダム4択クイズ" },
   { key: "test", label: "テストの部屋", icon: "🖊️",
     desc: "番号範囲を選んでまとめてテスト" },
   { key: "result", label: "結果の部屋", icon: "📊",
@@ -771,7 +769,6 @@ function vQuizEnd() {
       <div class="btnrow"><button class="primary" data-act="retry" data-src="quiz">間違えた問題だけやり直す</button></div>` : `<p>全問正解！</p>`}
     ${schedInfo}
     <div class="btnrow">
-      ${quiz.sched ? "" : `<button data-act="tosetup">クイズの部屋へ</button>`}
       <button data-nav="home">ホームへ</button>
     </div>
   </div>`;
@@ -782,8 +779,7 @@ function vCard() {
   const { list, idx, flipped } = cardSet;
   if (!list.length || idx >= list.length)
     return `<div class="card"><h2>このセットは完了です</h2>
-      <div class="btnrow"><button data-act="tosetup">クイズの部屋へ</button>
-      <button data-nav="home">ホームへ</button></div></div>`;
+      <div class="btnrow"><button data-nav="home">ホームへ</button></div></div>`;
   const it = list[idx];
   const front = `<div class="card flash" data-act="flip">
       <div class="muted">${idx + 1} / ${list.length}　${esc(it.cat)} ${STATUS_BADGE[statusOf(it.id)]}</div>
@@ -1079,7 +1075,6 @@ document.addEventListener("click", (e) => {
     else if (k === "earnlog") go("earnlog", { room: "earnlog" });
     else if (k === "jisho") go("list", { room: "jisho" });
     else if (k === "result") go("result", { room: "result", cat: view.cat });
-    else if (k === "quiz") go("quizsetup", { room: "quiz" });
     else if (k === "test") go("testpick", { room: "test" });
     else if (k === "power") go("testsetup", { room: "power" });
     else go("catpick", { room: k });
@@ -1174,16 +1169,15 @@ document.addEventListener("click", (e) => {
         if (view.room === "power") go("home");
         else go("testpick", { room: "test" });
       }
-      else if (view.room === "quiz" || view.name === "card") go("quizsetup", { room: "quiz" });
+      else if (view.room === "quiz" || view.name === "card") go("home");
       else if (view.room === "power") go("home");
       else if (test && test.kind === "wtest") go("home");
       else go("testpick", { room: "test" });
     }
     else if (act === "tosetup") {
-      if (quiz && quiz.sched && view.name === "quizend") go("home");
-      else if (view.name === "quizend" || view.name === "card" || view.room === "quiz") {
-        go("quizsetup", { room: "quiz" });
-      } else if (test && test.kind === "power") {
+      if ((quiz && quiz.sched && view.name === "quizend") ||
+          view.name === "quizend" || view.name === "card" || view.room === "quiz") go("home");
+      else if (test && test.kind === "power") {
         go("testsetup", { room: "power" });
       } else if (test && test.kind === "wtest") {
         go("home");
