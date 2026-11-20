@@ -17592,5 +17592,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「くにがまえ」です。"
+  },
+  {
+    "id": "dou_1271",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「休」と同じ部首（にんべん）を持つものを1つ選びなさい。",
+    "options": [
+      "作",
+      "行",
+      "後"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「作」です。"
+  },
+  {
+    "id": "dou_1272",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「海」と同じ部首（さんずい）を持つものを1つ選びなさい。",
+    "options": [
+      "泳",
+      "氷",
+      "冷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「泳」です。"
+  },
+  {
+    "id": "dou_1273",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「林」と同じ部首（きへん）を持つものを1つ選びなさい。",
+    "options": [
+      "村",
+      "秋",
+      "科"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「村」です。"
+  },
+  {
+    "id": "dou_1274",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「持」と同じ部首（てへん）を持つものを1つ選びなさい。",
+    "options": [
+      "投",
+      "物",
+      "特"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「投」です。"
+  },
+  {
+    "id": "dou_1275",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「話」と同じ部首（ごんべん）を持つものを1つ選びなさい。",
+    "options": [
+      "読",
+      "絵",
+      "紙"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「読」です。"
+  },
+  {
+    "id": "dou_1276",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「絵」と同じ部首（いとへん）を持つものを1つ選びなさい。",
+    "options": [
+      "線",
+      "語",
+      "記"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「線」です。"
+  },
+  {
+    "id": "dou_1277",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「鉄」と同じ部首（かねへん）を持つものを1つ選びなさい。",
+    "options": [
+      "銀",
+      "地",
+      "坂"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「銀」です。"
+  },
+  {
+    "id": "dou_1278",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「晴」と同じ部首（にちへん）を持つものを1つ選びなさい。",
+    "options": [
+      "明",
+      "服",
+      "朝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「明」です。"
+  },
+  {
+    "id": "dou_1279",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「陸」と同じ部首（こざとへん）を持つものを1つ選びなさい。",
+    "options": [
+      "院",
+      "都",
+      "部"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「院」です。"
+  },
+  {
+    "id": "dou_1280",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「都」と同じ部首（おおざと）を持つものを1つ選びなさい。",
+    "options": [
+      "部",
+      "隊",
+      "階"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「部」です。"
+  },
+  {
+    "id": "dou_1281",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「花」と同じ部首（くさかんむり）を持つものを1つ選びなさい。",
+    "options": [
+      "茶",
+      "竹",
+      "算"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「茶」です。"
+  },
+  {
+    "id": "dou_1282",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「竹」と同じ部首（たけかんむり）を持つものを1つ選びなさい。",
+    "options": [
+      "筆",
+      "草",
+      "薬"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「筆」です。"
+  },
+  {
+    "id": "dou_1283",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「家」と同じ部首（うかんむり）を持つものを1つ選びなさい。",
+    "options": [
+      "室",
+      "写",
+      "軍"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「室」です。"
+  },
+  {
+    "id": "dou_1284",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「道」と同じ部首（しんにょう）を持つものを1つ選びなさい。",
+    "options": [
+      "進",
+      "建",
+      "延"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「進」です。"
+  },
+  {
+    "id": "dou_1285",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（同じ部首探し）",
+    "question": "次の漢字のうち、「広」と同じ部首（まだれ）を持つものを1つ選びなさい。",
+    "options": [
+      "店",
+      "原",
+      "病"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「店」です。"
+  },
+  {
+    "id": "dou_1286",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "海",
+      "池",
+      "毎"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「毎」です。"
+  },
+  {
+    "id": "dou_1287",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "晴",
+      "明",
+      "月"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「月」です。"
+  },
+  {
+    "id": "dou_1288",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "行",
+      "後",
+      "休"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「休」です。"
+  },
+  {
+    "id": "dou_1289",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "秋",
+      "科",
+      "林"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「林」です。"
+  },
+  {
+    "id": "dou_1290",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "都",
+      "部",
+      "陸"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「陸」です。"
+  },
+  {
+    "id": "dou_1291",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "広",
+      "店",
+      "原"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「原」です。"
+  },
+  {
+    "id": "dou_1292",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "道",
+      "近",
+      "建"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「建」です。"
+  },
+  {
+    "id": "dou_1293",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "家",
+      "室",
+      "写"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「写」です。"
+  },
+  {
+    "id": "dou_1294",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "国",
+      "図",
+      "間"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「間」です。"
+  },
+  {
+    "id": "dou_1295",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（仲間はずれ探し）",
+    "question": "次の漢字のうち、部首が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "熱",
+      "点",
+      "魚"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「魚」です。"
   }
 ]
