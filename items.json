@@ -1448,5 +1448,380 @@
     ],
     "answerIndex": 0,
     "explanation": "「欣喜雀躍（きんきじゃくやく）」小躍りするほど、非常に喜ぶこと。"
+  },
+  {
+    "id": "yoji_101",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「三（　）四温」",
+    "options": [
+      "寒",
+      "冷",
+      "涼",
+      "冬"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「寒」で「三寒四温（さんかんしおん）」と書きます。"
+  },
+  {
+    "id": "yoji_102",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「山紫（　）明」",
+    "options": [
+      "川",
+      "海",
+      "水",
+      "湖"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「水」で「山紫水明（さんしすいめい）」と書きます。"
+  },
+  {
+    "id": "yoji_103",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「花鳥（　）月」",
+    "options": [
+      "雪",
+      "雲",
+      "空",
+      "風"
+    ],
+    "answerIndex": 3,
+    "explanation": "正解は「風」で「花鳥風月（かちょうふうげつ）」と書きます。"
+  },
+  {
+    "id": "yoji_104",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）夏秋冬」",
+    "options": [
+      "春",
+      "朝",
+      "東",
+      "青"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「春」で「春夏秋冬（しゅんかしゅうとう）」と書きます。"
+  },
+  {
+    "id": "yoji_105",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「東西（　）北」",
+    "options": [
+      "中",
+      "前",
+      "南",
+      "右"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「南」で「東西南北（とうざいなんぼく）」と書きます。"
+  },
+  {
+    "id": "yoji_106",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「老若（　）女」",
+    "options": [
+      "子",
+      "男",
+      "父",
+      "人"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「男」で「老若男女（ろうにゃくなんにょ）」と書きます。"
+  },
+  {
+    "id": "yoji_107",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「冠婚（　）祭」",
+    "options": [
+      "葬",
+      "仏",
+      "法",
+      "祝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「葬」で「冠婚葬祭（かんこんそうさい）」と書きます。"
+  },
+  {
+    "id": "yoji_108",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「早（　）早起」",
+    "options": [
+      "眠",
+      "休",
+      "寝",
+      "夜"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「寝」で「早寝早起（はやねはやおき）」と書きます。"
+  },
+  {
+    "id": "yoji_109",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「悪口（　）言」",
+    "options": [
+      "乱",
+      "雑",
+      "暴",
+      "荒"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「雑」で「悪口雑言（あっこうぞうごん）」と書きます。"
+  },
+  {
+    "id": "yoji_110",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「意気（　）合」",
+    "options": [
+      "投",
+      "結",
+      "統",
+      "意"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「投」で「意気投合（いきとうごう）」と書きます。"
+  },
+  {
+    "id": "yoji_111",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「一喜一（　）」",
+    "options": [
+      "悲",
+      "哀",
+      "憂",
+      "泣"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「憂」で「一喜一憂（いっきいちゆう）」と書きます。"
+  },
+  {
+    "id": "yoji_112",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「一長一（　）」",
+    "options": [
+      "少",
+      "弱",
+      "欠",
+      "短"
+    ],
+    "answerIndex": 3,
+    "explanation": "正解は「短」で「一長一短（いっちょういったん）」と書きます。"
+  },
+  {
+    "id": "yoji_113",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「才色（　）備」",
+    "options": [
+      "兼",
+      "全",
+      "完",
+      "両"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「兼」で「才色兼備（さいしょくけんび）」と書きます。"
+  },
+  {
+    "id": "yoji_114",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「賛否（　）論」",
+    "options": [
+      "二",
+      "双",
+      "両",
+      "多"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「両」で「賛否両論（さんぴりょうろん）」と書きます。"
+  },
+  {
+    "id": "yoji_115",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「始終一（　）」",
+    "options": [
+      "徹",
+      "貫",
+      "通",
+      "決"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「貫」で「始終一貫（しじゅういっかん）」と書きます。"
+  },
+  {
+    "id": "yoji_116",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「諸行（　）常」",
+    "options": [
+      "無",
+      "不",
+      "非",
+      "未"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「無」で「諸行無常（しょぎょうむじょう）」と書きます。"
+  },
+  {
+    "id": "yoji_117",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「心機一（　）」",
+    "options": [
+      "変",
+      "改",
+      "換",
+      "転"
+    ],
+    "answerIndex": 3,
+    "explanation": "正解は「転」で「心機一転（しんきいってん）」と書きます。"
+  },
+  {
+    "id": "yoji_118",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「新陳（　）謝」",
+    "options": [
+      "交",
+      "変",
+      "代",
+      "替"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「代」で「新陳代謝（しんちんたいしゃ）」と書きます。"
+  },
+  {
+    "id": "yoji_119",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「青天（　）日」",
+    "options": [
+      "白",
+      "明",
+      "晴",
+      "光"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「白」で「青天白日（せいてんはくじつ）」と書きます。"
+  },
+  {
+    "id": "yoji_120",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「善悪（　）邪」",
+    "options": [
+      "真",
+      "正",
+      "良",
+      "義"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「正」で「善悪正邪（ぜんあくせいじゃ）」と書きます。"
+  },
+  {
+    "id": "yoji_121",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「前途（　）々」",
+    "options": [
+      "海",
+      "広",
+      "洋",
+      "大"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「洋」で「前途洋々（ぜんとようよう）」と書きます。"
+  },
+  {
+    "id": "yoji_122",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「相思（　）愛」",
+    "options": [
+      "相",
+      "互",
+      "共",
+      "両"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「相」で「相思相愛（そうしそうあい）」と書きます。"
+  },
+  {
+    "id": "yoji_123",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「大胆（　）敵」",
+    "options": [
+      "無",
+      "不",
+      "非",
+      "絶"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「不」で「大胆不敵（だいたんふてき）」と書きます。"
+  },
+  {
+    "id": "yoji_124",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「男女（　）等」",
+    "options": [
+      "同",
+      "均",
+      "平",
+      "対"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「平」で「男女平等（だんじょびょうどう）」と書きます。"
+  },
+  {
+    "id": "yoji_125",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「天変（　）異」",
+    "options": [
+      "山",
+      "海",
+      "空",
+      "地"
+    ],
+    "answerIndex": 3,
+    "explanation": "正解は「地」で「天変地異（てんぺんちい）」と書きます。"
   }
 ]
