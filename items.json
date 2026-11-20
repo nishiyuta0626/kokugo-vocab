@@ -7790,5 +7790,380 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「縦」で「首を縦に振る」です。"
+  },
+  {
+    "id": "kan_556",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（手）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）に汗を握る」",
+    "options": [
+      "手",
+      "足",
+      "胸",
+      "腹"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「手」で「手に汗を握る」です。"
+  },
+  {
+    "id": "kan_557",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（手）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を焼く」",
+    "options": [
+      "手",
+      "頭",
+      "胸",
+      "顔"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「手」で「手を焼く」です。"
+  },
+  {
+    "id": "kan_558",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（手）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が離せない」",
+    "options": [
+      "手",
+      "目",
+      "口",
+      "足"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「手」で「手が離せない」です。"
+  },
+  {
+    "id": "kan_559",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（手）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を貸す」",
+    "options": [
+      "手",
+      "肩",
+      "足",
+      "頭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「手」で「手を貸す」です。"
+  },
+  {
+    "id": "kan_560",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（手・足）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）も足も出ない」",
+    "options": [
+      "手",
+      "頭",
+      "口",
+      "目"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「手」で「手も足も出ない」です。"
+  },
+  {
+    "id": "kan_561",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（足）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を引っ張る」",
+    "options": [
+      "足",
+      "手",
+      "肩",
+      "腰"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「足」で「足を引っ張る」です。"
+  },
+  {
+    "id": "kan_562",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（足）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が棒になる」",
+    "options": [
+      "足",
+      "手",
+      "腰",
+      "首"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「足」で「足が棒になる」です。"
+  },
+  {
+    "id": "kan_563",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（足）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）元を見る」",
+    "options": [
+      "足",
+      "手",
+      "目",
+      "口"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「足」で「足元を見る」です。"
+  },
+  {
+    "id": "kan_564",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（足）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を洗う」",
+    "options": [
+      "足",
+      "手",
+      "顔",
+      "頭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「足」で「足を洗う」です。"
+  },
+  {
+    "id": "kan_565",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（足）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が地につかない」",
+    "options": [
+      "足",
+      "腰",
+      "手",
+      "膝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「足」で「足が地につかない」です。"
+  },
+  {
+    "id": "kan_566",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（肩）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を落とす」",
+    "options": [
+      "肩",
+      "首",
+      "頭",
+      "腰"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「肩」で「肩を落とす」です。"
+  },
+  {
+    "id": "kan_567",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（肩）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を持つ」",
+    "options": [
+      "肩",
+      "手",
+      "腕",
+      "腰"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「肩」で「肩を持つ」です。"
+  },
+  {
+    "id": "kan_568",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（肩）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の荷が下りる」",
+    "options": [
+      "肩",
+      "背",
+      "腰",
+      "胸"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「肩」で「肩の荷が下りる」です。"
+  },
+  {
+    "id": "kan_569",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（腰）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を据える」",
+    "options": [
+      "腰",
+      "足",
+      "膝",
+      "腹"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腰」で「腰を据える」です。"
+  },
+  {
+    "id": "kan_570",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（腰）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が重い」",
+    "options": [
+      "腰",
+      "足",
+      "手",
+      "頭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腰」で「腰が重い」です。"
+  },
+  {
+    "id": "kan_571",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（胸）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をなで下ろす」",
+    "options": [
+      "胸",
+      "腹",
+      "肩",
+      "背"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「胸」で「胸をなで下ろす」です。"
+  },
+  {
+    "id": "kan_572",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（胸）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が張り裂ける」",
+    "options": [
+      "胸",
+      "腹",
+      "頭",
+      "目"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「胸」で「胸が張り裂ける」です。"
+  },
+  {
+    "id": "kan_573",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（胸）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を張る」",
+    "options": [
+      "胸",
+      "肩",
+      "背",
+      "顔"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「胸」で「胸を張る」です。"
+  },
+  {
+    "id": "kan_574",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（腹）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が立つ」",
+    "options": [
+      "腹",
+      "胸",
+      "頭",
+      "気"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腹」で「腹が立つ」です。"
+  },
+  {
+    "id": "kan_575",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（腹）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を割る」",
+    "options": [
+      "腹",
+      "胸",
+      "口",
+      "頭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腹」で「腹を割る」です。"
+  },
+  {
+    "id": "kan_576",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（腹）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を抱える」",
+    "options": [
+      "腹",
+      "頭",
+      "胸",
+      "膝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腹」で「腹を抱える」です。"
+  },
+  {
+    "id": "kan_577",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（腹）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をくくる」",
+    "options": [
+      "腹",
+      "首",
+      "腰",
+      "腕"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腹」で「腹をくくる」です。"
+  },
+  {
+    "id": "kan_578",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（その他身体）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を磨く」",
+    "options": [
+      "腕",
+      "手",
+      "足",
+      "目"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腕」で「腕を磨く」です。"
+  },
+  {
+    "id": "kan_579",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（その他身体）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を巻く」",
+    "options": [
+      "舌",
+      "口",
+      "首",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「舌」で「舌を巻く」です。"
+  },
+  {
+    "id": "kan_580",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（その他身体）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を折る」",
+    "options": [
+      "骨",
+      "手",
+      "指",
+      "腰"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「骨」で「骨を折る」です。"
   }
 ]
