@@ -1823,5 +1823,370 @@
     ],
     "answerIndex": 3,
     "explanation": "正解は「地」で「天変地異（てんぺんちい）」と書きます。"
+  },
+  {
+    "id": "yoji_126",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「一期一（　）」",
+    "options": [
+      "遇",
+      "逢",
+      "会",
+      "合"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「会」で「一期一会（いちごいちえ）」と書きます。"
+  },
+  {
+    "id": "yoji_127",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「一石二（　）」",
+    "options": [
+      "羽",
+      "匹",
+      "頭",
+      "鳥"
+    ],
+    "answerIndex": 3,
+    "explanation": "正解は「鳥」で「一石二鳥（いっせきにちょう）」と書きます。"
+  },
+  {
+    "id": "yoji_128",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）人十色」",
+    "options": [
+      "百",
+      "千",
+      "万",
+      "十"
+    ],
+    "answerIndex": 3,
+    "explanation": "正解は「十」で「十人十色（じゅうにんといろ）」と書きます。"
+  },
+  {
+    "id": "yoji_129",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「以心（　）心」",
+    "options": [
+      "通",
+      "伝",
+      "転",
+      "届"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「伝」で「以心伝心（いしんでんしん）」と書きます。"
+  },
+  {
+    "id": "yoji_130",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「自画自（　）」",
+    "options": [
+      "満",
+      "賛",
+      "誇",
+      "賞"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「賛」で「自画自賛（じがじさん）」と書きます。"
+  },
+  {
+    "id": "yoji_131",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「有言（　）行」",
+    "options": [
+      "必",
+      "直",
+      "実",
+      "即"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「実」で「有言実行（ゆうげんじっこう）」と書きます。"
+  },
+  {
+    "id": "yoji_132",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）転八起」",
+    "options": [
+      "五",
+      "六",
+      "七",
+      "八"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「七」で「七転八起（しちてんはっき）」と書きます。"
+  },
+  {
+    "id": "yoji_133",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「弱（　）強食」",
+    "options": [
+      "者",
+      "肉",
+      "小",
+      "体"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「肉」で「弱肉強食（じゃくにくきょうしょく）」と書きます。"
+  },
+  {
+    "id": "yoji_134",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「馬耳（　）風」",
+    "options": [
+      "春",
+      "秋",
+      "東",
+      "西"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「東」で「馬耳東風（ばじとうふう）」と書きます。"
+  },
+  {
+    "id": "yoji_135",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「温故（　）新」",
+    "options": [
+      "学",
+      "見",
+      "知",
+      "思"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「知」で「温故知新（おんこちしん）」と書きます。"
+  },
+  {
+    "id": "yoji_136",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）寒四温」",
+    "options": [
+      "二",
+      "三",
+      "四",
+      "五"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「三」で「三寒四温（さんかんしおん）」と書きます。"
+  },
+  {
+    "id": "yoji_137",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「山（　）水明」",
+    "options": [
+      "青",
+      "緑",
+      "紫",
+      "清"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「紫」で「山紫水明（さんしすいめい）」と書きます。"
+  },
+  {
+    "id": "yoji_138",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）鳥風月」",
+    "options": [
+      "山",
+      "川",
+      "草",
+      "花"
+    ],
+    "answerIndex": 3,
+    "explanation": "正解は「花」で「花鳥風月（かちょうふうげつ）」と書きます。"
+  },
+  {
+    "id": "yoji_139",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「一喜（　）憂」",
+    "options": [
+      "一",
+      "二",
+      "三",
+      "多"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一」で「一喜一憂（いっきいちゆう）」と書きます。"
+  },
+  {
+    "id": "yoji_140",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「心機（　）転」",
+    "options": [
+      "一",
+      "全",
+      "大",
+      "急"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一」で「心機一転（しんきいってん）」と書きます。"
+  },
+  {
+    "id": "yoji_141",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「自分の行った悪いことの報いを、自分自身が受けること。」",
+    "options": [
+      "自業自得",
+      "因果応報",
+      "自画自賛"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「自業自得（じごうじとく）」です。"
+  },
+  {
+    "id": "yoji_142",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「その時々の状況に合わせて、適切な対応をすること。」",
+    "options": [
+      "臨機応変",
+      "試行錯誤",
+      "一進一退"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「臨機応変（りんきおうへん）」です。"
+  },
+  {
+    "id": "yoji_143",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「たくさんの人が口をそろえて同じことを言うこと。」",
+    "options": [
+      "異口同音",
+      "満場一致",
+      "以心伝心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「異口同音（いくどうおん）」です。"
+  },
+  {
+    "id": "yoji_144",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「本当かどうか分からず、半分信じて半分疑うこと。」",
+    "options": [
+      "半信半疑",
+      "疑心暗鬼",
+      "五里霧中"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「半信半疑（はんしんはんぎ）」です。"
+  },
+  {
+    "id": "yoji_145",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「どうしても逃れられない、非常に危険な状況のこと。」",
+    "options": [
+      "絶体絶命",
+      "危機一髪",
+      "四面楚歌"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「絶体絶命（ぜったいぜつめい）」です。"
+  },
+  {
+    "id": "yoji_146",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「山や川などの自然の景色が、非常に清らかで美しいこと。」",
+    "options": [
+      "山紫水明",
+      "花鳥風月",
+      "晴耕雨読"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「山紫水明（さんしすいめい）」です。"
+  },
+  {
+    "id": "yoji_147",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「ひとつの行為で、ふたつの利益を同時に得ること。」",
+    "options": [
+      "一石二鳥",
+      "一長一短",
+      "一喜一憂"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一石二鳥（いっせきにちょう）」です。"
+  },
+  {
+    "id": "yoji_148",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「良い点もあれば、悪い点もあること。」",
+    "options": [
+      "一長一短",
+      "賛否両論",
+      "大同小異"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一長一短（いっちょういったん）」です。"
+  },
+  {
+    "id": "yoji_149",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「何かをきっかけに、気持ちがすっかり良い方向へ変わること。」",
+    "options": [
+      "心機一転",
+      "意気投合",
+      "一意専心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「心機一転（しんきいってん）」です。"
+  },
+  {
+    "id": "yoji_150",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「古いものや昔のことを調べて学び、新しい知識や道理を見つけること。」",
+    "options": [
+      "温故知新",
+      "日進月歩",
+      "前代未聞"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「温故知新（おんこちしん）」です。"
   }
 ]
