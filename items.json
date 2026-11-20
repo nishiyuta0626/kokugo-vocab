@@ -13367,5 +13367,360 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「具体的」です。"
+  },
+  {
+    "id": "dou_946",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「人工」",
+    "options": [
+      "天然",
+      "自然",
+      "偶然"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「天然」です。"
+  },
+  {
+    "id": "dou_947",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「拡大」",
+    "options": [
+      "縮小",
+      "減少",
+      "短縮"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「縮小」です。"
+  },
+  {
+    "id": "dou_948",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「過去」",
+    "options": [
+      "未来",
+      "現在",
+      "以前"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「未来」です。"
+  },
+  {
+    "id": "dou_949",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「個人」",
+    "options": [
+      "集団",
+      "団体",
+      "社会"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「集団」です。"
+  },
+  {
+    "id": "dou_950",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「複雑」",
+    "options": [
+      "単純",
+      "簡単",
+      "素朴"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「単純」です。"
+  },
+  {
+    "id": "dou_951",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「進歩」",
+    "options": [
+      "退歩",
+      "後退",
+      "停止"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「退歩」です。"
+  },
+  {
+    "id": "dou_952",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「上昇」",
+    "options": [
+      "下降",
+      "落下",
+      "低下"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「下降」です。"
+  },
+  {
+    "id": "dou_953",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「開始」",
+    "options": [
+      "終了",
+      "中止",
+      "廃止"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「終了」です。"
+  },
+  {
+    "id": "dou_954",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「勝利」",
+    "options": [
+      "敗北",
+      "失敗",
+      "負け"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「敗北」です。"
+  },
+  {
+    "id": "dou_955",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「安全」",
+    "options": [
+      "危険",
+      "不安",
+      "危機"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「危険」です。"
+  },
+  {
+    "id": "dou_956",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「維持」",
+    "options": [
+      "継続",
+      "終了",
+      "変化"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「継続」です。"
+  },
+  {
+    "id": "dou_957",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「改善」",
+    "options": [
+      "改良",
+      "改悪",
+      "破壊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「改良」です。"
+  },
+  {
+    "id": "dou_958",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「困難」",
+    "options": [
+      "苦労",
+      "容易",
+      "快適"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「苦労」です。"
+  },
+  {
+    "id": "dou_959",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「発見」",
+    "options": [
+      "発掘",
+      "発明",
+      "発表"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「発掘」です。"
+  },
+  {
+    "id": "dou_960",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「尊敬」",
+    "options": [
+      "敬愛",
+      "軽蔑",
+      "無視"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「敬愛」です。"
+  },
+  {
+    "id": "dou_961",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「天然 ⇔ （　）工」",
+    "options": [
+      "人",
+      "手",
+      "自",
+      "天"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「人」です。"
+  },
+  {
+    "id": "dou_962",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「縮小 ⇔ （　）大」",
+    "options": [
+      "拡",
+      "広",
+      "増",
+      "巨"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「拡」です。"
+  },
+  {
+    "id": "dou_963",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「単純 ⇔ 複（　）」",
+    "options": [
+      "雑",
+      "数",
+      "合",
+      "線"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「雑」です。"
+  },
+  {
+    "id": "dou_964",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・類義）",
+    "question": "類義語になるように（　）に入る漢字を選びなさい。「改善 ＝ （　）良」",
+    "options": [
+      "改",
+      "変",
+      "修",
+      "直"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「改」です。"
+  },
+  {
+    "id": "dou_965",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・類義）",
+    "question": "類義語になるように（　）に入る漢字を選びなさい。「援助 ＝ （　）援」",
+    "options": [
+      "支",
+      "助",
+      "救",
+      "応"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「支」です。"
+  },
+  {
+    "id": "dou_966",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「敗北」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "勝利",
+      "成功",
+      "優勝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「勝利」です。"
+  },
+  {
+    "id": "dou_967",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「単純」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "複雑",
+      "困難",
+      "面倒"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「複雑」です。"
+  },
+  {
+    "id": "dou_968",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「下降」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "上昇",
+      "向上",
+      "発展"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「上昇」です。"
+  },
+  {
+    "id": "dou_969",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「夏は気温が上昇するが、秋になると次第に（　）していく。」",
+    "options": [
+      "下降",
+      "落下",
+      "縮小"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「下降」です。"
+  },
+  {
+    "id": "dou_970",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・類義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「健康を（　）するために、毎日欠かさずウォーキングを継続している。」",
+    "options": [
+      "維持",
+      "保存",
+      "固定"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「維持」です。"
   }
 ]
