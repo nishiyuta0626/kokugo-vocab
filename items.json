@@ -14077,5 +14077,360 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「禁止」です。"
+  },
+  {
+    "id": "dou_996",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「伝統」",
+    "options": [
+      "革新",
+      "流行",
+      "現代"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「革新」です。"
+  },
+  {
+    "id": "dou_997",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「都市」",
+    "options": [
+      "農村",
+      "地方",
+      "田舎"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「農村」です。"
+  },
+  {
+    "id": "dou_998",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「権利」",
+    "options": [
+      "義務",
+      "責任",
+      "規則"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「義務」です。"
+  },
+  {
+    "id": "dou_999",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「温暖」",
+    "options": [
+      "寒冷",
+      "冷涼",
+      "酷寒"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「寒冷」です。"
+  },
+  {
+    "id": "dou_1000",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「直接」",
+    "options": [
+      "間接",
+      "遠隔",
+      "代理"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「間接」です。"
+  },
+  {
+    "id": "dou_1001",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「部分」",
+    "options": [
+      "全体",
+      "全部",
+      "総合"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「全体」です。"
+  },
+  {
+    "id": "dou_1002",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「出発」",
+    "options": [
+      "到着",
+      "帰着",
+      "停止"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「到着」です。"
+  },
+  {
+    "id": "dou_1003",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「発見」",
+    "options": [
+      "発明",
+      "紛失",
+      "隠蔽"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「紛失」です。"
+  },
+  {
+    "id": "dou_1004",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「質問」",
+    "options": [
+      "応答",
+      "解決",
+      "疑問"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「応答」です。"
+  },
+  {
+    "id": "dou_1005",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「勝利」",
+    "options": [
+      "敗戦",
+      "引き分け",
+      "撤退"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「敗戦」です。"
+  },
+  {
+    "id": "dou_1006",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「信頼」",
+    "options": [
+      "信用",
+      "疑念",
+      "期待"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「信用」です。"
+  },
+  {
+    "id": "dou_1007",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「努力」",
+    "options": [
+      "奮闘",
+      "怠慢",
+      "休息"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「奮闘」です。"
+  },
+  {
+    "id": "dou_1008",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「観察」",
+    "options": [
+      "観測",
+      "無視",
+      "放置"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「観測」です。"
+  },
+  {
+    "id": "dou_1009",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「防止」",
+    "options": [
+      "予防",
+      "促進",
+      "許可"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「予防」です。"
+  },
+  {
+    "id": "dou_1010",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「完成」",
+    "options": [
+      "成就",
+      "未完",
+      "中断"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「成就」です。"
+  },
+  {
+    "id": "dou_1011",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「権利 ⇔ （　）務」",
+    "options": [
+      "義",
+      "責",
+      "任",
+      "職"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「義」です。"
+  },
+  {
+    "id": "dou_1012",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「直接 ⇔ （　）接」",
+    "options": [
+      "間",
+      "遠",
+      "別",
+      "他"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「間」です。"
+  },
+  {
+    "id": "dou_1013",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「部分 ⇔ （　）体」",
+    "options": [
+      "全",
+      "総",
+      "完",
+      "大"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「全」です。"
+  },
+  {
+    "id": "dou_1014",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「出発 ⇔ 到（　）」",
+    "options": [
+      "着",
+      "達",
+      "来",
+      "終"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「着」です。"
+  },
+  {
+    "id": "dou_1015",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・類義）",
+    "question": "類義語になるように（　）に入る漢字を選びなさい。「信頼 ＝ 信（　）」",
+    "options": [
+      "用",
+      "心",
+      "念",
+      "条"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「用」です。"
+  },
+  {
+    "id": "dou_1016",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「義務」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "権利",
+      "自由",
+      "利益"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「権利」です。"
+  },
+  {
+    "id": "dou_1017",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「寒冷」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "温暖",
+      "炎暑",
+      "熱帯"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「温暖」です。"
+  },
+  {
+    "id": "dou_1018",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「全体」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "部分",
+      "一部",
+      "要素"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「部分」です。"
+  },
+  {
+    "id": "dou_1019",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「長い歴史を持つ（　）を守りながらも、新しい時代に向けた革新に挑戦する。」",
+    "options": [
+      "伝統",
+      "習慣",
+      "過去"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「伝統」です。"
+  },
+  {
+    "id": "dou_1020",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「人から聞いた話だけでなく、自分の目で（　）確かめることが大切だ。」",
+    "options": [
+      "直接",
+      "間接",
+      "客観"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「直接」です。"
   }
 ]
