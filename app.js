@@ -3,14 +3,14 @@
  * 記録ルール: ❌のあと連続2回⭕で克服。
  * 部屋: 辞書 / クイズ / テスト / 結果 / 実力テスト
  * 単元: カテゴリごとに50件区切り(番号はカテゴリ内1始まり)
- * sdn: 実力テストの点数に応じてポイント付与
+ * stdm: 実力テストの点数に応じてポイント付与
  */
 "use strict";
 
 const LS_PROGRESS = "kv_progress_v1";
 const LS_OVERRIDE = "kv_item_override_v1";
 const LS_RESULTS = "kv_results_v1";
-const LS_SDN = "kv_sdn_v1";
+const LS_stdm = "kv_stdm_v1";
 const SEC_SIZE = 50;
 // 全体通し番号のカテゴリ順(1〜漢字→慣用句→四字熟語→ことわざ)
 const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
@@ -25,7 +25,7 @@ const ROOMS = [
   { key: "result", label: "結果の部屋", icon: "📊",
     desc: "過去の結果と間違えた語句の復習リスト" },
   { key: "power", label: "実力テストの部屋", icon: "🏆", gold: true,
-    desc: "全範囲ランダム・点数に応じてsdn付与" },
+    desc: "全範囲ランダム・点数に応じてstdm付与" },
 ];
 const MODES = { m2t: "意味→語句", t2y: "語句→読み", y2t: "読み→語句" };
 const KIND_JP = { quiz: "クイズ", test: "テスト", power: "実力テスト" };
@@ -34,7 +34,7 @@ let ITEMS = [];
 let PROGRESS = {};   // id -> {c,w,s,last}
 let RESULTS = [];    // {ts,kind,cat,range:[a,b],n,ok,wrongIds}
 let OVERRIDES = {};
-let SDN = 0;
+let stdm = 0;
 let view = { name: "home" };
 let quiz = null;     // {list,idx,mode,answers,judged,pool,cat,range}
 let test = null;     // {list,idx,mode,answers,cur,pool,cat,range,kind}
@@ -47,7 +47,7 @@ function loadJSON(k, d) {
 const saveProgress = () => localStorage.setItem(LS_PROGRESS, JSON.stringify(PROGRESS));
 const saveResults = () => localStorage.setItem(LS_RESULTS, JSON.stringify(RESULTS));
 const saveOverrides = () => localStorage.setItem(LS_OVERRIDE, JSON.stringify(OVERRIDES));
-const saveSdn = () => localStorage.setItem(LS_SDN, String(SDN));
+const savestdm = () => localStorage.setItem(LS_stdm, String(stdm));
 function applyOverrides() {
   for (const it of ITEMS) {
     const o = OVERRIDES[it.id];
@@ -115,7 +115,7 @@ function fmtTs(ts) {
   const p = (n) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 }
-function sdnAward(pct) { // 実力テストのsdn付与
+function stdmAward(pct) { // 実力テストのstdm付与
   if (pct >= 100) return 1000;
   if (pct >= 90) return 500;
   if (pct >= 80) return 400;
@@ -179,7 +179,7 @@ function vHome() {
     `<div class="roomcard ${r.gold ? "gold" : ""}" data-nav="${r.key}">
       <div class="room-ttl">${r.icon} ${r.label}${r.gold && !unlocked ? " 🔒" : ""}</div>
       <div class="muted">${r.desc}</div>
-      ${r.gold ? `<div class="muted small">(100点/1000sdn　90〜99点/500sdn　80〜89点/400sdn　70〜79点/300sdn　50〜69点/100sdn　49点以下/10sdn)</div>
+      ${r.gold ? `<div class="muted small">(100点/1000stdm　90〜99点/500stdm　80〜89点/400stdm　70〜79点/300stdm　50〜69点/100stdm　49点以下/10stdm)</div>
         <div class="muted small">${unlocked
           ? "🔓 解放済み！"
           : `🔒 全単元を「合格」(46件以上習得)すると解放されます　合格 ${pw.cleared}/${pw.total} 単元`}</div>` : ""}
@@ -190,7 +190,7 @@ function vHome() {
   const correct = Object.values(PROGRESS).reduce((a, r) => a + r.c, 0);
   return `<div class="roomlist">${rooms}</div>
     <p class="muted mt">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
-    <p class="muted">所有：<b class="sdn">${SDN} sdn</b>　<button class="ghost" data-nav="data">データ管理 →</button></p>`;
+    <p class="muted">所有：<b class="stdm">${stdm} stdm</b>　<button class="ghost" data-nav="data">データ管理 →</button></p>`;
 }
 
 // ---------- カテゴリ選択 ----------
@@ -238,29 +238,44 @@ function allBlockTiles(act, selSet) {
 }
 
 // ---------- クイズの部屋 ----------
-let selBlocks = new Set(); // 選択中ブロックの全体先頭番号(gs)
+// 50問を自動生成: 各単元からラウンドロビンでバランスよく、
+// 単元内では出題回数の少ない語句を優先(ランキング精度のため)・ただしランダム性あり
+function stratifiedSample(blocks, n, filt) {
+  const pools = blocks.map(b => {
+    let q = b;
+    if (filt === "weak") q = q.filter(i => statusOf(i.id) === "weak");
+    else if (filt === "new") q = q.filter(i => statusOf(i.id) === "new");
+    return [...q].sort((x, y) =>
+      (rec(x.id).c + rec(x.id).w + Math.random() * 4) -
+      (rec(y.id).c + rec(y.id).w + Math.random() * 4));
+  });
+  const out = [];
+  while (out.length < n) {
+    const nonempty = pools.filter(p => p.length);
+    if (!nonempty.length) break;
+    for (const p of nonempty) {
+      if (out.length >= n) break;
+      out.push(p.shift());
+    }
+  }
+  return shuffle(out);
+}
 function vQuizSetup() {
-  const blks = globalBlocks();
-  const selCnt = [...selBlocks].reduce((s2, gs) => {
-    const b = blks.find(x => x.gs === gs);
-    return s2 + (b ? b.blk.length : 0);
-  }, 0);
+  const scope = view.qscope ?? "";
+  const scopeChips = [`<button class="chip ${scope === "" ? "on" : ""}" data-act="qscope" data-cat="">全カテゴリ</button>`,
+    ...cats().map(c => `<button class="chip ${scope === c ? "on" : ""}" data-act="qscope" data-cat="${esc(c)}">${esc(c)}</button>`)].join("");
+  const nBlocks = globalBlocks().filter(b => !scope || b.cat === scope).length;
   return `<div class="card">
     <h2>4択クイズを作る</h2>
-    <p class="muted">出題する枠をタップして選んでください(複数選択可・カテゴリまたぎOK)。</p>
-    ${allBlockTiles("selblk", selBlocks)}
-    <div class="chips">
-      <button class="chip" data-act="selall">すべて選ぶ</button>
-      <button class="chip" data-act="selnone">すべてはずす</button></div>
+    <p class="muted">自動で50問を生成します。ランダムですが各単元からバランスよく・出題回数の少ない語句を優先して出題します。</p>
+    <label class="f">カテゴリ</label>
+    <div class="chips">${scopeChips}</div>
     <label class="f">出題対象</label>
     <select id="q_filt">
-      <option value="">選択した枠からランダム</option>
+      <option value="">すべて（ランダム・各単元バランス）</option>
       <option value="new">未学習のみ</option>
       <option value="weak">苦手のみ</option>
     </select>
-    <div class="numrow">
-      <div><label class="f">問題数</label><input type="number" id="q_n" value="20" min="4"></div>
-    </div>
     <label class="f">出題形式</label>
     <select id="q_mode">
       <option value="m2t">意味 → 語句を選ぶ</option>
@@ -268,8 +283,7 @@ function vQuizSetup() {
       <option value="y2t">読み → 語句を選ぶ</option>
       <option value="card">カードめくり(自学習)</option>
     </select>
-    <button class="bigbtn" id="q_go" ${selBlocks.size ? "" : "disabled"}>
-      クイズを開始${selBlocks.size ? `（${selBlocks.size}枠・最大${selCnt}問）` : "（枠を選択）"}</button>
+    <button class="bigbtn" id="q_go">クイズを開始（50問・${nBlocks}単元から）</button>
   </div>
   ${recentRows("quiz")}
   ${vRanking()}`;
@@ -337,7 +351,7 @@ function vTestSetup() {
   return `<div class="card">
     <h2>${power ? "実力テスト" : `テストを始める — No.${view.gs}-${view.ge}`}</h2>
     <p class="muted">${power
-      ? "全範囲からランダム出題。点数に応じてsdnを獲得できます。"
+      ? "全範囲からランダム出題。点数に応じてstdmを獲得できます。"
       : `${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。`}</p>
     ${power ? `<div class="numrow"><div><label class="f">問題数</label>
       <select id="t_n"><option selected>30</option><option>50</option><option>100</option></select></div></div>` : ""}
@@ -472,7 +486,7 @@ function vTestRun() {
 function vTestEnd() {
   const ok = test.answers.filter(a => a.ok).length;
   const pct = Math.round(ok / test.answers.length * 100);
-  const got = test.kind === "power" ? sdnAward(pct) : 0;
+  const got = test.kind === "power" ? stdmAward(pct) : 0;
   const passed = test.kind === "test" && pct >= TEST_PASS * 100;
   // 次の枠(合格していれば解放されている)
   const blks = globalBlocks();
@@ -486,7 +500,7 @@ function vTestEnd() {
   return `<div class="card">
     <h2>${test.kind === "power" ? "実力テスト" : "テスト"}結果: ${ok} / ${test.answers.length} 問正解(${pct}点)</h2>
     ${test.kind === "test" ? `<p style="font-size:20px;font-weight:700;color:${passed ? "#16a34a" : "var(--ng)"}">${passed ? "合格！次の枠が解放されました" : `不合格(合格は${TEST_PASS * 100}%以上)`}</p>` : ""}
-    ${got ? `<p class="sdn">+${got} sdn 獲得！(所有: ${SDN} sdn)</p>` : ""}
+    ${got ? `<p class="stdm">+${got} stdm 獲得！(所有: ${stdm} stdm)</p>` : ""}
     ${wrongs.length ? `<h3>間違えた問題 (${wrongs.length})</h3>${rows}
       <div class="btnrow"><button class="primary" data-act="retry" data-src="test">間違えた問題だけクイズで練習</button></div>` : `<p>全問正解！</p>`}
     <div class="btnrow">
@@ -514,7 +528,7 @@ function vResult() {
   return `<div class="card">
       <h3>進捗票（${SEC_SIZE}件ブロック）</h3>
       <p class="muted">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
-      <p class="muted">所有：<b class="sdn">${SDN} sdn</b></p>
+      <p class="muted">所有：<b class="stdm">${stdm} stdm</b></p>
       <h3>習得状況</h3><p class="muted small">タップで残りの語句を確認できます</p>
       ${allBlockTiles("tile")}
     </div>
@@ -643,16 +657,7 @@ document.addEventListener("click", (e) => {
     if (act === "cat") { // 実力テストのカテゴリ選択のみで使用
       go("testsetup", { cat: a.dataset.cat || null, room: "power" });
     }
-    else if (act === "selblk") {
-      const k = +a.dataset.gs;
-      if (selBlocks.has(k)) selBlocks.delete(k); else selBlocks.add(k);
-      render();
-    }
-    else if (act === "selall") {
-      globalBlocks().forEach(b => selBlocks.add(b.gs));
-      render();
-    }
-    else if (act === "selnone") { selBlocks.clear(); render(); }
+    else if (act === "qscope") { view.qscope = a.dataset.cat; render(); }
     else if (act === "tblk") {
       go("testsetup", { room: "test", cat: a.dataset.cat,
         sec: +a.dataset.sec, gs: +a.dataset.gs, ge: +a.dataset.ge });
@@ -725,7 +730,7 @@ document.addEventListener("click", (e) => {
       test.idx++;
       if (test.idx >= test.list.length) {
         const nOk = test.answers.filter(x => x.ok).length;
-        if (test.kind === "power") { SDN += sdnAward(Math.round(nOk / test.answers.length * 100)); saveSdn(); }
+        if (test.kind === "power") { stdm += stdmAward(Math.round(nOk / test.answers.length * 100)); savestdm(); }
         RESULTS.push({
           ts: new Date().toISOString(), kind: test.kind, cat: test.cat,
           range: test.range, n: test.answers.length, ok: nOk,
@@ -760,30 +765,20 @@ document.addEventListener("click", (e) => {
     }
   }
   if (e.target.id === "q_go") {
-    if (!selBlocks.size) { toast("枠を選んでください"); return; }
     const mode = $("#q_mode").value;
     const filt = $("#q_filt").value;
-    const nQ = +$("#q_n").value || 20;
-    const blks = globalBlocks().filter(b => selBlocks.has(b.gs));
-    let p = [];
-    for (const b of blks) {
-      let q = b.blk;
-      if (filt === "weak") q = q.filter(i => statusOf(i.id) === "weak");
-      else if (filt === "new") q = q.filter(i => statusOf(i.id) === "new");
-      p = p.concat(q);
-    }
+    const scope = view.qscope ?? "";
+    const blks = globalBlocks().filter(b => !scope || b.cat === scope);
+    let p = stratifiedSample(blks.map(b => b.blk), 50, filt);
     if (mode === "card") {
-      p = shuffle([...p]);
       cardSet = { list: p, idx: 0, flipped: false };
       if (!p.length) { toast("対象の項目がありません"); return; }
       go("card"); return;
     }
-    p = shuffle([...p]).slice(0, nQ);
     if (p.length < 4) { toast("4件以上必要です"); return; }
-    const cs = [...new Set(blks.map(b => b.cat))];
     quiz = { list: p, idx: 0, mode, answers: [], judged: null,
-      pool: ITEMS, cat: cs.length === 1 ? cs[0] : "複数",
-      range: [blks[0].gs, blks[blks.length - 1].ge] };
+      pool: ITEMS, cat: scope || "全カテゴリ",
+      range: [blks[0]?.gs ?? 1, blks[blks.length - 1]?.ge ?? ITEMS.length] };
     go("quizrun");
   }
   if (e.target.id === "t_go") {
@@ -820,7 +815,7 @@ document.addEventListener("click", (e) => {
     saveOverrides(); toast("保存しました"); go("list", { room: "jisho" });
   }
   if (e.target.id === "d_export") {
-    const blob = new Blob([JSON.stringify({ progress: PROGRESS, results: RESULTS, overrides: OVERRIDES, sdn: SDN }, null, 1)],
+    const blob = new Blob([JSON.stringify({ progress: PROGRESS, results: RESULTS, overrides: OVERRIDES, stdm: stdm }, null, 1)],
       { type: "application/json" });
     const a2 = document.createElement("a");
     a2.href = URL.createObjectURL(blob);
@@ -828,9 +823,9 @@ document.addEventListener("click", (e) => {
   }
   if (e.target.id === "d_import") $("#d_file").click();
   if (e.target.id === "d_reset") {
-    if (confirm("学習記録・履歴・sdnをすべて消去しますか？")) {
-      PROGRESS = {}; RESULTS = []; SDN = 0;
-      saveProgress(); saveResults(); saveSdn();
+    if (confirm("学習記録・履歴・stdmをすべて消去しますか？")) {
+      PROGRESS = {}; RESULTS = []; stdm = 0;
+      saveProgress(); saveResults(); savestdm();
       toast("消去しました"); render();
     }
   }
@@ -853,7 +848,7 @@ document.addEventListener("change", (e) => {
         if (d.progress) PROGRESS = d.progress;
         if (d.results) RESULTS = d.results;
         if (d.overrides) { OVERRIDES = d.overrides; applyOverrides(); saveOverrides(); }
-        if (typeof d.sdn === "number") { SDN = d.sdn; saveSdn(); }
+        if (typeof d.stdm === "number") { stdm = d.stdm; savestdm(); }
         saveProgress(); saveResults(); toast("インポートしました"); render();
       } catch { toast("読み込めませんでした"); }
     };
@@ -871,7 +866,7 @@ async function boot() {
   PROGRESS = loadJSON(LS_PROGRESS, {});
   RESULTS = loadJSON(LS_RESULTS, []);
   OVERRIDES = loadJSON(LS_OVERRIDE, {});
-  SDN = +(localStorage.getItem(LS_SDN) || 0);
+  stdm = +(localStorage.getItem(LS_stdm) || 0);
   try {
     ITEMS = await (await fetch("items.json")).json();
   } catch {
