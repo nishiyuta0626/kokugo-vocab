@@ -426,7 +426,7 @@ function vTestSetup() {
 // ---------- 4択クイズ実行 ----------
 function makeChoices(it, mode, poolAll) {
   const key = mode === "t2y" ? "yomi" : "text";
-  const cand = shuffle(poolAll.filter(x => x.id !== it.id && x[key] && x[key] !== it[key]));
+  const cand = shuffle(poolAll.filter(x => x.id !== it.id && x.cat === it.cat && x[key] && x[key] !== it[key]));
   const picks = [it[key]];
   for (const c of cand) { if (picks.length >= 4) break; if (!picks.includes(c[key])) picks.push(c[key]); }
   return { options: shuffle(picks.slice(0, 4)), answer: it[key] };
