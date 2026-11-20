@@ -10526,5 +10526,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「この映画は子どもから大人まで幅広い年齢層が【対照】だ。」です。"
+  },
+  {
+    "id": "dou_746",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「弟の絵の上手さに思わずカンシンした。」",
+    "options": [
+      "感心",
+      "関心",
+      "歓心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「感心」です。"
+  },
+  {
+    "id": "dou_747",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「ニュースを見て環境問題にカンシンを持つ。」",
+    "options": [
+      "関心",
+      "感心",
+      "歓心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「関心」です。"
+  },
+  {
+    "id": "dou_748",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「図工の時間に木工作品をセイサクする。」",
+    "options": [
+      "制作",
+      "製作",
+      "正作"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「制作」です。"
+  },
+  {
+    "id": "dou_749",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「工場で新しい自動車の部品をセイサクする。」",
+    "options": [
+      "製作",
+      "制作",
+      "正作"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「製作」です。"
+  },
+  {
+    "id": "dou_750",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「この時計の品質はメーカーがホショウしている。」",
+    "options": [
+      "保証",
+      "保障",
+      "補償"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「保証」です。"
+  },
+  {
+    "id": "dou_751",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「国の安全や国民の基本的人権をホショウする。」",
+    "options": [
+      "保障",
+      "保証",
+      "補償"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「保障」です。"
+  },
+  {
+    "id": "dou_752",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「工事で壊れた建物の損害をホショウする。」",
+    "options": [
+      "補償",
+      "保証",
+      "保障"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「補償」です。"
+  },
+  {
+    "id": "dou_753",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「結果だけでなく、努力するカテイも大切だ。」",
+    "options": [
+      "過程",
+      "家庭",
+      "課程"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「過程」です。"
+  },
+  {
+    "id": "dou_754",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「小学校六年間の教育カテイを修了する。」",
+    "options": [
+      "課程",
+      "過程",
+      "家庭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「課程」です。"
+  },
+  {
+    "id": "dou_755",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「温かいカテイを築くために家族で協力する。」",
+    "options": [
+      "家庭",
+      "過程",
+      "課程"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「家庭」です。"
+  },
+  {
+    "id": "dou_756",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「ボランティア活動に参加するイギを考える。」",
+    "options": [
+      "意義",
+      "異議",
+      "異義"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「意義」です。"
+  },
+  {
+    "id": "dou_757",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「学級会で提案された意見にイギをとなえる。」",
+    "options": [
+      "異議",
+      "意義",
+      "異義"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「異議」です。"
+  },
+  {
+    "id": "dou_758",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「雨天のため、遠足は来週にエンキされた。」",
+    "options": [
+      "延期",
+      "演技",
+      "縁起"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「延期」です。"
+  },
+  {
+    "id": "dou_759",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「学芸会の劇で主役を見事にエンギする。」",
+    "options": [
+      "演技",
+      "延期",
+      "縁起"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「演技」です。"
+  },
+  {
+    "id": "dou_760",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「正月にエンギの良い飾り物を玄関に置く。」",
+    "options": [
+      "縁起",
+      "延期",
+      "演技"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「縁起」です。"
+  },
+  {
+    "id": "dou_761",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「美しい自然の風景にカンドウする。」",
+    "options": [
+      "感動",
+      "感嘆",
+      "感傷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「感動」です。"
+  },
+  {
+    "id": "dou_762",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「自分のミスを素直にハンセイする。」",
+    "options": [
+      "反省",
+      "半生",
+      "反政"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「反省」です。"
+  },
+  {
+    "id": "dou_763",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「偉人のハンセイを描いた伝記を読む。」",
+    "options": [
+      "半生",
+      "反省",
+      "反生"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「半生」です。"
+  },
+  {
+    "id": "dou_764",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「試合の結果にマンゾクして笑顔を見せる。」",
+    "options": [
+      "満足",
+      "満腹",
+      "満点"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「満足」です。"
+  },
+  {
+    "id": "dou_765",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「遠足の費用を全員からチョウシュウする。」",
+    "options": [
+      "徴収",
+      "聴衆",
+      "長寿"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「徴収」です。"
+  },
+  {
+    "id": "dou_766",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：スポーツにカンシンがある ／ B：見事なプレーにカンシンする」",
+    "options": [
+      "A：関心　B：感心",
+      "A：感心　B：関心",
+      "A：歓心　B：感心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：関心　B：感心」です。"
+  },
+  {
+    "id": "dou_767",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：憲法で自由がホショウされる ／ B：商品の修理をホショウする」",
+    "options": [
+      "A：保障　B：保証",
+      "A：保証　B：保障",
+      "A：補償　B：保障"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：保障　B：保証」です。"
+  },
+  {
+    "id": "dou_768",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：問題解決のカテイを重視する ／ B：義務教育のカテイを終える」",
+    "options": [
+      "A：過程　B：課程",
+      "A：課程　B：過程",
+      "A：家庭　B：過程"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：過程　B：課程」です。"
+  },
+  {
+    "id": "dou_769",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "学級委員の提案に対して【意義】をとなえる人はいなかった。",
+      "美術の時間に油絵を【制作】して展覧会に出品した。",
+      "雨のために運動会が来週へ【延期】になった。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「学級委員の提案に対して【意義】をとなえる人はいなかった。」です。"
+  },
+  {
+    "id": "dou_770",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "祖父の【反省】をまとめた本が図書館に置かれている。",
+      "お正月に【縁起】の良い鶴と亀の絵を飾った。",
+      "明るい【家庭】をつくるために毎日あいさつを欠かさない。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「祖父の【反省】をまとめた本が図書館に置かれている。」です。"
   }
 ]
