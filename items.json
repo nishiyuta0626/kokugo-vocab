@@ -10176,5 +10176,355 @@
     ],
     "answerIndex": 0,
     "explanation": "「手塩にかける」自分自身で世話をし、大切に心を込めて育てること。"
+  },
+  {
+    "id": "dou_721",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「最新のキカイを使って実験を行う。」",
+    "options": [
+      "機械",
+      "機会",
+      "奇怪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「機械」です。"
+  },
+  {
+    "id": "dou_722",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「留学するキカイに恵まれて喜んでいる。」",
+    "options": [
+      "機会",
+      "機械",
+      "奇怪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「機会」です。"
+  },
+  {
+    "id": "dou_723",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「真夜中にキカイな物音が聞こえて驚いた。」",
+    "options": [
+      "奇怪",
+      "機械",
+      "機会"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「奇怪」です。"
+  },
+  {
+    "id": "dou_724",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「自分のイシをしっかり持って行動する。」",
+    "options": [
+      "意志",
+      "意思",
+      "医師"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「意志」です。"
+  },
+  {
+    "id": "dou_725",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「話し合って、お互いのイシを確認し合った。」",
+    "options": [
+      "意思",
+      "意志",
+      "遺志"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「意思」です。"
+  },
+  {
+    "id": "dou_726",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「小学生をタイショウにしたアンケート調査を行う。」",
+    "options": [
+      "対象",
+      "対照",
+      "対称"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「対象」です。"
+  },
+  {
+    "id": "dou_727",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「兄と弟は性格がまったくタイショウ的だ。」",
+    "options": [
+      "対照",
+      "対象",
+      "対称"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「対照」です。"
+  },
+  {
+    "id": "dou_728",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「左右がタイショウになるように図形を描く。」",
+    "options": [
+      "対称",
+      "対象",
+      "対照"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「対称」です。"
+  },
+  {
+    "id": "dou_729",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「夏休みの間、祖母の家にタイザイする。」",
+    "options": [
+      "滞在",
+      "大罪",
+      "題材"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「滞在」です。"
+  },
+  {
+    "id": "dou_730",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「環境問題をダイザイにして作文を書く。」",
+    "options": [
+      "題材",
+      "滞在",
+      "大罪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「題材」です。"
+  },
+  {
+    "id": "dou_731",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「古い資料をケイショウして未来へ伝える。」",
+    "options": [
+      "継承",
+      "軽傷",
+      "警鐘"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「継承」です。"
+  },
+  {
+    "id": "dou_732",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「転んでしまったが、幸いケイショウで済んだ。」",
+    "options": [
+      "軽傷",
+      "継承",
+      "警鐘"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「軽傷」です。"
+  },
+  {
+    "id": "dou_733",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「図書館で歴史に関する本をサンショウする。」",
+    "options": [
+      "参照",
+      "参上",
+      "三唱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「参照」です。"
+  },
+  {
+    "id": "dou_734",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「優勝を祝って、みんなで万歳をサンショウする。」",
+    "options": [
+      "三唱",
+      "参照",
+      "参上"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「三唱」です。"
+  },
+  {
+    "id": "dou_735",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「工事の騒音で、静かな環境がコウガイされる。」",
+    "options": [
+      "妨害",
+      "公害",
+      "郊外"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「妨害」です。"
+  },
+  {
+    "id": "dou_736",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「工場の排水によるコウガイが社会問題になった。」",
+    "options": [
+      "公害",
+      "郊外",
+      "妨害"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「公害」です。"
+  },
+  {
+    "id": "dou_737",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「週末は家族でコウガイの公園へピクニックに行く。」",
+    "options": [
+      "郊外",
+      "公害",
+      "口外"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「郊外」です。"
+  },
+  {
+    "id": "dou_738",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「約束の秘密を絶対にコウガイしてはいけない。」",
+    "options": [
+      "口外",
+      "郊外",
+      "公害"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「口外」です。"
+  },
+  {
+    "id": "dou_739",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「文化祭の実行委員にシュウニンする。」",
+    "options": [
+      "就任",
+      "信任",
+      "新任"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「就任」です。"
+  },
+  {
+    "id": "dou_740",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「四月から新しい先生が学校にシンニンされる。」",
+    "options": [
+      "新任",
+      "就任",
+      "信任"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「新任」です。"
+  },
+  {
+    "id": "dou_741",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：貴重なキカイを逃す ／ B：精密なキカイを修理する」",
+    "options": [
+      "A：機会　B：機械",
+      "A：機械　B：機会",
+      "A：奇怪　B：機械"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：機会　B：機械」です。"
+  },
+  {
+    "id": "dou_742",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：固いイシを貫く ／ B：病院のイシに診てもらう」",
+    "options": [
+      "A：意志　B：医師",
+      "A：意思　B：意志",
+      "A：医師　B：意志"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：意志　B：医師」です。"
+  },
+  {
+    "id": "dou_743",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：正反対でタイショウ的だ ／ B：線タイショウな図形を描く」",
+    "options": [
+      "A：対照　B：対称",
+      "A：対称　B：対照",
+      "A：対象　B：対称"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：対照　B：対称」です。"
+  },
+  {
+    "id": "dou_744",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "友達との秘密は絶対に【郊外】しないように気をつける。",
+      "伝統的なお祭りの文化を次の世代へ【継承】する。",
+      "小説の【題材】を探すためにいろいろな本を読む。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「友達との秘密は絶対に【郊外】しないように気をつける。」です。"
+  },
+  {
+    "id": "dou_745",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "この映画は子どもから大人まで幅広い年齢層が【対照】だ。",
+      "事故に遭ったが、幸いにも【軽傷】で済んで安心した。",
+      "新しい生徒会長に【就任】してあいさつをする。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「この映画は子どもから大人まで幅広い年齢層が【対照】だ。」です。"
   }
 ]
