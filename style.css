@@ -242,6 +242,9 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 .mission .mdone { color: #16a34a; font-weight: 700; }
 .mission.wtest { background: #fffbeb; margin: 0 -6px; padding: 10px 6px; border-radius: 10px; border-top: 0; }
 .mission button { white-space: nowrap; }
+.wkmarks { letter-spacing: 3px; font-size: 15px; line-height: 1.9; margin: 2px 0 8px; overflow-wrap: anywhere; }
+.wkmarks .ok { color: #16a34a; }
+.wkmarks .ng { color: var(--ng); font-weight: 700; }
 @media (max-width: 560px) { .mission { flex-wrap: wrap; } .mission-m { flex-basis: 100%; order: 3; } }
 .textin{display:block;width:100%;max-width:420px;margin:14px auto;padding:14px;font-size:22px;text-align:center;border:2px solid var(--line);border-radius:12px;font-family:inherit}
 .textin:focus{outline:none;border-color:var(--acc)}

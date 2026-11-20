@@ -273,6 +273,7 @@ function schedMark(id, ok, fast) {
     s.cc = Math.min(4, s.cc + 1);
     if (fast) s.fast++;
     s.wok = (s.wok || 0) + 1; // 誤答後の連続正解(ストック克服判定用)
+    s.last = "ok";
     // 1〜3周すべて正解かつ3秒以内 → 4周目をスキップして完全定着
     if (s.cc === 3 && s.w === 0 && s.fast >= 3) { s.cc = 4; s.plat = true; }
     d.clears += s.cc - before; // プラチナは免除された4周目分も加算
@@ -283,7 +284,7 @@ function schedMark(id, ok, fast) {
       toast("🎉 今日のノルマ達成！ +100 stdm");
     }
   } else {
-    s.w++; s.wok = 0;
+    s.w++; s.wok = 0; s.last = "ng";
   }
   saveSched();
 }
@@ -291,8 +292,8 @@ function schedMark(id, ok, fast) {
 function prepMark(id, ok) {
   let s = SCHED.items[id];
   if (!s) s = SCHED.items[id] = { cc: 0, w: 0, fast: 0 };
-  if (ok) s.wok = (s.wok || 0) + 1;
-  else { s.w++; s.wok = 0; }
+  if (ok) { s.wok = (s.wok || 0) + 1; s.last = "ok"; }
+  else { s.w++; s.wok = 0; s.last = "ng"; }
   saveSched();
 }
 // 10問セット生成: 今日出た問題は後回しにしつつ、各周をラウンドロビンで混合
@@ -398,6 +399,11 @@ function vPrep() {
     解答した時点で〇✕判定と正解・解説が表示されます。</p>
     <p class="muted">今週の範囲: <b>${weekItems.length}問</b>（うち間違い ${w7.length}問）。
     間違いの確認は辞書の部屋でもできます。</p>
+    <div class="wkmarks">${weekItems.slice(0, 200).map(it => {
+      const s = SCHED.items[it.id] || {};
+      const bad = s.last === "ng" || (s.last !== "ok" && s.w > 0 && !(s.wok > 0));
+      return `<span class="${bad ? "ng" : "ok"}">${bad ? "✕" : "◯"}</span>`;
+    }).join("")}${weekItems.length > 200 ? `<span class="muted small">…他${weekItems.length - 200}問</span>` : ""}</div>
     <button class="bigbtn" data-act="prepset" ${weekItems.length ? "" : "disabled"}>10問テストを開始 ▶</button>
     <div class="btnrow"><button class="ghost" data-nav="result">📊 過去の結果・進捗を見る →</button></div>
   </div>`;
