@@ -496,7 +496,7 @@ function render() {
   $("#backbtn").style.display = inRoom ? "" : "none";
   const lb = $("#logoutbtn");
   lb.style.display = (USER && view.name !== "userselect") ? "" : "none";
-  lb.textContent = `${USER === "admin" ? "🛠 管理者" : "🌸 こはる"} ▸ ログアウト`;
+  lb.textContent = `${USER === "admin" ? "🔑 管理者" : "🌸 こはる"} ▸ ログアウト`;
   $("#headtitle").textContent = inRoom
     ? (room ? `${room.icon} ${room.label}` : (view.name === "admin" ? "管理者"
       : view.name === "earnlog" ? "🪙 stdm履歴"
@@ -571,10 +571,8 @@ function vUserSelect() {
   return `<div class="card" style="text-align:center">
     <h2>だれがあそびますか？</h2>
     <div class="choices">
-      <button class="choice" data-act="usel" data-u="koharu" style="font-size:20px">🌸 こはる
-        <span class="muted small">パスワードなしでロビーへ</span></button>
-      <button class="choice" data-act="usel" data-u="admin" style="font-size:20px">🛠 管理者
-        <span class="muted small">PIN入力が必要です</span></button>
+      <button class="choice" data-act="usel" data-u="koharu" style="font-size:20px">🌸 こはる</button>
+      <button class="choice" data-act="usel" data-u="admin" style="font-size:20px">🔑 管理者</button>
     </div>
     ${view.pin ? `<div class="btnrow" style="justify-content:center">
       <input id="pin_in" type="password" inputmode="numeric" maxlength="4" placeholder="PIN(4桁)"
