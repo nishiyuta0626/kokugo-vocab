@@ -4356,5 +4356,735 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「大義名分（たいぎめいぶん）」です。"
+  },
+  {
+    "id": "kot_306",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「犬も歩けば（　）に当たる」",
+    "options": [
+      "棒",
+      "石",
+      "木",
+      "壁"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「棒」で「犬も歩けば棒に当たる」です。"
+  },
+  {
+    "id": "kot_307",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の耳に念仏」",
+    "options": [
+      "牛",
+      "馬",
+      "犬",
+      "猫"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「馬」で「馬の耳に念仏」です。"
+  },
+  {
+    "id": "kot_308",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「猿も（　）から落ちる」",
+    "options": [
+      "木",
+      "枝",
+      "岩",
+      "屋根"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「木」で「猿も木から落ちる」です。"
+  },
+  {
+    "id": "kot_309",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「弘法にも（　）の誤り」",
+    "options": [
+      "筆",
+      "字",
+      "墨",
+      "紙"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「筆」で「弘法にも筆の誤り」です。"
+  },
+  {
+    "id": "kot_310",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「河童の（　）流れ」",
+    "options": [
+      "川",
+      "水",
+      "海",
+      "滝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「川」で「河童の川流れ」です。"
+  },
+  {
+    "id": "kot_311",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「石の上にも（　）年」",
+    "options": [
+      "一",
+      "三",
+      "五",
+      "十"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「三」で「石の上にも三年」です。"
+  },
+  {
+    "id": "kot_312",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「急がば（　）れ」",
+    "options": [
+      "回",
+      "走",
+      "渡",
+      "急"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「回」で「急がば回れ」です。"
+  },
+  {
+    "id": "kot_313",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「塵も積もれば（　）となる」",
+    "options": [
+      "山",
+      "丘",
+      "城",
+      "森"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「山」で「塵も積もれば山となる」です。"
+  },
+  {
+    "id": "kot_314",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「好きこそ物の（　）なれ」",
+    "options": [
+      "上手",
+      "得意",
+      "名人",
+      "達人"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「上手」で「好きこそ物の上手なれ」です。"
+  },
+  {
+    "id": "kot_315",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「習うより（　）れろ」",
+    "options": [
+      "慣",
+      "覚",
+      "見",
+      "試"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「慣」で「習うより慣れろ」です。"
+  },
+  {
+    "id": "kot_316",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「案ずるより（　）むが易し」",
+    "options": [
+      "産",
+      "生",
+      "進",
+      "歩"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「産」で「案ずるより産むが易し」です。"
+  },
+  {
+    "id": "kot_317",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「井の中の（　）大海を知らず」",
+    "options": [
+      "蛙",
+      "魚",
+      "亀",
+      "虫"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「蛙」で「井の中の蛙大海を知らず」です。"
+  },
+  {
+    "id": "kot_318",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「鬼に（　）」",
+    "options": [
+      "金棒",
+      "刀",
+      "鎧",
+      "角"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「金棒」で「鬼に金棒」です。"
+  },
+  {
+    "id": "kot_319",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「泣きっ面に（　）」",
+    "options": [
+      "蜂",
+      "蚊",
+      "蟻",
+      "蛇"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「蜂」で「泣きっ面に蜂」です。"
+  },
+  {
+    "id": "kot_320",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「弱り目に（　）り目」",
+    "options": [
+      "祟",
+      "泣",
+      "痛",
+      "困"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「祟」で「弱り目に祟り目」です。"
+  },
+  {
+    "id": "kot_321",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「飛んで（　）に入る夏の虫」",
+    "options": [
+      "火",
+      "水",
+      "網",
+      "巣"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「火」で「飛んで火に入る夏の虫」です。"
+  },
+  {
+    "id": "kot_322",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「藪をつついて（　）を出す」",
+    "options": [
+      "蛇",
+      "蜂",
+      "熊",
+      "狐"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「蛇」で「藪をつついて蛇を出す」です。"
+  },
+  {
+    "id": "kot_323",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「捕らぬ（　）の皮算用」",
+    "options": [
+      "狸",
+      "狐",
+      "兎",
+      "熊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「狸」で「捕らぬ狸の皮算用」です。"
+  },
+  {
+    "id": "kot_324",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「二兎を追う者は（　）をも得ず」",
+    "options": [
+      "一兎",
+      "三兎",
+      "全部",
+      "少し"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一兎」で「二兎を追う者は一兎をも得ず」です。"
+  },
+  {
+    "id": "kot_325",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「虻（　）取らず」",
+    "options": [
+      "蜂",
+      "蝶",
+      "蚊",
+      "蝉"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「蜂」で「虻蜂取らず」です。"
+  },
+  {
+    "id": "kot_326",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「花より（　）」",
+    "options": [
+      "団子",
+      "餅",
+      "菓子",
+      "飯"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「団子」で「花より団子」です。"
+  },
+  {
+    "id": "kot_327",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「焼け石に（　）」",
+    "options": [
+      "水",
+      "雨",
+      "雪",
+      "氷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「水」で「焼け石に水」です。"
+  },
+  {
+    "id": "kot_328",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「暖簾に（　）」",
+    "options": [
+      "腕押し",
+      "体当たり",
+      "肩すかし",
+      "手応え"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腕押し」で「暖簾に腕押し」です。"
+  },
+  {
+    "id": "kot_329",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「糠に（　）」",
+    "options": [
+      "釘",
+      "針",
+      "棒",
+      "矢"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「釘」で「糠に釘」です。"
+  },
+  {
+    "id": "kot_330",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「蛙の面に（　）」",
+    "options": [
+      "水",
+      "泥",
+      "雨",
+      "風"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「水」で「蛙の面に水」です。"
+  },
+  {
+    "id": "kot_331",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「犬も歩けば棒に当たる」の最も適切な意味を選びなさい。",
+    "options": [
+      "何かをしようと行動すれば、思いがけない幸運に出会うことがあるということ。",
+      "外に出歩くと、危険な目や悪いことばかりに遭うということ。",
+      "計画を立てずに動き回ると、無駄な努力に終わるということ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「犬も歩けば棒に当たる」何かをしようと行動すれば、思いがけない幸運に出会うことがあるということ。"
+  },
+  {
+    "id": "kot_332",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「馬の耳に念仏」の最も適切な意味を選びなさい。",
+    "options": [
+      "いくら意見や忠告をしても、まったく聞き入れようとしないこと。",
+      "難しい話でも、繰り返し聞かせていればいつか理解できること。",
+      "動物に対しても、人間と同じように優しく接すること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「馬の耳に念仏」いくら意見や忠告をしても、まったく聞き入れようとしないこと。"
+  },
+  {
+    "id": "kot_333",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「猿も木から落ちる」の最も適切な意味を選びなさい。",
+    "options": [
+      "どんなにその道に優れた名人でも、時には失敗することがあるということ。",
+      "得意なことばかりして油断していると、大きなケガをするということ。",
+      "自分に向いていないことに挑戦すると、必ず失敗するということ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「猿も木から落ちる」どんなにその道に優れた名人でも、時には失敗することがあるということ。"
+  },
+  {
+    "id": "kot_334",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「石の上にも三年」の最も適切な意味を選びなさい。",
+    "options": [
+      "つらく苦しいことでも、がまんして努力を続ければ必ず成功するということ。",
+      "冷たい石の上に座り続けるほど、体を鍛えることが大切だということ。",
+      "どんな仕事でも、3年経てば飽きてしまうということ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「石の上にも三年」つらく苦しいことでも、がまんして努力を続ければ必ず成功するということ。"
+  },
+  {
+    "id": "kot_335",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「急がば回れ」の最も適切な意味を選びなさい。",
+    "options": [
+      "急いでいるときほど、危険な近道より安全で確実な道を選ぶ方が結局は早いということ。",
+      "急いでいるときは、多少危険でも一番短い近道を通るべきだということ。",
+      "慌てて行動すると道を間違えるので、立ち止まって休むべきだということ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「急がば回れ」急いでいるときほど、危険な近道より安全で確実な道を選ぶ方が結局は早いということ。"
+  },
+  {
+    "id": "kot_336",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「案ずるより産むが易し」の最も適切な意味を選びなさい。",
+    "options": [
+      "始める前はあれこれ心配するが、実際に行ってみると案外たやすいということ。",
+      "計画をしっかり立ててから行動する方が、失敗が少なくて簡単だということ。",
+      "難しいことは人に任せた方が、自分でやるよりずっと楽だということ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「案ずるより産むが易し」始める前はあれこれ心配するが、実際に行ってみると案外たやすいということ。"
+  },
+  {
+    "id": "kot_337",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「井の中の蛙大海を知らず」の最も適切な意味を選びなさい。",
+    "options": [
+      "自分の狭い知識や経験だけにとらわれて、広い世界のことを知らないこと。",
+      "小さな場所でも満足して、毎日楽しく暮らすのが一番だということ。",
+      "自分の得意な分野を深く極めることが大切だということ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「井の中の蛙大海を知らず」自分の狭い知識や経験だけにとらわれて、広い世界のことを知らないこと。"
+  },
+  {
+    "id": "kot_338",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「捕らぬ狸の皮算用」の最も適切な意味を選びなさい。",
+    "options": [
+      "まだ手に入っていないものを当てにして、あれこれ計画を立てること。",
+      "失敗したときのことを考えて、あらかじめ準備をしておくこと。",
+      "利益を正しく計算して、無駄遣いをしないようにすること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「捕らぬ狸の皮算用」まだ手に入っていないものを当てにして、あれこれ計画を立てること。"
+  },
+  {
+    "id": "kot_339",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「花より団子」の最も適切な意味を選びなさい。",
+    "options": [
+      "見た目の美しさや風流さよりも、実用的なものや食べ物の方を選ぶこと。",
+      "美味しいものを食べながら、美しい景色を眺めるのが最高だということ。",
+      "まずは中身を充実させてから、見た目を整えるべきだということ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「花より団子」見た目の美しさや風流さよりも、実用的なものや食べ物の方を選ぶこと。"
+  },
+  {
+    "id": "kot_340",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ意味選択",
+    "question": "「焼け石に水」の最も適切な意味を選びなさい。",
+    "options": [
+      "援助や努力が少なすぎて、ほとんど効果がないこと。",
+      "小さな努力でも積み重ねれば、大きな成果につながるということ。",
+      "ピンチのときに少しの助けがあるだけで、非常にありがたいこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「焼け石に水」援助や努力が少なすぎて、ほとんど効果がないこと。"
+  },
+  {
+    "id": "kot_341",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ類義ペア",
+    "question": "「猿も木から落ちる」と同じ意味のことわざを次から選びなさい。",
+    "options": [
+      "弘法にも筆の誤り",
+      "鬼に金棒",
+      "習うより慣れろ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「弘法にも筆の誤り」です。"
+  },
+  {
+    "id": "kot_342",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ類義ペア",
+    "question": "「泣きっ面に蜂」と同じ意味のことわざを次から選びなさい。",
+    "options": [
+      "弱り目に祟り目",
+      "飛んで火に入る夏の虫",
+      "藪をつついて蛇を出す"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「弱り目に祟り目」です。"
+  },
+  {
+    "id": "kot_343",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ類義ペア",
+    "question": "「二兎を追う者は一兎をも得ず」と同じ意味のことわざを次から選びなさい。",
+    "options": [
+      "虻蜂取らず",
+      "塵も積もれば山となる",
+      "好きこそ物の上手なれ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「虻蜂取らず」です。"
+  },
+  {
+    "id": "kot_344",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ類義ペア",
+    "question": "「暖簾に腕押し」と同じ意味のことわざを次から選びなさい。",
+    "options": [
+      "糠に釘",
+      "焼け石に水",
+      "犬も歩けば棒に当たる"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「糠に釘」です。"
+  },
+  {
+    "id": "kot_345",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ類義ペア",
+    "question": "「馬の耳に念仏」と同じように、何を言ってもまったく効き目がないことを表すことわざを選びなさい。",
+    "options": [
+      "蛙の面に水",
+      "河童の川流れ",
+      "井の中の蛙大海を知らず"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「蛙の面に水」です。"
+  },
+  {
+    "id": "kot_346",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）も歩けば棒に当たる」",
+    "options": [
+      "犬",
+      "猫",
+      "猿",
+      "馬"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「犬」で「犬も歩けば棒に当たる」です。"
+  },
+  {
+    "id": "kot_347",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の川流れ」",
+    "options": [
+      "河童",
+      "魚",
+      "蛙",
+      "亀"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「河童」で「河童の川流れ」です。"
+  },
+  {
+    "id": "kot_348",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）も積もれば山となる」",
+    "options": [
+      "塵",
+      "砂",
+      "石",
+      "雪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「塵」で「塵も積もれば山となる」です。"
+  },
+  {
+    "id": "kot_349",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）に金棒」",
+    "options": [
+      "鬼",
+      "神",
+      "武士",
+      "王"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鬼」で「鬼に金棒」です。"
+  },
+  {
+    "id": "kot_350",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をつついて蛇を出す」",
+    "options": [
+      "藪",
+      "草",
+      "森",
+      "穴"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「藪」で「藪をつついて蛇を出す」です。"
+  },
+  {
+    "id": "kot_351",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ例文補充",
+    "question": "次の文の（　）に入る最も適切なことわざを選びなさい。「余計なことを言ったせいで先生に叱られてしまい、まさに（　）だ。」",
+    "options": [
+      "藪をつついて蛇を出す",
+      "飛んで火に入る夏の虫",
+      "鬼に金棒"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「藪をつついて蛇を出す」です。"
+  },
+  {
+    "id": "kot_352",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ例文補充",
+    "question": "次の文の（　）に入る最も適切なことわざを選びなさい。「ただでさえ足が速い彼が最新のランニングシューズをはいたら、（　）だ。」",
+    "options": [
+      "鬼に金棒",
+      "河童の川流れ",
+      "焼け石に水"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鬼に金棒」です。"
+  },
+  {
+    "id": "kot_353",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ例文補充",
+    "question": "次の文の（　）に入る最も適切なことわざを選びなさい。「テスト前は不安でいっぱいだったが、始めてみたらスラスラ解けて（　）だった。」",
+    "options": [
+      "案ずるより産むが易し",
+      "石の上にも三年",
+      "急がば回れ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「案ずるより産むが易し」です。"
+  },
+  {
+    "id": "kot_354",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ例文補充",
+    "question": "次の文の（　）に入る最も適切なことわざを選びなさい。「毎日10分ずつの漢字練習でも、1年続ければ大きな力になる。（　）だ。」",
+    "options": [
+      "塵も積もれば山となる",
+      "習うより慣れろ",
+      "好きこそ物の上手なれ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「塵も積もれば山となる」です。"
+  },
+  {
+    "id": "kot_355",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ例文補充",
+    "question": "次の文の（　）に入る最も適切なことわざを選びなさい。「いくら注意しても平気な顔をしていて、まるで（　）だ。」",
+    "options": [
+      "蛙の面に水",
+      "猿も木から落ちる",
+      "花より団子"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「蛙の面に水」です。"
   }
 ]
