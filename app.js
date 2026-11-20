@@ -578,7 +578,7 @@ function vUserSelect() {
       <input id="pin_in" type="password" inputmode="numeric" maxlength="4" placeholder="PIN(4桁)"
         onkeydown="if(event.key==='Enter')this.nextElementSibling.click()"
         style="width:8em;text-align:center;font-size:20px;padding:6px">
-      <button class="primary" data-act="pinok">入る</button></div>` : ""}
+      <button class="primary" data-act="pinok">入室</button></div>` : ""}
   </div>`;
 }
 async function selectUser(u) {
@@ -1110,7 +1110,7 @@ document.addEventListener("click", (e) => {
     else if (act === "usel") {
       const u = a.dataset.u;
       if (u === "admin" && !view.pin) { view = { name: "userselect", pin: true }; render(); }
-      else selectUser(u);
+      else if (confirm(`${u === "admin" ? "管理者" : "こはる"}で入室しますか？`)) selectUser(u);
     }
     else if (act === "pinok") {
       const pv = ($("#pin_in")?.value || "").trim();
