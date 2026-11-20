@@ -11938,5 +11938,369 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「友だちの家に一晩【止まる】ことになった。」です。"
+  },
+  {
+    "id": "dou_846",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異義字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「駅の前で久しぶりに小学校の友だちとアう。」",
+    "options": [
+      "会",
+      "合",
+      "遭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「会」です。"
+  },
+  {
+    "id": "dou_847",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「計算の答えがぴったりアってうれしい。」",
+    "options": [
+      "合",
+      "会",
+      "遭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「合」です。"
+  },
+  {
+    "id": "dou_848",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「帰り道で突然の夕立にアってびしょぬれになった。」",
+    "options": [
+      "遭",
+      "会",
+      "合"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「遭」です。"
+  },
+  {
+    "id": "dou_849",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「遠くの山に積もった白い雪をミる。」",
+    "options": [
+      "見",
+      "観",
+      "診",
+      "看"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「見」です。"
+  },
+  {
+    "id": "dou_850",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「週末に映画館へ行って話題のアニメをミる。」",
+    "options": [
+      "観",
+      "見",
+      "診",
+      "看"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「観」です。"
+  },
+  {
+    "id": "dou_851",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「病院でお医者さんにのどの調子をミてもらう。」",
+    "options": [
+      "診",
+      "見",
+      "観",
+      "看"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「診」です。"
+  },
+  {
+    "id": "dou_852",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「風邪をひいて寝ている妹の世話をミる。」",
+    "options": [
+      "看",
+      "見",
+      "観",
+      "診"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「看」です。"
+  },
+  {
+    "id": "dou_853",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「隣の部屋から楽しそうな話し声がキこえる。」",
+    "options": [
+      "聞",
+      "聴",
+      "効",
+      "利"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「聞」です。"
+  },
+  {
+    "id": "dou_854",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「ホールで美しいオーケストラの演奏をキく。」",
+    "options": [
+      "聴",
+      "聞",
+      "効",
+      "利"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「聴」です。"
+  },
+  {
+    "id": "dou_855",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「この風邪薬はよくキいて、すぐに熱が下がった。」",
+    "options": [
+      "効",
+      "利",
+      "聞",
+      "聴"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「効」です。"
+  },
+  {
+    "id": "dou_856",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「この自転車はブレーキがよくキくので安全だ。」",
+    "options": [
+      "利",
+      "効",
+      "聞",
+      "聴"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「利」です。"
+  },
+  {
+    "id": "dou_857",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「机の上にある消しゴムを手にトる。」",
+    "options": [
+      "取",
+      "採",
+      "撮",
+      "捕"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「取」です。"
+  },
+  {
+    "id": "dou_858",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「山へ行って珍しい高山植物をトる。」",
+    "options": [
+      "採",
+      "取",
+      "撮",
+      "捕"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「採」です。"
+  },
+  {
+    "id": "dou_859",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「修学旅行の記念にみんなで写真をトる。」",
+    "options": [
+      "撮",
+      "取",
+      "採",
+      "捕"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「撮」です。"
+  },
+  {
+    "id": "dou_860",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「網を使って公園の池でザリガニをトる。」",
+    "options": [
+      "捕",
+      "取",
+      "採",
+      "撮"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「捕」です。"
+  },
+  {
+    "id": "dou_861",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「クラス全員で意見がアって方針が決まった。」",
+    "options": [
+      "合",
+      "会",
+      "遭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「合」です。"
+  },
+  {
+    "id": "dou_862",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「冬は部屋の中で暖房がよくキいて暖かい。」",
+    "options": [
+      "利",
+      "効",
+      "聞",
+      "聴"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「利」です。"
+  },
+  {
+    "id": "dou_863",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「新しいルールをクラスでトり入れる。」",
+    "options": [
+      "採",
+      "取",
+      "撮",
+      "捕"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「採」です。"
+  },
+  {
+    "id": "dou_864",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：友人とアう ／ B：交通事故にアう」",
+    "options": [
+      "A：会　B：遭",
+      "A：遭　B：会",
+      "A：合　B：遭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：会　B：遭」です。"
+  },
+  {
+    "id": "dou_865",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：医者が患者をミる ／ B：舞台の劇をミる」",
+    "options": [
+      "A：診　B：観",
+      "A：観　B：診",
+      "A：看　B：見"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：診　B：観」です。"
+  },
+  {
+    "id": "dou_866",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：薬がキく ／ B：鼻がキく」",
+    "options": [
+      "A：効　B：利",
+      "A：利　B：効",
+      "A：聞　B：聴"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：効　B：利」です。"
+  },
+  {
+    "id": "dou_867",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：虫をトる ／ B：ビデオをトる」",
+    "options": [
+      "A：捕　B：撮",
+      "A：撮　B：捕",
+      "A：採　B：取"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：捕　B：撮」です。"
+  },
+  {
+    "id": "dou_868",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "山道で吹雪に【会う】という恐ろしい体験をした。",
+      "二つのパズルのピースがぴったりと【合う】。",
+      "病人を夜通しつきっきりで【看る】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「山道で吹雪に【会う】という恐ろしい体験をした。」です。"
+  },
+  {
+    "id": "dou_869",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "クラシック音楽を静かに目を閉じて【聞く】。",
+      "このハサミは切れ味がよくてとてもよく【利く】。",
+      "テストの点数を数えて合計点を【取る】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「クラシック音楽を静かに目を閉じて【聞く】。」です。"
+  },
+  {
+    "id": "dou_870",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "旅行の思い出に風景をカメラで【採る】。",
+      "アンケートの結果から多数決の意見を【採る】。",
+      "逃げ出した小鳥を網でやさしく【捕る】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「旅行の思い出に風景をカメラで【採る】。」です。"
   }
 ]
