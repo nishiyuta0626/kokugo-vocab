@@ -134,6 +134,20 @@ function stdmAward(pts) { // 実力テスト(100点満点)のstdm付与
   if (pts >= 70) return 100;
   return 10;
 }
+// 実力テストの構成: [カテゴリ, 問数, 配点] 空のカテゴリは自動的に除外
+const POWER_SPEC = [["漢字", 40, 1], ["慣用句", 10, 2], ["四字熟語", 10, 2], ["ことわざ", 10, 2]];
+function powerSpec() { return POWER_SPEC.filter(([c]) => byCat(c).length > 0); }
+function powerWeight(it) { const sp = POWER_SPEC.find(s => s[0] === it.cat); return sp ? sp[2] : 0; }
+function powerScore(ansList) { // 加重得点を100点満点に換算
+  let earned = 0, max = 0;
+  for (const x of ansList) {
+    const it = ITEMS.find(i => i.id === x.id);
+    if (!it) continue;
+    const w = powerWeight(it);
+    max += w; if (x.ok) earned += w;
+  }
+  return max ? Math.round(earned / max * 100) : 0;
+}
 const RUN_VIEWS = new Set(["quizrun", "testrun", "card"]);
 const IDLE_MS = 120000; // 2分無操作でタイムロック
 let lastActivity = Date.now();
@@ -228,7 +242,7 @@ function vHome() {
     `<div class="roomcard ${r.gold ? "gold" : ""}" data-nav="${r.key}">
       <div class="room-ttl">${r.icon} ${r.label}${r.gold && !unlocked ? " 🔒" : ""}</div>
       <div class="muted">${r.desc}</div>
-      ${r.gold ? `<div class="muted small">60問(漢字40・慣用句10・四字熟語10・ことわざ10)・漢字1点/他2点・計100点</div>
+      ${r.gold ? `<div class="muted small">${powerSpec().map(([c, n, p]) => `${c}${Math.min(n, byCat(c).length)}問(${p}点/問)`).join("・")}・100点満点換算</div>
         <div class="muted small">(100点/500stdm　85〜99点/200stdm　70〜84点/100stdm　69点以下/10stdm)</div>
         <div class="muted small">${unlocked
           ? (POWER_ON ? "🔓 解放中(管理者設定)" : "🔓 解放済み！")
@@ -402,12 +416,10 @@ function vTestSetup() {
   const blk = power ? null : ITEMS.slice(view.gs - 1, view.ge);
   return `<div class="card">
     <h2>${power ? "実力テスト" : `テストを始める — No.${view.gs}-${view.ge}`}</h2>
-    ${power ? `<p class="muted">全範囲からランダム出題・計60問100点満点。</p>
+    ${power ? `<p class="muted">全範囲からランダム出題・100点満点換算。</p>
       <table class="awardtbl"><tr><th>カテゴリ</th><th>問数</th><th>配点</th><th>stdm付与</th></tr>
-      <tr><td>漢字読み</td><td>40問</td><td>1点/問</td><td rowspan="4">100点:500<br>85〜99点:200<br>70〜84点:100<br>69点以下:10</td></tr>
-      <tr><td>慣用句</td><td>10問</td><td>2点/問</td></tr>
-      <tr><td>四字熟語</td><td>10問</td><td>2点/問</td></tr>
-      <tr><td>ことわざ</td><td>10問</td><td>2点/問</td></tr></table>`
+      ${powerSpec().map(([c, n, p], i) =>
+        `<tr><td>${esc(c)}</td><td>${Math.min(n, byCat(c).length)}問</td><td>${p}点/問</td>${i === 0 ? `<td rowspan="${powerSpec().length}">100点:500<br>85〜99点:200<br>70〜84点:100<br>69点以下:10</td>` : ""}</tr>`).join("")}</table>`
       : `<p class="muted">${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。</p>`}
     <label class="f">出題形式</label>
     <select id="t_mode">
@@ -540,13 +552,7 @@ function vTestRun() {
 function vTestEnd() {
   const ok = test.answers.filter(a => a.ok).length;
   const pct = Math.round(ok / test.answers.length * 100);
-  const pts = test.kind === "power"
-    ? test.answers.reduce((s2, x) => {
-        if (!x.ok) return s2;
-        const it = ITEMS.find(i => i.id === x.id);
-        return s2 + (it && it.cat === "漢字" ? 1 : 2);
-      }, 0)
-    : null;
+  const pts = test.kind === "power" ? powerScore(test.answers) : null;
   const got = test.kind === "power" ? stdmAward(pts) : 0;
   const passed = test.kind === "test" && pct >= TEST_PASS * 100;
   // 次の枠(合格していれば解放されている)
@@ -872,14 +878,8 @@ document.addEventListener("click", (e) => {
       test.idx++;
       if (test.idx >= test.list.length) {
         const nOk = test.answers.filter(x => x.ok).length;
-        // 実力テスト: 漢字1点・他2点の加重得点(100点満点)でstdm付与
-        const pts = test.kind === "power"
-          ? test.answers.reduce((s2, x) => {
-              if (!x.ok) return s2;
-              const it = ITEMS.find(i => i.id === x.id);
-              return s2 + (it && it.cat === "漢字" ? 1 : 2);
-            }, 0)
-          : null;
+        // 実力テスト: 加重得点を100点満点に換算してstdm付与
+        const pts = test.kind === "power" ? powerScore(test.answers) : null;
         if (test.kind === "power") { stdm += stdmAward(pts); savestdm(); }
         RESULTS.push({
           ts: new Date().toISOString(), kind: test.kind, cat: test.cat,
@@ -937,9 +937,9 @@ document.addEventListener("click", (e) => {
     const power = view.room === "power";
     let p;
     if (power) {
-      // 固定構成60問: 漢字40(1点) + 慣用句/四字熟語/ことわざ 各10(2点) = 100点満点
+      // 固定構成: POWER_SPEC(漢字40・他各10)に従い、存在するカテゴリから出題
       const take = (cat, n) => shuffle([...byCat(cat)]).slice(0, n);
-      p = shuffle(take("漢字", 40).concat(take("慣用句", 10), take("四字熟語", 10), take("ことわざ", 10)));
+      p = shuffle(POWER_SPEC.flatMap(([c, n]) => take(c, n)));
     } else {
       // 50問構成: 範囲から45問以上 + 前の枠の✕を5問以内(先の問題は出ない)
       const blockItems = ITEMS.slice(view.gs - 1, view.ge);
