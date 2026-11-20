@@ -15487,5 +15487,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「根拠」です。"
+  },
+  {
+    "id": "dou_1096",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「一般」",
+    "options": [
+      "特殊",
+      "特別",
+      "専門"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「特殊」です。"
+  },
+  {
+    "id": "dou_1097",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「簡単」",
+    "options": [
+      "複雑",
+      "困難",
+      "面倒"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「複雑」です。"
+  },
+  {
+    "id": "dou_1098",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「勝利」",
+    "options": [
+      "敗北",
+      "失敗",
+      "後退"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「敗北」です。"
+  },
+  {
+    "id": "dou_1099",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「過去」",
+    "options": [
+      "未来",
+      "現在",
+      "将来"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「未来」です。"
+  },
+  {
+    "id": "dou_1100",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「存在」",
+    "options": [
+      "消滅",
+      "不在",
+      "欠如"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「消滅」です。"
+  },
+  {
+    "id": "dou_1101",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「優秀」",
+    "options": [
+      "劣等",
+      "平凡",
+      "普通"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「劣等」です。"
+  },
+  {
+    "id": "dou_1102",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「緊張」",
+    "options": [
+      "緩和",
+      "油断",
+      "安心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「緩和」です。"
+  },
+  {
+    "id": "dou_1103",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「節約」",
+    "options": [
+      "浪費",
+      "消費",
+      "費用"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「浪費」です。"
+  },
+  {
+    "id": "dou_1104",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「肯定」",
+    "options": [
+      "否定",
+      "反対",
+      "拒否"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「否定」です。"
+  },
+  {
+    "id": "dou_1105",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「現実」",
+    "options": [
+      "理想",
+      "空想",
+      "夢幻"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「理想」です。"
+  },
+  {
+    "id": "dou_1106",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「重要」",
+    "options": [
+      "大切",
+      "必要",
+      "重大"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「重大」です。"
+  },
+  {
+    "id": "dou_1107",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「豊富」",
+    "options": [
+      "潤沢",
+      "不足",
+      "貧弱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「潤沢」です。"
+  },
+  {
+    "id": "dou_1108",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「開始」",
+    "options": [
+      "着手",
+      "終了",
+      "完了"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「着手」です。"
+  },
+  {
+    "id": "dou_1109",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「防止」",
+    "options": [
+      "阻止",
+      "促進",
+      "許可"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「阻止」です。"
+  },
+  {
+    "id": "dou_1110",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「保存」",
+    "options": [
+      "保管",
+      "廃棄",
+      "消費"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「保管」です。"
+  },
+  {
+    "id": "dou_1111",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【似た意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "道路",
+      "高低",
+      "読書"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「道路」です。"
+  },
+  {
+    "id": "dou_1112",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【反対の意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "前後",
+      "森林",
+      "頭痛"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「前後」です。"
+  },
+  {
+    "id": "dou_1113",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、上の字が下の字を【修飾する関係】（例：高山＝高い山）になっているものを1つ選びなさい。",
+    "options": [
+      "大国",
+      "地震",
+      "売買"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「大国」です。"
+  },
+  {
+    "id": "dou_1114",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、上の字が【主語】、下の字が【述語】の関係（例：日没＝日が没する）になっているものを1つ選びなさい。",
+    "options": [
+      "頭痛",
+      "登山",
+      "親友"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「頭痛」です。"
+  },
+  {
+    "id": "dou_1115",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、下の字が上の字の【目的語・対象】（例：読書＝書を読む）になっているものを1つ選びなさい。",
+    "options": [
+      "読書",
+      "雪国",
+      "勝敗"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「読書」です。"
+  },
+  {
+    "id": "dou_1116",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（誤用チェック）",
+    "question": "次の文のうち、二字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "特別な道具を使わずに、誰でもできる特殊な方法で解決した。",
+      "絶滅したと思われていた生き物の存在が確認された。",
+      "大切な資料を金庫の中にしっかりと保管する。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「特別な道具を使わずに、誰でもできる特殊な方法で解決した。」です。"
+  },
+  {
+    "id": "dou_1117",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（誤用チェック）",
+    "question": "次の文のうち、二字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "危険な事故が起きないように、みんなで事故を促進しよう。",
+      "新しいプロジェクトの作業にいよいよ着手する。",
+      "緊張していた心がほぐれて、ようやく緩和した。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「危険な事故が起きないように、みんなで事故を促進しよう。」です。"
+  },
+  {
+    "id": "dou_1118",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「一般的なルールだけでなく、例外となる（　）なケースについても確認しておく。」",
+    "options": [
+      "特殊",
+      "普通",
+      "単純"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「特殊」です。"
+  },
+  {
+    "id": "dou_1119",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「恐竜は遠い過去に（　）したため、現在は化石でしかその姿を見ることができない。」",
+    "options": [
+      "消滅",
+      "存在",
+      "誕生"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「消滅」です。"
+  },
+  {
+    "id": "dou_1120",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・類義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「この地域は自然環境が豊かで、きれいな水が（　）に湧き出ている。」",
+    "options": [
+      "潤沢",
+      "貧弱",
+      "不足"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「潤沢」です。"
   }
 ]
