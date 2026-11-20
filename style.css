@@ -149,6 +149,7 @@ label.f { display: block; font-size: 13px; color: var(--sub); margin: 10px 0 2px
 .tile.orange { background: #fde0b8; color: #b45309; }
 .tile.gray { background: #e8ecf1; color: #6b7280; }
 .tile.gold { background: #fde68a; color: #92400e; }
+.tile.locked { opacity: .45; cursor: not-allowed; }
 .tile:hover { filter: brightness(.96); }
 .tile.sel { outline: 3px solid var(--acc); outline-offset: -3px; }
 .cathead { margin: 12px 0 6px; font-size: 15px; }
@@ -172,6 +173,7 @@ label.f { display: block; font-size: 13px; color: var(--sub); margin: 10px 0 2px
 .listrow .t { font-size: 19px; font-weight: 600; min-width: 7em; }
 .listrow .y { color: var(--acc); font-size: 14px; }
 .listrow .m { color: var(--sub); font-size: 13px; flex: 1; }
+.listrow .rank { font-weight: 700; color: var(--acc); min-width: 3.5em; font-size: 14px; }
 .badge {
   display: inline-block; font-size: 11px; border-radius: 6px;
   padding: 1px 6px; margin-left: 6px; vertical-align: middle;

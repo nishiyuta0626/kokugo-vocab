@@ -56,13 +56,19 @@ function applyOverrides() {
 }
 
 // ---------- 記録 ----------
-function rec(id) { return PROGRESS[id] || { c: 0, w: 0, s: 0, last: "" }; }
-function mark(id, ok) {
+function rec(id) { return PROGRESS[id] || { c: 0, w: 0, s: 0, tc: 0, tw: 0, ts: 0, last: "" }; }
+function mark(id, ok, kind) {
   const r = rec(id);
   if (ok) { r.c++; r.s++; } else { r.w++; r.s = 0; }
+  // テスト系は別カウント(クイズ・カードの✕はテストの復習対象にしない)
+  if (kind === "test" || kind === "power") {
+    if (ok) { r.tc++; r.ts++; } else { r.tw++; r.ts = 0; }
+  }
   r.last = new Date().toISOString();
   PROGRESS[id] = r; saveProgress();
 }
+// テストで間違えて未克服(連続2回⭕未満)かどうか
+function testWeak(id) { const r = rec(id); return r.tw > 0 && r.ts < 2; }
 function statusOf(id) {
   const r = rec(id);
   if (r.c === 0 && r.w === 0) return "new";
@@ -265,35 +271,76 @@ function vQuizSetup() {
     <button class="bigbtn" id="q_go" ${selBlocks.size ? "" : "disabled"}>
       クイズを開始${selBlocks.size ? `（${selBlocks.size}枠・最大${selCnt}問）` : "（枠を選択）"}</button>
   </div>
-  ${recentRows("quiz")}`;
+  ${recentRows("quiz")}
+  ${vRanking()}`;
+}
+
+// ---------- よく間違える問題ランキング(30件/ページ・最大300位) ----------
+function vRanking() {
+  const page = view.rpage || 0;
+  const ranked = ITEMS
+    .map(it => ({ it, w: rec(it.id).w }))
+    .filter(x => x.w > 0)
+    .sort((a, b) => b.w - a.w || a.it.text.localeCompare(b.it.text, "ja"))
+    .slice(0, 300);
+  const tabs = Array.from({ length: 10 }, (_, i) =>
+    `<button class="chip ${i === page ? "on" : ""}" data-act="rpage" data-p="${i}">${i * 30 + 1}〜${i * 30 + 30}</button>`).join("");
+  const rows = ranked.slice(page * 30, page * 30 + 30).map((x, i) =>
+    `<div class="listrow">
+      <span class="rank">${page * 30 + i + 1}位</span>
+      <span class="t">${esc(x.it.text)}</span>
+      <span class="y">${esc(x.it.yomi)}</span>
+      <span class="m">✕${x.w}回　${esc(x.it.meaning)}</span>
+    </div>`).join("");
+  return `<div class="card">
+    <h3>よく間違える問題ランキング</h3>
+    ${ranked.length ? `<div class="chips" style="overflow-x:auto;flex-wrap:nowrap">${tabs}</div>${rows || "<p class='muted'>このページはありません</p>"}`
+      : `<p class="muted">まだ間違えた問題がありません。</p>`}
+  </div>`;
 }
 
 // ---------- テストの部屋 ----------
-function vTestPick() { // 結果の部屋と同じ1ページ全タイル
+const TEST_PASS = 0.9; // 90%以上で合格
+function passedBlock(b) {
+  return RESULTS.some(r => r.kind === "test" &&
+    r.range[0] === b.gs && r.range[1] === b.ge && r.ok / r.n >= TEST_PASS);
+}
+function vTestPick() { // 結果の部屋と同じ1ページ全タイル(合格で次へ進む)
+  const blks = globalBlocks();
+  const parts = [];
+  let cur = "";
+  blks.forEach((b, i) => {
+    if (b.cat !== cur) { cur = b.cat; parts.push(`<h4 class="cathead">${esc(b.cat)}</h4><div class="tiles">`); }
+    const s = blockStat(b.blk);
+    const unlocked = i === 0 || passedBlock(blks[i - 1]);
+    const pass = passedBlock(b);
+    parts.push(`<div class="tile ${pass ? "gold" : s.cls}${unlocked ? "" : " locked"}"
+      data-act="${unlocked ? "tblk" : "locked"}"
+      data-cat="${esc(b.cat)}" data-sec="${b.sec}" data-gs="${b.gs}" data-ge="${b.ge}">
+      <div class="muted small">No.${b.gs}-${b.ge}${unlocked ? "" : " 🔒"}</div>
+      <div class="tile-n">${s.done}<span class="muted">/${b.blk.length}</span></div>
+      <div class="tile-l">${pass ? "テスト合格✓" : s.label}${s.weak ? ` / ✕${s.weak}` : ""}</div>
+    </div>`);
+    const next = blks[i + 1];
+    if (!next || next.cat !== cur) parts.push(`</div>`);
+  });
   return `<div class="card">
     <h2>テストを始める</h2>
-    <p class="muted">範囲の枠をタップして選んでください。</p>
-    ${allBlockTiles("tblk")}
+    <p class="muted">テストは50問構成(範囲45問以上＋前の枠の✕を5問以内)。<b>90%以上で合格</b>、合格すると次の枠が開きます。</p>
+    ${parts.join("")}
   </div>
   ${recentRows("test")}`;
 }
 function vTestSetup() {
   const power = view.room === "power";
   const blk = power ? null : ITEMS.slice(view.gs - 1, view.ge);
-  const n = power ? byCat(view.cat).length : blk.length;
   return `<div class="card">
     <h2>${power ? "実力テスト" : `テストを始める — No.${view.gs}-${view.ge}`}</h2>
     <p class="muted">${power
       ? "全範囲からランダム出題。点数に応じてsdnを獲得できます。"
-      : `${esc(view.cat)} No.${view.gs}-${view.ge} から出題します。`}</p>
-    <div class="numrow">
-      <div><label class="f">問題数</label>
-      <select id="t_n">
-        <option>10</option><option>20</option><option>30</option>
-        <option ${n <= 50 && !power ? "selected" : ""} value="${n}">全部(${n})</option>
-        ${power ? '<option selected>30</option><option>50</option><option>100</option>' : ""}
-      </select></div>
-    </div>
+      : `${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。`}</p>
+    ${power ? `<div class="numrow"><div><label class="f">問題数</label>
+      <select id="t_n"><option selected>30</option><option>50</option><option>100</option></select></div></div>` : ""}
     <label class="f">出題形式</label>
     <select id="t_mode">
       <option value="m2t">意味 → 語句を選ぶ</option>
@@ -426,6 +473,11 @@ function vTestEnd() {
   const ok = test.answers.filter(a => a.ok).length;
   const pct = Math.round(ok / test.answers.length * 100);
   const got = test.kind === "power" ? sdnAward(pct) : 0;
+  const passed = test.kind === "test" && pct >= TEST_PASS * 100;
+  // 次の枠(合格していれば解放されている)
+  const blks = globalBlocks();
+  const curIdx = blks.findIndex(b => b.gs === test.range[0] && b.ge === test.range[1]);
+  const next = curIdx >= 0 ? blks[curIdx + 1] : null;
   const wrongs = test.answers.filter(a => !a.ok)
     .map(a => ITEMS.find(i => i.id === a.id)).filter(Boolean);
   const rows = wrongs.map(it =>
@@ -433,11 +485,13 @@ function vTestEnd() {
      <span class="y">${esc(it.yomi)}</span><span class="m">${esc(it.meaning)}</span></div>`).join("");
   return `<div class="card">
     <h2>${test.kind === "power" ? "実力テスト" : "テスト"}結果: ${ok} / ${test.answers.length} 問正解(${pct}点)</h2>
+    ${test.kind === "test" ? `<p style="font-size:20px;font-weight:700;color:${passed ? "#16a34a" : "var(--ng)"}">${passed ? "合格！次の枠が解放されました" : `不合格(合格は${TEST_PASS * 100}%以上)`}</p>` : ""}
     ${got ? `<p class="sdn">+${got} sdn 獲得！(所有: ${SDN} sdn)</p>` : ""}
     ${wrongs.length ? `<h3>間違えた問題 (${wrongs.length})</h3>${rows}
       <div class="btnrow"><button class="primary" data-act="retry" data-src="test">間違えた問題だけクイズで練習</button></div>` : `<p>全問正解！</p>`}
     <div class="btnrow">
-      <button data-act="tosetup">もう一度</button>
+      ${passed && next ? `<button class="primary" data-act="nexttest" data-gs="${next.gs}" data-ge="${next.ge}" data-cat="${esc(next.cat)}" data-sec="${next.sec}">次のテストへ →</button>` : ""}
+      <button data-act="tosetup">${test.kind === "power" ? "もう一度" : "枠の選択へ"}</button>
       <button data-nav="result">結果の部屋へ</button>
       <button data-nav="home">ホームへ</button>
     </div>
@@ -603,6 +657,13 @@ document.addEventListener("click", (e) => {
       go("testsetup", { room: "test", cat: a.dataset.cat,
         sec: +a.dataset.sec, gs: +a.dataset.gs, ge: +a.dataset.ge });
     }
+    else if (act === "nexttest") {
+      go("testsetup", { room: "test", cat: a.dataset.cat,
+        sec: +a.dataset.sec, gs: +a.dataset.gs, ge: +a.dataset.ge });
+    }
+    else if (act === "locked") {
+      toast("🔒 前の枠のテストに合格(90%以上)すると開きます");
+    }
     else if (act === "tile") {
       go("list", { room: "jisho", cat: a.dataset.cat, sec: +a.dataset.sec, kw: "", filt: "" });
     }
@@ -625,7 +686,7 @@ document.addEventListener("click", (e) => {
     else if (act === "flip") { cardSet.flipped = !cardSet.flipped; render(); }
     else if (act === "skip") { cardSet.flipped = false; cardSet.idx++; render(); }
     else if (act === "mark") {
-      mark(cardSet.list[cardSet.idx].id, a.dataset.ok === "1");
+      mark(cardSet.list[cardSet.idx].id, a.dataset.ok === "1", "card");
       cardSet.flipped = false; cardSet.idx++;
       if (cardSet.idx >= cardSet.list.length) go("card"); else render();
     }
@@ -634,7 +695,7 @@ document.addEventListener("click", (e) => {
       const ok = pick === quiz.cur.answer;
       quiz.judged = { ok };
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
-      mark(quiz.list[quiz.idx].id, ok);
+      mark(quiz.list[quiz.idx].id, ok, "quiz");
       document.querySelectorAll(".choice").forEach((b, i) => {
         const v = quiz.cur.options[i];
         if (v === quiz.cur.answer) b.classList.add("hit");
@@ -660,7 +721,7 @@ document.addEventListener("click", (e) => {
       const pick = test.cur.options[+a.dataset.i];
       const ok = pick === test.cur.answer;
       test.answers.push({ id: test.list[test.idx].id, ok });
-      mark(test.list[test.idx].id, ok);
+      mark(test.list[test.idx].id, ok, test.kind);
       test.idx++;
       if (test.idx >= test.list.length) {
         const nOk = test.answers.filter(x => x.ok).length;
@@ -684,6 +745,7 @@ document.addEventListener("click", (e) => {
         pool: ITEMS, cat: wrongs[0].cat, range: [1, wrongs.length] };
       go("quizrun");
     }
+    else if (act === "rpage") { view.rpage = +a.dataset.p; render(); }
     else if (act === "rdetail") go("resultdetail", { idx: +a.dataset.i, room: "result" });
     else if (act === "rdel") {
       if (confirm("この記録を削除しますか？")) {
@@ -727,14 +789,23 @@ document.addEventListener("click", (e) => {
   if (e.target.id === "t_go") {
     const mode = $("#t_mode").value;
     const power = view.room === "power";
-    const nQ = +$("#t_n").value || 50;
-    const src = power ? byCat(view.cat || null) : ITEMS.slice(view.gs - 1, view.ge);
-    let p = shuffle([...src]).slice(0, nQ);
+    let p;
+    if (power) {
+      p = shuffle([...byCat(view.cat || null)]).slice(0, +$("#t_n").value || 30);
+    } else {
+      // 50問構成: 範囲から45問以上 + 前の枠の✕を5問以内(先の問題は出ない)
+      const blockItems = ITEMS.slice(view.gs - 1, view.ge);
+      const earlierWrongs = ITEMS.slice(0, view.gs - 1)
+        .filter(i => testWeak(i.id)); // クイズ・カードの✕は混入しない
+      const review = shuffle([...earlierWrongs]).slice(0, 5);
+      const nRange = Math.min(blockItems.length, 50 - review.length);
+      p = shuffle(shuffle([...blockItems]).slice(0, nRange).concat(review));
+    }
     if (p.length < 4) { toast("4件以上必要です"); return; }
     test = { list: p, idx: 0, mode, answers: [],
-      pool: power ? src : ITEMS,
+      pool: ITEMS,
       cat: power ? (view.cat || "全カテゴリ") : view.cat,
-      range: power ? [1, src.length] : [view.gs, view.ge],
+      range: power ? [1, byCat(view.cat || null).length] : [view.gs, view.ge],
       kind: power ? "power" : "test" };
     go("testrun");
   }
