@@ -27,7 +27,7 @@ SEC_DESC = {
 }
 
 PROMPT = """最初の画像は漢検{g}級の検定問題、後の画像はその標準解答です。
-「{desc}」の問題を**すべて**抽出してください(省略・抜け禁止)。
+「{desc}」の問題を**すべて**抽出してください(通常この大問には15〜30問あります。省略・抜けは厳禁。1問も残さず全部出してください)。
 
 各項目 {{"text": "...", "yomi": "..."}} を JSONオブジェクト {{"items": [...]}} のみで出力。
 - {rule}
@@ -90,7 +90,7 @@ def main():
     out = {}
     if OUT.exists():
         out = json.loads(OUT.read_text(encoding="utf-8"))
-    for g in (5, 6, 7):
+    for g in (4,):
         imgs = pdf_pngs(DATA / f"kanken_{g}m_3.pdf") + \
                pdf_pngs(DATA / f"kanken_{g}k_3.pdf")
         for sec in ("yomi", "kaki"):
