@@ -11226,5 +11226,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「レモンの汁を調べたら強い【賛成】を示した。」です。"
+  },
+  {
+    "id": "dou_796",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「テストの難問に正しいカイトウを記入する。」",
+    "options": [
+      "解答",
+      "回答",
+      "解凍"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「解答」です。"
+  },
+  {
+    "id": "dou_797",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「アンケートの質問にすべてカイトウして提出する。」",
+    "options": [
+      "回答",
+      "解答",
+      "解凍"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「回答」です。"
+  },
+  {
+    "id": "dou_798",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「冷凍庫から出した肉を電子レンジでカイトウする。」",
+    "options": [
+      "解凍",
+      "解答",
+      "回答"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「解凍」です。"
+  },
+  {
+    "id": "dou_799",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「機械にイジョウがないか出発前に点検する。」",
+    "options": [
+      "異常",
+      "異状",
+      "以上"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「異常」です。"
+  },
+  {
+    "id": "dou_800",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「台風によるイジョウな大雨が降り続いている。」",
+    "options": [
+      "異常",
+      "異状",
+      "以上"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「異常」です。"
+  },
+  {
+    "id": "dou_801",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「時間をコウリツよく使って宿題を終わらせる。」",
+    "options": [
+      "効率",
+      "公立",
+      "高率"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「効率」です。"
+  },
+  {
+    "id": "dou_802",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「兄は地元のコウリツ中学校に通っている。」",
+    "options": [
+      "公立",
+      "効率",
+      "高率"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「公立」です。"
+  },
+  {
+    "id": "dou_803",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「自転車の安全運転に関するキテイを守る。」",
+    "options": [
+      "規定",
+      "既定",
+      "基底"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「規定」です。"
+  },
+  {
+    "id": "dou_804",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「遠足はキテイの方針どおり来週実施される。」",
+    "options": [
+      "既定",
+      "規定",
+      "基底"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「既定」です。"
+  },
+  {
+    "id": "dou_805",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「新しいプロジェクトのキカクを立てて発表する。」",
+    "options": [
+      "企画",
+      "規格",
+      "気格"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「企画」です。"
+  },
+  {
+    "id": "dou_806",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「国のキカクに合った安全な製品を工場で作る。」",
+    "options": [
+      "規格",
+      "企画",
+      "気格"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「規格」です。"
+  },
+  {
+    "id": "dou_807",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「試合の開始を告げるアイズが鳴り響く。」",
+    "options": [
+      "合図",
+      "会図",
+      "相図"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「合図」です。"
+  },
+  {
+    "id": "dou_808",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「歴史上の人物のコウセキを調べてまとめる。」",
+    "options": [
+      "功績",
+      "航跡",
+      "鉱石"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「功績」です。"
+  },
+  {
+    "id": "dou_809",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「山から掘り出したコウセキから金属を取り出す。」",
+    "options": [
+      "鉱石",
+      "功績",
+      "航跡"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鉱石」です。"
+  },
+  {
+    "id": "dou_810",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「友達の誕生日会にショウタイされて出かける。」",
+    "options": [
+      "招待",
+      "正体",
+      "状態"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「招待」です。"
+  },
+  {
+    "id": "dou_811",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「物語の最後に、怪盗のショウタイが明らかになる。」",
+    "options": [
+      "正体",
+      "招待",
+      "状態"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「正体」です。"
+  },
+  {
+    "id": "dou_812",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：算数の問題にカイトウする ／ B：質問用紙にカイトウする」",
+    "options": [
+      "A：解答　B：回答",
+      "A：回答　B：解答",
+      "A：解凍　B：回答"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：解答　B：回答」です。"
+  },
+  {
+    "id": "dou_813",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：コウリツの良い勉強法 ／ B：コウリツの図書館」",
+    "options": [
+      "A：効率　B：公立",
+      "A：公立　B：効率",
+      "A：高率　B：公立"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：効率　B：公立」です。"
+  },
+  {
+    "id": "dou_814",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：イベントをキカクする ／ B：キカクどおりの部品」",
+    "options": [
+      "A：企画　B：規格",
+      "A：規格　B：企画",
+      "A：気格　B：規格"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：企画　B：規格」です。"
+  },
+  {
+    "id": "dou_815",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：偉人のコウセキをたたえる ／ B：珍しいコウセキを採集する」",
+    "options": [
+      "A：功績　B：鉱石",
+      "A：鉱石　B：功績",
+      "A：航跡　B：鉱石"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：功績　B：鉱石」です。"
+  },
+  {
+    "id": "dou_816",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "計算ドリルの答え合わせをして正しい【回答】を確かめる。",
+      "冷凍した魚を冷蔵庫でゆっくり【解凍】する。",
+      "新しい文化祭のイベントをクラス全員で【企画】した。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「計算ドリルの答え合わせをして正しい【回答】を確かめる。」です。"
+  },
+  {
+    "id": "dou_817",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "この学校は市が運営している【効率】の小学校だ。",
+      "科学の発展に大きく貢献した博士の【功績】を学ぶ。",
+      "スタートの【合図】に合わせて一斉に走り出した。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「この学校は市が運営している【効率】の小学校だ。」です。"
+  },
+  {
+    "id": "dou_818",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "パーティーに【正体】されたのでプレゼントを持っていく。",
+      "今のところ健康【状態】にまったく問題はない。",
+      "季節外れの【異常】な暑さが続いて体調を崩しやすい。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「パーティーに【正体】されたのでプレゼントを持っていく。」です。"
+  },
+  {
+    "id": "dou_819",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "美術の時間に粘土で動物を【製作】した。",
+      "国民の権利は法律によってしっかりと【保障】されている。",
+      "明日は【快晴】の予報なので遠足が楽しみだ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「美術の時間に粘土で動物を【製作】した。」です。"
+  },
+  {
+    "id": "dou_820",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "図書館の本を傷つけないように大切に【観賞】する。",
+      "飛行機が離陸する前に【機体】の安全を確認する。",
+      "努力した【過程】そのものに大きな価値がある。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「図書館の本を傷つけないように大切に【観賞】する。」です。"
   }
 ]
