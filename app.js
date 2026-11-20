@@ -342,7 +342,7 @@ function vQuizSetup() {
       <option value="new">未学習のみ</option>
       <option value="weak">苦手のみ</option>
     </select>
-    <p class="muted small">出題形式: 漢字は読み・その他は意味から語句を4択で選ぶ（選択肢は毎回シャッフル）</p>
+    <p class="muted small">出題形式: 漢字は読みを入力・その他は「意味→語句」「語句→意味」の4択（選択肢は毎回シャッフル）</p>
     <button class="bigbtn" id="q_go">クイズを開始（50問・${nBlocks}単元から）</button>
     <button class="ghost" id="q_card" style="margin-top:8px">🃏 カードめくりで学習</button>
   </div>
@@ -416,7 +416,7 @@ function vTestSetup() {
       ${powerSpec().map(([c, n, p], i) =>
         `<tr><td>${esc(c)}</td><td>${Math.min(n, byCat(c).length)}問</td><td>${p}点/問</td>${i === 0 ? `<td rowspan="${powerSpec().length}">100点:500<br>85〜99点:200<br>70〜84点:100<br>69点以下:10</td>` : ""}</tr>`).join("")}</table>`
       : `<p class="muted">${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。</p>`}
-    <p class="muted small">出題形式: 漢字は読み・その他は意味から語句を4択で選ぶ（選択肢は毎回シャッフル）</p>
+    <p class="muted small">出題形式: 漢字は読みを入力・その他は「意味→語句」「語句→意味」の4択（選択肢は毎回シャッフル）</p>
     <button class="bigbtn" id="t_go">テストを開始</button>
     <div class="btnrow"><button class="ghost" data-act="quit">${power ? "← ホームへ" : "← 範囲選択へ"}</button></div>
   </div>
@@ -425,16 +425,17 @@ function vTestSetup() {
 
 // ---------- 4択クイズ実行 ----------
 function makeChoices(it, mode, poolAll) {
-  const key = mode === "t2y" ? "yomi" : "text";
+  const key = mode === "t2y" ? "yomi" : mode === "t2m" ? "meaning" : "text";
   const cand = shuffle(poolAll.filter(x => x.id !== it.id && x.cat === it.cat && x[key] && x[key] !== it[key]));
   const seen = new Set([it[key]]);
   const picks = [it];
   for (const c of cand) { if (picks.length >= 4) break; if (!seen.has(c[key])) { seen.add(c[key]); picks.push(c); } }
-  const options = shuffle(picks.slice(0, 4)).map(x => ({ v: x[key], yomi: x.yomi }));
+  const options = shuffle(picks.slice(0, 4)).map(x => ({ v: x[key], yomi: key === "text" ? x.yomi : x[key] }));
   return { options, answer: it[key] };
 }
 function qPrompt(it, mode) {
   if (mode === "m2t") return `<div class="q-prompt"><b>意味:</b> ${esc(it.meaning)}</div>`;
+  if (mode === "t2m") return `<div class="q-surface">${esc(it.text)}</div><div class="center muted">${esc(it.yomi)}</div><div class="center muted">意味を選んでください</div>`;
   if (mode === "t2y") return `<div class="q-surface">${esc(it.text)}</div><div class="center muted">読み方を選んでください</div>`;
   if (mode === "tyin") return `<div class="q-surface">${esc(it.text)}</div><div class="center muted">読み方をひらがなで入力してください</div>`;
   return `<div class="q-surface">${esc(it.yomi)}</div><div class="center muted">この読みの語句を選んでください</div>`;
@@ -447,12 +448,17 @@ function normYomi(s) {
     .replace(/[\s　]/g, "");
 }
 
-// 漢字カテゴリは「漢字→読み入力」の記述式に自動切替
+// 漢字カテゴリは「漢字→読み入力」の記述式に自動切替。
+// 漢字以外は「意味→語句(m2t)」と「語句→意味(t2m)」をランダムに混ぜる。
 function itemMode(it, mode) { return it.cat === "漢字" ? "tyin" : mode; }
+function pickModes(list) {
+  return list.map(i => i.cat === "漢字" ? "tyin" : (Math.random() < 0.5 ? "t2m" : "m2t"));
+}
+function qMode(obj, it, idx, mode) { return (obj.modes && obj.modes[idx]) || itemMode(it, mode); }
 function vQuizRun() {
   const { list, idx, mode } = quiz;
   const it = list[idx];
-  const imode = itemMode(it, mode);
+  const imode = qMode(quiz, it, idx, mode);
   const { options, answer } = imode === "tyin"
     ? { options: [], answer: it.yomi }
     : makeChoices(it, imode, quiz.pool);
@@ -543,7 +549,7 @@ function vCard() {
 function vTestRun() {
   const { list, idx, mode } = test;
   const it = list[idx];
-  const imode = itemMode(it, mode);
+  const imode = qMode(test, it, idx, mode);
   const { options, answer } = imode === "tyin"
     ? { options: [], answer: it.yomi }
     : makeChoices(it, imode, test.pool);
@@ -924,6 +930,7 @@ document.addEventListener("click", (e) => {
       const wrongs = ids.map(id => ITEMS.find(i => i.id === id)).filter(Boolean);
       if (!wrongs.length) { toast("対象がありません"); return; }
       quiz = { list: wrongs, idx: 0, mode: "m2t", answers: [], judged: null,
+        modes: pickModes(wrongs),
         pool: ITEMS, cat: wrongs[0].cat, range: [1, wrongs.length] };
       go("quizrun");
     }
@@ -954,6 +961,7 @@ document.addEventListener("click", (e) => {
     }
     if (p.length < 4) { toast("4件以上必要です"); return; }
     quiz = { list: p, idx: 0, mode, answers: [], judged: null,
+      modes: pickModes(p),
       pool: ITEMS, cat: scope || "全カテゴリ",
       range: [blks[0]?.gs ?? 1, blks[blks.length - 1]?.ge ?? ITEMS.length] };
     go("quizrun");
@@ -977,6 +985,7 @@ document.addEventListener("click", (e) => {
     }
     if (p.length < 4) { toast("4件以上必要です"); return; }
     test = { list: p, idx: 0, mode, answers: [],
+      modes: pickModes(p),
       pool: ITEMS,
       cat: power ? "全カテゴリ" : view.cat,
       range: power ? [1, ITEMS.length] : [view.gs, view.ge],
