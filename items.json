@@ -13012,5 +13012,360 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「病気の父に【替えて】私が買い物に出かけた。」です。"
+  },
+  {
+    "id": "dou_921",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「需要」",
+    "options": [
+      "供給",
+      "提供",
+      "消費"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「供給」です。"
+  },
+  {
+    "id": "dou_922",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「原因」",
+    "options": [
+      "結果",
+      "理由",
+      "経過"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「結果」です。"
+  },
+  {
+    "id": "dou_923",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「具体的」",
+    "options": [
+      "抽象的",
+      "一般的",
+      "客観的"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「抽象的」です。"
+  },
+  {
+    "id": "dou_924",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「主観」",
+    "options": [
+      "客観",
+      "観察",
+      "直観"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「客観」です。"
+  },
+  {
+    "id": "dou_925",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「積極的」",
+    "options": [
+      "消極的",
+      "否定的",
+      "受動的"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「消極的」です。"
+  },
+  {
+    "id": "dou_926",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「肯定」",
+    "options": [
+      "否定",
+      "決定",
+      "安定"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「否定」です。"
+  },
+  {
+    "id": "dou_927",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「理想」",
+    "options": [
+      "現実",
+      "空想",
+      "事実"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「現実」です。"
+  },
+  {
+    "id": "dou_928",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「偶然」",
+    "options": [
+      "必然",
+      "当然",
+      "自然"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「必然」です。"
+  },
+  {
+    "id": "dou_929",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「緊張」",
+    "options": [
+      "緩和",
+      "安心",
+      "油断"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「緩和」です。"
+  },
+  {
+    "id": "dou_930",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「節約」",
+    "options": [
+      "浪費",
+      "消費",
+      "費用"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「浪費」です。"
+  },
+  {
+    "id": "dou_931",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「開始」",
+    "options": [
+      "出発",
+      "終了",
+      "継続"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「出発」です。"
+  },
+  {
+    "id": "dou_932",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「変化」",
+    "options": [
+      "推移",
+      "維持",
+      "固定"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「推移」です。"
+  },
+  {
+    "id": "dou_933",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「援助」",
+    "options": [
+      "支援",
+      "妨害",
+      "依頼"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「支援」です。"
+  },
+  {
+    "id": "dou_934",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「承諾」",
+    "options": [
+      "了解",
+      "拒絶",
+      "質問"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「了解」です。"
+  },
+  {
+    "id": "dou_935",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「蓄積」",
+    "options": [
+      "貯蔵",
+      "消費",
+      "分散"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「貯蔵」です。"
+  },
+  {
+    "id": "dou_936",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「輸出 ⇔ 輸（　）」",
+    "options": [
+      "入",
+      "来",
+      "着",
+      "受"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「入」です。"
+  },
+  {
+    "id": "dou_937",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「生産 ⇔ （　）費」",
+    "options": [
+      "消",
+      "使",
+      "減",
+      "浪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「消」です。"
+  },
+  {
+    "id": "dou_938",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「長所 ⇔ （　）所」",
+    "options": [
+      "短",
+      "欠",
+      "弱",
+      "悪"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「短」です。"
+  },
+  {
+    "id": "dou_939",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「賛成 ⇔ （　）対」",
+    "options": [
+      "反",
+      "非",
+      "不",
+      "異"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「反」です。"
+  },
+  {
+    "id": "dou_940",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「増加 ⇔ （　）少」",
+    "options": [
+      "減",
+      "縮",
+      "低",
+      "小"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「減」です。"
+  },
+  {
+    "id": "dou_941",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「供給」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "需要",
+      "要求",
+      "注文"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「需要」です。"
+  },
+  {
+    "id": "dou_942",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「消極的」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "積極的",
+      "活動的",
+      "意欲的"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「積極的」です。"
+  },
+  {
+    "id": "dou_943",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「浪費」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "節約",
+      "貯金",
+      "倹約"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「節約」です。"
+  },
+  {
+    "id": "dou_944",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「物語の感想を個人の（　）だけでなく、データに基づく客観的な視点からも分析する。」",
+    "options": [
+      "主観",
+      "直観",
+      "印象"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「主観」です。"
+  },
+  {
+    "id": "dou_945",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「抽象的な説明ばかりで分かりにくかったので、もっと（　）な例を挙げて話した。」",
+    "options": [
+      "具体的",
+      "一般的",
+      "専門的"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「具体的」です。"
   }
 ]
