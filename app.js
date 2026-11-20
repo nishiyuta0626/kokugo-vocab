@@ -342,14 +342,9 @@ function vQuizSetup() {
       <option value="new">未学習のみ</option>
       <option value="weak">苦手のみ</option>
     </select>
-    <label class="f">出題形式</label>
-    <select id="q_mode">
-      <option value="m2t">意味 → 語句を選ぶ</option>
-      <option value="t2y">語句 → 読みを選ぶ</option>
-      <option value="y2t">読み → 語句を選ぶ</option>
-      <option value="card">カードめくり(自学習)</option>
-    </select>
+    <p class="muted small">出題形式: 意味を見て語句を4択から選ぶ（選択肢は毎回シャッフル）</p>
     <button class="bigbtn" id="q_go">クイズを開始（50問・${nBlocks}単元から）</button>
+    <button class="ghost" id="q_card" style="margin-top:8px">🃏 カードめくりで学習</button>
   </div>
   ${recentRows("quiz")}
   ${vRanking()}`;
@@ -421,12 +416,7 @@ function vTestSetup() {
       ${powerSpec().map(([c, n, p], i) =>
         `<tr><td>${esc(c)}</td><td>${Math.min(n, byCat(c).length)}問</td><td>${p}点/問</td>${i === 0 ? `<td rowspan="${powerSpec().length}">100点:500<br>85〜99点:200<br>70〜84点:100<br>69点以下:10</td>` : ""}</tr>`).join("")}</table>`
       : `<p class="muted">${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。</p>`}
-    <label class="f">出題形式</label>
-    <select id="t_mode">
-      <option value="m2t">意味 → 語句を選ぶ</option>
-      <option value="t2y">語句 → 読みを選ぶ</option>
-      <option value="y2t">読み → 語句を選ぶ</option>
-    </select>
+    <p class="muted small">出題形式: 意味を見て語句を4択から選ぶ（選択肢は毎回シャッフル）</p>
     <button class="bigbtn" id="t_go">テストを開始</button>
     <div class="btnrow"><button class="ghost" data-act="quit">${power ? "← ホームへ" : "← 範囲選択へ"}</button></div>
   </div>
@@ -915,8 +905,8 @@ document.addEventListener("click", (e) => {
       }
     }
   }
-  if (e.target.id === "q_go") {
-    const mode = $("#q_mode").value;
+  if (e.target.id === "q_go" || e.target.id === "q_card") {
+    const mode = e.target.id === "q_card" ? "card" : "m2t";
     const filt = $("#q_filt").value;
     const scope = view.qscope ?? "";
     const blks = globalBlocks().filter(b => !scope || b.cat === scope);
@@ -933,7 +923,7 @@ document.addEventListener("click", (e) => {
     go("quizrun");
   }
   if (e.target.id === "t_go") {
-    const mode = $("#t_mode").value;
+    const mode = "m2t";
     const power = view.room === "power";
     let p;
     if (power) {
