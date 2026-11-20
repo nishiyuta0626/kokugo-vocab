@@ -27,9 +27,17 @@ GitHub Pages等の静的ホスティングにそのまま置ける。
 ## データ仕様
 
 items.json: `[{id, cat, text, yomi, meaning, example, level, image?}]`
-- cat: 四字熟語 / 慣用句 / ことわざ / 漢字
+- cat: 四字熟語 / 慣用句 / ことわざ / 漢字 / 国語文法
 - level: 頻出度 S/A/B/C
 - 克服ルール: ❌のあと連続2回⭕で克服(小春アプリと同じ)
+
+## 50日・4周プラン / stdm
+
+- `kv_sched_v1`: {start, base, items:{id:{cc,w,fast,plat}}, days:{date:{clears,seen,quota,bonus}}}
+  - cc 0〜4で周管理。1〜3周を全て正解かつ各3秒以内 → 💎プラチナ(4周目免除)
+  - 1日ノルマ=その日初アクセス時に 残りクリア数÷残り日数 で確定。先取りで翌日以降が軽くなる
+- `kv_earn_v1`: stdm増減履歴 {ts,day,amount,label}。10問セット+10 / ノルマ達成+100
+- ホーム最上部のstdmカード: 残高カウントアップ表示・タップで獲得履歴(earnlog画面)
 
 ## 関連プロジェクト
 

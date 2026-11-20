@@ -215,7 +215,29 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 
 .stdmbar{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;border-radius:14px;padding:12px 16px;font-size:15px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(124,58,237,.25)}
 .stdmbar b{font-size:24px;font-weight:800}
+.stdmbar.bigstdm{cursor:pointer;gap:14px;padding:16px 18px}
+.stdmbar.bigstdm:hover{filter:brightness(1.06)}
+.stdmbar .coin{font-size:34px}
+.stdmmain{flex:1;min-width:0}
+#stdmnum{font-size:34px;font-weight:800;letter-spacing:.5px}
+.stdmunit{font-size:14px;margin-left:6px;opacity:.85}
+.stdmsub{font-size:13px;opacity:.92;margin-top:2px}
+.stdmgo{white-space:nowrap;font-size:14px;opacity:.9}
 
 .fyomi{display:block;font-size:12px;color:#6b7280;font-weight:400;margin-top:3px;letter-spacing:.5px}
+
+/* 50日・4周プラン */
+.schedcard { border: 2px solid #c7d2fe; }
+.bar { height: 10px; background: var(--line); border-radius: 6px; overflow: hidden; margin: 6px 0; }
+.bar.big { height: 14px; }
+.bar > i { display: block; height: 100%; background: linear-gradient(90deg,#6366f1,#7c3aed); border-radius: 6px; }
+.sched-ahead { color: #b45309; font-weight: 700; margin: 8px 0 0; }
+.mission { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
+.mission-l { min-width: 130px; display: flex; flex-direction: column; }
+.mission-m { flex: 1; display: flex; align-items: center; gap: 8px; }
+.mission-m .bar { flex: 1; margin: 0; }
+.mission .mdone { color: #16a34a; font-weight: 700; }
+.mission button { white-space: nowrap; }
+@media (max-width: 560px) { .mission { flex-wrap: wrap; } .mission-m { flex-basis: 100%; order: 3; } }
 .textin{display:block;width:100%;max-width:420px;margin:14px auto;padding:14px;font-size:22px;text-align:center;border:2px solid var(--line);border-radius:12px;font-family:inherit}
 .textin:focus{outline:none;border-color:var(--acc)}

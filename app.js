@@ -15,6 +15,8 @@ const LS_stdm = "kv_stdm_v1";
 const LS_TIME = "kv_study_time_v1";
 const LS_POWER = "kv_power_unlock_v1";
 const LS_ADJUST = "kv_stdm_adjust_v1";
+const LS_SCHED = "kv_sched_v1";
+const LS_EARN = "kv_earn_v1";
 const SEC_SIZE = 50;
 // 全体通し番号のカテゴリ順(1〜漢字→慣用句→四字熟語→ことわざ)
 const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
@@ -31,7 +33,7 @@ const ROOMS = [
   { key: "power", label: "実力テストの部屋", icon: "🏆", gold: true,
     desc: "全範囲ランダム・点数に応じてstdm付与" },
 ];
-const KIND_JP = { quiz: "クイズ", test: "テスト", power: "実力テスト" };
+const KIND_JP = { quiz: "クイズ", test: "テスト", power: "実力テスト", sched: "50日プラン" };
 
 let ITEMS = [];
 let PROGRESS = {};   // id -> {c,w,s,tc,tw,ts,last}
@@ -44,6 +46,11 @@ let POWER_ON = false; // 管理者の実力テスト解放スイッチ
 // 2分勉強 = 1stdm
 let study = { day: "", sec: 0, total: 0, paidStdm: 0 };
 let ADJUSTS = []; // {ts,amount,memo} stdm手動増減ログ
+// 50日・4周プラン: {start:"YYYY-MM-DD", base:1日基準ノルマ,
+//   items:{id:{cc,w,fast,plat}}, days:{"Y-M-D":{clears,seen:[ids]}}}
+let SCHED = { start: "", base: 0, items: {}, days: {} };
+let EARN = [];       // {ts,day,amount,label} stdm増減履歴
+let lastStdmShown = 0; // ホーム表示のカウントアップ起点
 let runStartTotal = 0; // 実行開始時点の累計勉強秒(セッション使用時間の算出用)
 let view = { name: "home" };
 let quiz = null;     // {list,idx,mode,answers,judged,pool,cat,range}
@@ -61,6 +68,24 @@ const saveHidden = () => localStorage.setItem(LS_HIDDEN, JSON.stringify(HIDDEN))
 const savestdm = () => localStorage.setItem(LS_stdm, String(stdm));
 const savePower = () => localStorage.setItem(LS_POWER, POWER_ON ? "1" : "0");
 const saveStudy = () => localStorage.setItem(LS_TIME, JSON.stringify(study));
+const saveSched = () => localStorage.setItem(LS_SCHED, JSON.stringify(SCHED));
+const saveEarn = () => localStorage.setItem(LS_EARN, JSON.stringify(EARN));
+// stdm増減＋履歴記録(merge指定時は同日・同ラベルの直近行に集約)
+function stdmEarn(amount, label, merge) {
+  stdm = Math.max(0, stdm + amount); savestdm();
+  const k = todayStr();
+  if (merge) {
+    const last = EARN[EARN.length - 1];
+    if (last && last.day === k && last.label === label) { last.amount += amount; saveEarn(); return; }
+  }
+  EARN.push({ ts: new Date().toISOString(), day: k, amount, label });
+  if (EARN.length > 500) EARN.splice(0, EARN.length - 500);
+  saveEarn();
+}
+function earnToday() {
+  const k = todayStr();
+  return EARN.filter(x => x.day === k && x.amount > 0).reduce((a, x) => a + x.amount, 0);
+}
 function applyOverrides() {
   for (const it of ITEMS) {
     const o = OVERRIDES[it.id];
@@ -177,7 +202,7 @@ function studyTick() {
   if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }
   study.sec += dt / 1000; study.total += dt / 1000;
   const earned = Math.floor(study.total / 120); // 2分=1stdm
-  if (earned > study.paidStdm) { stdm += earned - study.paidStdm; study.paidStdm = earned; savestdm(); }
+  if (earned > study.paidStdm) { stdmEarn(earned - study.paidStdm, "勉強時間", true); study.paidStdm = earned; }
   saveStudy();
 }
 function fmtStudy() {
@@ -198,13 +223,185 @@ function blockStat(blk) {
   return { cls: "orange", label: "いまいち", done, weak };
 }
 
+// ---------- 50日・4周スケジュール ----------
+// 各問題は clear_count(cc:0〜4)を持ち、正解ごとに+1。
+// 1〜3周をすべて正解かつ各3秒以内の即答なら「完全定着(プラチナ)」=4周目を免除。
+// 1日のノルマは「残りクリア数÷残り日数」で毎日自動再計算し、
+// 未達や先取りは翌日以降に平準化される。
+const SCHED_DAYS = 50;
+function isoDay() {
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+function schedElapsed() { // 開始日からの経過日数(開始当日=0)
+  if (!SCHED.start) return 0;
+  const s = new Date(SCHED.start + "T00:00:00");
+  const t = new Date(); t.setHours(0, 0, 0, 0);
+  return Math.max(0, Math.round((t - s) / 86400000));
+}
+function schedDone() { // 累計クリア数(プラチナはcc4として済)
+  let n = 0;
+  for (const id in SCHED.items) n += Math.min(4, SCHED.items[id].cc || 0);
+  return n;
+}
+function schedToday() { // 当日レコード(初アクセス時にその日のノルマを確定)
+  const k = todayStr();
+  let d = SCHED.days[k];
+  if (!d) {
+    const daysLeft = Math.max(1, SCHED_DAYS - schedElapsed());
+    const remain = Math.max(0, ITEMS.length * 4 - schedDone());
+    d = SCHED.days[k] = { clears: 0, seen: [], quota: Math.ceil(remain / daysLeft) };
+    saveSched();
+  }
+  return d;
+}
+function schedStatus() {
+  const total = ITEMS.length * 4;
+  const base = SCHED.base || Math.ceil(total / SCHED_DAYS);
+  const elapsed = schedElapsed();
+  const dayNo = elapsed + 1;
+  const daysLeft = Math.max(1, SCHED_DAYS - elapsed);
+  const done = schedDone();
+  const remain = Math.max(0, total - done);
+  const dq = SCHED.days[todayStr()]?.quota; // 確定済みなら当日ノルマを固定
+  return {
+    total, base, elapsed, dayNo, daysLeft, done, remain,
+    quota: dq != null ? dq : Math.ceil(remain / daysLeft),
+    todayDone: SCHED.days[todayStr()]?.clears || 0,
+    ahead: done - Math.min(dayNo, SCHED_DAYS) * base,
+  };
+}
+// 出題上の周バケツ: cc0=1周目 cc1=2周目 cc2=3周目 cc3または誤答あり=4周目
+function schedBucket(id) {
+  const s = SCHED.items[id];
+  const cc = s ? s.cc : 0;
+  if (cc >= 4) return 0;
+  return (cc === 3 || (s && s.w > 0)) ? 4 : cc + 1;
+}
+function schedBreakdown() {
+  const c = [0, 0, 0, 0, 0];
+  let plat = 0;
+  for (const it of ITEMS) {
+    const s = SCHED.items[it.id];
+    if (s && s.cc >= 4) { c[0]++; if (s.plat) plat++; continue; }
+    c[schedBucket(it.id)]++;
+  }
+  return { c, plat };
+}
+function schedMark(id, ok, fast) {
+  let s = SCHED.items[id];
+  if (!s) s = SCHED.items[id] = { cc: 0, w: 0, fast: 0 };
+  const d = schedToday();
+  if (!d.seen.includes(id)) d.seen.push(id);
+  if (ok) {
+    const before = s.cc;
+    s.cc = Math.min(4, s.cc + 1);
+    if (fast) s.fast++;
+    // 1〜3周すべて正解かつ3秒以内 → 4周目をスキップして完全定着
+    if (s.cc === 3 && s.w === 0 && s.fast >= 3) { s.cc = 4; s.plat = true; }
+    d.clears += s.cc - before; // プラチナは免除された4周目分も加算
+    const st = schedStatus();
+    if (!d.bonus && st.quota > 0 && d.clears >= st.quota) {
+      d.bonus = true;
+      stdmEarn(100, "ノルマ達成ボーナス");
+      toast("🎉 今日のノルマ達成！ +100 stdm");
+    }
+  } else {
+    s.w++;
+  }
+  saveSched();
+}
+// 10問セット生成: 今日出た問題は後回しにしつつ、各周をラウンドロビンで混合
+function schedPick(n) {
+  const seen = new Set(schedToday().seen);
+  const pools = [[], [], [], [], []], extra = [[], [], [], [], []];
+  for (const it of ITEMS) {
+    const b = schedBucket(it.id);
+    if (!b) continue;
+    (seen.has(it.id) ? extra : pools)[b].push(it);
+  }
+  for (let b = 1; b <= 4; b++) {
+    shuffle(pools[b]); shuffle(extra[b]);
+    pools[b].push(...extra[b]);
+  }
+  const out = [];
+  while (out.length < n) {
+    let took = false;
+    for (let b = 1; b <= 4 && out.length < n; b++)
+      if (pools[b].length) { out.push(pools[b].shift()); took = true; }
+    if (!took) break;
+  }
+  return shuffle(out);
+}
+function schedStart(mission, n) {
+  const p = schedPick(n);
+  if (p.length < 4) { toast("出題できる問題が残っていません"); return; }
+  quiz = { list: p, idx: 0, mode: "q4", answers: [], judged: null, sched: true,
+    mission, pool: ITEMS, cat: "50日プラン", range: [1, p.length] };
+  go("quizrun");
+}
+// ホームのプランパネル(前半6セット/後半の2分割表示＋先取り)
+function vSchedCard() {
+  if (!ITEMS.length) return "";
+  const total = ITEMS.length * 4;
+  const baseN = Math.ceil(total / SCHED_DAYS);
+  if (!SCHED.start) {
+    return `<div class="card schedcard">
+      <h2>📅 50日・4周プラン</h2>
+      <p class="muted">全${ITEMS.length}問 × 4周 ＝ ${total}クリアを${SCHED_DAYS}日で完走。
+      1日のノルマ(基準${baseN}問＝10問×${Math.ceil(baseN / 10)}セット)は残りクリア数÷残り日数で毎日自動計算。
+      1〜3周すべて3秒以内に正解した問題は💎完全定着となり4周目を免除されます。</p>
+      <button class="bigbtn" data-act="schedstart">プランを開始（今日が1日目）</button>
+    </div>`;
+  }
+  const st = schedStatus();
+  const bd = schedBreakdown();
+  const amT = Math.min(60, st.quota), pmT = st.quota - amT;
+  const amDone = Math.min(st.todayDone, amT);
+  const pmDone = Math.min(Math.max(0, st.todayDone - amT), pmT);
+  const quotaDone = st.quota > 0 && st.todayDone >= st.quota;
+  const pct = Math.min(100, Math.round(st.done / st.total * 100));
+  const todayPct = st.quota ? Math.min(100, Math.round(st.todayDone / st.quota * 100)) : 100;
+  const pace = st.ahead > 0
+    ? `<p class="sched-ahead">🚀 現在 ${(st.ahead / st.base).toFixed(1)}日分 先取り中！（＋${st.ahead}問貯金）</p>`
+    : st.ahead < 0
+      ? `<p class="muted">📈 予定ペースまであと ${-st.ahead}問</p>`
+      : `<p class="muted">📈 ちょうど予定どおりのペースです</p>`;
+  const mission = (label, done, t, m) => t <= 0 ? "" : `
+    <div class="mission">
+      <div class="mission-l"><b>${label}</b><span class="muted small">${t}問・${Math.ceil(t / 10)}セット</span></div>
+      <div class="mission-m"><div class="bar"><i style="width:${Math.round(done / t * 100)}%"></i></div>
+        <span class="muted small">${done}/${t}</span></div>
+      ${done >= t
+        ? `<span class="mdone">✓ 完了</span>`
+        : `<button class="primary" data-act="schedset" data-mission="${m}" data-n="10">10問セット ▶</button>`}
+    </div>`;
+  return `<div class="card schedcard">
+    <h2>📅 50日・4周プラン <span class="muted small">${st.dayNo}日目/${SCHED_DAYS}日・残り${st.daysLeft}日</span></h2>
+    <div class="muted small">全体 ${st.done}/${st.total}クリア（${pct}%）
+      　1周目${bd.c[1]}・2周目${bd.c[2]}・3周目${bd.c[3]}・4周目${bd.c[4]}・完了${bd.c[0]}（💎${bd.plat}）</div>
+    <div class="bar big"><i style="width:${pct}%"></i></div>
+    ${pace}
+    ${st.remain <= 0
+      ? `<p class="sched-ahead">🎊 全${st.total}クリア完了！お疲れさまでした！</p>`
+      : `<h3>今日のノルマ: ${st.todayDone}/${st.quota}問（${todayPct}%）</h3>
+         <div class="bar"><i style="width:${todayPct}%"></i></div>
+         ${quotaDone
+           ? `<p class="sched-ahead">🎉 今日のノルマ達成！</p>
+              <button class="bigbtn" data-act="schedset" data-mission="extra" data-n="10">明日以降の分を先取りする（10問セット）</button>`
+           : `${mission("☀️ 前半ミッション", amDone, amT, "am")}
+              ${mission("🌙 後半ミッション", pmDone, pmT, "pm")}`}`}
+  </div>`;
+}
+
 // ---------- 描画 ----------
 function render() {
   const inRoom = view.name !== "home" && view.name !== "data";
   const room = ROOMS.find(r => r.key === view.room);
   $("#backbtn").style.display = inRoom ? "" : "none";
   $("#headtitle").textContent = inRoom
-    ? (room ? `${room.icon} ${room.label}` : (view.name === "admin" ? "管理者" : ""))
+    ? (room ? `${room.icon} ${room.label}` : (view.name === "admin" ? "管理者" : view.name === "earnlog" ? "🪙 stdm履歴" : ""))
     : "";
   const el = $("#app");
   const v = view.name;
@@ -224,6 +421,8 @@ function render() {
   else if (v === "edit") el.innerHTML = vEdit();
   else if (v === "data") el.innerHTML = vData();
   else if (v === "admin") el.innerHTML = vAdmin();
+  else if (v === "earnlog") el.innerHTML = vEarnLog();
+  animateStdm();
 }
 function go(name, params = {}) {
   const wasRun = RUN_VIEWS.has(view.name);
@@ -232,6 +431,37 @@ function go(name, params = {}) {
   view = { name, ...params }; render(); window.scrollTo(0, 0);
 }
 const fmtDur = (s) => `${Math.floor(s / 60)}分${Math.round(s % 60)}秒`;
+// ホーム表示時に所有stdmをカウントアップさせる(前回表示値→現在値)
+function animateStdm() {
+  const el = $("#stdmnum");
+  if (!el || !el.dataset) return;
+  const to = +el.dataset.to, from = +el.dataset.from || 0;
+  lastStdmShown = to;
+  if (to <= from || to - from > 5000) { el.textContent = to.toLocaleString(); return; }
+  const t0 = performance.now(), dur = Math.min(1200, 300 + (to - from) * 15);
+  const step = (t) => {
+    const p = Math.min(1, (t - t0) / dur);
+    el.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3))).toLocaleString();
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+// ---------- stdm獲得履歴 ----------
+function vEarnLog() {
+  const rows = EARN.slice().reverse().map(x =>
+    `<div class="listrow">
+      <span class="t" style="color:${x.amount >= 0 ? "#16a34a" : "var(--ng)"}">${x.amount >= 0 ? "+" : ""}${x.amount} stdm</span>
+      <span class="m">${esc(x.label || "")}</span>
+      <span class="muted small">${fmtTs(x.ts)}</span>
+    </div>`).join("");
+  return `<div class="card">
+    <h2>🪙 stdm 獲得履歴</h2>
+    <p class="muted">所有 ${stdm.toLocaleString()} stdm ・ 本日 ＋${earnToday()} stdm</p>
+    ${rows || `<p class="muted">まだ履歴がありません。セットをクリアすると記録されます。</p>`}
+    <div class="btnrow"><button class="ghost" data-nav="home">← ホームへ</button></div>
+  </div>`;
+}
 
 // ---------- ホーム ----------
 function powerProgress() { // 実力テスト解放状況: 全単元が「合格」(46件以上習得)
@@ -264,10 +494,20 @@ function vHome() {
   const learned = ITEMS.filter(i => statusOf(i.id) !== "new").length;
   const mastered = ITEMS.filter(i => statusOf(i.id) === "master").length;
   const correct = Object.values(PROGRESS).reduce((a, r) => a + r.c, 0);
-  return `<div class="stdmbar">所有 stdm <b>${stdm}</b></div>
+  const st2 = SCHED.start ? schedStatus() : null;
+  const aheadTxt = st2 && st2.ahead > 0 ? `｜ 🚀 先取り ＋${(st2.ahead / st2.base).toFixed(1)}日分` : "";
+  return `<div class="stdmbar bigstdm" data-nav="earnlog" title="タップで獲得履歴">
+    <div class="coin">🪙</div>
+    <div class="stdmmain">
+      <div><span id="stdmnum" data-from="${lastStdmShown}" data-to="${stdm}">${stdm.toLocaleString()}</span><span class="stdmunit">stdm</span></div>
+      <div class="stdmsub">本日 ＋${earnToday()} stdm${aheadTxt}</div>
+    </div>
+    <div class="stdmgo">履歴 ›</div>
+  </div>
+    ${vSchedCard()}
     <div class="roomlist">${rooms}</div>
     <p class="muted mt">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
-    <p class="muted">所有：<b class="stdm">${stdm} stdm</b>　<button class="ghost" data-nav="data">データ管理 →</button>
+    <p class="muted"><button class="ghost" data-nav="data">データ管理 →</button>
     <button class="ghost adminbtn" data-nav="admin">管理者</button></p>`;
 }
 
@@ -461,6 +701,9 @@ function vQuizRun() {
   const { options, answer } = fixedQ(it);
   quiz.cur = { answer, options, userAns: null };
   const judged = quiz.judged;
+  if (!judged) quiz.qStart = Date.now(); // 即答判定(3秒)用の提示時刻
+  const roundTag = quiz.sched
+    ? `　${["", "1周目", "2周目", "3周目", "4周目"][schedBucket(it.id)] || ""}` : "";
   const opts = options.map((o, i) =>
     `<button class="choice" data-act="answer" data-i="${i}">${esc(o.v)}</button>`).join("");
   const side = `<div class="card side">
@@ -470,7 +713,7 @@ function vQuizRun() {
       ` : `<p class="muted">答えると、正解と解説がここに表示されます。</p>`}
     </div>`;
   return `<div class="panes"><div class="card">
-      <div class="muted">${idx + 1} / ${list.length}　${esc(quiz.cat)}</div>
+      <div class="muted">${idx + 1} / ${list.length}　${esc(quiz.cat)}${roundTag}</div>
       <div class="progress">${list.map((_, i) =>
         `<i class="${i < idx ? "f" : ""}"></i>`).join("")}</div>
       ${judged
@@ -490,12 +733,22 @@ function vQuizEnd() {
   const rows = wrongs.map(it =>
     `<div class="listrow"><span class="t">${esc(qt(it))}</span>
      <span class="y">${esc(it.sub || it.cat)}</span><span class="m"></span></div>`).join("");
+  const schedInfo = quiz.sched ? (() => {
+    const st = schedStatus();
+    return `<hr><h3>📅 50日プラン</h3>
+      <p class="muted">今日 ${st.todayDone}/${st.quota}問・累計 ${st.done}/${st.total}クリア</p>
+      ${st.todayDone >= st.quota
+        ? `<p class="sched-ahead">🎉 今日のノルマ達成！</p>
+           <button class="bigbtn" data-act="schedset" data-mission="extra" data-n="10">明日以降の分を先取りする（10問セット）</button>`
+        : `<button class="bigbtn" data-act="schedset" data-mission="extra" data-n="10">続けて10問セット ▶</button>`}`;
+  })() : "";
   return `<div class="card">
     <h2>結果: ${ok} / ${quiz.answers.length} 問正解</h2>
     ${wrongs.length ? `<h3>間違えた問題 (${wrongs.length})</h3>${rows}
       <div class="btnrow"><button class="primary" data-act="retry" data-src="quiz">間違えた問題だけやり直す</button></div>` : `<p>全問正解！</p>`}
+    ${schedInfo}
     <div class="btnrow">
-      <button data-act="tosetup">クイズの部屋へ</button>
+      ${quiz.sched ? "" : `<button data-act="tosetup">クイズの部屋へ</button>`}
       <button data-nav="home">ホームへ</button>
     </div>
   </div>`;
@@ -733,6 +986,16 @@ function vAdmin() {
       <button class="chip ${POWER_ON ? "on" : ""}" data-act="power" data-v="1">実力テスト ON</button>
       <button class="chip ${POWER_ON ? "" : "on"}" data-act="power" data-v="0">実力テスト OFF</button>
     </div>
+    <hr>
+    <h3>📅 50日・4周プラン</h3>
+    <p class="muted">${SCHED.start
+      ? `開始日 ${SCHED.start}（${schedStatus().dayNo}日目/${SCHED_DAYS}日・累計${schedDone()}クリア）`
+      : "未開始（ホーム画面から開始できます）"}</p>
+    <div class="btnrow" style="align-items:flex-end">
+      <div><label class="f">開始日</label><input type="date" id="s_start" value="${SCHED.start || isoDay()}"></div>
+      <button data-act="scheddate">開始日を設定</button>
+      <button data-act="schedreset" style="border-color:var(--ng);color:var(--ng)">プランをリセット</button>
+    </div>
   </div>
   <div class="card">
     <h3>使用時間ログ</h3>
@@ -790,6 +1053,7 @@ document.addEventListener("click", (e) => {
     if (k === "home") go("home");
     else if (k === "data") go("data");
     else if (k === "admin") go("admin");
+    else if (k === "earnlog") go("earnlog", { room: "earnlog" });
     else if (k === "jisho") go("list", { room: "jisho" });
     else if (k === "result") go("result", { room: "result", cat: view.cat });
     else if (k === "quiz") go("quizsetup", { room: "quiz" });
@@ -855,13 +1119,34 @@ document.addEventListener("click", (e) => {
       const amt = Math.abs(+($("#a_amt")?.value) || 0);
       if (!amt) { toast("stdm数を入力してください"); return; }
       const signed = a.dataset.v === "1" ? amt : -amt;
-      stdm = Math.max(0, stdm + signed);
-      ADJUSTS.push({ ts: new Date().toISOString(), amount: signed, memo: ($("#a_memo")?.value || "").trim() });
+      const memo = ($("#a_memo")?.value || "").trim();
+      stdmEarn(signed, memo ? `手動:${memo}` : "手動調整");
+      ADJUSTS.push({ ts: new Date().toISOString(), amount: signed, memo });
       localStorage.setItem(LS_ADJUST, JSON.stringify(ADJUSTS));
-      savestdm(); toast(`${signed > 0 ? "+" : ""}${signed} stdm`); render();
+      toast(`${signed > 0 ? "+" : ""}${signed} stdm`); render();
+    }
+    else if (act === "schedstart") {
+      SCHED.start = isoDay();
+      SCHED.base = Math.ceil(ITEMS.length * 4 / SCHED_DAYS);
+      saveSched(); toast("50日プランを開始しました"); render();
+    }
+    else if (act === "schedset") schedStart(a.dataset.mission, +(a.dataset.n || 10));
+    else if (act === "scheddate") {
+      const v2 = $("#s_start")?.value;
+      if (!v2) { toast("開始日を入力してください"); return; }
+      SCHED.start = v2;
+      SCHED.base = Math.ceil(ITEMS.length * 4 / SCHED_DAYS);
+      saveSched(); toast(`開始日を ${v2} に設定しました`); render();
+    }
+    else if (act === "schedreset") {
+      if (confirm("50日プランの記録（クリア数・先取り・開始日）をすべて消去しますか？")) {
+        SCHED = { start: "", base: 0, items: {}, days: {} };
+        saveSched(); toast("プランをリセットしました"); render();
+      }
     }
     else if (act === "quit") {
-      if (view.name === "testsetup") {
+      if (quiz && quiz.sched && (view.name === "quizrun" || view.name === "quizend")) go("home");
+      else if (view.name === "testsetup") {
         if (view.room === "power") go("home");
         else go("testpick", { room: "test" });
       }
@@ -870,7 +1155,8 @@ document.addEventListener("click", (e) => {
       else go("testpick", { room: "test" });
     }
     else if (act === "tosetup") {
-      if (view.name === "quizend" || view.name === "card" || view.room === "quiz") {
+      if (quiz && quiz.sched && view.name === "quizend") go("home");
+      else if (view.name === "quizend" || view.name === "card" || view.room === "quiz") {
         go("quizsetup", { room: "quiz" });
       } else if (test && test.kind === "power") {
         go("testsetup", { room: "power" });
@@ -888,6 +1174,8 @@ document.addEventListener("click", (e) => {
       const ok = pick.v === quiz.cur.answer;
       quiz.judged = { ok };
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
+      if (quiz.sched)
+        schedMark(quiz.list[quiz.idx].id, ok, Date.now() - (quiz.qStart || Date.now()) <= 3000);
       mark(quiz.list[quiz.idx].id, ok, "quiz");
       document.querySelectorAll(".choice").forEach((b, i) => {
         const v = quiz.cur.options[i];
@@ -901,13 +1189,14 @@ document.addEventListener("click", (e) => {
       quiz.judged = null; quiz.idx++;
       if (quiz.idx >= quiz.list.length) {
         RESULTS.push({
-          ts: new Date().toISOString(), kind: "quiz", cat: quiz.cat,
+          ts: new Date().toISOString(), kind: quiz.sched ? "sched" : "quiz", cat: quiz.cat,
           range: quiz.range, n: quiz.answers.length,
           ok: quiz.answers.filter(x => x.ok).length,
           secs: Math.round(study.total - runStartTotal),
           wrongIds: quiz.answers.filter(x => !x.ok).map(x => x.id),
         });
         saveResults();
+        if (quiz.sched) stdmEarn(10, "50日プラン・10問セット");
         go("quizend");
       } else render();
     }
@@ -917,6 +1206,8 @@ document.addEventListener("click", (e) => {
       quiz.cur.userAns = raw.trim();
       quiz.judged = { ok };
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
+      if (quiz.sched)
+        schedMark(quiz.list[quiz.idx].id, ok, Date.now() - (quiz.qStart || Date.now()) <= 3000);
       mark(quiz.list[quiz.idx].id, ok, "quiz");
       render();
     }
@@ -931,7 +1222,7 @@ document.addEventListener("click", (e) => {
         const nOk = test.answers.filter(x => x.ok).length;
         // 実力テスト: 加重得点を100点満点に換算してstdm付与
         const pts = test.kind === "power" ? powerScore(test.answers) : null;
-        if (test.kind === "power") { stdm += stdmAward(pts); savestdm(); }
+        if (test.kind === "power") stdmEarn(stdmAward(pts), "実力テスト");
         RESULTS.push({
           ts: new Date().toISOString(), kind: test.kind, cat: test.cat,
           range: test.range, n: test.answers.length, ok: nOk, pts,
@@ -1012,7 +1303,7 @@ document.addEventListener("click", (e) => {
     go("testrun");
   }
   if (e.target.id === "d_export") {
-    const blob = new Blob([JSON.stringify({ progress: PROGRESS, results: RESULTS, overrides: OVERRIDES, stdm: stdm, hidden: HIDDEN }, null, 1)],
+    const blob = new Blob([JSON.stringify({ progress: PROGRESS, results: RESULTS, overrides: OVERRIDES, stdm: stdm, hidden: HIDDEN, sched: SCHED, earn: EARN }, null, 1)],
       { type: "application/json" });
     const a2 = document.createElement("a");
     a2.href = URL.createObjectURL(blob);
@@ -1020,9 +1311,10 @@ document.addEventListener("click", (e) => {
   }
   if (e.target.id === "d_import") $("#d_file").click();
   if (e.target.id === "d_reset") {
-    if (confirm("学習記録・履歴・stdmをすべて消去しますか？")) {
+    if (confirm("学習記録・履歴・stdm・50日プランをすべて消去しますか？")) {
       PROGRESS = {}; RESULTS = []; stdm = 0;
-      saveProgress(); saveResults(); savestdm();
+      SCHED = { start: "", base: 0, items: {}, days: {} }; EARN = [];
+      saveProgress(); saveResults(); savestdm(); saveSched(); saveEarn();
       toast("消去しました"); render();
     }
   }
@@ -1046,6 +1338,8 @@ document.addEventListener("change", (e) => {
         if (d.results) RESULTS = d.results;
         if (d.overrides) { OVERRIDES = d.overrides; applyOverrides(); saveOverrides(); }
         if (d.hidden && d.hidden.ids) { HIDDEN = d.hidden; saveHidden(); applyHidden(); resortItems(); }
+        if (d.sched && d.sched.items) { SCHED = d.sched; saveSched(); }
+        if (Array.isArray(d.earn)) { EARN = d.earn; saveEarn(); }
         if (typeof d.stdm === "number") { stdm = d.stdm; savestdm(); }
         saveProgress(); saveResults(); toast("インポートしました"); render();
       } catch { toast("読み込めませんでした"); }
@@ -1073,6 +1367,10 @@ async function boot() {
   POWER_ON = localStorage.getItem(LS_POWER) === "1";
   study = Object.assign({ day: todayStr(), sec: 0, total: 0, paidStdm: 0 }, loadJSON(LS_TIME, {}));
   ADJUSTS = loadJSON(LS_ADJUST, []);
+  SCHED = loadJSON(LS_SCHED, { start: "", base: 0, items: {}, days: {} });
+  SCHED.items = SCHED.items || {}; SCHED.days = SCHED.days || {};
+  EARN = loadJSON(LS_EARN, []);
+  lastStdmShown = stdm; // 初回表示はアニメなし
   if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }
   setInterval(studyTick, 1000);
   document.addEventListener("pointerdown", () => { lastActivity = Date.now(); }, { passive: true });
