@@ -31,7 +31,6 @@ const ROOMS = [
   { key: "power", label: "実力テストの部屋", icon: "🏆", gold: true,
     desc: "全範囲ランダム・点数に応じてstdm付与" },
 ];
-const MODES = { m2t: "意味→語句", t2y: "語句→読み", y2t: "読み→語句" };
 const KIND_JP = { quiz: "クイズ", test: "テスト", power: "実力テスト" };
 
 let ITEMS = [];
@@ -68,7 +67,7 @@ function applyOverrides() {
     if (o) Object.assign(it, o);
   }
 }
-const catRank = (c) => { const i = CAT_ORDER.indexOf(c); return i < 0 ? 99 : i; };
+const catRank = (c) => { const i = cats().indexOf(c); return i < 0 ? 99 : i; };
 function resortItems() { ITEMS.sort((x, y) => catRank(x.cat) - catRank(y.cat)); }
 function applyHidden() {
   const hid = new Set(HIDDEN.ids);
@@ -112,10 +111,10 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
   c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 1800); }
-function cats() { // CAT_ORDERの順(存在するもののみ)
-  const have = new Set(ITEMS.map(i => i.cat));
-  return CAT_ORDER.filter(c => have.has(c))
-    .concat([...have].filter(c => !CAT_ORDER.includes(c)));
+function cats() { // データ中の出現順にカテゴリを列挙
+  const seen = [];
+  for (const i of ITEMS) if (i.cat && !seen.includes(i.cat)) seen.push(i.cat);
+  return seen;
 }
 function byCat(cat) { return ITEMS.filter(i => !cat || i.cat === cat); }
 // 全体通し番号で50件ブロックを列挙(カテゴリをまたがない)
@@ -143,10 +142,14 @@ function stdmAward(pts) { // 実力テスト(100点満点)のstdm付与
   if (pts >= 70) return 100;
   return 10;
 }
-// 実力テストの構成: [カテゴリ, 問数, 配点] 空のカテゴリは自動的に除外
-const POWER_SPEC = [["漢字", 40, 1], ["慣用句", 10, 2], ["四字熟語", 10, 2], ["ことわざ", 10, 2]];
-function powerSpec() { return POWER_SPEC.filter(([c]) => byCat(c).length > 0); }
-function powerWeight(it) { const sp = POWER_SPEC.find(s => s[0] === it.cat); return sp ? sp[2] : 0; }
+// 実力テストの構成: 全カテゴリから計60問・各1点・100点満点換算
+function powerSpec() {
+  const cs = cats().filter(c => byCat(c).length > 0);
+  if (!cs.length) return [];
+  const base = Math.floor(60 / cs.length), rem = 60 % cs.length;
+  return cs.map((c, i) => [c, base + (i < rem ? 1 : 0), 1]);
+}
+function powerWeight() { return 1; }
 function powerScore(ansList) { // 加重得点を100点満点に換算
   let earned = 0, max = 0;
   for (const x of ansList) {
@@ -351,7 +354,7 @@ function vQuizSetup() {
       <option value="new">未学習のみ</option>
       <option value="weak">苦手のみ</option>
     </select>
-    <p class="muted small">出題形式: 漢字は読みを入力・その他は「意味→語句」「語句→意味」の4択（選択肢は毎回シャッフル）</p>
+    <p class="muted small">出題形式: 4択問題（選択肢は問題ごとに固定）</p>
     <button class="bigbtn" id="q_go">クイズを開始（50問・${nBlocks}単元から）</button>
     <button class="ghost" id="q_card" style="margin-top:8px">🃏 カードめくりで学習</button>
   </div>
@@ -365,16 +368,16 @@ function vRanking() {
   const ranked = ITEMS
     .map(it => ({ it, w: rec(it.id).w }))
     .filter(x => x.w > 0)
-    .sort((a, b) => b.w - a.w || a.it.text.localeCompare(b.it.text, "ja"))
+    .sort((a, b) => b.w - a.w || qt(a.it).localeCompare(qt(b.it), "ja"))
     .slice(0, 300);
   const tabs = Array.from({ length: 10 }, (_, i) =>
     `<button class="chip ${i === page ? "on" : ""}" data-act="rpage" data-p="${i}">${i * 30 + 1}〜${i * 30 + 30}</button>`).join("");
   const rows = ranked.slice(page * 30, page * 30 + 30).map((x, i) =>
     `<div class="listrow">
       <span class="rank">${page * 30 + i + 1}位</span>
-      <span class="t">${esc(x.it.text)}</span>
-      <span class="y">${esc(x.it.yomi)}</span>
-      <span class="m">✕${x.w}回　${esc(x.it.meaning)}</span>
+      <span class="t">${esc(qt(x.it))}</span>
+      <span class="y">${esc(x.it.sub || x.it.cat)}</span>
+      <span class="m">✕${x.w}回</span>
     </div>`).join("");
   return `<div class="card">
     <h3>よく間違える問題ランキング</h3>
@@ -425,7 +428,7 @@ function vTestSetup() {
       ${powerSpec().map(([c, n, p], i) =>
         `<tr><td>${esc(c)}</td><td>${Math.min(n, byCat(c).length)}問</td><td>${p}点/問</td>${i === 0 ? `<td rowspan="${powerSpec().length}">100点:500<br>85〜99点:200<br>70〜84点:100<br>69点以下:10</td>` : ""}</tr>`).join("")}</table>`
       : `<p class="muted">${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。</p>`}
-    <p class="muted small">出題形式: 漢字は読みを入力・その他は「意味→語句」「語句→意味」の4択（選択肢は毎回シャッフル）</p>
+    <p class="muted small">出題形式: 4択問題（選択肢は問題ごとに固定）</p>
     <button class="bigbtn" id="t_go">テストを開始</button>
     <div class="btnrow"><button class="ghost" data-act="quit">${power ? "← ホームへ" : "← 範囲選択へ"}</button></div>
   </div>
@@ -433,21 +436,15 @@ function vTestSetup() {
 }
 
 // ---------- 4択クイズ実行 ----------
-function makeChoices(it, mode, poolAll) {
-  const key = mode === "t2y" ? "yomi" : mode === "t2m" ? "meaning" : "text";
-  const cand = shuffle(poolAll.filter(x => x.id !== it.id && x.cat === it.cat && x[key] && x[key] !== it[key]));
-  const seen = new Set([it[key]]);
-  const picks = [it];
-  for (const c of cand) { if (picks.length >= 4) break; if (!seen.has(c[key])) { seen.add(c[key]); picks.push(c); } }
-  const options = shuffle(picks.slice(0, 4)).map(x => ({ v: x[key], yomi: key === "text" ? x.yomi : x[key] }));
-  return { options, answer: it[key] };
+// 新形式: 問題は固定の選択肢(options)とanswerIndexを持つ
+function fixedQ(it) {
+  const options = it.options.map(v => ({ v, yomi: v }));
+  return { options, answer: it.options[it.answerIndex] };
 }
-function qPrompt(it, mode) {
-  if (mode === "m2t") return `<div class="q-prompt"><b>意味:</b> ${esc(it.meaning)}</div>`;
-  if (mode === "t2m") return `<div class="q-surface">${esc(it.text)}</div><div class="center muted">${esc(it.yomi)}</div><div class="center muted">意味を選んでください</div>`;
-  if (mode === "t2y") return `<div class="q-surface">${esc(it.text)}</div><div class="center muted">読み方を選んでください</div>`;
-  if (mode === "tyin") return `<div class="q-surface">${esc(it.text)}</div><div class="center muted">読み方をひらがなで入力してください</div>`;
-  return `<div class="q-surface">${esc(it.yomi)}</div><div class="center muted">この読みの語句を選んでください</div>`;
+// 一覧・結果表示用の短いタイトル(問題文の最終行=実際の設問文)
+function qt(it) { return (it.question || it.text || "").split("\n").slice(-1)[0].slice(0, 60); }
+function qPrompt(it) {
+  return `<div class="q-prompt">${esc(it.question).replace(/\n/g, "<br>")}</div>`;
 }
 // 入力した読みを正規化(カタカナ→ひらがな・空白/括弧除去)
 function normYomi(s) {
@@ -457,31 +454,20 @@ function normYomi(s) {
     .replace(/[\s　]/g, "");
 }
 
-// 漢字カテゴリは「漢字→読み入力」の記述式に自動切替。
-// 漢字以外は「意味→語句(m2t)」と「語句→意味(t2m)」をランダムに混ぜる。
-function itemMode(it, mode) { return it.cat === "漢字" ? "tyin" : mode; }
-function pickModes(list) {
-  return list.map(i => i.cat === "漢字" ? "tyin" : (Math.random() < 0.5 ? "t2m" : "m2t"));
-}
-function qMode(obj, it, idx, mode) { return (obj.modes && obj.modes[idx]) || itemMode(it, mode); }
+function pickModes(list) { return list.map(() => "q4"); }
 function vQuizRun() {
-  const { list, idx, mode } = quiz;
+  const { list, idx } = quiz;
   const it = list[idx];
-  const imode = qMode(quiz, it, idx, mode);
-  const { options, answer } = imode === "tyin"
-    ? { options: [], answer: it.yomi }
-    : makeChoices(it, imode, quiz.pool);
+  const { options, answer } = fixedQ(it);
   quiz.cur = { answer, options, userAns: null };
   const judged = quiz.judged;
   const opts = options.map((o, i) =>
-    `<button class="choice" data-act="answer" data-i="${i}">${esc(o.v)}${o.yomi !== o.v ? `<span class="fyomi">${esc(o.yomi)}</span>` : ""}</button>`).join("");
+    `<button class="choice" data-act="answer" data-i="${i}">${esc(o.v)}</button>`).join("");
   const side = `<div class="card side">
-      ${it.image ? `<img class="imgbox" src="${esc(it.image)}" alt="">` : ""}
       ${judged ? `
-        <div class="yomi" style="font-size:20px;color:var(--acc)">${esc(it.yomi)}</div>
-        <p><b>${esc(it.text)}</b> — ${esc(it.meaning)}</p>
-        ${it.example ? `<p class="muted"><b>例:</b> ${esc(it.example)}</p>` : ""}
-      ` : `<p class="muted">答えると、語句の詳細がここに表示されます。</p>`}
+        <p><b>正解:</b> ${esc(it.options[it.answerIndex])}</p>
+        ${it.explanation ? `<p class="muted"><b>解説:</b> ${esc(it.explanation)}</p>` : ""}
+      ` : `<p class="muted">答えると、正解と解説がここに表示されます。</p>`}
     </div>`;
   return `<div class="panes"><div class="card">
       <div class="muted">${idx + 1} / ${list.length}　${esc(quiz.cat)}</div>
@@ -489,15 +475,10 @@ function vQuizRun() {
         `<i class="${i < idx ? "f" : ""}"></i>`).join("")}</div>
       ${judged
         ? `<div class="judge ${judged.ok ? "ok" : "ng"}">${judged.ok ? "⭕" : "❌"}</div>
-           <p class="center"><b>${esc(it.text)}</b>（${esc(it.yomi)}）</p>
-           ${imode === "tyin"
-             ? `<div class="center muted">あなたの答え: ${esc(quiz.cur.userAns || "（未入力）")}</div>`
-             : qPrompt(it, imode)}
+           ${qPrompt(it)}
+           <p class="center"><b>正解: ${esc(it.options[it.answerIndex])}</b></p>
            <button class="bigbtn" data-act="nextq">${idx + 1 < list.length ? "次へ" : "結果を見る"}</button>`
-        : `${qPrompt(it, imode)}${imode === "tyin"
-            ? `<input id="ans_in" class="textin" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="ひらがなで入力" autofocus>
-               <button class="bigbtn" data-act="answer_in">こたえる</button>`
-            : `<div class="choices">${opts}</div>`}
+        : `${qPrompt(it)}<div class="choices">${opts}</div>
            <div class="btnrow"><button class="ghost" data-act="quit">やめる</button></div>`}
     </div>${side}</div>`;
 }
@@ -507,8 +488,8 @@ function vQuizEnd() {
   const wrongs = quiz.answers.filter(a => !a.ok)
     .map(a => ITEMS.find(i => i.id === a.id)).filter(Boolean);
   const rows = wrongs.map(it =>
-    `<div class="listrow"><span class="t">${esc(it.text)}</span>
-     <span class="y">${esc(it.yomi)}</span><span class="m">${esc(it.meaning)}</span></div>`).join("");
+    `<div class="listrow"><span class="t">${esc(qt(it))}</span>
+     <span class="y">${esc(it.sub || it.cat)}</span><span class="m"></span></div>`).join("");
   return `<div class="card">
     <h2>結果: ${ok} / ${quiz.answers.length} 問正解</h2>
     ${wrongs.length ? `<h3>間違えた問題 (${wrongs.length})</h3>${rows}
@@ -530,16 +511,14 @@ function vCard() {
   const it = list[idx];
   const front = `<div class="card flash" data-act="flip">
       <div class="muted">${idx + 1} / ${list.length}　${esc(it.cat)} ${STATUS_BADGE[statusOf(it.id)]}</div>
-      <div class="surface">${esc(it.text)}</div>
+      <div class="q-prompt">${esc(it.question).replace(/\n/g, "<br>")}</div>
       <div class="hint">${flipped ? "" : "タップで答えを表示"}</div>
     </div>`;
   const side = `<div class="card side">
-      ${it.image ? `<img class="imgbox" src="${esc(it.image)}" alt="">` : ""}
       ${flipped ? `
-        <div class="yomi" style="font-size:20px;color:var(--acc)">${esc(it.yomi)}</div>
-        <p><b>意味:</b> ${esc(it.meaning)}</p>
-        ${it.example ? `<p class="muted"><b>例:</b> ${esc(it.example)}</p>` : ""}
-      ` : `<p class="muted">カードをめくると、読み・意味・例文がここに表示されます。</p>`}
+        <p><b>正解:</b> ${esc(it.options[it.answerIndex])}</p>
+        ${it.explanation ? `<p class="muted"><b>解説:</b> ${esc(it.explanation)}</p>` : ""}
+      ` : `<p class="muted">カードをめくると、正解と解説がここに表示されます。</p>`}
     </div>`;
   const btns = flipped ? `
     <div class="btnrow">
@@ -556,24 +535,18 @@ function vCard() {
 
 // ---------- テスト実行(途中採点なし) ----------
 function vTestRun() {
-  const { list, idx, mode } = test;
+  const { list, idx } = test;
   const it = list[idx];
-  const imode = qMode(test, it, idx, mode);
-  const { options, answer } = imode === "tyin"
-    ? { options: [], answer: it.yomi }
-    : makeChoices(it, imode, test.pool);
+  const { options, answer } = fixedQ(it);
   test.cur = { answer, options };
   const opts = options.map((o, i) =>
-    `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o.v)}${o.yomi !== o.v ? `<span class="fyomi">${esc(o.yomi)}</span>` : ""}</button>`).join("");
+    `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o.v)}</button>`).join("");
   return `<div class="panes"><div class="card">
       <div class="muted">${test.kind === "power" ? "🏆 実力テスト" : "🖊️ テスト"}　${idx + 1} / ${list.length}　${esc(test.cat)}</div>
       <div class="progress">${list.map((_, i) =>
         `<i class="${i < idx ? "f" : ""}"></i>`).join("")}</div>
-      ${qPrompt(it, imode)}
-      ${imode === "tyin"
-        ? `<input id="ans_in" class="textin" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="ひらがなで入力" autofocus>
-           <button class="bigbtn" data-act="tanswer_in">こたえる</button>`
-        : `<div class="choices">${opts}</div>`}
+      ${qPrompt(it)}
+      <div class="choices">${opts}</div>
       <div class="btnrow"><button class="ghost" data-act="quit">やめる</button></div>
     </div>
     <div class="card side"><p class="muted">本番形式: 答えはテスト終了後にまとめて表示されます。</p></div>
@@ -593,8 +566,8 @@ function vTestEnd() {
   const wrongs = test.answers.filter(a => !a.ok)
     .map(a => ITEMS.find(i => i.id === a.id)).filter(Boolean);
   const rows = wrongs.map(it =>
-    `<div class="listrow"><span class="t">${esc(it.text)}</span>
-     <span class="y">${esc(it.yomi)}</span><span class="m">${esc(it.meaning)}</span></div>`).join("");
+    `<div class="listrow"><span class="t">${esc(qt(it))}</span>
+     <span class="y">${esc(it.sub || it.cat)}</span><span class="m"></span></div>`).join("");
   return `<div class="card">
     <h2>${test.kind === "power"
       ? `実力テスト結果: ${pts}点 / 100点満点 (${ok}/${test.answers.length}問正解)`
@@ -641,8 +614,8 @@ function vResultDetail() {
   if (!r) return `<div class="card">記録がありません</div>`;
   const wrongs = r.wrongIds.map(id => ITEMS.find(i => i.id === id)).filter(Boolean);
   const rows = wrongs.map(it =>
-    `<div class="listrow"><span class="t">${esc(it.text)}</span>
-     <span class="y">${esc(it.yomi)}</span><span class="m">${esc(it.meaning)}</span></div>`).join("");
+    `<div class="listrow"><span class="t">${esc(qt(it))}</span>
+     <span class="y">${esc(it.sub || it.cat)}</span><span class="m"></span></div>`).join("");
   return `<div class="card">
     <h2>${KIND_JP[r.kind]}: ${r.ok}/${r.n} 問正解</h2>
     <p class="muted">${fmtTs(r.ts)}・${esc(r.cat)} No.${r.range[0]}-${r.range[1]}</p>
@@ -664,13 +637,13 @@ function vList() {
     p = blk.filter(i => ["new", "weak"].includes(statusOf(i.id)));
   }
   if (kw) p = p.filter(i =>
-    `${i.text}${i.yomi}${i.meaning}${i.example || ""}`.toLowerCase().includes(kw));
+    `${i.question}${i.explanation || ""}`.toLowerCase().includes(kw));
   if (filt) p = p.filter(i => statusOf(i.id) === filt);
   const rows = p.slice(0, 500).map(it =>
     `<div class="listrow" data-act="edit" data-id="${it.id}" style="cursor:pointer">
-      <span class="t">${esc(it.text)}${STATUS_BADGE[statusOf(it.id)]}</span>
-      <span class="y">${esc(it.yomi)}</span>
-      <span class="m">${esc(it.meaning)}</span>
+      <span class="t">${esc(qt(it))}${STATUS_BADGE[statusOf(it.id)]}</span>
+      <span class="y">${esc(it.sub || it.cat)}</span>
+      <span class="m"></span>
       <button class="delx" data-act="hide" data-id="${it.id}" title="この項目を削除">✕</button></div>`).join("");
   return `<div class="card">
     <div class="btnrow" style="margin-top:0">
@@ -690,24 +663,24 @@ function vList() {
 function vEdit() {
   const it = ITEMS.find(i => i.id === view.id);
   if (!it) return `<div class="card">見つかりません</div>`;
+  const opts = (it.options || []).map((o, i) =>
+    `<div class="listrow"><span class="t">${i === it.answerIndex ? "⭕ " : "　 "}${esc(o)}</span></div>`).join("");
   return `<div class="panes"><div class="card">
-    <h2>項目の編集 ${STATUS_BADGE[statusOf(it.id)]}</h2>
-    <label class="f">語句(表記)</label><input type="text" id="e_text" value="${esc(it.text)}">
-    <label class="f">読み</label><input type="text" id="e_yomi" value="${esc(it.yomi)}">
-    <label class="f">意味</label><textarea id="e_meaning" rows="2">${esc(it.meaning)}</textarea>
-    <label class="f">例文・例</label><textarea id="e_example" rows="2">${esc(it.example || "")}</textarea>
-    <label class="f">頻出度</label><input type="text" id="e_level" value="${esc(it.level || "")}">
+    <h2>問題の詳細 ${STATUS_BADGE[statusOf(it.id)]}</h2>
+    <p class="muted small">${esc(it.cat || "")}${it.sub ? ` / ${esc(it.sub)}` : ""}</p>
+    ${qPrompt(it)}
+    <h3>選択肢</h3>
+    ${opts}
+    ${it.explanation ? `<h3>解説</h3><p class="muted">${esc(it.explanation)}</p>` : ""}
     <div class="btnrow">
-      <button class="primary" id="e_save">保存</button>
       <button data-act="delprog">学習記録をリセット</button>
+      <button class="delx" data-act="hide" data-id="${it.id}">✕ この問題を削除</button>
       <button data-nav="jisho">戻る</button>
     </div>
   </div>
   <div class="card side">
-    ${it.image ? `<img class="imgbox" src="${esc(it.image)}" alt="">` : ""}
-    <p><b>${esc(it.text)}</b>（${esc(it.yomi)}）</p>
-    <p><b>意味:</b> ${esc(it.meaning)}</p>
-    ${it.example ? `<p class="muted"><b>例:</b> ${esc(it.example)}</p>` : ""}
+    <p><b>正解:</b> ${esc(it.options?.[it.answerIndex] ?? "")}</p>
+    ${it.explanation ? `<p class="muted">${esc(it.explanation)}</p>` : ""}
   </div></div>`;
 }
 
@@ -794,8 +767,8 @@ function vData() {
       ${HIDDEN.ids.length ? `<button class="ghost" data-act="unhide_all">すべて復元</button>` : ""}</p>
     ${HIDDEN.ids.slice(0, 500).map(id => {
       const it = HIDDEN.items[id];
-      return it ? `<div class="listrow"><span class="t">${esc(it.text)}</span>
-        <span class="y">${esc(it.yomi)}</span><span class="m">${esc(it.cat)}</span>
+      return it ? `<div class="listrow"><span class="t">${esc(qt(it))}</span>
+        <span class="y">${esc(it.sub || it.cat)}</span><span class="m"></span>
         <button class="ghost" data-act="unhide" data-id="${id}" style="padding:2px 10px">復元</button></div>` : "";
     }).join("")}
     <div class="btnrow"><button class="ghost" data-nav="home">← ホームへ</button></div>
@@ -852,7 +825,8 @@ document.addEventListener("click", (e) => {
         HIDDEN.ids.push(it.id);
         HIDDEN.items[it.id] = it;
         ITEMS = ITEMS.filter(i => i.id !== it.id);
-        saveHidden(); toast(`「${it.text}」を削除しました`); render();
+        saveHidden(); toast(`「${qt(it)}」を削除しました`);
+        if (view.name === "edit") go("list", { room: "jisho" }); else render();
       }
     }
     else if (act === "unhide") {
@@ -1016,9 +990,9 @@ document.addEventListener("click", (e) => {
     const power = view.room === "power";
     let p;
     if (power) {
-      // 固定構成: POWER_SPEC(漢字40・他各10)に従い、存在するカテゴリから出題
+      // 全カテゴリから計60問を均等抽出(各1点・100点満点換算)
       const take = (cat, n) => shuffle([...byCat(cat)]).slice(0, n);
-      p = shuffle(POWER_SPEC.flatMap(([c, n]) => take(c, n)));
+      p = shuffle(powerSpec().flatMap(([c, n]) => take(c, n)));
     } else {
       // 50問構成: 範囲から45問以上 + 前の枠の✕を5問以内(先の問題は出ない)
       const blockItems = ITEMS.slice(view.gs - 1, view.ge);
@@ -1036,16 +1010,6 @@ document.addEventListener("click", (e) => {
       range: power ? [1, ITEMS.length] : [view.gs, view.ge],
       kind: power ? "power" : "test" };
     go("testrun");
-  }
-  if (e.target.id === "e_save") {
-    const it = ITEMS.find(i => i.id === view.id);
-    OVERRIDES[view.id] = {
-      text: $("#e_text").value.trim(), yomi: $("#e_yomi").value.trim(),
-      meaning: $("#e_meaning").value.trim(), example: $("#e_example").value.trim(),
-      level: $("#e_level").value.trim(),
-    };
-    Object.assign(it, OVERRIDES[view.id]);
-    saveOverrides(); toast("保存しました"); go("list", { room: "jisho" });
   }
   if (e.target.id === "d_export") {
     const blob = new Blob([JSON.stringify({ progress: PROGRESS, results: RESULTS, overrides: OVERRIDES, stdm: stdm, hidden: HIDDEN }, null, 1)],
@@ -1123,6 +1087,14 @@ async function boot() {
     $("#app").innerHTML =
       '<div class="card"><p>items.json を読み込めません。データ生成後に再読み込みしてください。</p></div>';
     return;
+  }
+  // 項目の正規化(問題データ: categoryName/subCategory を内部名に)
+  for (const it of ITEMS) {
+    it.cat = it.categoryName || it.cat || "";
+    it.sub = it.subCategory || it.sub || "";
+    it.yomi = it.yomi || "";
+    it.meaning = it.meaning || "";
+    it.example = it.example || "";
   }
   applyOverrides();
   applyHidden();
