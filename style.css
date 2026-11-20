@@ -1,13 +1,13 @@
 :root {
-  --bg: #f4f6fa;
+  --bg: #f7f4ec;
   --card: #ffffff;
   --ink: #1f2937;
   --sub: #6b7280;
-  --acc: #1a56db;
+  --acc: #2b6cb0;
   --ok: #e02424;
   --ng: #d61f69;
-  --line: #e5e7eb;
-  --radius: 12px;
+  --line: #e8e2d5;
+  --radius: 16px;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
@@ -123,9 +123,29 @@ label.f { display: block; font-size: 13px; color: var(--sub); margin: 8px 0 2px;
 .stat b { font-size: 22px; display: block; }
 .stat span { font-size: 12px; color: var(--sub); }
 
-.catcard { cursor: pointer; }
+.catcard { cursor: pointer; border-radius: 18px; }
 .catcard:hover { box-shadow: 0 2px 8px rgba(0,0,0,.14); }
 .catcard .ttl { font-size: 20px; font-weight: 700; }
+.roomico {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin-bottom: 8px;
+}
+.roomico.r0 { background: #dbeafe; }
+.roomico.r1 { background: #fef3c7; }
+.roomico.r2 { background: #dcfce7; }
+.roomico.r3 { background: #fce7f3; }
+.roomico.r4 { background: #ede9fe; }
+
+/* 単元選択(50件区切り) */
+.unit {
+  border: 1.5px solid var(--line); border-radius: 14px;
+  padding: 12px 14px; margin-bottom: 10px; cursor: pointer;
+  background: #fff;
+}
+.unit:hover { border-color: var(--acc); }
+.unit.cleared { border-color: #16a34a; background: #f6fdf9; }
+.unit-head { display: flex; align-items: center; gap: 10px; }
 
 #toast {
   position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);

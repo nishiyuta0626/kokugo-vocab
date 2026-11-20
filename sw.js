@@ -1,5 +1,5 @@
 // PWA用サービスワーカー: アプリ本体と問題データをキャッシュ(オフライン対応)
-const CACHE = "kokugo-vocab-v1";
+const CACHE = "kokugo-vocab-v2";
 const ASSETS = [
   "./",
   "./index.html",
