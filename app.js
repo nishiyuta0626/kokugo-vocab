@@ -569,7 +569,6 @@ function vEarnLog() {
 // ---------- トップページ(ユーザー選択) ----------
 function vUserSelect() {
   return `<div class="card" style="text-align:center">
-    <h2>だれがあそびますか？</h2>
     <div class="choices">
       <button class="choice" data-act="usel" data-u="koharu" style="font-size:20px">🌸 こはる</button>
       <button class="choice" data-act="usel" data-u="admin" style="font-size:20px">🔑 管理者</button>
