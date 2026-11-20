@@ -9598,5 +9598,368 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「板につい」です。"
+  },
+  {
+    "id": "kan_681",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）に塩」",
+    "options": [
+      "青菜",
+      "大根",
+      "白菜",
+      "きゅうり"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「青菜」で「青菜に塩」です。"
+  },
+  {
+    "id": "kan_682",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の仲」",
+    "options": [
+      "犬猿",
+      "猫犬",
+      "狐狸",
+      "水魚"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「犬猿」で「犬猿の仲」です。"
+  },
+  {
+    "id": "kan_683",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を割ったよう」",
+    "options": [
+      "竹",
+      "木",
+      "石",
+      "氷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「竹」で「竹を割ったよう」です。"
+  },
+  {
+    "id": "kan_684",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の一声」",
+    "options": [
+      "鶴",
+      "鷹",
+      "鷲",
+      "鳩"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鶴」で「鶴の一声」です。"
+  },
+  {
+    "id": "kan_685",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）に油」",
+    "options": [
+      "水",
+      "湯",
+      "火",
+      "氷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「水」で「水に油」です。"
+  },
+  {
+    "id": "kan_686",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）から棒」",
+    "options": [
+      "藪",
+      "草",
+      "森",
+      "山"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「藪」で「藪から棒」です。"
+  },
+  {
+    "id": "kan_687",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の耳に風」",
+    "options": [
+      "馬",
+      "牛",
+      "犬",
+      "豚"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「馬」で「馬の耳に風」です。"
+  },
+  {
+    "id": "kan_688",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）も杓子も」",
+    "options": [
+      "猫",
+      "犬",
+      "猿",
+      "鳥"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「猫」で「猫も杓子も」です。"
+  },
+  {
+    "id": "kan_689",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の目」",
+    "options": [
+      "台風",
+      "嵐",
+      "風",
+      "雲"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「台風」で「台風の目」です。"
+  },
+  {
+    "id": "kan_690",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の角を折る」",
+    "options": [
+      "鬼",
+      "牛",
+      "鹿",
+      "羊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鬼」で「鬼の角を折る」です。"
+  },
+  {
+    "id": "kan_691",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「青菜に塩」の最も適切な意味を選びなさい。",
+    "options": [
+      "急に元気がなくなり、しょげてしおれている様子。",
+      "新鮮で生き生きとしており、元気にあふれている様子。",
+      "嫌いなものを食べさせられて、顔をしかめている様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「青菜に塩」急に元気がなくなり、しょげてしおれている様子。"
+  },
+  {
+    "id": "kan_692",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「竹を割ったよう」の最も適切な意味を選びなさい。",
+    "options": [
+      "性格がさっぱりしていて、隠し事や裏表がない様子。",
+      "怒りっぽくて、すぐに感情を爆発させる様子。",
+      "頑固で融通がきかず、他人の意見を聞かない様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「竹を割ったよう」性格がさっぱりしていて、隠し事や裏表がない様子。"
+  },
+  {
+    "id": "kan_693",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「鶴の一声」の最も適切な意味を選びなさい。",
+    "options": [
+      "多くの人が議論して決まらないとき、権威のある人の一言で決まること。",
+      "遠くまでよく通る、美しく澄んだ声で話すこと。",
+      "一番最初に意見を言って、話し合いのきっかけを作ること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「鶴の一声」多くの人が議論して決まらないとき、権威のある人の一言で決まること。"
+  },
+  {
+    "id": "kan_694",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「藪から棒」の最も適切な意味を選びなさい。",
+    "options": [
+      "前触れもなく、出し抜けに物事を行うこと。",
+      "隠れていた危険が、突然目の前に現れること。",
+      "用意周到に準備して、相手を驚かせること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「藪から棒」前触れもなく、出し抜けに物事を行うこと。"
+  },
+  {
+    "id": "kan_695",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「猫も杓子も」の最も適切な意味を選びなさい。",
+    "options": [
+      "誰も彼も、区別なくみんなが同じことをする様子。",
+      "家の中にある道具をすべて使って、忙しく働く様子。",
+      "動物も人間も関係なく、みんなが仲良く暮らす様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「猫も杓子も」誰も彼も、区別なくみんなが同じことをする様子。"
+  },
+  {
+    "id": "kan_696",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「さっきまで騒いでいたのに、先生に叱られた途端に（　）のように静かになった。」",
+    "options": [
+      "青菜に塩",
+      "水に油",
+      "猫も杓子も"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「青菜に塩」です。"
+  },
+  {
+    "id": "kan_697",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「あの二人は顔を見るたびにけんかばかりしていて、まさに（　）だ。」",
+    "options": [
+      "犬猿の仲",
+      "竹を割ったよう",
+      "鶴の一声"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「犬猿の仲」です。"
+  },
+  {
+    "id": "kan_698",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「意見が分かれてまとまらなかったが、部長の（　）で方針が決まった。」",
+    "options": [
+      "鶴の一声",
+      "藪から棒",
+      "台風の目"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鶴の一声」です。"
+  },
+  {
+    "id": "kan_699",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「前置きもなく（　）に『明日引っ越すんだ』と言われて驚いた。」",
+    "options": [
+      "藪から棒",
+      "青菜に塩",
+      "水に油"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「藪から棒」です。"
+  },
+  {
+    "id": "kan_700",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「新しいゲームが発売されると、クラスの（　）その話ばかりしている。」",
+    "options": [
+      "猫も杓子も",
+      "犬猿の仲",
+      "竹を割ったよう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「猫も杓子も」です。"
+  },
+  {
+    "id": "kan_701",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句誤用チェック",
+    "question": "次の文のうち、慣用句の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "二人はとても仲が良く、いつも助け合っているので犬猿の仲だ。",
+      "彼女は竹を割ったような性格で、嫌なことがあっても後に引きずらない。",
+      "意見が合わずに反発し合う二人は、まさに水に油の関係だ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「二人はとても仲が良く、いつも助け合っているので犬猿の仲だ。」です。"
+  },
+  {
+    "id": "kan_702",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句対義・類義ペア",
+    "question": "「青菜に塩」と同じような「がっかりして元気がなくなる様子」を表す四字熟語を選びなさい。",
+    "options": [
+      "意気消沈",
+      "意気揚々",
+      "意気投合"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「意気消沈」です。"
+  },
+  {
+    "id": "kan_703",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「竹を（　）ったよう」",
+    "options": [
+      "割",
+      "切",
+      "折",
+      "裂"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「割」で「竹を割ったよう」です。"
+  },
+  {
+    "id": "kan_704",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「白羽の（　）が立つ」",
+    "options": [
+      "矢",
+      "羽",
+      "旗",
+      "針"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「矢」で「白羽の矢が立つ」です。"
+  },
+  {
+    "id": "kan_705",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「太鼓（　）を押す」",
+    "options": [
+      "判",
+      "印",
+      "札",
+      "章"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「判」で「太鼓判を押す」です。"
   }
 ]
