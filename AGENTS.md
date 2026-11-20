@@ -43,3 +43,12 @@ items.json: `[{id, cat, text, yomi, meaning, example, level, image?}]`
 
 - 小春テスト管理アプリ: `C:\Users\nishida\gekokujo_test_app`(別プロジェクト)
 - データ生成は同フォルダのvenv(gekokujo_test_app/.venv)と.env(GEMINI_API_KEY)を借りる
+
+## クラウド同期(Vercel + Turso)
+
+- 本番URL: https://kokugo-vocab.vercel.app (GitHub Pages版 https://nishiyuta0626.github.io/kokugo-vocab/ も同一DBに同期)
+- `api/state.js`: Vercelサーバーレス関数。Tursoの `kv_state` テーブル(target1900と同じDB, 別テーブル)にユーザー別JSONを保存
+- 環境変数(Vercel Production): `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`
+- スコープ: `koharu` / `admin` / `_shared`(項目修正・非表示は全ユーザー共有)
+- app.js側: ログイン時pull→localStorage反映(リモート空なら初回push)、保存時800msデバウンスpush、10秒ポーリングで他端末の変更を適用
+- デプロイ: `vercel deploy --prod --yes`(vercel CLIログイン済み、プロジェクト racemaster/kokugo-vocab)
