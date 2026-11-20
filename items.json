@@ -5816,5 +5816,320 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「一を聞いて十を知る」です。"
+  },
+  {
+    "id": "kot_406",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「転ばぬ先の（　）」",
+    "options": [
+      "杖",
+      "傘",
+      "靴",
+      "道"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「杖」で「転ばぬ先の杖」です。"
+  },
+  {
+    "id": "kot_407",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）からぼたもち」",
+    "options": [
+      "棚",
+      "空",
+      "雲",
+      "木"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「棚」で「棚からぼたもち」です。"
+  },
+  {
+    "id": "kot_408",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を売らば馬を買え」",
+    "options": [
+      "鞍",
+      "鞭",
+      "鎧",
+      "車"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鞍」で「鞍を売らば馬を買え」です。"
+  },
+  {
+    "id": "kot_409",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の子は蛙」",
+    "options": [
+      "蛙",
+      "魚",
+      "亀",
+      "蛇"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「蛙」で「蛙の子は蛙」です。"
+  },
+  {
+    "id": "kot_411",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「三つ子の（　）百まで」",
+    "options": [
+      "魂",
+      "心",
+      "夢",
+      "癖"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「魂」で「三つ子の魂百まで」です。"
+  },
+  {
+    "id": "kot_412",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）は心の鏡」",
+    "options": [
+      "目",
+      "顔",
+      "口",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「目」で「目は心の鏡」です。"
+  },
+  {
+    "id": "kot_413",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）も木から落ちる」",
+    "options": [
+      "猿",
+      "猫",
+      "鳥",
+      "熊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「猿」で「猿も木から落ちる」です。"
+  },
+  {
+    "id": "kot_414",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の頭も信心から」",
+    "options": [
+      "鰯",
+      "鯖",
+      "鮭",
+      "鯛"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鰯」で「鰯の頭も信心から」です。"
+  },
+  {
+    "id": "kot_415",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を矯めて牛を殺す」",
+    "options": [
+      "角",
+      "牙",
+      "爪",
+      "耳"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「角」で「角を矯めて牛を殺す」です。"
+  },
+  {
+    "id": "kot_416",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の河原の石積み」",
+    "options": [
+      "賽",
+      "三途",
+      "地獄",
+      "鬼"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「賽」で「賽の河原の石積み」です。"
+  },
+  {
+    "id": "kot_417",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の空似」",
+    "options": [
+      "他人",
+      "別人",
+      "親子",
+      "兄弟"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「他人」で「他人の空似」です。"
+  },
+  {
+    "id": "kot_418",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の心子知らず」",
+    "options": [
+      "親",
+      "子",
+      "人",
+      "親父"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「親」で「親の心子知らず」です。"
+  },
+  {
+    "id": "kot_419",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の菖蒲十日の菊」",
+    "options": [
+      "六日",
+      "十日",
+      "昨日",
+      "明日"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「六日」で「六日の菖蒲十日の菊」です。"
+  },
+  {
+    "id": "kot_420",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の目の黒いうち」",
+    "options": [
+      "親",
+      "祖父",
+      "先生",
+      "自分"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「親」で「親の目の黒いうち」です。"
+  },
+  {
+    "id": "kot_421",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の上のたんこぶ」",
+    "options": [
+      "目",
+      "頭",
+      "鼻",
+      "耳"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「目」で「目の上のたんこぶ」です。"
+  },
+  {
+    "id": "kot_422",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の背くらべ」",
+    "options": [
+      "どんぐり",
+      "きのこ",
+      "たけのこ",
+      "つくし"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「どんぐり」で「どんぐりの背くらべ」です。"
+  },
+  {
+    "id": "kot_423",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を見て森を見ず」",
+    "options": [
+      "木",
+      "葉",
+      "花",
+      "枝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「木」で「木を見て森を見ず」です。"
+  },
+  {
+    "id": "kot_424",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の遠吠え」",
+    "options": [
+      "負け犬",
+      "野良犬",
+      "子犬",
+      "番犬"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「負け犬」で「負け犬の遠吠え」です。"
+  },
+  {
+    "id": "kot_425",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）心あれば水心」",
+    "options": [
+      "魚",
+      "蛙",
+      "亀",
+      "鳥"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「魚」で「魚心あれば水心」です。"
+  },
+  {
+    "id": "kot_429",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の甲より年の功」",
+    "options": [
+      "亀",
+      "鶴",
+      "蟹",
+      "貝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「亀」で「亀の甲より年の功」です。"
+  },
+  {
+    "id": "kot_430",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "ことわざ穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の涙」",
+    "options": [
+      "雀",
+      "燕",
+      "鳩",
+      "烏"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「雀」で「雀の涙」です。"
   }
 ]
