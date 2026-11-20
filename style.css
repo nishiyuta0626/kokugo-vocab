@@ -195,3 +195,15 @@ label.f { display: block; font-size: 13px; color: var(--sub); margin: 10px 0 2px
 
 .center { text-align: center; }
 hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
+
+/* 管理者ボタン(右下・控えめ) */
+.adminbtn { float: right; font-size: 12px; opacity: .6; }
+.adminbtn:hover { opacity: 1; }
+
+/* 実力テスト付与票 */
+.awardtbl { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 14px; }
+.awardtbl th, .awardtbl td {
+  border: 1px solid var(--line); padding: 6px 10px; text-align: left;
+}
+.awardtbl th { background: #f1f3f9; }
+.awardtbl td[rowspan] { background: #fefce8; vertical-align: middle; }

@@ -11,6 +11,9 @@ const LS_PROGRESS = "kv_progress_v1";
 const LS_OVERRIDE = "kv_item_override_v1";
 const LS_RESULTS = "kv_results_v1";
 const LS_stdm = "kv_stdm_v1";
+const LS_TIME = "kv_study_time_v1";
+const LS_POWER = "kv_power_unlock_v1";
+const LS_ADJUST = "kv_stdm_adjust_v1";
 const SEC_SIZE = 50;
 // 全体通し番号のカテゴリ順(1〜漢字→慣用句→四字熟語→ことわざ)
 const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
@@ -31,10 +34,16 @@ const MODES = { m2t: "意味→語句", t2y: "語句→読み", y2t: "読み→�
 const KIND_JP = { quiz: "クイズ", test: "テスト", power: "実力テスト" };
 
 let ITEMS = [];
-let PROGRESS = {};   // id -> {c,w,s,last}
-let RESULTS = [];    // {ts,kind,cat,range:[a,b],n,ok,wrongIds}
+let PROGRESS = {};   // id -> {c,w,s,tc,tw,ts,last}
+let RESULTS = [];    // {ts,kind,cat,range:[a,b],n,ok,wrongIds,pts?}
 let OVERRIDES = {};
 let stdm = 0;
+let POWER_ON = false; // 管理者の実力テスト解放スイッチ
+// 勉強時間: 問題を解いている時間のみ計測。2分無操作/離席で一時停止。
+// 2分勉強 = 1stdm
+let study = { day: "", sec: 0, total: 0, paidStdm: 0 };
+let ADJUSTS = []; // {ts,amount,memo} stdm手動増減ログ
+let runStartTotal = 0; // 実行開始時点の累計勉強秒(セッション使用時間の算出用)
 let view = { name: "home" };
 let quiz = null;     // {list,idx,mode,answers,judged,pool,cat,range}
 let test = null;     // {list,idx,mode,answers,cur,pool,cat,range,kind}
@@ -48,6 +57,8 @@ const saveProgress = () => localStorage.setItem(LS_PROGRESS, JSON.stringify(PROG
 const saveResults = () => localStorage.setItem(LS_RESULTS, JSON.stringify(RESULTS));
 const saveOverrides = () => localStorage.setItem(LS_OVERRIDE, JSON.stringify(OVERRIDES));
 const savestdm = () => localStorage.setItem(LS_stdm, String(stdm));
+const savePower = () => localStorage.setItem(LS_POWER, POWER_ON ? "1" : "0");
+const saveStudy = () => localStorage.setItem(LS_TIME, JSON.stringify(study));
 function applyOverrides() {
   for (const it of ITEMS) {
     const o = OVERRIDES[it.id];
@@ -56,19 +67,21 @@ function applyOverrides() {
 }
 
 // ---------- 記録 ----------
-function rec(id) { return PROGRESS[id] || { c: 0, w: 0, s: 0, tc: 0, tw: 0, ts: 0, last: "" }; }
+function rec(id) { return PROGRESS[id] || { c: 0, w: 0, s: 0, tc: 0, tw: 0, tlast: "", last: "" }; }
 function mark(id, ok, kind) {
   const r = rec(id);
   if (ok) { r.c++; r.s++; } else { r.w++; r.s = 0; }
-  // テスト系は別カウント(クイズ・カードの✕はテストの復習対象にしない)
+  // テスト系(テスト・実力テスト)の状態は別管理: 直近のテスト結果が✕なら✕、⭕なら〇に戻る。
+  // クイズ・カードの結果はここに反映されない。
   if (kind === "test" || kind === "power") {
-    if (ok) { r.tc++; r.ts++; } else { r.tw++; r.ts = 0; }
+    if (ok) r.tc++; else r.tw++;
+    r.tlast = ok ? "ok" : "ng";
   }
   r.last = new Date().toISOString();
   PROGRESS[id] = r; saveProgress();
 }
-// テストで間違えて未克服(連続2回⭕未満)かどうか
-function testWeak(id) { const r = rec(id); return r.tw > 0 && r.ts < 2; }
+// テスト系で直近が✕かどうか(次のテストに混入する復習対象)
+function testWeak(id) { return rec(id).tlast === "ng"; }
 function statusOf(id) {
   const r = rec(id);
   if (r.c === 0 && r.w === 0) return "new";
@@ -115,13 +128,35 @@ function fmtTs(ts) {
   const p = (n) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 }
-function stdmAward(pct) { // 実力テストのstdm付与
-  if (pct >= 100) return 1000;
-  if (pct >= 90) return 500;
-  if (pct >= 80) return 400;
-  if (pct >= 70) return 300;
-  if (pct >= 50) return 100;
+function stdmAward(pts) { // 実力テスト(100点満点)のstdm付与
+  if (pts >= 100) return 500;
+  if (pts >= 85) return 200;
+  if (pts >= 70) return 100;
   return 10;
+}
+const RUN_VIEWS = new Set(["quizrun", "testrun", "card"]);
+const IDLE_MS = 120000; // 2分無操作でタイムロック
+let lastActivity = Date.now();
+let winFocused = true;
+let lastTickAt = Date.now();
+function todayStr() { const d = new Date(); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; }
+function studyTick() {
+  const now = Date.now();
+  const dt = now - lastTickAt;
+  lastTickAt = now;
+  if (dt <= 0 || dt > 60000) return;
+  const active = RUN_VIEWS.has(view.name) && !document.hidden && winFocused &&
+    (now - lastActivity) < IDLE_MS;
+  if (!active) return;
+  if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }
+  study.sec += dt / 1000; study.total += dt / 1000;
+  const earned = Math.floor(study.total / 120); // 2分=1stdm
+  if (earned > study.paidStdm) { stdm += earned - study.paidStdm; study.paidStdm = earned; savestdm(); }
+  saveStudy();
+}
+function fmtStudy() {
+  const m = Math.floor(study.sec / 60);
+  return m >= 60 ? `${Math.floor(m / 60)}時間${m % 60}分` : `${m}分`;
 }
 // 単元(50件)ブロックの状態: 習得数で段階評価
 //   0(未着手)=gray / 〜25いまいち=orange / 26〜35まあまあ=blue / 36〜45すごい=green / 46〜合格=gold
@@ -142,7 +177,9 @@ function render() {
   const inRoom = view.name !== "home" && view.name !== "data";
   const room = ROOMS.find(r => r.key === view.room);
   $("#backbtn").style.display = inRoom ? "" : "none";
-  $("#headtitle").textContent = inRoom && room ? `${room.icon} ${room.label}` : "";
+  $("#headtitle").textContent = inRoom
+    ? (room ? `${room.icon} ${room.label}` : (view.name === "admin" ? "管理者" : ""))
+    : "";
   const el = $("#app");
   const v = view.name;
   if (v === "home") el.innerHTML = vHome();
@@ -160,8 +197,15 @@ function render() {
   else if (v === "list") el.innerHTML = vList();
   else if (v === "edit") el.innerHTML = vEdit();
   else if (v === "data") el.innerHTML = vData();
+  else if (v === "admin") el.innerHTML = vAdmin();
 }
-function go(name, params = {}) { view = { name, ...params }; render(); window.scrollTo(0, 0); }
+function go(name, params = {}) {
+  const wasRun = RUN_VIEWS.has(view.name);
+  const isRun = RUN_VIEWS.has(name);
+  if (isRun && !wasRun) runStartTotal = study.total;
+  view = { name, ...params }; render(); window.scrollTo(0, 0);
+}
+const fmtDur = (s) => `${Math.floor(s / 60)}分${Math.round(s % 60)}秒`;
 
 // ---------- ホーム ----------
 function powerProgress() { // 実力テスト解放状況: 全単元が「合格」(46件以上習得)
@@ -172,16 +216,22 @@ function powerProgress() { // 実力テスト解放状況: 全単元が「合格
   }
   return { total, cleared };
 }
+function powerUnlocked() {
+  if (POWER_ON) return true;
+  const pw = powerProgress();
+  return pw.total > 0 && pw.cleared === pw.total;
+}
 function vHome() {
   const pw = powerProgress();
-  const unlocked = pw.total > 0 && pw.cleared === pw.total;
+  const unlocked = powerUnlocked();
   const rooms = ROOMS.map(r =>
     `<div class="roomcard ${r.gold ? "gold" : ""}" data-nav="${r.key}">
       <div class="room-ttl">${r.icon} ${r.label}${r.gold && !unlocked ? " 🔒" : ""}</div>
       <div class="muted">${r.desc}</div>
-      ${r.gold ? `<div class="muted small">(100点/1000stdm　90〜99点/500stdm　80〜89点/400stdm　70〜79点/300stdm　50〜69点/100stdm　49点以下/10stdm)</div>
+      ${r.gold ? `<div class="muted small">60問(漢字40・慣用句10・四字熟語10・ことわざ10)・漢字1点/他2点・計100点</div>
+        <div class="muted small">(100点/500stdm　85〜99点/200stdm　70〜84点/100stdm　69点以下/10stdm)</div>
         <div class="muted small">${unlocked
-          ? "🔓 解放済み！"
+          ? (POWER_ON ? "🔓 解放中(管理者設定)" : "🔓 解放済み！")
           : `🔒 全単元を「合格」(46件以上習得)すると解放されます　合格 ${pw.cleared}/${pw.total} 単元`}</div>` : ""}
     </div>`).join("");
   const total = ITEMS.length;
@@ -190,7 +240,8 @@ function vHome() {
   const correct = Object.values(PROGRESS).reduce((a, r) => a + r.c, 0);
   return `<div class="roomlist">${rooms}</div>
     <p class="muted mt">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
-    <p class="muted">所有：<b class="stdm">${stdm} stdm</b>　<button class="ghost" data-nav="data">データ管理 →</button></p>`;
+    <p class="muted">所有：<b class="stdm">${stdm} stdm</b>　<button class="ghost" data-nav="data">データ管理 →</button>
+    <button class="ghost adminbtn" data-nav="admin">管理者</button></p>`;
 }
 
 // ---------- カテゴリ選択 ----------
@@ -350,11 +401,13 @@ function vTestSetup() {
   const blk = power ? null : ITEMS.slice(view.gs - 1, view.ge);
   return `<div class="card">
     <h2>${power ? "実力テスト" : `テストを始める — No.${view.gs}-${view.ge}`}</h2>
-    <p class="muted">${power
-      ? "全範囲からランダム出題。点数に応じてstdmを獲得できます。"
-      : `${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。`}</p>
-    ${power ? `<div class="numrow"><div><label class="f">問題数</label>
-      <select id="t_n"><option selected>30</option><option>50</option><option>100</option></select></div></div>` : ""}
+    ${power ? `<p class="muted">全範囲からランダム出題・計60問100点満点。</p>
+      <table class="awardtbl"><tr><th>カテゴリ</th><th>問数</th><th>配点</th><th>stdm付与</th></tr>
+      <tr><td>漢字読み</td><td>40問</td><td>1点/問</td><td rowspan="4">100点:500<br>85〜99点:200<br>70〜84点:100<br>69点以下:10</td></tr>
+      <tr><td>慣用句</td><td>10問</td><td>2点/問</td></tr>
+      <tr><td>四字熟語</td><td>10問</td><td>2点/問</td></tr>
+      <tr><td>ことわざ</td><td>10問</td><td>2点/問</td></tr></table>`
+      : `<p class="muted">${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。</p>`}
     <label class="f">出題形式</label>
     <select id="t_mode">
       <option value="m2t">意味 → 語句を選ぶ</option>
@@ -362,7 +415,7 @@ function vTestSetup() {
       <option value="y2t">読み → 語句を選ぶ</option>
     </select>
     <button class="bigbtn" id="t_go">テストを開始</button>
-    <div class="btnrow"><button class="ghost" data-act="quit">← 範囲選択へ</button></div>
+    <div class="btnrow"><button class="ghost" data-act="quit">${power ? "← ホームへ" : "← 範囲選択へ"}</button></div>
   </div>
   ${recentRows(power ? "power" : "test", view.cat)}`;
 }
@@ -486,7 +539,14 @@ function vTestRun() {
 function vTestEnd() {
   const ok = test.answers.filter(a => a.ok).length;
   const pct = Math.round(ok / test.answers.length * 100);
-  const got = test.kind === "power" ? stdmAward(pct) : 0;
+  const pts = test.kind === "power"
+    ? test.answers.reduce((s2, x) => {
+        if (!x.ok) return s2;
+        const it = ITEMS.find(i => i.id === x.id);
+        return s2 + (it && it.cat === "漢字" ? 1 : 2);
+      }, 0)
+    : null;
+  const got = test.kind === "power" ? stdmAward(pts) : 0;
   const passed = test.kind === "test" && pct >= TEST_PASS * 100;
   // 次の枠(合格していれば解放されている)
   const blks = globalBlocks();
@@ -498,7 +558,9 @@ function vTestEnd() {
     `<div class="listrow"><span class="t">${esc(it.text)}</span>
      <span class="y">${esc(it.yomi)}</span><span class="m">${esc(it.meaning)}</span></div>`).join("");
   return `<div class="card">
-    <h2>${test.kind === "power" ? "実力テスト" : "テスト"}結果: ${ok} / ${test.answers.length} 問正解(${pct}点)</h2>
+    <h2>${test.kind === "power"
+      ? `実力テスト結果: ${pts}点 / 100点満点 (${ok}/${test.answers.length}問正解)`
+      : `テスト結果: ${ok} / ${test.answers.length} 問正解(${pct}点)`}</h2>
     ${test.kind === "test" ? `<p style="font-size:20px;font-weight:700;color:${passed ? "#16a34a" : "var(--ng)"}">${passed ? "合格！次の枠が解放されました" : `不合格(合格は${TEST_PASS * 100}%以上)`}</p>` : ""}
     ${got ? `<p class="stdm">+${got} stdm 獲得！(所有: ${stdm} stdm)</p>` : ""}
     ${wrongs.length ? `<h3>間違えた問題 (${wrongs.length})</h3>${rows}
@@ -525,7 +587,8 @@ function vResult() {
       <b>${r.ok}/${r.n}</b>
       <span class="muted small">${fmtTs(r.ts)}</span></div>`;
   }).join("");
-  return `<div class="card">
+  return `<p class="muted">今日の勉強時間合計: <b>${fmtStudy()}</b></p>
+    <div class="card">
       <h3>進捗票（${SEC_SIZE}件ブロック）</h3>
       <p class="muted">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
       <p class="muted">所有：<b class="stdm">${stdm} stdm</b></p>
@@ -609,6 +672,66 @@ function vEdit() {
   </div></div>`;
 }
 
+// ---------- 管理者 ----------
+const ATABS = [["quiz", "クイズ管理"], ["test", "テスト管理"], ["power", "実力テスト管理"]];
+function vAdmin() {
+  const pw = powerProgress();
+  const m = Math.floor(study.sec / 60);
+  const totalH = Math.floor(study.total / 3600), totalM = Math.floor(study.total / 60) % 60;
+  // stdm手動増減ログ(直近10件)
+  const adjRows = ADJUSTS.slice(-10).reverse().map(x =>
+    `<div class="listrow"><span class="t" style="color:${x.amount >= 0 ? "#16a34a" : "var(--ng)"}">${x.amount >= 0 ? "+" : ""}${x.amount}</span>
+     <span class="m">${esc(x.memo || "")}　${fmtTs(x.ts)}</span></div>`).join("");
+  // 使用時間ログタブ
+  const tab = view.atab || "quiz";
+  const tabBtns = ATABS.map(([k, l]) =>
+    `<button class="chip ${tab === k ? "on" : ""}" data-act="atab" data-k="${k}">${l}</button>`).join("");
+  const logs = RESULTS.filter(r => r.kind === tab).slice().reverse();
+  const logRows = logs.map(r =>
+    `<div class="listrow">
+      <span class="t">No.${r.range[0]}-${r.range[1]}</span>
+      <span class="y">${r.ok}/${r.n}${r.pts != null ? `・${r.pts}点` : ""}</span>
+      <span class="m">${fmtTs(r.ts)}${r.secs != null ? `・使用時間 ${fmtDur(r.secs)}` : ""}</span>
+    </div>`).join("");
+  const totalSecs = logs.reduce((s2, r) => s2 + (r.secs || 0), 0);
+  return `<div class="card">
+    <h2>管理者</h2>
+    <div class="statrow">
+      <div class="stat"><b class="stdm" style="font-size:30px">${stdm}</b><span>所有 stdm</span></div>
+      <div class="stat"><b>${m}</b><span>今日の勉強(分)</span></div>
+      <div class="stat"><b>${totalH}h${totalM}m</b><span>累計勉強時間</span></div>
+    </div>
+    <h3>stdm 手動増減</h3>
+    <div class="btnrow" style="align-items:flex-end">
+      <div><label class="f">stdm数</label><input type="number" id="a_amt" value="10" min="1"></div>
+      <div style="flex:2"><label class="f">メモ(任意)</label><input type="text" id="a_memo" placeholder="理由など"></div>
+      <button class="primary" data-act="adj" data-v="1">付与(+)</button>
+      <button data-act="adj" data-v="0" style="border-color:var(--ng);color:var(--ng)">使用(-)</button>
+    </div>
+    ${adjRows}
+  </div>
+  <div class="card">
+    <h3>進捗票（${SEC_SIZE}件ブロック）</h3>
+    <p class="muted small">タップで残りの語句を確認できます</p>
+    ${allBlockTiles("tile")}
+    <hr>
+    <h3>実力テスト</h3>
+    <p class="muted">ONにすると、全単元合格を待たずに実力テストの部屋が解放されます。現在: 合格 ${pw.cleared}/${pw.total} 単元。</p>
+    <div class="chips">
+      <button class="chip ${POWER_ON ? "on" : ""}" data-act="power" data-v="1">実力テスト ON</button>
+      <button class="chip ${POWER_ON ? "" : "on"}" data-act="power" data-v="0">実力テスト OFF</button>
+    </div>
+  </div>
+  <div class="card">
+    <h3>使用時間ログ</h3>
+    <p class="muted small">問題を解いている時間のみ(2分無操作・離席で停止)</p>
+    <div class="chips">${tabBtns}</div>
+    <p class="muted small mt">${logs.length}件・合計 ${fmtDur(totalSecs)}</p>
+    ${logRows || `<p class="muted">まだ記録がありません。</p>`}
+    <div class="btnrow"><button class="ghost" data-nav="home">← ホームへ</button></div>
+  </div>`;
+}
+
 // ---------- データ管理 ----------
 function vData() {
   const total = Object.keys(PROGRESS).length;
@@ -636,19 +759,21 @@ document.addEventListener("click", (e) => {
   if (nav) {
     const k = nav.dataset.nav;
     if (k === "power") {
-      const pw = powerProgress();
-      if (!(pw.total > 0 && pw.cleared === pw.total)) {
-        toast(`🔒 まだ入れません（習得済み ${pw.cleared}/${pw.total} 単元）`);
+      if (!powerUnlocked()) {
+        const pw = powerProgress();
+        toast(`🔒 まだ入れません（合格 ${pw.cleared}/${pw.total} 単元）`);
         return;
       }
     }
     if (k === "home") go("home");
     else if (k === "data") go("data");
+    else if (k === "admin") go("admin");
     else if (k === "jisho") go("list", { room: "jisho" });
     else if (k === "result") go("result", { room: "result", cat: view.cat });
     else if (k === "quiz") go("quizsetup", { room: "quiz" });
     else if (k === "test") go("testpick", { room: "test" });
-    else go("catpick", { room: k, allowAll: k === "power" });
+    else if (k === "power") go("testsetup", { room: "power" });
+    else go("catpick", { room: k });
     return;
   }
   const a = e.target.closest("[data-act]");
@@ -672,20 +797,35 @@ document.addEventListener("click", (e) => {
     else if (act === "tile") {
       go("list", { room: "jisho", cat: a.dataset.cat, sec: +a.dataset.sec, kw: "", filt: "" });
     }
+    else if (act === "power") {
+      POWER_ON = a.dataset.v === "1"; savePower();
+      toast(POWER_ON ? "実力テストを解放しました" : "実力テストをロックしました");
+      render();
+    }
+    else if (act === "atab") { view.atab = a.dataset.k; render(); }
+    else if (act === "adj") {
+      const amt = Math.abs(+($("#a_amt")?.value) || 0);
+      if (!amt) { toast("stdm数を入力してください"); return; }
+      const signed = a.dataset.v === "1" ? amt : -amt;
+      stdm = Math.max(0, stdm + signed);
+      ADJUSTS.push({ ts: new Date().toISOString(), amount: signed, memo: ($("#a_memo")?.value || "").trim() });
+      localStorage.setItem(LS_ADJUST, JSON.stringify(ADJUSTS));
+      savestdm(); toast(`${signed > 0 ? "+" : ""}${signed} stdm`); render();
+    }
     else if (act === "quit") {
       if (view.name === "testsetup") {
-        if (view.room === "power") go("catpick", { room: "power", allowAll: true });
+        if (view.room === "power") go("home");
         else go("testpick", { room: "test" });
       }
       else if (view.room === "quiz" || view.name === "card") go("quizsetup", { room: "quiz" });
-      else if (view.room === "power") go("catpick", { room: "power", allowAll: true });
+      else if (view.room === "power") go("home");
       else go("testpick", { room: "test" });
     }
     else if (act === "tosetup") {
       if (view.name === "quizend" || view.name === "card" || view.room === "quiz") {
         go("quizsetup", { room: "quiz" });
       } else if (test && test.kind === "power") {
-        go("catpick", { room: "power", allowAll: true });
+        go("testsetup", { room: "power" });
       } else go("testpick", { room: "test" });
     }
     else if (act === "flip") { cardSet.flipped = !cardSet.flipped; render(); }
@@ -716,6 +856,7 @@ document.addEventListener("click", (e) => {
           ts: new Date().toISOString(), kind: "quiz", cat: quiz.cat,
           range: quiz.range, n: quiz.answers.length,
           ok: quiz.answers.filter(x => x.ok).length,
+          secs: Math.round(study.total - runStartTotal),
           wrongIds: quiz.answers.filter(x => !x.ok).map(x => x.id),
         });
         saveResults();
@@ -730,10 +871,19 @@ document.addEventListener("click", (e) => {
       test.idx++;
       if (test.idx >= test.list.length) {
         const nOk = test.answers.filter(x => x.ok).length;
-        if (test.kind === "power") { stdm += stdmAward(Math.round(nOk / test.answers.length * 100)); savestdm(); }
+        // 実力テスト: 漢字1点・他2点の加重得点(100点満点)でstdm付与
+        const pts = test.kind === "power"
+          ? test.answers.reduce((s2, x) => {
+              if (!x.ok) return s2;
+              const it = ITEMS.find(i => i.id === x.id);
+              return s2 + (it && it.cat === "漢字" ? 1 : 2);
+            }, 0)
+          : null;
+        if (test.kind === "power") { stdm += stdmAward(pts); savestdm(); }
         RESULTS.push({
           ts: new Date().toISOString(), kind: test.kind, cat: test.cat,
-          range: test.range, n: test.answers.length, ok: nOk,
+          range: test.range, n: test.answers.length, ok: nOk, pts,
+          secs: Math.round(study.total - runStartTotal),
           wrongIds: test.answers.filter(x => !x.ok).map(x => x.id),
         });
         saveResults();
@@ -786,7 +936,9 @@ document.addEventListener("click", (e) => {
     const power = view.room === "power";
     let p;
     if (power) {
-      p = shuffle([...byCat(view.cat || null)]).slice(0, +$("#t_n").value || 30);
+      // 固定構成60問: 漢字40(1点) + 慣用句/四字熟語/ことわざ 各10(2点) = 100点満点
+      const take = (cat, n) => shuffle([...byCat(cat)]).slice(0, n);
+      p = shuffle(take("漢字", 40).concat(take("慣用句", 10), take("四字熟語", 10), take("ことわざ", 10)));
     } else {
       // 50問構成: 範囲から45問以上 + 前の枠の✕を5問以内(先の問題は出ない)
       const blockItems = ITEMS.slice(view.gs - 1, view.ge);
@@ -799,8 +951,8 @@ document.addEventListener("click", (e) => {
     if (p.length < 4) { toast("4件以上必要です"); return; }
     test = { list: p, idx: 0, mode, answers: [],
       pool: ITEMS,
-      cat: power ? (view.cat || "全カテゴリ") : view.cat,
-      range: power ? [1, byCat(view.cat || null).length] : [view.gs, view.ge],
+      cat: power ? "全カテゴリ" : view.cat,
+      range: power ? [1, ITEMS.length] : [view.gs, view.ge],
       kind: power ? "power" : "test" };
     go("testrun");
   }
@@ -867,6 +1019,16 @@ async function boot() {
   RESULTS = loadJSON(LS_RESULTS, []);
   OVERRIDES = loadJSON(LS_OVERRIDE, {});
   stdm = +(localStorage.getItem(LS_stdm) || 0);
+  POWER_ON = localStorage.getItem(LS_POWER) === "1";
+  study = Object.assign({ day: todayStr(), sec: 0, total: 0, paidStdm: 0 }, loadJSON(LS_TIME, {}));
+  ADJUSTS = loadJSON(LS_ADJUST, []);
+  if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }
+  setInterval(studyTick, 1000);
+  document.addEventListener("pointerdown", () => { lastActivity = Date.now(); }, { passive: true });
+  document.addEventListener("keydown", () => { lastActivity = Date.now(); });
+  window.addEventListener("blur", () => { winFocused = false; });
+  window.addEventListener("focus", () => { winFocused = true; lastActivity = Date.now(); });
+  window.addEventListener("pagehide", () => saveStudy());
   try {
     ITEMS = await (await fetch("items.json")).json();
   } catch {
