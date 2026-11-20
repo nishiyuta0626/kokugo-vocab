@@ -3268,5 +3268,360 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「同」で「呉越同舟（ごえつどうしゅう）」と書きます。"
+  },
+  {
+    "id": "yoji_226",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「文武両道」の意味として正しいものを選びなさい。",
+    "options": [
+      "学問と武道（スポーツ）の両方に優れていること。",
+      "文を書くことと、本を読むことの両方が得意なこと。",
+      "礼儀正しく、誰に対しても優しく接すること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「文武両道（ぶんぶりょうどう）」学問と武道（スポーツ）の両方に優れていること。"
+  },
+  {
+    "id": "yoji_227",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「質実剛健」の意味として正しいものを選びなさい。",
+    "options": [
+      "飾り気がなくまじめで、心も体も強くたくましいこと。",
+      "見た目も中身も華やかで、おしゃれな様子。",
+      "細かいことにはこだわらず、おおらかで優しい性格のこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「質実剛健（しつじつごうけん）」飾り気がなくまじめで、心も体も強くたくましいこと。"
+  },
+  {
+    "id": "yoji_228",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「興味津々」の意味として正しいものを選びなさい。",
+    "options": [
+      "興味が次々とわいてきて、心が強くひかれる様子。",
+      "まったく関心がなく、退屈そうにしている様子。",
+      "ひとつのことに飽きてしまい、別のことに目を向ける様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「興味津々（きょうみしんしん）」興味が次々とわいてきて、心が強くひかれる様子。"
+  },
+  {
+    "id": "yoji_229",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「自暴自棄」の意味として正しいものを選びなさい。",
+    "options": [
+      "やけくそになって、自分自身を粗末に扱うこと。",
+      "自分の失敗を反省し、一からやり直そうと決意すること。",
+      "他人の意見に頼らず、自分の力だけで道を切り開くこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「自暴自棄（じぼうじき）」やけくそになって、自分自身を粗末に扱うこと。"
+  },
+  {
+    "id": "yoji_230",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「意気消沈」の意味として正しいものを選びなさい。",
+    "options": [
+      "がっかりして元気がなくなり、しょげかえること。",
+      "得意になって、元気よく堂々と振る舞うこと。",
+      "怒りで気持ちがたかぶり、冷静さを失うこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「意気消沈（いきしょうちん）」がっかりして元気がなくなり、しょげかえること。"
+  },
+  {
+    "id": "yoji_231",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「独立独歩」の意味として正しいものを選びなさい。",
+    "options": [
+      "他人の力に頼らず、自分の考えや力で行動すること。",
+      "仲間と協力し合い、みんなで同じ目標に向かうこと。",
+      "迷子になってしまい、一人で知らない道を歩くこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「独立独歩（どくりつどっぽ）」他人の力に頼らず、自分の考えや力で行動すること。"
+  },
+  {
+    "id": "yoji_232",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「十中八九」の意味として正しいものを選びなさい。",
+    "options": [
+      "ほとんど間違いなく、その通りになるだろうということ。",
+      "成功する確率が非常に低く、ほとんど無理であること。",
+      "半分は成功するが、残りの半分は失敗すること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「十中八九（じゅっちゅうはっく）」ほとんど間違いなく、その通りになるだろうということ。"
+  },
+  {
+    "id": "yoji_233",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「千差万別」の意味として正しいものを選びなさい。",
+    "options": [
+      "物事にいろいろな違いがあり、それぞれ異なっていること。",
+      "どれもまったく同じで、見分けがつかないこと。",
+      "たくさんの種類の中から、一番良いものを選び出すこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「千差万別（せんさばんべつ）」物事にいろいろな違いがあり、それぞれ異なっていること。"
+  },
+  {
+    "id": "yoji_234",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「百花繚乱」の意味として正しいものを選びなさい。",
+    "options": [
+      "いろいろな花が美しく咲き乱れること、また優れた人物や作品が多く現れること。",
+      "季節外れの花が咲き、自然のバランスが崩れること。",
+      "一種類の花だけが広い野原一面に咲いている様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「百花繚乱（ひゃっかりょうらん）」いろいろな花が美しく咲き乱れること、また優れた人物や作品が多く現れること。"
+  },
+  {
+    "id": "yoji_235",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「紆余曲折」の意味として正しいものを選びなさい。",
+    "options": [
+      "物事が解決するまでに、いろいろと複雑な事情や変化があること。",
+      "何の障害もなく、まっすぐ順調に物事が進むこと。",
+      "道がくねくねと曲がっていて、歩きにくい様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「紆余曲折（うよきょくせつ）」物事が解決するまでに、いろいろと複雑な事情や変化があること。"
+  },
+  {
+    "id": "yoji_236",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「この秘伝のレシピは（　）であり、家族以外の誰にも教えてはいけない。」",
+    "options": [
+      "門外不出",
+      "公明正大",
+      "言語道断"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「門外不出（もんがいふしゅつ）」です。"
+  },
+  {
+    "id": "yoji_237",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「ライバルチームが優勝の座を（　）とねらっている。」",
+    "options": [
+      "虎視眈々",
+      "意気消沈",
+      "優柔不断"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「虎視眈々（こしたんたん）」です。"
+  },
+  {
+    "id": "yoji_238",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「太陽が昇ると、あれほど濃かった霧が（　）した。」",
+    "options": [
+      "雲散霧消",
+      "五里霧中",
+      "天変地異"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「雲散霧消（うんさんむしょう）」です。"
+  },
+  {
+    "id": "yoji_239",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「チームを優勝させるため、（　）の努力を続けてきた。」",
+    "options": [
+      "粉骨砕身",
+      "三日坊主",
+      "自暴自棄"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「粉骨砕身（ふんこつさいしん）」です。"
+  },
+  {
+    "id": "yoji_240",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「宇宙や自然界に存在する（　）のしくみを解き明かす。」",
+    "options": [
+      "森羅万象",
+      "山紫水明",
+      "花鳥風月"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「森羅万象（しんらばんしょう）」です。"
+  },
+  {
+    "id": "yoji_241",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）武両道」",
+    "options": [
+      "文",
+      "学",
+      "知",
+      "才"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「文」で「文武両道（ぶんぶりょうどう）」と書きます。"
+  },
+  {
+    "id": "yoji_242",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）実剛健」",
+    "options": [
+      "質",
+      "誠",
+      "真",
+      "正"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「質」で「質実剛健（しつじつごうけん）」と書きます。"
+  },
+  {
+    "id": "yoji_243",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「四（　）八方」",
+    "options": [
+      "方",
+      "面",
+      "辺",
+      "隅"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「方」で「四方八方（しほうはっぽう）」と書きます。"
+  },
+  {
+    "id": "yoji_244",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「千差（　）別」",
+    "options": [
+      "万",
+      "百",
+      "十",
+      "億"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「万」で「千差万別（せんさばんべつ）」と書きます。"
+  },
+  {
+    "id": "yoji_245",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「雲（　）霧消」",
+    "options": [
+      "散",
+      "消",
+      "去",
+      "飛"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「散」で「雲散霧消（うんさんむしょう）」と書きます。"
+  },
+  {
+    "id": "yoji_246",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「意気揚々」と反対の意味を表す四字熟語を次から選びなさい。",
+    "options": [
+      "意気消沈",
+      "意気投合",
+      "一意専心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「意気消沈（いきしょうちん）」です。"
+  },
+  {
+    "id": "yoji_247",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「十人十色」とほぼ同じ意味を表す四字熟語を次から選びなさい。",
+    "options": [
+      "千差万別",
+      "大同小異",
+      "満場一致"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「千差万別（せんさばんべつ）」です。"
+  },
+  {
+    "id": "yoji_248",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「悪戦苦闘」と似た意味を表す四字熟語を次から選びなさい。",
+    "options": [
+      "四苦八苦",
+      "順風満帆",
+      "平穏無事"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「四苦八苦（しくはっく）」です。"
+  },
+  {
+    "id": "yoji_249",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「自問自答」と反対のニュアンス（他人の意見にすぐ従うこと）を表す四字熟語を選びなさい。",
+    "options": [
+      "付和雷同",
+      "独立独歩",
+      "唯我独尊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「付和雷同（ふわらいどう）」です。"
+  },
+  {
+    "id": "yoji_250",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "対義語・類義語選択",
+    "question": "「言語道断」と似たような「ひどい振る舞い・勝手気ままな様子」を表す四字熟語を選びなさい。",
+    "options": [
+      "傍若無人",
+      "公明正大",
+      "誠心誠意"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「傍若無人（ぼうじゃくぶじん）」です。"
   }
 ]
