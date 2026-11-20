@@ -117,15 +117,18 @@ function sdnAward(pct) { // 実力テストのsdn付与
   if (pct >= 50) return 100;
   return 10;
 }
-// 単元(50件)ブロックの状態: gray未着手 / green習得 / blue普通 / orange要復習
+// 単元(50件)ブロックの状態: 習得数で段階評価
+//   0(未着手)=gray / 〜25いまいち=orange / 26〜35まあまあ=blue / 36〜45すごい=green / 46〜合格=gold
 function blockStat(blk) {
   const st = { new: 0, weak: 0, master: 0, good: 0 };
   blk.forEach(it => st[statusOf(it.id)]++);
   const done = st.master + st.good;
-  if (st.new === blk.length) return { cls: "gray", label: "未着手", done, weak: st.weak };
-  if (st.weak > 0) return { cls: "orange", label: "要復習", done, weak: st.weak };
-  if (done === blk.length) return { cls: "green", label: "習得", done, weak: 0 };
-  return { cls: "blue", label: "普通", done, weak: st.weak };
+  const weak = st.weak;
+  if (done >= 46) return { cls: "gold", label: "合格", done, weak };
+  if (done >= 36) return { cls: "green", label: "すごい", done, weak };
+  if (done >= 26) return { cls: "blue", label: "まあまあ", done, weak };
+  if (done === 0 && st.new === blk.length) return { cls: "gray", label: "未着手", done, weak };
+  return { cls: "orange", label: "いまいち", done, weak };
 }
 
 // ---------- 描画 ----------
@@ -155,16 +158,11 @@ function render() {
 function go(name, params = {}) { view = { name, ...params }; render(); window.scrollTo(0, 0); }
 
 // ---------- ホーム ----------
-function powerProgress() { // 実力テスト解放状況: {total, cleared}
+function powerProgress() { // 実力テスト解放状況: 全単元が「合格」(46件以上習得)
   let total = 0, cleared = 0;
-  for (const c of cats()) {
-    const p = byCat(c);
-    for (let a = 0; a < p.length; a += SEC_SIZE) {
-      total++;
-      const blk = p.slice(a, a + SEC_SIZE);
-      const done = blk.filter(i => ["good", "master"].includes(statusOf(i.id))).length;
-      if (done >= blk.length * 0.8) cleared++;
-    }
+  for (const b of globalBlocks()) {
+    total++;
+    if (blockStat(b.blk).done >= b.blk.length - 4) cleared++;
   }
   return { total, cleared };
 }
@@ -178,7 +176,7 @@ function vHome() {
       ${r.gold ? `<div class="muted small">(100点/1000sdn　90〜99点/500sdn　80〜89点/400sdn　70〜79点/300sdn　50〜69点/100sdn　49点以下/10sdn)</div>
         <div class="muted small">${unlocked
           ? "🔓 解放済み！"
-          : `🔒 全単元を習得(各単元80%以上⭕)すると解放されます　習得済み ${pw.cleared}/${pw.total} 単元`}</div>` : ""}
+          : `🔒 全単元を「合格」(46件以上習得)すると解放されます　合格 ${pw.cleared}/${pw.total} 単元`}</div>` : ""}
     </div>`).join("");
   const total = ITEMS.length;
   const learned = ITEMS.filter(i => statusOf(i.id) !== "new").length;
