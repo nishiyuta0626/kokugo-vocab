@@ -8878,5 +8878,725 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「相づち」で「相づちを打つ」です。"
+  },
+  {
+    "id": "kan_631",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「気が置けない」の最も適切な意味を選びなさい。",
+    "options": [
+      "遠慮や気遣いをする必要がなく、心から打ち解けられること。",
+      "油断がならず、いつも警戒していなければならないこと。",
+      "心配なことが多すぎて、心が休まる暇がないこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「気が置けない」遠慮や気遣いをする必要がなく、心から打ち解けられること。"
+  },
+  {
+    "id": "kan_632",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「気を揉む」の最も適切な意味を選びなさい。",
+    "options": [
+      "あれこれと心配して、心を悩ませること。",
+      "相手の機嫌をとるために、優しく気を使うこと。",
+      "イライラして怒りを抑えきれなくなること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「気を揉む」あれこれと心配して、心を悩ませること。"
+  },
+  {
+    "id": "kan_633",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「虫が好かない」の最も適切な意味を選びなさい。",
+    "options": [
+      "はっきりした理由はないが、なんとなく嫌な感じがして好きになれないこと。",
+      "小さな生き物や自然の景色に対して、まったく興味がないこと。",
+      "相手から嫌われてしまい、仲良くなれずに困っていること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「虫が好かない」はっきりした理由はないが、なんとなく嫌な感じがして好きになれないこと。"
+  },
+  {
+    "id": "kan_634",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「虫の居所が悪い」の最も適切な意味を選びなさい。",
+    "options": [
+      "なんとなく機嫌が悪く、ちょっとしたことでも怒りっぽい様子。",
+      "おなかの調子が悪くて、元気が出ない様子。",
+      "落ち着きがなく、そわそわと動き回っている様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「虫の居所が悪い」なんとなく機嫌が悪く、ちょっとしたことでも怒りっぽい様子。"
+  },
+  {
+    "id": "kan_635",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「猫をかぶる」の最も適切な意味を選びなさい。",
+    "options": [
+      "本当はそうではないのに、おとなしくて優しいふりをすること。",
+      "寒がりな人が、丸くなってじっと動かないこと。",
+      "失敗を隠すために、とぼけて知らないふりをすること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「猫をかぶる」本当はそうではないのに、おとなしくて優しいふりをすること。"
+  },
+  {
+    "id": "kan_636",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「狐につままれたよう」の最も適切な意味を選びなさい。",
+    "options": [
+      "思いがけない出来事に、わけが分からずぼんやりとする様子。",
+      "誰かにだまされたことに気づいて、ひどく後悔する様子。",
+      "暗闇の中で迷子になり、不安でいっぱいになる様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「狐につままれたよう」思いがけない出来事に、わけが分からずぼんやりとする様子。"
+  },
+  {
+    "id": "kan_637",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「油を売る」の最も適切な意味を選びなさい。",
+    "options": [
+      "仕事や用事の途中で、無駄話などをして時間を無駄に過ごすこと。",
+      "自分の得意なことを自慢して、周りの人に言いふらすこと。",
+      "困っている人を助けるために、一生懸命に働くこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「油を売る」仕事や用事の途中で、無駄話などをして時間を無駄に過ごすこと。"
+  },
+  {
+    "id": "kan_638",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「水に流す」の最も適切な意味を選びなさい。",
+    "options": [
+      "過去の争いや失敗などをなかったことにして、許し合うこと。",
+      "せっかくの努力や計画が、すべて無駄になってしまうこと。",
+      "嫌な思い出を忘れるために、新しい場所へ出かけること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「水に流す」過去の争いや失敗などをなかったことにして、許し合うこと。"
+  },
+  {
+    "id": "kan_639",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「矢面に立つ」の最も適切な意味を選びなさい。",
+    "options": [
+      "批判や攻撃などを、一番先頭に立って直接受けること。",
+      "危険な場所から逃げて、安全な後ろに隠れること。",
+      "みんなの手本となるように、堂々と意見を発表すること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「矢面に立つ」批判や攻撃などを、一番先頭に立って直接受けること。"
+  },
+  {
+    "id": "kan_640",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「火蓋を切る」の最も適切な意味を選びなさい。",
+    "options": [
+      "戦いや試合、物事などが始まること。",
+      "激しい怒りを爆発させて、けんかを始めること。",
+      "隠していた秘密を、みんなの前で明らかにすること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「火蓋を切る」戦いや試合、物事などが始まること。"
+  },
+  {
+    "id": "kan_641",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「大掃除の日は朝から忙しすぎて、本当に（　）くらいだった。」",
+    "options": [
+      "猫の手も借りたい",
+      "猫をかぶりたい",
+      "狐につままれた"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「猫の手も借りたい」です。"
+  },
+  {
+    "id": "kan_642",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「突然の雨で運動会が中止になり、これまでの練習の苦労が（　）ってしまった。」",
+    "options": [
+      "水の泡とな",
+      "水に流し",
+      "話に水を差し"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「水の泡とな」です。"
+  },
+  {
+    "id": "kan_643",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「手がかりがまったくなく、犯人捜しは（　）な状態だ。」",
+    "options": [
+      "雲をつかむよう",
+      "狐につままれたよう",
+      "虫の息"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「雲をつかむよう」です。"
+  },
+  {
+    "id": "kan_644",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「サーカスの空中ブランコのすごい技に、観客は思わず（　）だ。」",
+    "options": [
+      "息をのん",
+      "息を合わせ",
+      "相づちを打っ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「息をのん」です。"
+  },
+  {
+    "id": "kan_645",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「相手の話をよく聞いていることを伝えるために、うなずきながら（　）た。」",
+    "options": [
+      "相づちを打っ",
+      "見栄を張っ",
+      "油を売っ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「相づちを打っ」です。"
+  },
+  {
+    "id": "kan_646",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「おつかいを頼まれたのに、途中で友だちと（　）て帰りが遅くなった。」",
+    "options": [
+      "油を売っ",
+      "見栄を張っ",
+      "猫をかぶっ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「油を売っ」です。"
+  },
+  {
+    "id": "kan_647",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「昨日のけんかのことはお互い（　）て、今日からまた仲良くしよう。」",
+    "options": [
+      "水に流し",
+      "水の泡にし",
+      "話に水を差し"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「水に流し」です。"
+  },
+  {
+    "id": "kan_648",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句誤用チェック",
+    "question": "次の文のうち、慣用句の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "彼はとても油断ならない危険な人物なので、本当に気が置けない。",
+      "幼なじみの彼女とは何でも話せる、気が置けない親友だ。",
+      "今日は朝から虫の居所が悪いのか、兄はずっと不機嫌そうだ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「彼はとても油断ならない危険な人物なので、本当に気が置けない。」です。"
+  },
+  {
+    "id": "kan_649",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句誤用チェック",
+    "question": "次の文のうち、慣用句の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "みんなで楽しくおしゃべりしているところに、相づちを打って話を台無しにした。",
+      "普段はやんちゃなのに、お客様の前ではおとなしく猫をかぶっている。",
+      "いよいよ全国大会の決勝戦の火蓋が切られた。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「みんなで楽しくおしゃべりしているところに、相づちを打って話を台無しにした。」です。"
+  },
+  {
+    "id": "kan_650",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句誤用チェック",
+    "question": "次の文のうち、慣用句の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "お金持ちのように見せるため、無理をして見栄を張るのはよくない。",
+      "大切な試合の朝、なんとなく嫌な予感がして虫が知らせた。",
+      "息がぴったり合って、息をのむように見事な合唱ができた。"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「息がぴったり合って、息をのむように見事な合唱ができた。」です。"
+  },
+  {
+    "id": "kan_651",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「気が（　）ない」",
+    "options": [
+      "置け",
+      "抜け",
+      "晴れ",
+      "済ま"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「置け」で「気が置けない」です。"
+  },
+  {
+    "id": "kan_652",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「猫の手も（　）たい」",
+    "options": [
+      "借り",
+      "使い",
+      "持ち",
+      "引き"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「借り」で「猫の手も借りたい」です。"
+  },
+  {
+    "id": "kan_653",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「水の（　）となる」",
+    "options": [
+      "泡",
+      "流",
+      "滴",
+      "底"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「泡」で「水の泡となる」です。"
+  },
+  {
+    "id": "kan_654",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「虫の（　）が悪い」",
+    "options": [
+      "居所",
+      "機嫌",
+      "調子",
+      "気分"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「居所」で「虫の居所が悪い」です。"
+  },
+  {
+    "id": "kan_655",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（別位置）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「狐に（　）れたよう」",
+    "options": [
+      "つまま",
+      "だまさ",
+      "ばかさ",
+      "かまれ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「つまま」で「狐につままれたよう」です。"
+  },
+  {
+    "id": "kan_656",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を投げる」",
+    "options": [
+      "さじ",
+      "はし",
+      "さら",
+      "わん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「さじ」で「さじを投げる」です。"
+  },
+  {
+    "id": "kan_657",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）判を押す」",
+    "options": [
+      "太鼓",
+      "大判",
+      "金印",
+      "実印"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「太鼓」で「太鼓判を押す」です。"
+  },
+  {
+    "id": "kan_658",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をかける」",
+    "options": [
+      "拍車",
+      "風車",
+      "歯車",
+      "水車"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「拍車」で「拍車をかける」です。"
+  },
+  {
+    "id": "kan_659",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を下ろす」",
+    "options": [
+      "幕",
+      "旗",
+      "帆",
+      "網"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「幕」で「幕を下ろす」です。"
+  },
+  {
+    "id": "kan_660",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の矢が立つ」",
+    "options": [
+      "白羽",
+      "黒羽",
+      "赤羽",
+      "青羽"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「白羽」で「白羽の矢が立つ」です。"
+  },
+  {
+    "id": "kan_661",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）に落ちる」",
+    "options": [
+      "腑",
+      "腹",
+      "胸",
+      "肝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腑」で「腑に落ちる」です。"
+  },
+  {
+    "id": "kan_662",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を潰す」",
+    "options": [
+      "肝",
+      "胆",
+      "腹",
+      "胸"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「肝」で「肝を潰す」です。"
+  },
+  {
+    "id": "kan_663",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を冷やす」",
+    "options": [
+      "肝",
+      "背",
+      "首",
+      "胸"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「肝」で「肝を冷やす」です。"
+  },
+  {
+    "id": "kan_664",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）に銘じる」",
+    "options": [
+      "肝",
+      "心",
+      "胸",
+      "頭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「肝」で「肝に銘じる」です。"
+  },
+  {
+    "id": "kan_665",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を並べる」",
+    "options": [
+      "肩",
+      "腕",
+      "首",
+      "膝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「肩」で「肩を並べる」です。"
+  },
+  {
+    "id": "kan_666",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を貸す」",
+    "options": [
+      "知恵",
+      "耳",
+      "目",
+      "口"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「知恵」で「知恵を貸す」です。"
+  },
+  {
+    "id": "kan_667",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を絞る」",
+    "options": [
+      "知恵",
+      "汗",
+      "涙",
+      "声"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「知恵」で「知恵を絞る」です。"
+  },
+  {
+    "id": "kan_668",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）につく」",
+    "options": [
+      "板",
+      "壁",
+      "床",
+      "柱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「板」で「板につく」です。"
+  },
+  {
+    "id": "kan_669",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）挟みになる」",
+    "options": [
+      "板",
+      "壁",
+      "門",
+      "戸"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「板」で「板挟みになる」です。"
+  },
+  {
+    "id": "kan_670",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を売る」",
+    "options": [
+      "喧嘩",
+      "油",
+      "名前",
+      "顔"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「喧嘩」で「喧嘩を売る」です。"
+  },
+  {
+    "id": "kan_671",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「さじを投げる」の最も適切な意味を選びなさい。",
+    "options": [
+      "どうにもならなくなって、あきらめること。",
+      "食事のマナーが悪く、道具を乱暴に扱うこと。",
+      "難しい問題に最後まで粘り強く挑戦すること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「さじを投げる」どうにもならなくなって、あきらめること。"
+  },
+  {
+    "id": "kan_672",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「太鼓判を押す」の最も適切な意味を選びなさい。",
+    "options": [
+      "間違いなく確かだと、自信をもって保証すること。",
+      "大きな音を立てて、みんなに集合の合図を送ること。",
+      "約束を破った人に対して、厳しい罰を与えること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「太鼓判を押す」間違いなく確かだと、自信をもって保証すること。"
+  },
+  {
+    "id": "kan_673",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「白羽の矢が立つ」の最も適切な意味を選びなさい。",
+    "options": [
+      "大勢の中から、特別な役目や仕事に選び出されること。",
+      "敵からの攻撃を受けて、真っ先に狙われてしまうこと。",
+      "遠くの目標に向かって、見事に矢を命中させること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「白羽の矢が立つ」大勢の中から、特別な役目や仕事に選び出されること。"
+  },
+  {
+    "id": "kan_674",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「腑に落ちる」の最も適切な意味を選びなさい。",
+    "options": [
+      "なるほどと心から納得でき、よく理解できること。",
+      "びっくりして、心臓が止まりそうになること。",
+      "嫌な気持ちになり、食欲がなくなってしまうこと。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「腑に落ちる」なるほどと心から納得でき、よく理解できること。"
+  },
+  {
+    "id": "kan_675",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句意味選択",
+    "question": "「板につく」の最も適切な意味を選びなさい。",
+    "options": [
+      "経験や練習を積んで、その仕事や役割がすっかり似合うようになること。",
+      "緊張して体が硬くなり、思うように動けなくなること。",
+      "壁にぶつかってしまい、それ以上進めなくなること。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「板につく」経験や練習を積んで、その仕事や役割がすっかり似合うようになること。"
+  },
+  {
+    "id": "kan_676",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「先生の詳しい説明を聞いて、ようやくその理由が（　）た。」",
+    "options": [
+      "腑に落ち",
+      "肝を冷やし",
+      "肝を潰し"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腑に落ち」です。"
+  },
+  {
+    "id": "kan_677",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「飛び出してきた自転車にぶつかりそうになり、思わず（　）た。」",
+    "options": [
+      "肝を冷やし",
+      "肝に銘じ",
+      "胸をなで下ろし"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「肝を冷やし」です。"
+  },
+  {
+    "id": "kan_678",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「今年の生徒会長の候補として、クラス代表の彼に（　）た。」",
+    "options": [
+      "白羽の矢が立っ",
+      "太鼓判を押し",
+      "拍車がかかっ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「白羽の矢が立っ」です。"
+  },
+  {
+    "id": "kan_679",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「あの店のケーキは絶品だと、料理研究家の先生も（　）ている。」",
+    "options": [
+      "太鼓判を押し",
+      "さじを投げ",
+      "幕を下ろし"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「太鼓判を押し」です。"
+  },
+  {
+    "id": "kan_680",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句例文補充",
+    "question": "次の文の（　）に入る最も適切な慣用句を選びなさい。「学級委員になって半年が過ぎ、司会進行もすっかり（　）てきた。」",
+    "options": [
+      "板につい",
+      "腑に落ち",
+      "肩を並べ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「板につい」です。"
   }
 ]
