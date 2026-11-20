@@ -18642,5 +18642,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「そのうえ」です。"
+  },
+  {
+    "id": "bun_1346",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「校長先生が朝礼でお話を【なさった】。」",
+    "options": [
+      "尊敬語",
+      "謙譲語",
+      "丁寧語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「尊敬語」です。"
+  },
+  {
+    "id": "bun_1347",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「私は先生に質問を【申し上げた】。」",
+    "options": [
+      "謙譲語",
+      "尊敬語",
+      "丁寧語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「謙譲語」です。"
+  },
+  {
+    "id": "bun_1348",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「明日の遠足はとても楽しみ【です】。」",
+    "options": [
+      "丁寧語",
+      "尊敬語",
+      "謙譲語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「丁寧語」です。"
+  },
+  {
+    "id": "bun_1349",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「お客様がもうすぐこちらへ【いらっしゃる】。」",
+    "options": [
+      "尊敬語",
+      "謙譲語",
+      "丁寧語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「尊敬語」です。"
+  },
+  {
+    "id": "bun_1350",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「私が先生の荷物を【お持ちします】。」",
+    "options": [
+      "謙譲語",
+      "尊敬語",
+      "丁寧語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「謙譲語」です。"
+  },
+  {
+    "id": "bun_1351",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「先生が書いた本を【拝見しました】。」",
+    "options": [
+      "謙譲語",
+      "尊敬語",
+      "丁寧語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「謙譲語」です。"
+  },
+  {
+    "id": "bun_1352",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「先生は私たちの作品を熱心に【ご覧になった】。」",
+    "options": [
+      "尊敬語",
+      "謙譲語",
+      "丁寧語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「尊敬語」です。"
+  },
+  {
+    "id": "bun_1353",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「田中先生が大切なことを【おっしゃった】。」",
+    "options": [
+      "尊敬語",
+      "謙譲語",
+      "丁寧語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「尊敬語」です。"
+  },
+  {
+    "id": "bun_1354",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「昨日、有名な作家のお話を【うかがいました】。」",
+    "options": [
+      "謙譲語",
+      "尊敬語",
+      "丁寧語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「謙譲語」です。"
+  },
+  {
+    "id": "bun_1355",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の種類識別）",
+    "question": "次の文の太字（【　】内）の敬語の種類を選びなさい。「おいしいお茶と【お菓子】をいただきました。」",
+    "options": [
+      "丁寧語",
+      "尊敬語",
+      "謙譲語"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「丁寧語」です。"
+  },
+  {
+    "id": "bun_1356",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "次の文の（　）に入る最も適切な敬語を選びなさい。「先生が教室に（　）。」",
+    "options": [
+      "おいでになった",
+      "参った",
+      "うかがった"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「おいでになった」です。"
+  },
+  {
+    "id": "bun_1357",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "次の文の（　）に入る最も適切な敬語を選びなさい。「明日、私が先生のお宅へ（　）。」",
+    "options": [
+      "うかがいます",
+      "いらっしゃいます",
+      "おいでになります"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「うかがいます」です。"
+  },
+  {
+    "id": "bun_1358",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "次の文の（　）に入る最も適切な敬語を選びなさい。「お客様に温かいコーヒーを（　）。」",
+    "options": [
+      "差し上げた",
+      "くださった",
+      "いただいた"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「差し上げた」です。"
+  },
+  {
+    "id": "bun_1359",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "次の文の（　）に入る最も適切な敬語を選びなさい。「先生が私に分かりやすい本を（　）。」",
+    "options": [
+      "くださった",
+      "差し上げた",
+      "いただいた"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「くださった」です。"
+  },
+  {
+    "id": "bun_1360",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "次の文の（　）に入る最も適切な敬語を選びなさい。「私は先生から素晴らしい賞状を（　）。」",
+    "options": [
+      "いただいた",
+      "くださった",
+      "差し上げた"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「いただいた」です。"
+  },
+  {
+    "id": "bun_1361",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「食べる」の【尊敬語】として最も適切なものを選びなさい。",
+    "options": [
+      "召し上がる",
+      "いただく",
+      "食べるです"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「召し上がる」です。"
+  },
+  {
+    "id": "bun_1362",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「見る」の【謙譲語】として最も適切なものを選びなさい。",
+    "options": [
+      "拝見する",
+      "ご覧になる",
+      "見られる"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「拝見する」です。"
+  },
+  {
+    "id": "bun_1363",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「言う」の【尊敬語】として最も適切なものを選びなさい。",
+    "options": [
+      "おっしゃる",
+      "申し上げる",
+      "申す"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「おっしゃる」です。"
+  },
+  {
+    "id": "bun_1364",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「行く・来る」の【謙譲語】として最も適切なものを選びなさい。",
+    "options": [
+      "参る",
+      "いらっしゃる",
+      "おいでになる"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「参る」です。"
+  },
+  {
+    "id": "bun_1365",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「知る」の【尊敬語】として最も適切なものを選びなさい。",
+    "options": [
+      "ご存じだ",
+      "存じ上げる",
+      "存じる"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ご存じだ」です。"
+  },
+  {
+    "id": "bun_1366",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「知る」の【謙譲語】として最も適切なものを選びなさい。",
+    "options": [
+      "存じ上げる",
+      "ご存じだ",
+      "知っておられる"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「存じ上げる」です。"
+  },
+  {
+    "id": "bun_1367",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「いる」の【尊敬語】として最も適切なものを選びなさい。",
+    "options": [
+      "いらっしゃる",
+      "おる",
+      "おります"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「いらっしゃる」です。"
+  },
+  {
+    "id": "bun_1368",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「する」の【謙譲語】として最も適切なものを選びなさい。",
+    "options": [
+      "いたす",
+      "なさる",
+      "される"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「いたす」です。"
+  },
+  {
+    "id": "bun_1369",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「聞く」の【謙譲語】として最も適切なものを選びなさい。",
+    "options": [
+      "うかがう",
+      "お聞きになる",
+      "聞かれる"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「うかがう」です。"
+  },
+  {
+    "id": "bun_1370",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（敬語の変換・選択）",
+    "question": "動詞「読む」の【尊敬語】として最も適切なものを選びなさい。",
+    "options": [
+      "お読みになる",
+      "拝読する",
+      "読みます"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「お読みになる」です。"
   }
 ]
