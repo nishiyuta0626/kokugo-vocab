@@ -288,14 +288,7 @@ function schedMark(id, ok, fast) {
   }
   saveSched();
 }
-// 対策練習での正誤: 周回(cc)は動かさずストック克服カウント(wok)のみ更新
-function prepMark(id, ok) {
-  let s = SCHED.items[id];
-  if (!s) s = SCHED.items[id] = { cc: 0, w: 0, fast: 0 };
-  if (ok) { s.wok = (s.wok || 0) + 1; s.last = "ok"; }
-  else { s.w++; s.wok = 0; s.last = "ng"; }
-  saveSched();
-}
+
 // 10問セット生成: 今日出た問題は後回しにしつつ、各周をラウンドロビンで混合
 function schedPick(n) {
   const seen = new Set(schedToday().seen);
@@ -397,8 +390,9 @@ function vPrep() {
     <p class="muted"><b>今週のテスト範囲</b>（直近7日に出題した問題）だけから
     <b>間違えた問題8問＋正解だった問題2問</b>の割合で10問を出題します。
     解答した時点で〇✕判定と正解・解説が表示されます。</p>
-    <p class="muted">今週の範囲: <b>${weekItems.length}問</b>（うち間違い ${w7.length}問）。
-    間違いの確認は辞書の部屋でもできます。</p>
+    <p class="muted">${w7.length
+      ? `あと <b>${w7.length}問</b> 確認が必要です（間違えた問題を中心に出題）。`
+      : `今週の範囲で確認が必要な問題はありません。`}</p>
     <div class="wkmarks">${weekItems.slice(0, 200).map(it => {
       const s = SCHED.items[it.id] || {};
       const bad = s.last === "ng" || (s.last !== "ok" && s.w > 0 && !(s.wok > 0));
@@ -1132,8 +1126,7 @@ document.addEventListener("click", (e) => {
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
       if (quiz.sched)
         schedMark(quiz.list[quiz.idx].id, ok, Date.now() - (quiz.qStart || Date.now()) <= 3000);
-      else if (quiz.prep) prepMark(quiz.list[quiz.idx].id, ok);
-      mark(quiz.list[quiz.idx].id, ok, "quiz");
+      if (!quiz.prep) mark(quiz.list[quiz.idx].id, ok, "quiz");
       document.querySelectorAll(".choice").forEach((b, i) => {
         const v = quiz.cur.options[i];
         if (v.v === quiz.cur.answer) b.classList.add("hit");
@@ -1146,7 +1139,7 @@ document.addEventListener("click", (e) => {
       quiz.judged = null; quiz.idx++;
       if (quiz.idx >= quiz.list.length) {
         RESULTS.push({
-          ts: new Date().toISOString(), kind: quiz.sched ? "sched" : "quiz", cat: quiz.cat,
+          ts: new Date().toISOString(), kind: quiz.sched ? "sched" : quiz.prep ? "prep" : "quiz", cat: quiz.cat,
           range: quiz.range, n: quiz.answers.length,
           ok: quiz.answers.filter(x => x.ok).length,
           secs: Math.round(study.total - runStartTotal),
@@ -1165,8 +1158,7 @@ document.addEventListener("click", (e) => {
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
       if (quiz.sched)
         schedMark(quiz.list[quiz.idx].id, ok, Date.now() - (quiz.qStart || Date.now()) <= 3000);
-      else if (quiz.prep) prepMark(quiz.list[quiz.idx].id, ok);
-      mark(quiz.list[quiz.idx].id, ok, "quiz");
+      if (!quiz.prep) mark(quiz.list[quiz.idx].id, ok, "quiz");
       render();
     }
     else if (act === "tanswer" || act === "tanswer_in") {
