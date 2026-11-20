@@ -24,7 +24,7 @@ const ROOMS = [
   { key: "jisho", label: "辞書の部屋", icon: "📖",
     desc: "語句を検索できます（実施中はロック）" },
   { key: "prep", label: "テスト対策の部屋", icon: "📝",
-    desc: "週間テスト範囲の間違い中心・即時〇✕判定" },
+    desc: "間違いストックからランダム10問・即時〇✕判定" },
   { key: "wtest", label: "週間テストの部屋", icon: "📋", gold: true,
     desc: "週間ノルマ達成で解放・25問×4点・間違い中心" },
 ];
@@ -371,62 +371,22 @@ function prepWrongs() {
     return s && s.w > 0 && (s.wok || 0) < 2;
   });
 }
-function prepStart(mode) {
-  const s7 = seen7Set();
-  const wrongs = prepWrongs();
-  let p;
-  if (mode === "week") { // 今週の範囲をまとめて
-    p = shuffle(ITEMS.filter(it => s7.has(it.id))).slice(0, 10);
-    if (p.length < 10) {
-      const ids = new Set(p.map(i => i.id));
-      p = p.concat(shuffle(wrongs.filter(i => !ids.has(i.id))).slice(0, 10 - p.length));
-    }
-  } else { // 間違えた問題中心(今週分→その他の順)
-    const w7 = wrongs.filter(it => s7.has(it.id));
-    const wRest = wrongs.filter(it => !s7.has(it.id));
-    p = shuffle(w7).concat(shuffle(wRest)).slice(0, 10);
-    if (p.length < 10) {
-      const ids = new Set(p.map(i => i.id));
-      p = p.concat(shuffle(ITEMS.filter(it => s7.has(it.id) && !ids.has(it.id)))
-        .slice(0, 10 - p.length));
-    }
-  }
-  if (p.length < 4) { toast("練習できる問題がありません"); return; }
-  quiz = { list: shuffle(p), idx: 0, mode: "q4", answers: [], judged: null, prep: true,
-    prepMode: mode, pool: ITEMS, cat: "テスト対策", range: [1, p.length] };
+function prepStart() { // 間違いストックからランダム10問
+  const p = shuffle([...prepWrongs()]).slice(0, 10);
+  if (!p.length) { toast("間違いストックはありません"); return; }
+  quiz = { list: p, idx: 0, mode: "q4", answers: [], judged: null, prep: true,
+    prepMode: "wrong", pool: ITEMS, cat: "テスト対策", range: [1, p.length] };
   go("quizrun");
 }
 function vPrep() {
-  const s7 = seen7Set();
   const wrongs = prepWrongs();
-  const w7 = wrongs.filter(it => s7.has(it.id));
-  const weekItems = ITEMS.filter(it => s7.has(it.id));
   return `<div class="card">
     <h2>📝 テスト対策の部屋</h2>
-    <p class="muted">週間テストの範囲（直近7日に出た問題 ${weekItems.length}問）を練習します。
-    10問セット・解答した時点で〇✕判定と正解・解説が表示されます。</p>
-    <div class="mission">
-      <div class="mission-l"><b>❌ 間違えた問題</b><span class="muted small">今週${w7.length}問・全${wrongs.length}問</span></div>
-      <div class="mission-m"></div>
-      <button class="primary" data-act="prepset" data-mode="wrong" ${wrongs.length ? "" : "disabled"}>10問練習 ▶</button>
-    </div>
-    <div class="mission">
-      <div class="mission-l"><b>📋 今週の範囲まとめ</b><span class="muted small">${weekItems.length}問</span></div>
-      <div class="mission-m"></div>
-      <button class="primary" data-act="prepset" data-mode="week" ${weekItems.length ? "" : "disabled"}>10問練習 ▶</button>
-    </div>
+    <p class="muted">間違えた問題のストックからランダムに10問を出題します。
+    解答した時点で〇✕判定と正解・解説が表示されます。</p>
+    <p class="muted">間違いストック: <b>${wrongs.length}問</b>（連続2回正解で克服・解除。問題の確認は辞書の部屋でもできます）</p>
+    <button class="bigbtn" data-act="prepset" ${wrongs.length ? "" : "disabled"}>10問テストを開始 ▶</button>
     <div class="btnrow"><button class="ghost" data-nav="result">📊 過去の結果・進捗を見る →</button></div>
-    <hr>
-    <h3>❌ 間違いストック（${wrongs.length}問）</h3>
-    <p class="muted small">誤答した問題が蓄積されます。連続2回正解で克服となりリストから外れます。タップで詳細を確認。</p>
-    ${wrongs.length ? wrongs.slice(0, 200).map(it =>
-      `<div class="listrow" data-act="edit" data-id="${it.id}" style="cursor:pointer">
-        <span class="t">${esc(qt(it))}</span>
-        <span class="y">${esc(it.sub || it.cat)}</span>
-        <span class="m">✕${(SCHED.items[it.id] || {}).w || 0}回${s7.has(it.id) ? "・今週" : ""}</span>
-      </div>`).join("")
-        + (wrongs.length > 200 ? `<p class="muted">…残り${wrongs.length - 200}件</p>` : "")
-      : `<p class="muted">ストックはありません。間違えた問題はここに蓄積されます。</p>`}
   </div>`;
 }
 
