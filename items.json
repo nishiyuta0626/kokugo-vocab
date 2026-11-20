@@ -15837,5 +15837,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「潤沢」です。"
+  },
+  {
+    "id": "dou_1121",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「お互いに貸し借りを【相殺】する。」",
+    "options": [
+      "そうさい",
+      "そうさつ",
+      "あいさつ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「そうさい」です。"
+  },
+  {
+    "id": "dou_1122",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「二つの文章の内容が【重複】している。」",
+    "options": [
+      "ちょうふく",
+      "じゅうふく",
+      "ちょうふ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ちょうふく」です。"
+  },
+  {
+    "id": "dou_1123",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「古い機械の【代替】品を用意する。」",
+    "options": [
+      "だいたい",
+      "だいがえ",
+      "たいがえ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「だいたい」です。"
+  },
+  {
+    "id": "dou_1124",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「文化祭の準備を【円滑】に進める。」",
+    "options": [
+      "えんかつ",
+      "えんこつ",
+      "まるかつ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「えんかつ」です。"
+  },
+  {
+    "id": "dou_1125",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「大きな地震の被害から【復興】する。」",
+    "options": [
+      "ふっこう",
+      "ふくこう",
+      "ふっきょう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ふっこう」です。"
+  },
+  {
+    "id": "dou_1126",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「日本の伝統的な【遊説】や演説について学ぶ。」",
+    "options": [
+      "ゆうぜい",
+      "ゆうせつ",
+      "あそびせつ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ゆうぜい」です。"
+  },
+  {
+    "id": "dou_1127",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「お年寄りを【敬老】の日に大切にする。」",
+    "options": [
+      "けいろう",
+      "きょうろう",
+      "けいお"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「けいろう」です。"
+  },
+  {
+    "id": "dou_1128",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「自分の意見を【簡潔】にまとめて発表する。」",
+    "options": [
+      "かんけつ",
+      "かんきつ",
+      "かんさつ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「かんけつ」です。"
+  },
+  {
+    "id": "dou_1129",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「難しい事件の真相を【究明】する。」",
+    "options": [
+      "きゅうめい",
+      "くめい",
+      "けんめい"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「きゅうめい」です。"
+  },
+  {
+    "id": "dou_1130",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「新しいルールをクラス全員に【徹底】させる。」",
+    "options": [
+      "てってい",
+      "てつじょう",
+      "てっていん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「てってい」です。"
+  },
+  {
+    "id": "dou_1131",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「遠い親戚から【音信】が届く。」",
+    "options": [
+      "いんしん",
+      "おんしん",
+      "おとしん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「いんしん」です。"
+  },
+  {
+    "id": "dou_1132",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「日本の【固有】の文化を大切にする。」",
+    "options": [
+      "こゆう",
+      "こう",
+      "こゆ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「こゆう」です。"
+  },
+  {
+    "id": "dou_1133",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「テストの点数を【平均】して計算する。」",
+    "options": [
+      "へいきん",
+      "びょうきん",
+      "へいぎん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「へいきん」です。"
+  },
+  {
+    "id": "dou_1134",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「相手の気持ちに【配慮】して言葉を選ぶ。」",
+    "options": [
+      "はいりょ",
+      "はいりょう",
+      "はいそ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「はいりょ」です。"
+  },
+  {
+    "id": "dou_1135",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「自然環境を【保護】するための活動に参加する。」",
+    "options": [
+      "ほご",
+      "ほうご",
+      "ほこう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ほご」です。"
+  },
+  {
+    "id": "dou_1136",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「昔からの【慣習】に従って行事を行う。」",
+    "options": [
+      "かんしゅう",
+      "かんじゅう",
+      "かんしゅ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「かんしゅう」です。"
+  },
+  {
+    "id": "dou_1137",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「友達と【頻繁】に連絡を取り合う。」",
+    "options": [
+      "ひんぱん",
+      "ひんはん",
+      "びんぱん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ひんぱん」です。"
+  },
+  {
+    "id": "dou_1138",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「大切な約束を【順守】する。」",
+    "options": [
+      "じゅんしゅ",
+      "じゅんじゅ",
+      "しゅんしゅ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「じゅんしゅ」です。"
+  },
+  {
+    "id": "dou_1139",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「美しい景色に【魅了】される。」",
+    "options": [
+      "みりょう",
+      "びりょう",
+      "みりょ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「みりょう」です。"
+  },
+  {
+    "id": "dou_1140",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「新しい発見が科学の発展に【貢献】する。」",
+    "options": [
+      "こうけん",
+      "くけん",
+      "こうげん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「こうけん」です。"
+  },
+  {
+    "id": "dou_1141",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（誤読チェック）",
+    "question": "次のうち、太字（【　】内）の漢字の読み方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "意見が【重複（じゅうふく）】したので整理する。",
+      "貸し借りを【相殺（そうさい）】してゼロにする。",
+      "会議が【円滑（えんかつ）】に進行した。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「意見が【重複（じゅうふく）】したので整理する。」です。"
+  },
+  {
+    "id": "dou_1142",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（誤読チェック）",
+    "question": "次のうち、太字（【　】内）の漢字の読み方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "壊れた部品の【代替（だいがえ）】を探す。",
+      "大切なルールを【順守（じゅんしゅ）】する。",
+      "質問に対して【簡潔（かんけつ）】に答える。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「壊れた部品の【代替（だいがえ）】を探す。」です。"
+  },
+  {
+    "id": "dou_1143",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（誤読チェック）",
+    "question": "次のうち、太字（【　】内）の漢字の読み方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "ふるさとから久しぶりの【音信（おんしん）】があった。",
+      "周りの人に【配慮（はいりょ）】して行動する。",
+      "社会の発展に大きく【貢献（こうけん）】した。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ふるさとから久しぶりの【音信（おんしん）】があった。」です。"
+  },
+  {
+    "id": "dou_1144",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「難しい問題に対して【柔軟】に考える。」",
+    "options": [
+      "じゅうなん",
+      "にゅうなん",
+      "じゅうぜん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「じゅうなん」です。"
+  },
+  {
+    "id": "dou_1145",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「相手の主張を【根拠】を示して反論する。」",
+    "options": [
+      "こんきょ",
+      "こんご",
+      "ねきょ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「こんきょ」です。"
   }
 ]
