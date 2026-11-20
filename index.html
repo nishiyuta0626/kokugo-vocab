@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1a56db">
+<meta name="theme-color" content="#4f46e5">
 <title>国語文法 - 語句学習</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -12,14 +12,9 @@
 </head>
 <body>
 <header id="app-header">
+  <button id="backbtn" style="display:none">← 戻る</button>
   <span id="brand">国語文法</span>
-  <nav id="topnav">
-    <button data-nav="jisho" class="navbtn">辞書</button>
-    <button data-nav="quiz" class="navbtn">クイズ</button>
-    <button data-nav="test" class="navbtn">テスト</button>
-    <button data-nav="result" class="navbtn">結果</button>
-    <button data-nav="power" class="navbtn">実力</button>
-  </nav>
+  <span id="headtitle"></span>
 </header>
 <main id="app"></main>
 <div id="toast"></div>
