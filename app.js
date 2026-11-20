@@ -232,7 +232,7 @@ function schedToday() { // 当日レコード(初アクセス時にその日の�
 }
 function schedStatus() {
   const total = ITEMS.length * 4;
-  const base = SCHED.base || Math.ceil(total / SCHED_DAYS);
+  const base = Math.ceil(total / SCHED_DAYS); // 常に現在の問題数から算出
   const elapsed = schedElapsed();
   const dayNo = elapsed + 1;
   const daysLeft = Math.max(1, SCHED_DAYS - elapsed);
@@ -317,7 +317,7 @@ function schedStart(mission, n) {
 }
 // 週間テスト: 1週間分のノルマ(基準ノルマ×7)達成ごとに1回解放
 function weeklyStatus() {
-  const per = 7 * (SCHED.base || Math.ceil(ITEMS.length * 4 / SCHED_DAYS));
+  const per = 7 * Math.ceil(ITEMS.length * 4 / SCHED_DAYS);
   const completed = SCHED.start ? Math.floor(schedDone() / per) : 0;
   const taken = SCHED.wcount || 0;
   const avail = Math.max(0, completed - taken);
