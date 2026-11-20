@@ -14432,5 +14432,360 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「直接」です。"
+  },
+  {
+    "id": "dou_1021",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「豊富」",
+    "options": [
+      "貧弱",
+      "不足",
+      "少量"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「貧弱」です。"
+  },
+  {
+    "id": "dou_1022",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「平和」",
+    "options": [
+      "戦争",
+      "対立",
+      "混乱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「戦争」です。"
+  },
+  {
+    "id": "dou_1023",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「入力」",
+    "options": [
+      "出力",
+      "発信",
+      "排出"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「出力」です。"
+  },
+  {
+    "id": "dou_1024",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「優秀」",
+    "options": [
+      "劣等",
+      "平凡",
+      "普通"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「劣等」です。"
+  },
+  {
+    "id": "dou_1025",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「多数」",
+    "options": [
+      "少数",
+      "僅少",
+      "単数"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「少数」です。"
+  },
+  {
+    "id": "dou_1026",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「最大」",
+    "options": [
+      "最小",
+      "極小",
+      "微少"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「最小」です。"
+  },
+  {
+    "id": "dou_1027",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「最高」",
+    "options": [
+      "最低",
+      "最悪",
+      "最下"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「最低」です。"
+  },
+  {
+    "id": "dou_1028",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「清潔」",
+    "options": [
+      "不潔",
+      "汚濁",
+      "汚染"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「不潔」です。"
+  },
+  {
+    "id": "dou_1029",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「健康」",
+    "options": [
+      "病気",
+      "不調",
+      "虚弱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「病気」です。"
+  },
+  {
+    "id": "dou_1030",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「温暖」",
+    "options": [
+      "寒冷",
+      "冷気",
+      "寒波"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「寒冷」です。"
+  },
+  {
+    "id": "dou_1031",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「同意」",
+    "options": [
+      "賛成",
+      "反対",
+      "疑問"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「賛成」です。"
+  },
+  {
+    "id": "dou_1032",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「禁止」",
+    "options": [
+      "制止",
+      "許可",
+      "奨励"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「制止」です。"
+  },
+  {
+    "id": "dou_1033",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「選択」",
+    "options": [
+      "選抜",
+      "放棄",
+      "強制"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「選抜」です。"
+  },
+  {
+    "id": "dou_1034",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「移動」",
+    "options": [
+      "移転",
+      "定着",
+      "停止"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「移転」です。"
+  },
+  {
+    "id": "dou_1035",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「説明」",
+    "options": [
+      "解説",
+      "質問",
+      "沈黙"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「解説」です。"
+  },
+  {
+    "id": "dou_1036",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「入力 ⇔ （　）力」",
+    "options": [
+      "出",
+      "外",
+      "発",
+      "送"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「出」です。"
+  },
+  {
+    "id": "dou_1037",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「多数 ⇔ （　）数」",
+    "options": [
+      "少",
+      "小",
+      "微",
+      "単"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「少」です。"
+  },
+  {
+    "id": "dou_1038",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・対義）",
+    "question": "対義語になるように（　）に入る漢字を選びなさい。「清潔 ⇔ （　）潔」",
+    "options": [
+      "不",
+      "非",
+      "無",
+      "未"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「不」です。"
+  },
+  {
+    "id": "dou_1039",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・類義）",
+    "question": "類義語になるように（　）に入る漢字を選びなさい。「説明 ＝ （　）説」",
+    "options": [
+      "解",
+      "演",
+      "論",
+      "説"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「解」です。"
+  },
+  {
+    "id": "dou_1040",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（漢字穴埋め・類義）",
+    "question": "類義語になるように（　）に入る漢字を選びなさい。「移動 ＝ （　）転」",
+    "options": [
+      "移",
+      "運",
+      "回",
+      "変"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「移」です。"
+  },
+  {
+    "id": "dou_1041",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「少数」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "多数",
+      "無数",
+      "複数"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「多数」です。"
+  },
+  {
+    "id": "dou_1042",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「不潔」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "清潔",
+      "純粋",
+      "透明"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「清潔」です。"
+  },
+  {
+    "id": "dou_1043",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（組み合わせ・逆引き）",
+    "question": "「出力」の反対の意味を表す二字熟語を次から選びなさい。",
+    "options": [
+      "入力",
+      "受信",
+      "吸収"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「入力」です。"
+  },
+  {
+    "id": "dou_1044",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「日本は資源が乏しいため、外国から多くの原料を（　）し、製品にして輸出している。」",
+    "options": [
+      "輸入",
+      "運搬",
+      "調達"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「輸入」です。"
+  },
+  {
+    "id": "dou_1045",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・類義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「難しいルールを子どもにも分かるように（　）して説明した。」",
+    "options": [
+      "解説",
+      "議論",
+      "報告"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「解説」です。"
   }
 ]
