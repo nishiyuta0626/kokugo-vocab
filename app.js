@@ -134,12 +134,30 @@ function render() {
 function go(name, params = {}) { view = { name, ...params }; render(); window.scrollTo(0, 0); }
 
 // ---------- ホーム ----------
+function powerProgress() { // 実力テスト解放状況: {total, cleared}
+  let total = 0, cleared = 0;
+  for (const c of cats()) {
+    const p = byCat(c);
+    for (let a = 0; a < p.length; a += SEC_SIZE) {
+      total++;
+      const blk = p.slice(a, a + SEC_SIZE);
+      const done = blk.filter(i => ["good", "master"].includes(statusOf(i.id))).length;
+      if (done >= blk.length * 0.8) cleared++;
+    }
+  }
+  return { total, cleared };
+}
 function vHome() {
+  const pw = powerProgress();
+  const unlocked = pw.total > 0 && pw.cleared === pw.total;
   const rooms = ROOMS.map(r =>
     `<div class="roomcard ${r.gold ? "gold" : ""}" data-nav="${r.key}">
-      <div class="room-ttl">${r.icon} ${r.label}${r.gold ? " 🔒" : ""}</div>
+      <div class="room-ttl">${r.icon} ${r.label}${r.gold && !unlocked ? " 🔒" : ""}</div>
       <div class="muted">${r.desc}</div>
-      ${r.gold ? `<div class="muted small">(100点/1000sdn　90〜99点/500sdn　80〜89点/400sdn　70〜79点/300sdn　50〜69点/100sdn　49点以下/10sdn)</div>` : ""}
+      ${r.gold ? `<div class="muted small">(100点/1000sdn　90〜99点/500sdn　80〜89点/400sdn　70〜79点/300sdn　50〜69点/100sdn　49点以下/10sdn)</div>
+        <div class="muted small">${unlocked
+          ? "🔓 解放済み！"
+          : `🔒 全単元を習得(各単元80%以上⭕)すると解放されます　習得済み ${pw.cleared}/${pw.total} 単元`}</div>` : ""}
     </div>`).join("");
   const total = ITEMS.length;
   const learned = ITEMS.filter(i => statusOf(i.id) !== "new").length;
@@ -540,6 +558,13 @@ document.addEventListener("click", (e) => {
   const nav = e.target.closest("[data-nav]");
   if (nav) {
     const k = nav.dataset.nav;
+    if (k === "power") {
+      const pw = powerProgress();
+      if (!(pw.total > 0 && pw.cleared === pw.total)) {
+        toast(`🔒 まだ入れません（習得済み ${pw.cleared}/${pw.total} 単元）`);
+        return;
+      }
+    }
     if (k === "home") go("home");
     else if (k === "data") go("data");
     else if (k === "jisho") go("list", { room: "jisho" });
