@@ -1,1 +1,377 @@
-[]
+[
+  {
+    "id": "yoji_1",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「一（　）一会」",
+    "options": [
+      "日",
+      "期",
+      "年",
+      "時"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「期」で「一期一会（いちごいちえ）」と書きます。"
+  },
+  {
+    "id": "yoji_2",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）石二鳥」",
+    "options": [
+      "一",
+      "投",
+      "打",
+      "放"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一」で「一石二鳥（いっせきにちょう）」と書きます。"
+  },
+  {
+    "id": "yoji_3",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「十人（　）色」",
+    "options": [
+      "百",
+      "千",
+      "万",
+      "十"
+    ],
+    "answerIndex": 3,
+    "explanation": "正解は「十」で「十人十色（じゅうにんといろ）」と書きます。"
+  },
+  {
+    "id": "yoji_4",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「以（　）伝心」",
+    "options": [
+      "心",
+      "気",
+      "言",
+      "目"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「心」で「以心伝心（いしんでんしん）」と書きます。"
+  },
+  {
+    "id": "yoji_5",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「自（　）自賛」",
+    "options": [
+      "画",
+      "話",
+      "我",
+      "家"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「画」で「自画自賛（じがじさん）」と書きます。"
+  },
+  {
+    "id": "yoji_6",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）言実行」",
+    "options": [
+      "無",
+      "有",
+      "不",
+      "多"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「有」で「有言実行（ゆうげんじっこう）」と書きます。"
+  },
+  {
+    "id": "yoji_7",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「七（　）八起」",
+    "options": [
+      "倒",
+      "転",
+      "回",
+      "動"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「転」で「七転八起（しちてんはっき）」と書きます。"
+  },
+  {
+    "id": "yoji_8",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「弱肉（　）食」",
+    "options": [
+      "大",
+      "勝",
+      "強",
+      "優"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「強」で「弱肉強食（じゃくにくきょうしょく）」と書きます。"
+  },
+  {
+    "id": "yoji_9",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）耳東風」",
+    "options": [
+      "牛",
+      "犬",
+      "馬",
+      "猫"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「馬」で「馬耳東風（ばじとうふう）」と書きます。"
+  },
+  {
+    "id": "yoji_10",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「温（　）知新」",
+    "options": [
+      "古",
+      "旧",
+      "昔",
+      "前"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「古」で「温故知新（おんこちしん）」と書きます。"
+  },
+  {
+    "id": "yoji_11",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「一（　）両得」",
+    "options": [
+      "鳥",
+      "石",
+      "挙",
+      "箭"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「挙」で「一挙両得（いっきょりょうとく）」と書きます。"
+  },
+  {
+    "id": "yoji_12",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）心暗鬼」",
+    "options": [
+      "疑",
+      "迷",
+      "恐",
+      "怖"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「疑」で「疑心暗鬼（ぎしんあんき）」と書きます。"
+  },
+  {
+    "id": "yoji_13",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「大（　）小異」",
+    "options": [
+      "同",
+      "合",
+      "似",
+      "共"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「同」で「大同小異（だいどうしょうい）」と書きます。"
+  },
+  {
+    "id": "yoji_14",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）面楚歌」",
+    "options": [
+      "八",
+      "四",
+      "周",
+      "全"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「四」で「四面楚歌（しめんそか）」と書きます。"
+  },
+  {
+    "id": "yoji_15",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「単（　）直入」",
+    "options": [
+      "刀",
+      "剣",
+      "槍",
+      "矢"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「刀」で「単刀直入（たんとうちょくにゅう）」と書きます。"
+  },
+  {
+    "id": "yoji_16",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「油断（　）敵」",
+    "options": [
+      "強",
+      "大",
+      "天",
+      "好"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「大」で「油断大敵（ゆだんたいてき）」と書きます。"
+  },
+  {
+    "id": "yoji_17",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）苦八苦」",
+    "options": [
+      "三",
+      "四",
+      "五",
+      "六"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「四」で「四苦八苦（しくはっく）」と書きます。"
+  },
+  {
+    "id": "yoji_18",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「起（　）回生」",
+    "options": [
+      "生",
+      "命",
+      "死",
+      "病"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「死」で「起死回生（きしかいせい）」と書きます。"
+  },
+  {
+    "id": "yoji_19",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）竜点睛」",
+    "options": [
+      "書",
+      "描",
+      "画",
+      "図"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「画」で「画竜点睛（がりょうてんせい）」と書きます。"
+  },
+  {
+    "id": "yoji_20",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）蛇添足」",
+    "options": [
+      "描",
+      "書",
+      "画",
+      "作"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「画」で「画蛇添足（がだてんそく）」と書きます。"
+  },
+  {
+    "id": "yoji_21",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「朝（　）暮改」",
+    "options": [
+      "令",
+      "言",
+      "命",
+      "定"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「令」で「朝令暮改（ちょうれいぼかい）」と書きます。"
+  },
+  {
+    "id": "yoji_22",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）発百中」",
+    "options": [
+      "百",
+      "千",
+      "万",
+      "十"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「百」で「百発百中（ひゃっぱつひゃくちゅう）」と書きます。"
+  },
+  {
+    "id": "yoji_23",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「一（　）一夕」",
+    "options": [
+      "朝",
+      "日",
+      "夜",
+      "晩"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「朝」で「一朝一夕（いっちょういっせき）」と書きます。"
+  },
+  {
+    "id": "yoji_24",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）材適所」",
+    "options": [
+      "適",
+      "良",
+      "好",
+      "正"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「適」で「適材適所（てきざいてきしょ）」と書きます。"
+  },
+  {
+    "id": "yoji_25",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「（　）意専心」",
+    "options": [
+      "一",
+      "全",
+      "純",
+      "専"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一」で「一意専心（いちいせんしん）」と書きます。"
+  }
+]
