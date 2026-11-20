@@ -62,14 +62,14 @@ let cardSet = { list: [], idx: 0, flipped: false };
 function loadJSON(k, d) {
   try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; }
 }
-const saveProgress = () => localStorage.setItem(uk(LS_PROGRESS), JSON.stringify(PROGRESS));
-const saveResults = () => localStorage.setItem(uk(LS_RESULTS), JSON.stringify(RESULTS));
-const saveOverrides = () => localStorage.setItem(LS_OVERRIDE, JSON.stringify(OVERRIDES));
-const saveHidden = () => localStorage.setItem(LS_HIDDEN, JSON.stringify(HIDDEN));
-const savestdm = () => localStorage.setItem(uk(LS_stdm), String(stdm));
-const saveStudy = () => localStorage.setItem(uk(LS_TIME), JSON.stringify(study));
-const saveSched = () => localStorage.setItem(uk(LS_SCHED), JSON.stringify(SCHED));
-const saveEarn = () => localStorage.setItem(uk(LS_EARN), JSON.stringify(EARN));
+const saveProgress = () => { localStorage.setItem(uk(LS_PROGRESS), JSON.stringify(PROGRESS)); cloudPushSoon(); };
+const saveResults = () => { localStorage.setItem(uk(LS_RESULTS), JSON.stringify(RESULTS)); cloudPushSoon(); };
+const saveOverrides = () => { localStorage.setItem(LS_OVERRIDE, JSON.stringify(OVERRIDES)); cloudPushSharedSoon(); };
+const saveHidden = () => { localStorage.setItem(LS_HIDDEN, JSON.stringify(HIDDEN)); cloudPushSharedSoon(); };
+const savestdm = () => { localStorage.setItem(uk(LS_stdm), String(stdm)); cloudPushSoon(); };
+const saveStudy = () => { localStorage.setItem(uk(LS_TIME), JSON.stringify(study)); cloudPushSoon(); };
+const saveSched = () => { localStorage.setItem(uk(LS_SCHED), JSON.stringify(SCHED)); cloudPushSoon(); };
+const saveEarn = () => { localStorage.setItem(uk(LS_EARN), JSON.stringify(EARN)); cloudPushSoon(); };
 // stdm増減＋履歴記録(merge指定時は同日・同ラベルの直近行に集約)
 function stdmEarn(amount, label, merge) {
   stdm = Math.max(0, stdm + amount); savestdm();
@@ -582,6 +582,7 @@ function vUserSelect() {
 }
 async function selectUser(u) {
   USER = u; localStorage.setItem(LS_USER, u);
+  await cloudInit();
   await startSession(); go("home");
 }
 function vHome() {
@@ -1418,20 +1419,116 @@ async function boot() {
   }
   USER = localStorage.getItem(LS_USER) || "";
   if (!USER) { view = { name: "userselect" }; render(); return; }
+  await cloudInit();
   await startSession();
 }
 let wiredOnce = false;
-async function startSession() {
+// ユーザースコープの全変数をlocalStorageから読み直す
+function loadUserState() {
   PROGRESS = loadJSON(uk(LS_PROGRESS), {});
   RESULTS = loadJSON(uk(LS_RESULTS), []);
-  OVERRIDES = loadJSON(LS_OVERRIDE, {});
-  HIDDEN = loadJSON(LS_HIDDEN, { ids: [], items: {} });
   stdm = +(localStorage.getItem(uk(LS_stdm)) || 0);
   study = Object.assign({ day: todayStr(), sec: 0, total: 0, paidStdm: 0 }, loadJSON(uk(LS_TIME), {}));
   ADJUSTS = loadJSON(uk(LS_ADJUST), []);
   SCHED = loadJSON(uk(LS_SCHED), { start: "", base: 0, items: {}, days: {} });
   SCHED.items = SCHED.items || {}; SCHED.days = SCHED.days || {}; SCHED.prepOk = SCHED.prepOk || {};
   EARN = loadJSON(uk(LS_EARN), []);
+}
+function loadSharedState() {
+  OVERRIDES = loadJSON(LS_OVERRIDE, {});
+  HIDDEN = loadJSON(LS_HIDDEN, { ids: [], items: {} });
+}
+// ---------- クラウド同期(Vercel+Turso。APIが無い環境では自動的に無効) ----------
+let cloudDirty = false;   // ローカルに未pushの変更あり
+let remoteTs = { user: "", shared: "" }; // 最後に同期したリモート時刻
+let pushTimer = null, sharedPushTimer = null;
+const SYNC_URL = "https://kokugo-vocab.vercel.app/api/state"; // どの環境で開いても同一DBに同期
+async function cloudPush() {
+  if (!USER) return;
+  try {
+    const r = await fetch(SYNC_URL, { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user: USER, data: {
+        progress: PROGRESS, results: RESULTS, stdm, study,
+        adjusts: ADJUSTS, sched: SCHED, earn: EARN } }) });
+    if (!r.ok) return;
+    remoteTs.user = (await r.json()).updated_at || remoteTs.user;
+    cloudDirty = false;
+  } catch { cloudDirty = true; }
+}
+function cloudPushSoon() {
+  cloudDirty = true;
+  clearTimeout(pushTimer); pushTimer = setTimeout(cloudPush, 800);
+}
+async function cloudPushShared() {
+  try {
+    const r = await fetch(SYNC_URL, { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user: "_shared", data: { overrides: OVERRIDES, hidden: HIDDEN } }) });
+    if (r.ok) remoteTs.shared = (await r.json()).updated_at || remoteTs.shared;
+  } catch { }
+}
+function cloudPushSharedSoon() {
+  clearTimeout(sharedPushTimer); sharedPushTimer = setTimeout(cloudPushShared, 800);
+}
+// リモートのユーザー状態をlocalStorageへ書き戻す
+async function cloudPull() {
+  if (!USER) return false;
+  try {
+    const r = await fetch(`${SYNC_URL}?user=${USER}`);
+    if (!r.ok) return false;
+    const j = await r.json();
+    remoteTs.user = j.updated_at || remoteTs.user;
+    if (!j.data) return false;
+    const d = j.data, put = (k, v) => localStorage.setItem(uk(k), JSON.stringify(v));
+    if (d.progress != null) put(LS_PROGRESS, d.progress);
+    if (d.results != null) put(LS_RESULTS, d.results);
+    if (d.stdm != null) localStorage.setItem(uk(LS_stdm), String(d.stdm));
+    if (d.study != null) put(LS_TIME, d.study);
+    if (d.adjusts != null) put(LS_ADJUST, d.adjusts);
+    if (d.sched != null) put(LS_SCHED, d.sched);
+    if (d.earn != null) put(LS_EARN, d.earn);
+    return true;
+  } catch { return false; }
+}
+async function cloudPullShared() {
+  try {
+    const r = await fetch(`${SYNC_URL}?user=_shared`);
+    if (!r.ok) return false;
+    const j = await r.json();
+    remoteTs.shared = j.updated_at || remoteTs.shared;
+    if (!j.data) return false;
+    if (j.data.overrides != null) localStorage.setItem(LS_OVERRIDE, JSON.stringify(j.data.overrides));
+    if (j.data.hidden != null) localStorage.setItem(LS_HIDDEN, JSON.stringify(j.data.hidden));
+    return true;
+  } catch { return false; }
+}
+// ログイン時: リモート→localStorage。リモートが空ならローカルをpush(初回移行)
+async function cloudInit() {
+  const gotU = await cloudPull();
+  const gotS = await cloudPullShared();
+  if (!gotU) await cloudPush();
+  if (!gotS) await cloudPushShared();
+}
+// 定期ポーリング: 他端末の変更を拾う
+async function cloudTick() {
+  if (!USER) return;
+  try {
+    const r = await fetch(`${SYNC_URL}?meta=1`);
+    if (!r.ok) return;
+    const meta = await r.json();
+    if (meta[USER] && meta[USER] !== remoteTs.user && !cloudDirty) {
+      if (await cloudPull()) { loadUserState(); render(); }
+    }
+    if (meta._shared && meta._shared !== remoteTs.shared) {
+      if (await cloudPullShared()) {
+        loadSharedState(); applyOverrides(); applyHidden(); resortItems();
+        if (ITEMS.length) render();
+      }
+    }
+  } catch { }
+}
+async function startSession() {
+  loadUserState();
+  loadSharedState();
   // stdm報酬改訂(セット3/先取り5)に伴う残高・履歴の1回限りの再計算
   if (!localStorage.getItem(uk("kv_stdm_recalc_v1"))) {
     const dayOf = ts => { const d = ts ? new Date(ts) : new Date(); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
@@ -1461,6 +1558,7 @@ async function startSession() {
     window.addEventListener("blur", () => { winFocused = false; });
     window.addEventListener("focus", () => { winFocused = true; lastActivity = Date.now(); });
     window.addEventListener("pagehide", () => saveStudy());
+    setInterval(cloudTick, 10000);
   }
   try {
     ITEMS = await (await fetch("items.json")).json();

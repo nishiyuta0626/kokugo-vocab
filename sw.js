@@ -1,5 +1,5 @@
 // PWA用サービスワーカー: ネットワーク優先・オフライン時はキャッシュ
-const CACHE = "kokugo-vocab-v23";
+const CACHE = "kokugo-vocab-v24";
 const ASSETS = [
   "./",
   "./index.html",
@@ -24,6 +24,8 @@ self.addEventListener("activate", (e) => {
 });
 
 self.addEventListener("fetch", (e) => {
+  const u = new URL(e.request.url);
+  if (e.request.method !== "GET" || u.pathname.startsWith("/api/")) return;
   e.respondWith(
     fetch(e.request).then((res) => {
       const copy = res.clone();
