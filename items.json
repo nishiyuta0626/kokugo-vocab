@@ -8518,5 +8518,365 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「荷」で「肩の荷が下りる」です。"
+  },
+  {
+    "id": "kan_606",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（気・心）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が置けない」",
+    "options": [
+      "気",
+      "心",
+      "目",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「気」で「気が置けない」です。"
+  },
+  {
+    "id": "kan_607",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（気・心）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を揉む」",
+    "options": [
+      "気",
+      "手",
+      "肩",
+      "胸"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「気」で「気を揉む」です。"
+  },
+  {
+    "id": "kan_608",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（気・心）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が利く」",
+    "options": [
+      "気",
+      "目",
+      "鼻",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「気」で「気が利く」です。"
+  },
+  {
+    "id": "kan_609",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（気・心）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が乗る」",
+    "options": [
+      "気",
+      "波",
+      "調子",
+      "風"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「気」で「気が乗る」です。"
+  },
+  {
+    "id": "kan_610",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（気・心）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が弾む」",
+    "options": [
+      "心",
+      "気",
+      "胸",
+      "足"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「心」で「心が弾む」です。"
+  },
+  {
+    "id": "kan_611",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（虫）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が好かない」",
+    "options": [
+      "虫",
+      "気",
+      "腹",
+      "目"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「虫」で「虫が好かない」です。"
+  },
+  {
+    "id": "kan_612",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（虫）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の居所が悪い」",
+    "options": [
+      "虫",
+      "腹",
+      "気",
+      "心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「虫」で「虫の居所が悪い」です。"
+  },
+  {
+    "id": "kan_613",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（虫）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が知らせる」",
+    "options": [
+      "虫",
+      "風",
+      "鳥",
+      "星"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「虫」で「虫が知らせる」です。"
+  },
+  {
+    "id": "kan_614",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（虫）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の息」",
+    "options": [
+      "虫",
+      "鳥",
+      "魚",
+      "猫"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「虫」で「虫の息」です。"
+  },
+  {
+    "id": "kan_615",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（動物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の手も借りたい」",
+    "options": [
+      "猫",
+      "犬",
+      "猿",
+      "熊"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「猫」で「猫の手も借りたい」です。"
+  },
+  {
+    "id": "kan_616",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（動物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をかぶる」",
+    "options": [
+      "猫",
+      "狐",
+      "狸",
+      "狼"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「猫」で「猫をかぶる」です。"
+  },
+  {
+    "id": "kan_617",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（動物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をつままれたよう」",
+    "options": [
+      "狐",
+      "狸",
+      "猫",
+      "猿"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「狐」で「狐につままれたよう」です。"
+  },
+  {
+    "id": "kan_619",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を売る」",
+    "options": [
+      "油",
+      "水",
+      "風",
+      "雲"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「油」で「油を売る」です。"
+  },
+  {
+    "id": "kan_620",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「寝耳に（　）」",
+    "options": [
+      "水",
+      "雨",
+      "泥",
+      "風"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「水」で「寝耳に水」です。"
+  },
+  {
+    "id": "kan_621",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の泡となる」",
+    "options": [
+      "水",
+      "湯",
+      "波",
+      "海"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「水」で「水の泡となる」です。"
+  },
+  {
+    "id": "kan_622",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）に流す」",
+    "options": [
+      "水",
+      "汗",
+      "涙",
+      "血"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「水」で「水に流す」です。"
+  },
+  {
+    "id": "kan_623",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の雲をつかむよう」",
+    "options": [
+      "雲",
+      "霧",
+      "煙",
+      "風"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「雲」で「雲をつかむよう」です。"
+  },
+  {
+    "id": "kan_624",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）に立つ」",
+    "options": [
+      "矢面",
+      "正面",
+      "前面",
+      "表面"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「矢面」で「矢面に立つ」です。"
+  },
+  {
+    "id": "kan_625",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を切る」",
+    "options": [
+      "火蓋",
+      "口火",
+      "先陣",
+      "幕"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「火蓋」で「火蓋を切る」です。"
+  },
+  {
+    "id": "kan_626",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が折れる」",
+    "options": [
+      "心",
+      "気",
+      "骨",
+      "腰"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「心」で「心が折れる」です。"
+  },
+  {
+    "id": "kan_627",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を合わせる」",
+    "options": [
+      "息",
+      "声",
+      "目",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「息」で「息を合わせる」です。"
+  },
+  {
+    "id": "kan_628",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をのむ」",
+    "options": [
+      "息",
+      "唾",
+      "声",
+      "涙"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「息」で「息をのむ」です。"
+  },
+  {
+    "id": "kan_629",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を張る」",
+    "options": [
+      "見栄",
+      "意地",
+      "欲",
+      "気"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「見栄」で「見栄を張る」です。"
+  },
+  {
+    "id": "kan_630",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（自然・物）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を打つ」",
+    "options": [
+      "相づち",
+      "拍手",
+      "太鼓",
+      "鐘"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「相づち」で「相づちを打つ」です。"
   }
 ]
