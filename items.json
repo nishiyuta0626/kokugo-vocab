@@ -4283,5 +4283,78 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「山紫水明（さんしすいめい）」です。"
+  },
+  {
+    "id": "yoji_301",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「起（　）転結」",
+    "options": [
+      "承",
+      "受",
+      "続",
+      "継"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「承」で「起承転結（きしょうてんけつ）」と書きます。"
+  },
+  {
+    "id": "yoji_302",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「拍手（　）采」",
+    "options": [
+      "喝",
+      "歓",
+      "大",
+      "万"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「喝」で「拍手喝采（はくしゅかっさい）」と書きます。"
+  },
+  {
+    "id": "yoji_303",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め",
+    "question": "（　）に入る漢字を選びなさい。\n「千載一（　）」",
+    "options": [
+      "遇",
+      "会",
+      "機会",
+      "運"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「遇」で「千載一遇（せんざいいちぐう）」と書きます。"
+  },
+  {
+    "id": "yoji_304",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味選択",
+    "question": "「明朗快活」の意味として正しいものを選びなさい。",
+    "options": [
+      "性格が明るくほがらかで、元気いっぱいな様子。",
+      "頭がよく、どんな難しい問題もすぐに解ける様子。",
+      "礼儀正しく、落ち着いた態度で人と接する様子。"
+    ],
+    "answerIndex": 0,
+    "explanation": "「明朗快活（めいろうかいかつ）」性格が明るくほがらかで、元気いっぱいな様子。"
+  },
+  {
+    "id": "yoji_305",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「みんなが納得するだけの（　）がなければ、新しい計画は進められない。」",
+    "options": [
+      "大義名分",
+      "言語道断",
+      "付和雷同"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「大義名分（たいぎめいぶん）」です。"
   }
 ]
