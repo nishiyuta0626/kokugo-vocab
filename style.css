@@ -46,17 +46,20 @@ h3 { font-size: 16px; margin: 14px 0 6px; }
 .mt { margin-top: 12px; }
 .stdm { color: #dc2626; }
 
-/* 部屋リスト(ターゲット式・縦並び) */
-.roomlist { display: flex; flex-direction: column; gap: 12px; }
-.roomcard {
-  background: #fff; border-radius: var(--radius);
-  padding: 18px 20px; cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+/* 部屋リスト(コンパクト・1カード内の行) */
+.roombox { padding: 8px 18px; }
+.roombox-ttl { font-weight: 700; font-size: 14px; color: var(--sub); padding: 8px 0 4px; }
+.roomrow {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 6px; border-top: 1px solid var(--line); cursor: pointer;
 }
-.roomcard:hover { box-shadow: 0 3px 10px rgba(0,0,0,.12); }
-.roomcard .room-ttl { font-size: 18px; font-weight: 700; }
-.roomcard.gold { background: #f2d574; }
-.roomcard.gold .muted { color: #7a5c00; }
+.roomrow:hover { background: #f6f8fc; }
+.roomrow .ri { font-size: 20px; }
+.roomrow .rt { font-weight: 700; white-space: nowrap; }
+.roomrow .rs { flex: 1; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.roomrow .rgo { color: var(--acc); font-weight: 700; }
+.roomrow.gold .rt { color: #7a5c00; }
+@media (max-width: 480px) { .roomrow .rs { display: none; } }
 
 button {
   font: inherit; cursor: pointer;
@@ -237,6 +240,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 .mission-m { flex: 1; display: flex; align-items: center; gap: 8px; }
 .mission-m .bar { flex: 1; margin: 0; }
 .mission .mdone { color: #16a34a; font-weight: 700; }
+.mission.wtest { background: #fffbeb; margin: 0 -6px; padding: 10px 6px; border-radius: 10px; border-top: 0; }
 .mission button { white-space: nowrap; }
 @media (max-width: 560px) { .mission { flex-wrap: wrap; } .mission-m { flex-basis: 100%; order: 3; } }
 .textin{display:block;width:100%;max-width:420px;margin:14px auto;padding:14px;font-size:22px;text-align:center;border:2px solid var(--line);border-radius:12px;font-family:inherit}

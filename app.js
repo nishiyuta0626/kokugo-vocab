@@ -33,7 +33,7 @@ const ROOMS = [
   { key: "power", label: "実力テストの部屋", icon: "🏆", gold: true,
     desc: "全範囲ランダム・点数に応じてstdm付与" },
 ];
-const KIND_JP = { quiz: "クイズ", test: "テスト", power: "実力テスト", sched: "50日プラン" };
+const KIND_JP = { quiz: "クイズ", test: "テスト", power: "実力テスト", sched: "50日プラン", wtest: "週間テスト" };
 
 let ITEMS = [];
 let PROGRESS = {};   // id -> {c,w,s,tc,tw,ts,last}
@@ -341,6 +341,21 @@ function schedStart(mission, n) {
     mission, pool: ITEMS, cat: "50日プラン", range: [1, p.length] };
   go("quizrun");
 }
+// 週間テスト(7日ごと): 直近7日に出題した問題を50問・不足分は周回プールから補充
+function weeklyTestStart() {
+  const seen7 = new Set();
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    (SCHED.days[k]?.seen || []).forEach(id => seen7.add(id));
+  }
+  let p = shuffle(ITEMS.filter(it => seen7.has(it.id))).slice(0, 50);
+  if (p.length < 50) p = p.concat(schedPick(50 - p.length));
+  if (p.length < 4) { toast("まだ週間テストに出せる問題がありません"); return; }
+  test = { list: shuffle(p), idx: 0, mode: "q4", answers: [], pool: ITEMS,
+    cat: "週間テスト", range: [1, p.length], kind: "wtest" };
+  go("testrun");
+}
 // ホームのプランパネル(前半6セット/後半の2分割表示＋先取り)
 function vSchedCard() {
   if (!ITEMS.length) return "";
@@ -377,12 +392,20 @@ function vSchedCard() {
         ? `<span class="mdone">✓ 完了</span>`
         : `<button class="primary" data-act="schedset" data-mission="${m}" data-n="10">10問セット ▶</button>`}
     </div>`;
+  const wDay = st.dayNo % 7 === 0 && st.dayNo <= SCHED_DAYS;
+  const wDone = !!SCHED.days[todayStr()]?.wtest;
+  const wRow = wDay ? `<div class="mission wtest">
+      <div class="mission-l"><b>📋 週間テスト</b><span class="muted small">今週の復習50問・得点分stdm</span></div>
+      <div class="mission-m"></div>
+      ${wDone ? `<span class="mdone">✓ 完了</span>` : `<button class="primary" data-act="wtest">テスト開始 ▶</button>`}
+    </div>` : "";
   return `<div class="card schedcard">
     <h2>📅 50日・4周プラン <span class="muted small">${st.dayNo}日目/${SCHED_DAYS}日・残り${st.daysLeft}日</span></h2>
     <div class="muted small">全体 ${st.done}/${st.total}クリア（${pct}%）
       　1周目${bd.c[1]}・2周目${bd.c[2]}・3周目${bd.c[3]}・4周目${bd.c[4]}・完了${bd.c[0]}（💎${bd.plat}）</div>
     <div class="bar big"><i style="width:${pct}%"></i></div>
     ${pace}
+    ${wRow}
     ${st.remain <= 0
       ? `<p class="sched-ahead">🎊 全${st.total}クリア完了！お疲れさまでした！</p>`
       : `<h3>今日のノルマ: ${st.todayDone}/${st.quota}問（${todayPct}%）</h3>
@@ -480,16 +503,16 @@ function powerUnlocked() {
 function vHome() {
   const pw = powerProgress();
   const unlocked = powerUnlocked();
-  const rooms = ROOMS.map(r =>
-    `<div class="roomcard ${r.gold ? "gold" : ""}" data-nav="${r.key}">
-      <div class="room-ttl">${r.icon} ${r.label}${r.gold && !unlocked ? " 🔒" : ""}</div>
-      <div class="muted">${r.desc}</div>
-      ${r.gold ? `<div class="muted small">${powerSpec().map(([c, n, p]) => `${c}${Math.min(n, byCat(c).length)}問(${p}点/問)`).join("・")}・100点満点換算</div>
-        <div class="muted small">(100点/500stdm　85〜99点/200stdm　70〜84点/100stdm　69点以下/10stdm)</div>
-        <div class="muted small">${unlocked
-          ? (POWER_ON ? "🔓 解放中(管理者設定)" : "🔓 解放済み！")
-          : `🔒 全単元を「合格」(46件以上習得)すると解放されます　合格 ${pw.cleared}/${pw.total} 単元`}</div>` : ""}
-    </div>`).join("");
+  const rooms = `<div class="card roombox"><div class="roombox-ttl">🏠 学習ルーム</div>` +
+    ROOMS.map(r => {
+      const lock = r.gold && !unlocked;
+      const sub = r.gold
+        ? (unlocked ? "全範囲60問・最大500stdm 🔓" : `🔒 全単元合格で解放（合格 ${pw.cleared}/${pw.total} 単元）`)
+        : r.desc;
+      return `<div class="roomrow ${r.gold ? "gold" : ""}" data-nav="${r.key}">
+        <span class="ri">${r.icon}</span><span class="rt">${r.label}${lock ? " 🔒" : ""}</span>
+        <span class="rs muted small">${esc(sub)}</span><span class="rgo">›</span></div>`;
+    }).join("") + `</div>`;
   const total = ITEMS.length;
   const learned = ITEMS.filter(i => statusOf(i.id) !== "new").length;
   const mastered = ITEMS.filter(i => statusOf(i.id) === "master").length;
@@ -505,7 +528,7 @@ function vHome() {
     <div class="stdmgo">履歴 ›</div>
   </div>
     ${vSchedCard()}
-    <div class="roomlist">${rooms}</div>
+    ${rooms}
     <p class="muted mt">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
     <p class="muted"><button class="ghost" data-nav="data">データ管理 →</button>
     <button class="ghost adminbtn" data-nav="admin">管理者</button></p>`;
@@ -792,10 +815,11 @@ function vTestRun() {
   const it = list[idx];
   const { options, answer } = fixedQ(it);
   test.cur = { answer, options };
+  if (test.qIdx !== test.idx) { test.qIdx = test.idx; test.qStart = Date.now(); }
   const opts = options.map((o, i) =>
     `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o.v)}</button>`).join("");
   return `<div class="panes"><div class="card">
-      <div class="muted">${test.kind === "power" ? "🏆 実力テスト" : "🖊️ テスト"}　${idx + 1} / ${list.length}　${esc(test.cat)}</div>
+      <div class="muted">${test.kind === "power" ? "🏆 実力テスト" : test.kind === "wtest" ? "📋 週間テスト" : "🖊️ テスト"}　${idx + 1} / ${list.length}　${esc(test.cat)}</div>
       <div class="progress">${list.map((_, i) =>
         `<i class="${i < idx ? "f" : ""}"></i>`).join("")}</div>
       ${qPrompt(it)}
@@ -810,7 +834,8 @@ function vTestEnd() {
   const ok = test.answers.filter(a => a.ok).length;
   const pct = Math.round(ok / test.answers.length * 100);
   const pts = test.kind === "power" ? powerScore(test.answers) : null;
-  const got = test.kind === "power" ? stdmAward(pts) : 0;
+  const got = test.kind === "power" ? stdmAward(pts)
+    : test.kind === "wtest" ? Math.round(ok / test.answers.length * 100) : 0;
   const passed = test.kind === "test" && pct >= TEST_PASS * 100;
   // 次の枠(合格していれば解放されている)
   const blks = globalBlocks();
@@ -824,7 +849,7 @@ function vTestEnd() {
   return `<div class="card">
     <h2>${test.kind === "power"
       ? `実力テスト結果: ${pts}点 / 100点満点 (${ok}/${test.answers.length}問正解)`
-      : `テスト結果: ${ok} / ${test.answers.length} 問正解(${pct}点)`}</h2>
+      : `${test.kind === "wtest" ? "週間テスト" : "テスト"}結果: ${ok} / ${test.answers.length} 問正解(${pct}点)`}</h2>
     ${test.kind === "test" ? `<p style="font-size:20px;font-weight:700;color:${passed ? "#16a34a" : "var(--ng)"}">${passed ? "合格！次の枠が解放されました" : `不合格(合格は${TEST_PASS * 100}%以上)`}</p>` : ""}
     ${got ? `<p class="stdm">+${got} stdm 獲得！(所有: ${stdm} stdm)</p>` : ""}
     ${wrongs.length ? `<h3>間違えた問題 (${wrongs.length})</h3>${rows}
@@ -1131,6 +1156,7 @@ document.addEventListener("click", (e) => {
       saveSched(); toast("50日プランを開始しました"); render();
     }
     else if (act === "schedset") schedStart(a.dataset.mission, +(a.dataset.n || 10));
+    else if (act === "wtest") weeklyTestStart();
     else if (act === "scheddate") {
       const v2 = $("#s_start")?.value;
       if (!v2) { toast("開始日を入力してください"); return; }
@@ -1152,6 +1178,7 @@ document.addEventListener("click", (e) => {
       }
       else if (view.room === "quiz" || view.name === "card") go("quizsetup", { room: "quiz" });
       else if (view.room === "power") go("home");
+      else if (test && test.kind === "wtest") go("home");
       else go("testpick", { room: "test" });
     }
     else if (act === "tosetup") {
@@ -1160,6 +1187,8 @@ document.addEventListener("click", (e) => {
         go("quizsetup", { room: "quiz" });
       } else if (test && test.kind === "power") {
         go("testsetup", { room: "power" });
+      } else if (test && test.kind === "wtest") {
+        go("home");
       } else go("testpick", { room: "test" });
     }
     else if (act === "flip") { cardSet.flipped = !cardSet.flipped; render(); }
@@ -1215,14 +1244,22 @@ document.addEventListener("click", (e) => {
       const ok = act === "tanswer"
         ? test.cur.options[+a.dataset.i].v === test.cur.answer
         : normYomi($("#ans_in")?.value || "") === normYomi(test.cur.answer);
-      test.answers.push({ id: test.list[test.idx].id, ok });
-      mark(test.list[test.idx].id, ok, test.kind);
+      const id0 = test.list[test.idx].id;
+      test.answers.push({ id: id0, ok });
+      mark(id0, ok, test.kind);
+      // 週間テストの正誤はプランの周回記録にも反映(即答ならプラチナ対象)
+      if (test.kind === "wtest")
+        schedMark(id0, ok, Date.now() - (test.qStart || Date.now()) <= 3000);
       test.idx++;
       if (test.idx >= test.list.length) {
         const nOk = test.answers.filter(x => x.ok).length;
         // 実力テスト: 加重得点を100点満点に換算してstdm付与
         const pts = test.kind === "power" ? powerScore(test.answers) : null;
         if (test.kind === "power") stdmEarn(stdmAward(pts), "実力テスト");
+        if (test.kind === "wtest") {
+          schedToday().wtest = true; saveSched();
+          stdmEarn(Math.round(nOk / test.answers.length * 100), "週間テスト");
+        }
         RESULTS.push({
           ts: new Date().toISOString(), kind: test.kind, cat: test.cat,
           range: test.range, n: test.answers.length, ok: nOk, pts,
