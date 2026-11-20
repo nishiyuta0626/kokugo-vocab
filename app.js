@@ -951,7 +951,6 @@ function vEdit() {
     ${it.explanation ? `<h3>解説</h3><p class="muted">${esc(it.explanation)}</p>` : ""}
     <div class="btnrow">
       <button data-act="delprog">学習記録をリセット</button>
-      <button class="delx" data-act="hide" data-id="${it.id}">✕ この問題を削除</button>
       <button data-nav="jisho">戻る</button>
     </div>
   </div>
