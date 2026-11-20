@@ -16892,5 +16892,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「そんちょう」です。"
+  },
+  {
+    "id": "dou_1221",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「新しいルールをクラス全員に【適用】する。」",
+    "options": [
+      "てきよう",
+      "てきおう",
+      "ちゃくよう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「てきよう」です。"
+  },
+  {
+    "id": "dou_1222",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「自然災害から人々の生活を守る【対策】を立てる。」",
+    "options": [
+      "たいさく",
+      "だいさく",
+      "たいせき"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「たいさく」です。"
+  },
+  {
+    "id": "dou_1223",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「過去の失敗を【教訓】にして次の試合に臨む。」",
+    "options": [
+      "きょうくん",
+      "こうくん",
+      "きょうきん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「きょうくん」です。"
+  },
+  {
+    "id": "dou_1224",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「地域のお祭りの【運営】をボランティアが手伝う。」",
+    "options": [
+      "うんえい",
+      "うんよう",
+      "うんねい"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「うんえい」です。"
+  },
+  {
+    "id": "dou_1225",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「日本の文化や歴史に対する【理解】を深める。」",
+    "options": [
+      "りかい",
+      "りげ",
+      "りいかい"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「りかい」です。"
+  },
+  {
+    "id": "dou_1226",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「自分の考えを【冷静】に見つめ直す。」",
+    "options": [
+      "れいせい",
+      "れいじょう",
+      "りょうせい"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「れいせい」です。"
+  },
+  {
+    "id": "dou_1227",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「古い建物の【保存】と修理を行う。」",
+    "options": [
+      "ほぞん",
+      "ほうぞん",
+      "ほそん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ほぞん」です。"
+  },
+  {
+    "id": "dou_1228",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「新しい発見が医学の【進歩】につながる。」",
+    "options": [
+      "しんぽ",
+      "しんぼ",
+      "じんぽ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しんぽ」です。"
+  },
+  {
+    "id": "dou_1229",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（熟字訓・特別な読み）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「雨上がりの空に美しい【虹】がかかっている。」",
+    "options": [
+      "にじ",
+      "こう",
+      "あめむし"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「にじ」です。"
+  },
+  {
+    "id": "dou_1230",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（熟字訓・特別な読み）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「遠足の日の朝、水筒と【お握り】をリュックに入れる。」",
+    "options": [
+      "おにぎり",
+      "おあくしゅ",
+      "おにぎ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「おにぎり」です。"
+  },
+  {
+    "id": "dou_1231",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（熟字訓・特別な読み）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「冬の寒い夜に、家族で温かい【鍋】を囲む。」",
+    "options": [
+      "なべ",
+      "かま",
+      "さら"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「なべ」です。"
+  },
+  {
+    "id": "dou_1232",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（熟字訓・特別な読み）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「庭の池で赤い【金魚】が気持ちよさそうに泳いでいる。」",
+    "options": [
+      "きんぎょ",
+      "かねうお",
+      "こんぎょ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「きんぎょ」です。"
+  },
+  {
+    "id": "dou_1233",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（熟字訓・特別な読み）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「【一昨日】は雨が降っていたが、今日は気持ちよく晴れている。」",
+    "options": [
+      "おととい",
+      "いっさくじつ",
+      "いちさくじつ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「おととい」です。"
+  },
+  {
+    "id": "dou_1234",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（熟字訓・特別な読み）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「【明後日】からいよいよ楽しい夏休みが始まる。」",
+    "options": [
+      "あさって",
+      "みょうごにち",
+      "めいごにち"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「あさって」です。"
+  },
+  {
+    "id": "dou_1235",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【手】紙（てがみ）",
+      "【手】本（てほん）",
+      "上【手】（じょうず）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「上【手】（じょうず）」です。"
+  },
+  {
+    "id": "dou_1236",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【下】車（げしゃ）",
+      "【下】水道（げすいどう）",
+      "【下】手（へた）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「【下】手（へた）」です。"
+  },
+  {
+    "id": "dou_1237",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【文】字（もじ）",
+      "作【文】（さくぶん）",
+      "【文】章（ぶんしょう）"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【文】字（もじ）」です。"
+  },
+  {
+    "id": "dou_1238",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【物】語（ものがたり）",
+      "動【物】（どうぶつ）",
+      "植【物】（しょくぶつ）"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【物】語（ものがたり）」です。"
+  },
+  {
+    "id": "dou_1239",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【気】持ち（きもち）",
+      "天【気】（てんき）",
+      "【気】配（けはい）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「【気】配（けはい）」です。"
+  },
+  {
+    "id": "dou_1240",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【図】形」の「図」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "地【図】",
+      "【図】書館",
+      "【図】る"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「地【図】」です。"
+  },
+  {
+    "id": "dou_1241",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【楽】器」の「楽」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "音【楽】",
+      "【楽】しい",
+      "【楽】勝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「音【楽】」です。"
+  },
+  {
+    "id": "dou_1242",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【重】要」の「重」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "体【重】",
+      "【重】い",
+      "【重】なる"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「体【重】」です。"
+  },
+  {
+    "id": "dou_1243",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（誤読チェック）",
+    "question": "次のうち、太字（【　】内）の漢字の読み方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "自然災害の【対策（だいさく）】をみんなで話し合う。",
+      "過去の失敗を【教訓（きょうくん）】にして次に活かす。",
+      "大切な文化財を【保存（ほぞん）】して未来へ残す。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「自然災害の【対策（だいさく）】をみんなで話し合う。」です。"
+  },
+  {
+    "id": "dou_1244",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（誤読チェック）",
+    "question": "次のうち、太字（【　】内）の漢字の読み方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "新しいルールを全員に【適用（てきおう）】する。",
+      "運動会の【運営（うんえい）】を児童会が中心となって行う。",
+      "どんなときでも【冷静（れいせい）】に判断することが大切だ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「新しいルールを全員に【適用（てきおう）】する。」です。"
+  },
+  {
+    "id": "dou_1245",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（音訓の識別）",
+    "question": "次の二字熟語のうち、「音読み＋訓読み（重箱読み）」になっているものを1つ選びなさい。",
+    "options": [
+      "本箱",
+      "山川",
+      "読書"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「本箱」です。"
   }
 ]
