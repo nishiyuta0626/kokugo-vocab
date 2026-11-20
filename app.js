@@ -371,21 +371,28 @@ function prepWrongs() {
     return s && s.w > 0 && (s.wok || 0) < 2;
   });
 }
-function prepStart() { // 間違いストックからランダム10問
-  const p = shuffle([...prepWrongs()]).slice(0, 10);
-  if (!p.length) { toast("間違いストックはありません"); return; }
-  quiz = { list: p, idx: 0, mode: "q4", answers: [], judged: null, prep: true,
+function prepStart() { // 今週の範囲のみ・間違いを必ず含めて10問
+  const s7 = seen7Set();
+  const w7 = prepWrongs().filter(it => s7.has(it.id));
+  const wids = new Set(w7.map(i => i.id));
+  const rest = ITEMS.filter(it => s7.has(it.id) && !wids.has(it.id));
+  const p = shuffle([...w7]).concat(shuffle(rest)).slice(0, 10);
+  if (!p.length) { toast("今週出題した問題がまだありません"); return; }
+  quiz = { list: shuffle(p), idx: 0, mode: "q4", answers: [], judged: null, prep: true,
     prepMode: "wrong", pool: ITEMS, cat: "テスト対策", range: [1, p.length] };
   go("quizrun");
 }
 function vPrep() {
-  const wrongs = prepWrongs();
+  const s7 = seen7Set();
+  const weekItems = ITEMS.filter(it => s7.has(it.id));
+  const w7 = prepWrongs().filter(it => s7.has(it.id));
   return `<div class="card">
     <h2>📝 テスト対策の部屋</h2>
-    <p class="muted">間違えた問題のストックからランダムに10問を出題します。
-    解答した時点で〇✕判定と正解・解説が表示されます。</p>
-    <p class="muted">間違いストック: <b>${wrongs.length}問</b>（連続2回正解で克服・解除。問題の確認は辞書の部屋でもできます）</p>
-    <button class="bigbtn" data-act="prepset" ${wrongs.length ? "" : "disabled"}>10問テストを開始 ▶</button>
+    <p class="muted"><b>今週のテスト範囲</b>（直近7日に出題した問題）だけから10問を出題します。
+    間違えた問題は必ず含めて出題。解答した時点で〇✕判定と正解・解説が表示されます。</p>
+    <p class="muted">今週の範囲: <b>${weekItems.length}問</b>（うち間違い ${w7.length}問）。
+    間違いの確認は辞書の部屋でもできます。</p>
+    <button class="bigbtn" data-act="prepset" ${weekItems.length ? "" : "disabled"}>10問テストを開始 ▶</button>
     <div class="btnrow"><button class="ghost" data-nav="result">📊 過去の結果・進捗を見る →</button></div>
   </div>`;
 }
