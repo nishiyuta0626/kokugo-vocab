@@ -16,6 +16,13 @@ const LS_TIME = "kv_study_time_v1";
 const LS_ADJUST = "kv_stdm_adjust_v1";
 const LS_SCHED = "kv_sched_v1";
 const LS_EARN = "kv_earn_v1";
+const LS_USER = "kv_user_v1";
+const ADMIN_PIN = "0000";
+let USER = localStorage.getItem(LS_USER) || "";
+// ユーザー別キー: 学習記録・結果・stdm・勉強時間・調整・50日プラン・獲得履歴は
+// ユーザーごとに完全独立。項目の修正(kv_item_override)と非表示(kv_hidden)は共有。
+const uk = k => `${k}__${USER}`;
+const USER_SCOPED = [LS_PROGRESS, LS_RESULTS, LS_stdm, LS_TIME, LS_ADJUST, LS_SCHED, LS_EARN, "kv_stdm_recalc_v1"];
 const SEC_SIZE = 50;
 // 全体通し番号のカテゴリ順(1〜漢字→慣用句→四字熟語→ことわざ)
 const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
@@ -55,14 +62,14 @@ let cardSet = { list: [], idx: 0, flipped: false };
 function loadJSON(k, d) {
   try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; }
 }
-const saveProgress = () => localStorage.setItem(LS_PROGRESS, JSON.stringify(PROGRESS));
-const saveResults = () => localStorage.setItem(LS_RESULTS, JSON.stringify(RESULTS));
+const saveProgress = () => localStorage.setItem(uk(LS_PROGRESS), JSON.stringify(PROGRESS));
+const saveResults = () => localStorage.setItem(uk(LS_RESULTS), JSON.stringify(RESULTS));
 const saveOverrides = () => localStorage.setItem(LS_OVERRIDE, JSON.stringify(OVERRIDES));
 const saveHidden = () => localStorage.setItem(LS_HIDDEN, JSON.stringify(HIDDEN));
-const savestdm = () => localStorage.setItem(LS_stdm, String(stdm));
-const saveStudy = () => localStorage.setItem(LS_TIME, JSON.stringify(study));
-const saveSched = () => localStorage.setItem(LS_SCHED, JSON.stringify(SCHED));
-const saveEarn = () => localStorage.setItem(LS_EARN, JSON.stringify(EARN));
+const savestdm = () => localStorage.setItem(uk(LS_stdm), String(stdm));
+const saveStudy = () => localStorage.setItem(uk(LS_TIME), JSON.stringify(study));
+const saveSched = () => localStorage.setItem(uk(LS_SCHED), JSON.stringify(SCHED));
+const saveEarn = () => localStorage.setItem(uk(LS_EARN), JSON.stringify(EARN));
 // stdm増減＋履歴記録(merge指定時は同日・同ラベルの直近行に集約)
 function stdmEarn(amount, label, merge) {
   stdm = Math.max(0, stdm + amount); savestdm();
@@ -484,7 +491,7 @@ function vSchedCard() {
 
 // ---------- 描画 ----------
 function render() {
-  const inRoom = view.name !== "home" && view.name !== "data";
+  const inRoom = view.name !== "home" && view.name !== "data" && view.name !== "userselect";
   const room = ROOMS.find(r => r.key === view.room);
   $("#backbtn").style.display = inRoom ? "" : "none";
   $("#headtitle").textContent = inRoom
@@ -510,9 +517,13 @@ function render() {
   else if (v === "data") el.innerHTML = vData();
   else if (v === "admin") el.innerHTML = vAdmin();
   else if (v === "earnlog") el.innerHTML = vEarnLog();
+  else if (v === "userselect") el.innerHTML = vUserSelect();
   animateStdm();
 }
+const ADMIN_ONLY = new Set(["admin", "data"]);
 function go(name, params = {}) {
+  if (!USER && name !== "userselect") name = "userselect";
+  if (USER === "koharu" && ADMIN_ONLY.has(name)) { toast("管理者のみ使えます"); return; }
   const wasRun = RUN_VIEWS.has(view.name);
   const isRun = RUN_VIEWS.has(name);
   if (isRun && !wasRun) runStartTotal = study.total;
@@ -552,6 +563,27 @@ function vEarnLog() {
 }
 
 // ---------- ホーム ----------
+// ---------- トップページ(ユーザー選択) ----------
+function vUserSelect() {
+  return `<div class="card" style="text-align:center">
+    <h2>だれがあそびますか？</h2>
+    <div class="choices">
+      <button class="choice" data-act="usel" data-u="koharu" style="font-size:20px">🌸 こはる
+        <span class="muted small">パスワードなしでロビーへ</span></button>
+      <button class="choice" data-act="usel" data-u="admin" style="font-size:20px">🛠 管理者
+        <span class="muted small">PIN入力が必要です</span></button>
+    </div>
+    ${view.pin ? `<div class="btnrow" style="justify-content:center">
+      <input id="pin_in" type="password" inputmode="numeric" maxlength="4" placeholder="PIN(4桁)"
+        onkeydown="if(event.key==='Enter')this.nextElementSibling.click()"
+        style="width:8em;text-align:center;font-size:20px;padding:6px">
+      <button class="primary" data-act="pinok">入る</button></div>` : ""}
+  </div>`;
+}
+async function selectUser(u) {
+  USER = u; localStorage.setItem(LS_USER, u);
+  await startSession(); go("home");
+}
 function vHome() {
   const wk = weeklyStatus();
   const rooms = `<div class="card roombox"><div class="roombox-ttl">🏠 学習ルーム</div>` +
@@ -581,8 +613,9 @@ function vHome() {
     ${vSchedCard()}
     ${rooms}
     <p class="muted mt">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
-    <p class="muted"><button class="ghost" data-nav="data">データ管理 →</button>
-    <button class="ghost adminbtn" data-nav="admin">管理者</button></p>`;
+    <p class="muted">${USER === "admin" ? `<button class="ghost" data-nav="data">データ管理 →</button>
+    <button class="ghost adminbtn" data-nav="admin">管理者</button>` : ""}
+    <button class="ghost" data-act="logout">ユーザーを切り替え</button></p>`;
 }
 
 // ---------- カテゴリ選択 ----------
@@ -950,7 +983,7 @@ function vEdit() {
     ${opts}
     ${it.explanation ? `<h3>解説</h3><p class="muted">${esc(it.explanation)}</p>` : ""}
     <div class="btnrow">
-      <button data-act="delprog">学習記録をリセット</button>
+      ${USER === "admin" ? `<button data-act="delprog">学習記録をリセット</button>` : ""}
       <button data-nav="jisho">戻る</button>
     </div>
   </div>
@@ -1073,6 +1106,20 @@ document.addEventListener("click", (e) => {
   if (a) {
     const act = a.dataset.act;
     if (act === "qscope") { view.qscope = a.dataset.cat; render(); }
+    else if (act === "usel") {
+      const u = a.dataset.u;
+      if (u === "admin" && !view.pin) { view = { name: "userselect", pin: true }; render(); }
+      else selectUser(u);
+    }
+    else if (act === "pinok") {
+      const pv = ($("#pin_in")?.value || "").trim();
+      if (pv === ADMIN_PIN) selectUser("admin");
+      else toast("パスワードが違います");
+    }
+    else if (act === "logout") {
+      localStorage.removeItem(LS_USER); USER = "";
+      view = { name: "userselect" }; render();
+    }
     else if (act === "tile") {
       go("list", { room: "jisho", cat: a.dataset.cat, sec: +a.dataset.sec, kw: "", filt: "" });
     }
@@ -1110,7 +1157,7 @@ document.addEventListener("click", (e) => {
       const memo = ($("#a_memo")?.value || "").trim();
       stdmEarn(signed, memo ? `手動:${memo}` : "手動調整");
       ADJUSTS.push({ ts: new Date().toISOString(), amount: signed, memo });
-      localStorage.setItem(LS_ADJUST, JSON.stringify(ADJUSTS));
+      localStorage.setItem(uk(LS_ADJUST), JSON.stringify(ADJUSTS));
       toast(`${signed > 0 ? "+" : ""}${signed} stdm`); render();
     }
     else if (act === "schedstart") {
@@ -1235,6 +1282,7 @@ document.addEventListener("click", (e) => {
     }
     else if (act === "edit") go("edit", { id: a.dataset.id, room: "jisho" });
     else if (act === "delprog") {
+      if (USER !== "admin") { toast("管理者のみ使えます"); return; }
       if (confirm("この項目の学習記録をリセットしますか？")) {
         delete PROGRESS[view.id]; saveProgress(); toast("リセットしました"); render();
       }
@@ -1316,23 +1364,37 @@ $("#brand").addEventListener("click", () => go("home"));
 // ---------- 起動 ----------
 async function boot() {
   if (new URLSearchParams(location.search).has("reset")) {
-    for (const k of [LS_PROGRESS, LS_RESULTS, LS_stdm, LS_TIME, LS_ADJUST, LS_SCHED, LS_EARN, "kv_stdm_recalc_v1"])
-      localStorage.removeItem(k);
+    for (const u of ["koharu", "admin"])
+      for (const k of USER_SCOPED) localStorage.removeItem(`${k}__${u}`);
     location.replace("./");
     return;
   }
-  PROGRESS = loadJSON(LS_PROGRESS, {});
-  RESULTS = loadJSON(LS_RESULTS, []);
+  // 旧単一ユーザーデータを「こはる」側へ移行(1回限り)
+  for (const k of USER_SCOPED) {
+    const v = localStorage.getItem(k);
+    if (v !== null) {
+      if (localStorage.getItem(`${k}__koharu`) === null) localStorage.setItem(`${k}__koharu`, v);
+      localStorage.removeItem(k);
+    }
+  }
+  USER = localStorage.getItem(LS_USER) || "";
+  if (!USER) { view = { name: "userselect" }; render(); return; }
+  await startSession();
+}
+let wiredOnce = false;
+async function startSession() {
+  PROGRESS = loadJSON(uk(LS_PROGRESS), {});
+  RESULTS = loadJSON(uk(LS_RESULTS), []);
   OVERRIDES = loadJSON(LS_OVERRIDE, {});
   HIDDEN = loadJSON(LS_HIDDEN, { ids: [], items: {} });
-  stdm = +(localStorage.getItem(LS_stdm) || 0);
-  study = Object.assign({ day: todayStr(), sec: 0, total: 0, paidStdm: 0 }, loadJSON(LS_TIME, {}));
-  ADJUSTS = loadJSON(LS_ADJUST, []);
-  SCHED = loadJSON(LS_SCHED, { start: "", base: 0, items: {}, days: {} });
+  stdm = +(localStorage.getItem(uk(LS_stdm)) || 0);
+  study = Object.assign({ day: todayStr(), sec: 0, total: 0, paidStdm: 0 }, loadJSON(uk(LS_TIME), {}));
+  ADJUSTS = loadJSON(uk(LS_ADJUST), []);
+  SCHED = loadJSON(uk(LS_SCHED), { start: "", base: 0, items: {}, days: {} });
   SCHED.items = SCHED.items || {}; SCHED.days = SCHED.days || {}; SCHED.prepOk = SCHED.prepOk || {};
-  EARN = loadJSON(LS_EARN, []);
+  EARN = loadJSON(uk(LS_EARN), []);
   // stdm報酬改訂(セット3/先取り5)に伴う残高・履歴の1回限りの再計算
-  if (!localStorage.getItem("kv_stdm_recalc_v1")) {
+  if (!localStorage.getItem(uk("kv_stdm_recalc_v1"))) {
     const dayOf = ts => { const d = ts ? new Date(ts) : new Date(); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
     const earn2 = [];
     for (const r of RESULTS) {
@@ -1348,16 +1410,19 @@ async function boot() {
     EARN = earn2.sort((a, b) => String(a.ts).localeCompare(String(b.ts)));
     stdm = Math.max(0, EARN.reduce((a, x) => a + x.amount, 0));
     saveEarn(); savestdm();
-    localStorage.setItem("kv_stdm_recalc_v1", "1");
+    localStorage.setItem(uk("kv_stdm_recalc_v1"), "1");
   }
   lastStdmShown = stdm; // 初回表示はアニメなし
   if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }
-  setInterval(studyTick, 1000);
-  document.addEventListener("pointerdown", () => { lastActivity = Date.now(); }, { passive: true });
-  document.addEventListener("keydown", () => { lastActivity = Date.now(); });
-  window.addEventListener("blur", () => { winFocused = false; });
-  window.addEventListener("focus", () => { winFocused = true; lastActivity = Date.now(); });
-  window.addEventListener("pagehide", () => saveStudy());
+  if (!wiredOnce) {
+    wiredOnce = true;
+    setInterval(studyTick, 1000);
+    document.addEventListener("pointerdown", () => { lastActivity = Date.now(); }, { passive: true });
+    document.addEventListener("keydown", () => { lastActivity = Date.now(); });
+    window.addEventListener("blur", () => { winFocused = false; });
+    window.addEventListener("focus", () => { winFocused = true; lastActivity = Date.now(); });
+    window.addEventListener("pagehide", () => saveStudy());
+  }
   try {
     ITEMS = await (await fetch("items.json")).json();
   } catch {
