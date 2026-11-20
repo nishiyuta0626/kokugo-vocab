@@ -342,7 +342,7 @@ function vQuizSetup() {
       <option value="new">未学習のみ</option>
       <option value="weak">苦手のみ</option>
     </select>
-    <p class="muted small">出題形式: 意味を見て語句を4択から選ぶ（選択肢は毎回シャッフル）</p>
+    <p class="muted small">出題形式: 漢字は読み・その他は意味から語句を4択で選ぶ（選択肢は毎回シャッフル）</p>
     <button class="bigbtn" id="q_go">クイズを開始（50問・${nBlocks}単元から）</button>
     <button class="ghost" id="q_card" style="margin-top:8px">🃏 カードめくりで学習</button>
   </div>
@@ -416,7 +416,7 @@ function vTestSetup() {
       ${powerSpec().map(([c, n, p], i) =>
         `<tr><td>${esc(c)}</td><td>${Math.min(n, byCat(c).length)}問</td><td>${p}点/問</td>${i === 0 ? `<td rowspan="${powerSpec().length}">100点:500<br>85〜99点:200<br>70〜84点:100<br>69点以下:10</td>` : ""}</tr>`).join("")}</table>`
       : `<p class="muted">${esc(view.cat)} No.${view.gs}-${view.ge} から45問以上＋前の枠の✕を5問以内の計50問。90%以上で合格です。</p>`}
-    <p class="muted small">出題形式: 意味を見て語句を4択から選ぶ（選択肢は毎回シャッフル）</p>
+    <p class="muted small">出題形式: 漢字は読み・その他は意味から語句を4択で選ぶ（選択肢は毎回シャッフル）</p>
     <button class="bigbtn" id="t_go">テストを開始</button>
     <div class="btnrow"><button class="ghost" data-act="quit">${power ? "← ホームへ" : "← 範囲選択へ"}</button></div>
   </div>
@@ -439,14 +439,17 @@ function qPrompt(it, mode) {
   return `<div class="q-surface">${esc(it.yomi)}</div><div class="center muted">この読みの語句を選んでください</div>`;
 }
 
+// 漢字カテゴリは「漢字→読み」の4択に自動切替(漢検式の読み問題)
+function itemMode(it, mode) { return it.cat === "漢字" ? "t2y" : mode; }
 function vQuizRun() {
   const { list, idx, mode } = quiz;
   const it = list[idx];
-  const { options, answer } = makeChoices(it, mode, quiz.pool);
+  const imode = itemMode(it, mode);
+  const { options, answer } = makeChoices(it, imode, quiz.pool);
   quiz.cur = { answer, options };
   const judged = quiz.judged;
   const opts = options.map((o, i) =>
-    `<button class="choice" data-act="answer" data-i="${i}">${esc(o.v)}<span class="fyomi">${esc(o.yomi)}</span></button>`).join("");
+    `<button class="choice" data-act="answer" data-i="${i}">${esc(o.v)}${o.yomi !== o.v ? `<span class="fyomi">${esc(o.yomi)}</span>` : ""}</button>`).join("");
   const side = `<div class="card side">
       ${it.image ? `<img class="imgbox" src="${esc(it.image)}" alt="">` : ""}
       ${judged ? `
@@ -462,9 +465,9 @@ function vQuizRun() {
       ${judged
         ? `<div class="judge ${judged.ok ? "ok" : "ng"}">${judged.ok ? "⭕" : "❌"}</div>
            <p class="center"><b>${esc(it.text)}</b>（${esc(it.yomi)}）</p>
-           ${qPrompt(it, mode)}
+           ${qPrompt(it, imode)}
            <button class="bigbtn" data-act="nextq">${idx + 1 < list.length ? "次へ" : "結果を見る"}</button>`
-        : `${qPrompt(it, mode)}<div class="choices">${opts}</div>
+        : `${qPrompt(it, imode)}<div class="choices">${opts}</div>
            <div class="btnrow"><button class="ghost" data-act="quit">やめる</button></div>`}
     </div>${side}</div>`;
 }
@@ -525,15 +528,16 @@ function vCard() {
 function vTestRun() {
   const { list, idx, mode } = test;
   const it = list[idx];
-  const { options, answer } = makeChoices(it, mode, test.pool);
+  const imode = itemMode(it, mode);
+  const { options, answer } = makeChoices(it, imode, test.pool);
   test.cur = { answer, options };
   const opts = options.map((o, i) =>
-    `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o.v)}<span class="fyomi">${esc(o.yomi)}</span></button>`).join("");
+    `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o.v)}${o.yomi !== o.v ? `<span class="fyomi">${esc(o.yomi)}</span>` : ""}</button>`).join("");
   return `<div class="panes"><div class="card">
       <div class="muted">${test.kind === "power" ? "🏆 実力テスト" : "🖊️ テスト"}　${idx + 1} / ${list.length}　${esc(test.cat)}</div>
       <div class="progress">${list.map((_, i) =>
         `<i class="${i < idx ? "f" : ""}"></i>`).join("")}</div>
-      ${qPrompt(it, mode)}
+      ${qPrompt(it, imode)}
       <div class="choices">${opts}</div>
       <div class="btnrow"><button class="ghost" data-act="quit">やめる</button></div>
     </div>
