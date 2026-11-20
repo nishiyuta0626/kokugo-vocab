@@ -494,6 +494,9 @@ function render() {
   const inRoom = view.name !== "home" && view.name !== "data" && view.name !== "userselect";
   const room = ROOMS.find(r => r.key === view.room);
   $("#backbtn").style.display = inRoom ? "" : "none";
+  const lb = $("#logoutbtn");
+  lb.style.display = (USER && view.name !== "userselect") ? "" : "none";
+  lb.textContent = `${USER === "admin" ? "🛠 管理者" : "🌸 こはる"} ▸ ログアウト`;
   $("#headtitle").textContent = inRoom
     ? (room ? `${room.icon} ${room.label}` : (view.name === "admin" ? "管理者"
       : view.name === "earnlog" ? "🪙 stdm履歴"
@@ -1359,6 +1362,12 @@ document.addEventListener("keydown", (e) => { // 入力式でEnter=回答
   if (btn) { e.preventDefault(); btn.click(); }
 });
 $("#backbtn").addEventListener("click", () => go("home"));
+$("#logoutbtn").addEventListener("click", () => {
+  if (confirm("ログアウトしますか？")) {
+    localStorage.removeItem(LS_USER); USER = "";
+    view = { name: "userselect" }; render();
+  }
+});
 $("#brand").addEventListener("click", () => go("home"));
 
 // ---------- 起動 ----------
