@@ -17242,5 +17242,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「本箱」です。"
+  },
+  {
+    "id": "dou_1246",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「休・体・作」",
+    "options": [
+      "にんべん",
+      "ぎょうにんべん",
+      "てへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「にんべん」です。"
+  },
+  {
+    "id": "dou_1247",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「海・池・泳」",
+    "options": [
+      "さんずい",
+      "にすい",
+      "かわ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「さんずい」です。"
+  },
+  {
+    "id": "dou_1248",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「林・森・村」",
+    "options": [
+      "きへん",
+      "のぎへん",
+      "もく"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「きへん」です。"
+  },
+  {
+    "id": "dou_1249",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「持・打・投」",
+    "options": [
+      "てへん",
+      "にんべん",
+      "うしへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「てへん」です。"
+  },
+  {
+    "id": "dou_1250",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「話・語・読」",
+    "options": [
+      "ごんべん",
+      "いとへん",
+      "かねへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ごんべん」です。"
+  },
+  {
+    "id": "dou_1251",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「絵・紙・線」",
+    "options": [
+      "いとへん",
+      "ごんべん",
+      "きへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「いとへん」です。"
+  },
+  {
+    "id": "dou_1252",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「鉄・銀・銅」",
+    "options": [
+      "かねへん",
+      "つちへん",
+      "いしへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「かねへん」です。"
+  },
+  {
+    "id": "dou_1253",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「地・坂・場」",
+    "options": [
+      "つちへん",
+      "こざとへん",
+      "やまへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「つちへん」です。"
+  },
+  {
+    "id": "dou_1254",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「晴・明・時」",
+    "options": [
+      "にちへん（ひへん）",
+      "つきへん",
+      "めへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「にちへん（ひへん）」です。"
+  },
+  {
+    "id": "dou_1255",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「行・後・待」",
+    "options": [
+      "ぎょうにんべん",
+      "にんべん",
+      "しんにょう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ぎょうにんべん」です。"
+  },
+  {
+    "id": "dou_1256",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「物・特・牧」",
+    "options": [
+      "うしへん",
+      "てへん",
+      "のぎへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「うしへん」です。"
+  },
+  {
+    "id": "dou_1257",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「秋・科・秒」",
+    "options": [
+      "のぎへん",
+      "きへん",
+      "うしへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「のぎへん」です。"
+  },
+  {
+    "id": "dou_1258",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「陸・院・隊」",
+    "options": [
+      "こざとへん",
+      "おおざと",
+      "つちへん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「こざとへん」です。"
+  },
+  {
+    "id": "dou_1259",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「都・部・郡」",
+    "options": [
+      "おおざと",
+      "こざとへん",
+      "おおがい"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「おおざと」です。"
+  },
+  {
+    "id": "dou_1260",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「頭・顔・題」",
+    "options": [
+      "おおがい",
+      "ちから",
+      "りっとう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「おおがい」です。"
+  },
+  {
+    "id": "dou_1261",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「切・別・列」",
+    "options": [
+      "りっとう",
+      "かたな",
+      "ちから"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「りっとう」です。"
+  },
+  {
+    "id": "dou_1262",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「花・草・茶」",
+    "options": [
+      "くさかんむり",
+      "たけかんむり",
+      "うかんむり"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「くさかんむり」です。"
+  },
+  {
+    "id": "dou_1263",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「竹・算・筆」",
+    "options": [
+      "たけかんむり",
+      "くさかんむり",
+      "あめかんむり"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「たけかんむり」です。"
+  },
+  {
+    "id": "dou_1264",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「家・室・安」",
+    "options": [
+      "うかんむり",
+      "わかんむり",
+      "あなかんむり"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「うかんむり」です。"
+  },
+  {
+    "id": "dou_1265",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「雪・雲・電」",
+    "options": [
+      "あめかんむり",
+      "くさかんむり",
+      "うかんむり"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「あめかんむり」です。"
+  },
+  {
+    "id": "dou_1266",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「熱・点・照」",
+    "options": [
+      "れっか（れんが）",
+      "したごころ",
+      "さら"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「れっか（れんが）」です。"
+  },
+  {
+    "id": "dou_1267",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「病・痛・疲」",
+    "options": [
+      "やまいだれ",
+      "まだれ",
+      "がんだれ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「やまいだれ」です。"
+  },
+  {
+    "id": "dou_1268",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「広・店・庭」",
+    "options": [
+      "まだれ",
+      "がんだれ",
+      "やまいだれ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「まだれ」です。"
+  },
+  {
+    "id": "dou_1269",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「道・近・進」",
+    "options": [
+      "しんにょう",
+      "えんにょう",
+      "そうにょう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しんにょう」です。"
+  },
+  {
+    "id": "dou_1270",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の部首（部首名選択）",
+    "question": "次の漢字に共通する部首の名前を選びなさい。「国・図・園」",
+    "options": [
+      "くにがまえ",
+      "もんがまえ",
+      "ぎょうがまえ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「くにがまえ」です。"
   }
 ]
