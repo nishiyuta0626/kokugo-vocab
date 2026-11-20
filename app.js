@@ -285,6 +285,7 @@ function schedMark(id, ok, fast) {
     }
   } else {
     s.w++; s.wok = 0; s.last = "ng";
+    if (SCHED.prepOk) delete SCHED.prepOk[id]; // 本編で間違え直したら確認済みを解除
   }
   saveSched();
 }
@@ -362,21 +363,28 @@ function weeklyTestStart() {
 function prepWrongs() {
   return ITEMS.filter(it => {
     const s = SCHED.items[it.id];
-    return s && s.w > 0 && (s.wok || 0) < 2;
+    return s && s.w > 0 && (s.wok || 0) < 2 && !(SCHED.prepOk || {})[it.id];
   });
 }
-function prepStart() { // 今週の範囲のみ・間違い8:正解2の割合で10問
+// 対策テストの記録は「確認済みフラグ」と直近正誤マークのみ(学習記録には影響しない)
+function prepMark(id, ok) {
+  if (!SCHED.prepOk) SCHED.prepOk = {};
+  if (ok) SCHED.prepOk[id] = 1; else delete SCHED.prepOk[id];
+  const s = SCHED.items[id] || (SCHED.items[id] = { cc: 0, w: 0, fast: 0 });
+  s.last = ok ? "ok" : "ng";
+  saveSched();
+}
+// 直近の正誤マーク(プラン・週テスト・対策のどれで解いても更新される)
+function lastMark(id) {
+  const l = (SCHED.items[id] || {}).last;
+  return l === "ok" ? '<span class="lmark ok">◯</span>'
+       : l === "ng" ? '<span class="lmark ng">✕</span>' : "";
+}
+function prepStart() { // 今週の範囲の間違い問題から10問
   const s7 = seen7Set();
   const w7 = prepWrongs().filter(it => s7.has(it.id));
-  const wids = new Set(w7.map(i => i.id));
-  const rest = ITEMS.filter(it => s7.has(it.id) && !wids.has(it.id));
-  let p = shuffle([...w7]).slice(0, 8).concat(shuffle(rest).slice(0, 2));
-  if (p.length < 10) { // 片方が不足したらもう片方で補充
-    const ids = new Set(p.map(i => i.id));
-    p = p.concat(shuffle(ITEMS.filter(it => s7.has(it.id) && !ids.has(it.id)))
-      .slice(0, 10 - p.length));
-  }
-  if (!p.length) { toast("今週出題した問題がまだありません"); return; }
+  const p = shuffle(w7).slice(0, 10);
+  if (!p.length) { toast("確認が必要な問題はありません"); return; }
   quiz = { list: shuffle(p), idx: 0, mode: "q4", answers: [], judged: null, prep: true,
     prepMode: "wrong", pool: ITEMS, cat: "テスト対策", range: [1, p.length] };
   go("quizrun");
@@ -387,8 +395,8 @@ function vPrep() {
   const w7 = prepWrongs().filter(it => s7.has(it.id));
   return `<div class="card">
     <h2>📝 テスト対策の部屋</h2>
-    <p class="muted"><b>今週のテスト範囲</b>（直近7日に出題した問題）だけから
-    <b>間違えた問題8問＋正解だった問題2問</b>の割合で10問を出題します。
+    <p class="muted"><b>今週のテスト範囲</b>（直近7日に出題した問題）の中で
+    <b>間違えた問題</b>から10問を出題します。正解した問題は「確認済み」になり、
     解答した時点で〇✕判定と正解・解説が表示されます。</p>
     <p class="muted">${w7.length
       ? `あと <b>${w7.length}問</b> 確認が必要です（間違えた問題を中心に出題）。`
@@ -398,7 +406,7 @@ function vPrep() {
       const bad = s.last === "ng" || (s.last !== "ok" && s.w > 0 && !(s.wok > 0));
       return `<span class="${bad ? "ng" : "ok"}">${bad ? "✕" : "◯"}</span>`;
     }).join("")}${weekItems.length > 200 ? `<span class="muted small">…他${weekItems.length - 200}問</span>` : ""}</div>
-    <button class="bigbtn" data-act="prepset" ${weekItems.length ? "" : "disabled"}>10問テストを開始 ▶</button>
+    <button class="bigbtn" data-act="prepset" ${w7.length ? "" : "disabled"}>10問テストを開始 ▶</button>
     <div class="btnrow"><button class="ghost" data-nav="result">📊 過去の結果・進捗を見る →</button></div>
   </div>`;
 }
@@ -892,12 +900,13 @@ function vList() {
   }
   if (kw) p = p.filter(i =>
     `${i.question}${i.explanation || ""}`.toLowerCase().includes(kw));
-  if (filt) p = p.filter(i => statusOf(i.id) === filt);
+  if (filt === "ng") p = p.filter(i => (SCHED.items[i.id] || {}).last === "ng");
+  else if (filt) p = p.filter(i => statusOf(i.id) === filt);
   const rows = p.slice(0, 500).map(it =>
     `<div class="listrow" data-act="edit" data-id="${it.id}" style="cursor:pointer">
       <span class="t">${esc(qt(it))}${STATUS_BADGE[statusOf(it.id)]}</span>
       <span class="y">${esc(it.sub || it.cat)}</span>
-      <span class="m"></span></div>`).join("");
+      <span class="m">${lastMark(it.id)}</span></div>`).join("");
   return `<div class="card">
     <div class="btnrow" style="margin-top:0">
       <select id="l_cat"><option value="">全カテゴリ</option>
@@ -905,6 +914,7 @@ function vList() {
       <select id="l_filt"><option value="">全状態</option>
         ${["new", "weak", "master", "good"].map(s =>
           `<option value="${s}" ${s === filt ? "selected" : ""}>${STATUS_JP[s]}</option>`).join("")}</select>
+      <button class="chip ${filt === "ng" ? "on" : ""}" data-act="filtx">✕だけ表示</button>
 
     </div>
     ${view.sec != null ? `<p class="muted">未習得の残り（タイルから）</p>` : ""}
@@ -919,7 +929,7 @@ function vEdit() {
   const opts = (it.options || []).map((o, i) =>
     `<div class="listrow"><span class="t">${i === it.answerIndex ? "⭕ " : "　 "}${esc(o)}</span></div>`).join("");
   return `<div class="panes"><div class="card">
-    <h2>問題の詳細 ${STATUS_BADGE[statusOf(it.id)]}</h2>
+    <h2>問題の詳細 ${STATUS_BADGE[statusOf(it.id)]} ${lastMark(it.id)}</h2>
     <p class="muted small">${esc(it.cat || "")}${it.sub ? ` / ${esc(it.sub)}` : ""}</p>
     ${qPrompt(it)}
     <h3>選択肢</h3>
@@ -1110,6 +1120,7 @@ document.addEventListener("click", (e) => {
         saveSched(); toast("プランをリセットしました"); render();
       }
     }
+    else if (act === "filtx") { view.filt = view.filt === "ng" ? "" : "ng"; render(); }
     else if (act === "quit") go("home");
     else if (act === "tosetup") go("home");
     else if (act === "flip") { cardSet.flipped = !cardSet.flipped; render(); }
@@ -1126,7 +1137,8 @@ document.addEventListener("click", (e) => {
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
       if (quiz.sched)
         schedMark(quiz.list[quiz.idx].id, ok, Date.now() - (quiz.qStart || Date.now()) <= 3000);
-      if (!quiz.prep) mark(quiz.list[quiz.idx].id, ok, "quiz");
+      else if (quiz.prep) prepMark(quiz.list[quiz.idx].id, ok);
+      else mark(quiz.list[quiz.idx].id, ok, "quiz");
       document.querySelectorAll(".choice").forEach((b, i) => {
         const v = quiz.cur.options[i];
         if (v.v === quiz.cur.answer) b.classList.add("hit");
@@ -1158,7 +1170,8 @@ document.addEventListener("click", (e) => {
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
       if (quiz.sched)
         schedMark(quiz.list[quiz.idx].id, ok, Date.now() - (quiz.qStart || Date.now()) <= 3000);
-      if (!quiz.prep) mark(quiz.list[quiz.idx].id, ok, "quiz");
+      else if (quiz.prep) prepMark(quiz.list[quiz.idx].id, ok);
+      else mark(quiz.list[quiz.idx].id, ok, "quiz");
       render();
     }
     else if (act === "tanswer" || act === "tanswer_in") {
@@ -1295,7 +1308,7 @@ async function boot() {
   study = Object.assign({ day: todayStr(), sec: 0, total: 0, paidStdm: 0 }, loadJSON(LS_TIME, {}));
   ADJUSTS = loadJSON(LS_ADJUST, []);
   SCHED = loadJSON(LS_SCHED, { start: "", base: 0, items: {}, days: {} });
-  SCHED.items = SCHED.items || {}; SCHED.days = SCHED.days || {};
+  SCHED.items = SCHED.items || {}; SCHED.days = SCHED.days || {}; SCHED.prepOk = SCHED.prepOk || {};
   EARN = loadJSON(LS_EARN, []);
   lastStdmShown = stdm; // 初回表示はアニメなし
   if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }

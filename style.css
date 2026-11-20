@@ -245,6 +245,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 .wkmarks { letter-spacing: 3px; font-size: 15px; line-height: 1.9; margin: 2px 0 8px; overflow-wrap: anywhere; }
 .wkmarks .ok { color: #16a34a; }
 .wkmarks .ng { color: var(--ng); font-weight: 700; }
+.lmark.ok { color: #16a34a; }
+.lmark.ng { color: var(--ng); font-weight: 700; }
 @media (max-width: 560px) { .mission { flex-wrap: wrap; } .mission-m { flex-basis: 100%; order: 3; } }
 .textin{display:block;width:100%;max-width:420px;margin:14px auto;padding:14px;font-size:22px;text-align:center;border:2px solid var(--line);border-radius:12px;font-family:inherit}
 .textin:focus{outline:none;border-color:var(--acc)}
