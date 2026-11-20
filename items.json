@@ -12302,5 +12302,357 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「旅行の思い出に風景をカメラで【採る】。」です。"
+  },
+  {
+    "id": "dou_871",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「ノートに今日の授業の大切なポイントをカく。」",
+    "options": [
+      "書",
+      "描",
+      "欠",
+      "掻"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「書」です。"
+  },
+  {
+    "id": "dou_872",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「スケッチブックに公園の大きな木をカく。」",
+    "options": [
+      "描",
+      "書",
+      "欠",
+      "掻"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「描」です。"
+  },
+  {
+    "id": "dou_873",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「黒板に書かれた文字を急いでノートにウツす。」",
+    "options": [
+      "写",
+      "映",
+      "移"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「写」です。"
+  },
+  {
+    "id": "dou_874",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「静かな湖の水面に、美しい富士山がウツる。」",
+    "options": [
+      "映",
+      "写",
+      "移"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「映」です。"
+  },
+  {
+    "id": "dou_875",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「来月から新しい校舎へ教室をウツす。」",
+    "options": [
+      "移",
+      "写",
+      "映"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「移」です。"
+  },
+  {
+    "id": "dou_876",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「太陽の光がよく当たり、洗濯物がすっかりカワいた。」",
+    "options": [
+      "乾",
+      "渇",
+      "涸"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「乾」です。"
+  },
+  {
+    "id": "dou_877",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「たくさん走ったので、のどがカラカラにカワいた。」",
+    "options": [
+      "渇",
+      "乾",
+      "涸"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「渇」です。"
+  },
+  {
+    "id": "dou_878",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「春になってポカポカとアタタかい日が続いている。」",
+    "options": [
+      "暖",
+      "温",
+      "熱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「暖」です。"
+  },
+  {
+    "id": "dou_879",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「寒い冬には、アタタかいスープを飲んで体を温める。」",
+    "options": [
+      "温",
+      "暖",
+      "熱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「温」です。"
+  },
+  {
+    "id": "dou_880",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「家族のやさしい言葉に、心がアタタかくなった。」",
+    "options": [
+      "温",
+      "暖",
+      "熱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「温」です。"
+  },
+  {
+    "id": "dou_881",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「遠足の日が楽しみで、いつもよりハヤく目が覚めた。」",
+    "options": [
+      "早",
+      "速",
+      "急"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「早」です。"
+  },
+  {
+    "id": "dou_882",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「新幹線はとてもスピードがハヤくて快適だ。」",
+    "options": [
+      "速",
+      "早",
+      "急"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「速」です。"
+  },
+  {
+    "id": "dou_883",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「将来の夢や目標を心の中に思いカく。」",
+    "options": [
+      "描",
+      "書",
+      "欠"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「描」です。"
+  },
+  {
+    "id": "dou_884",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「大きなスクリーンに映画の映像をウツす。」",
+    "options": [
+      "映",
+      "写",
+      "移"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「映」です。"
+  },
+  {
+    "id": "dou_885",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「風邪のウイルスが他の人にウツらないように気をつける。」",
+    "options": [
+      "移",
+      "写",
+      "映"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「移」です。"
+  },
+  {
+    "id": "dou_886",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：手紙をカく ／ B：油絵をカく」",
+    "options": [
+      "A：書　B：描",
+      "A：描　B：書",
+      "A：書　B：書"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：書　B：描」です。"
+  },
+  {
+    "id": "dou_887",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：教科書をウツす ／ B：鏡に顔がウツる」",
+    "options": [
+      "A：写　B：映",
+      "A：映　B：写",
+      "A：移　B：映"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：写　B：映」です。"
+  },
+  {
+    "id": "dou_888",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：タオルがカワく ／ B：のどがカワく」",
+    "options": [
+      "A：乾　B：渇",
+      "A：渇　B：乾",
+      "A：乾　B：乾"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：乾　B：渇」です。"
+  },
+  {
+    "id": "dou_889",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：アタタかい気候 ／ B：アタタかい飲み物」",
+    "options": [
+      "A：暖　B：温",
+      "A：温　B：暖",
+      "A：暖　B：暖"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：暖　B：温」です。"
+  },
+  {
+    "id": "dou_890",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：朝ハヤく起きる ／ B：足がハヤい」",
+    "options": [
+      "A：早　B：速",
+      "A：速　B：早",
+      "A：早　B：早"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：早　B：速」です。"
+  },
+  {
+    "id": "dou_891",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "図工の時間に友達の似顔絵を【書く】。",
+      "大事なメモをノートに書き【写す】。",
+      "冬は空気が【乾く】ので火の元に気をつける。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「図工の時間に友達の似顔絵を【書く】。」です。"
+  },
+  {
+    "id": "dou_892",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "運動したあとにのどが【乾く】ので水を飲む。",
+      "窓ガラスに夕焼けの空が赤く【映る】。",
+      "別の町へ引っ越して住まいを【移す】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「運動したあとにのどが【乾く】ので水を飲む。」です。"
+  },
+  {
+    "id": "dou_893",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "ストーブをつけて部屋を【温かく】する。",
+      "母が作ってくれた【温かい】お弁当を食べる。",
+      "春になると【暖かい】南風が吹いてくる。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ストーブをつけて部屋を【温かく】する。」です。"
+  },
+  {
+    "id": "dou_894",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "彼はとても計算が【早い】のであっという間に終わる。",
+      "予定よりも【早く】駅に到着して友だちを待つ。",
+      "チーターは地上でもっとも走るのが【速い】動物だ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「彼はとても計算が【早い】のであっという間に終わる。」です。"
+  },
+  {
+    "id": "dou_895",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "写真に【映る】自分の笑顔を見てうれしくなる。",
+      "歴史のレポートを原稿用紙に【書く】。",
+      "未来の街の姿を自由に【描く】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「写真に【映る】自分の笑顔を見てうれしくなる。」です。"
   }
 ]
