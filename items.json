@@ -10876,5 +10876,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「祖父の【反省】をまとめた本が図書館に置かれている。」です。"
+  },
+  {
+    "id": "dou_771",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「次の試合での活躍を大いにキタイしている。」",
+    "options": [
+      "期待",
+      "気体",
+      "機体"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「期待」です。"
+  },
+  {
+    "id": "dou_772",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「水を熱して水蒸気というキタイに変化させる。」",
+    "options": [
+      "気体",
+      "期待",
+      "機体"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「気体」です。"
+  },
+  {
+    "id": "dou_773",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「飛行機のキタイを整備してから出発する。」",
+    "options": [
+      "機体",
+      "期待",
+      "気体"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「機体」です。"
+  },
+  {
+    "id": "dou_774",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「雲ひとつないカイセイの空の下で運動会を行う。」",
+    "options": [
+      "快晴",
+      "改正",
+      "回生"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「快晴」です。"
+  },
+  {
+    "id": "dou_775",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「時代に合わせて法律の一部をカイセイする。」",
+    "options": [
+      "改正",
+      "快晴",
+      "回生"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「改正」です。"
+  },
+  {
+    "id": "dou_776",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「美術館へ行って有名な絵画をカンショウする。」",
+    "options": [
+      "鑑賞",
+      "観賞",
+      "感傷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鑑賞」です。"
+  },
+  {
+    "id": "dou_777",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「公園に咲く美しい桜の花をカンショウする。」",
+    "options": [
+      "観賞",
+      "鑑賞",
+      "感傷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「観賞」です。"
+  },
+  {
+    "id": "dou_778",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「卒業式を前に、思い出にふけってカンショウ的になる。」",
+    "options": [
+      "感傷",
+      "鑑賞",
+      "観賞"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「感傷」です。"
+  },
+  {
+    "id": "dou_779",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「夏休みの間、学校のプールを地域にカイホウする。」",
+    "options": [
+      "開放",
+      "解放",
+      "快方"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「開放」です。"
+  },
+  {
+    "id": "dou_780",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「期末テストが終わり、重いプレッシャーからカイホウされた。」",
+    "options": [
+      "解放",
+      "開放",
+      "快方"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「解放」です。"
+  },
+  {
+    "id": "dou_781",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「病気だった祖父の体調がようやくカイホウに向かう。」",
+    "options": [
+      "快方",
+      "開放",
+      "解放"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「快方」です。"
+  },
+  {
+    "id": "dou_782",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「物語の続きがどうなるか、頭の中でソウゾウする。」",
+    "options": [
+      "想像",
+      "創造",
+      "構造"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「想像」です。"
+  },
+  {
+    "id": "dou_783",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「これまでにない新しい製品をソウゾウする。」",
+    "options": [
+      "創造",
+      "想像",
+      "構造"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「創造」です。"
+  },
+  {
+    "id": "dou_784",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「遠足の持ち物をすべてカバンにシュウノウする。」",
+    "options": [
+      "収納",
+      "収容",
+      "修養"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「収納」です。"
+  },
+  {
+    "id": "dou_785",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「この体育館は千人以上の観客をシュウヨウできる。」",
+    "options": [
+      "収容",
+      "収納",
+      "修養"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「収容」です。"
+  },
+  {
+    "id": "dou_786",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「自分の意見にサンセイする人が手を挙げる。」",
+    "options": [
+      "賛成",
+      "酸性",
+      "参政"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「賛成」です。"
+  },
+  {
+    "id": "dou_787",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「リトマス紙を使って、水溶液がサンセイかどうか調べる。」",
+    "options": [
+      "酸性",
+      "賛成",
+      "参政"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「酸性」です。"
+  },
+  {
+    "id": "dou_788",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「新しいルールをセイテイしてクラスで守る。」",
+    "options": [
+      "制定",
+      "晴天",
+      "成育"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「制定」です。"
+  },
+  {
+    "id": "dou_789",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「今日はセイテンに恵まれ、遠くの山までよく見える。」",
+    "options": [
+      "晴天",
+      "制定",
+      "成育"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「晴天」です。"
+  },
+  {
+    "id": "dou_790",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「難しい問題に対して、最後までユウカンに立ち向かう。」",
+    "options": [
+      "勇敢",
+      "夕刊",
+      "有感"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「勇敢」です。"
+  },
+  {
+    "id": "dou_791",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：未来の社会をソウゾウする ／ B：新しい文化をソウゾウする」",
+    "options": [
+      "A：想像　B：創造",
+      "A：創造　B：想像",
+      "A：構造　B：想像"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：想像　B：創造」です。"
+  },
+  {
+    "id": "dou_792",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：音楽をカンショウする ／ B：熱帯魚をカンショウする」",
+    "options": [
+      "A：鑑賞　B：観賞",
+      "A：観賞　B：鑑賞",
+      "A：感傷　B：鑑賞"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：鑑賞　B：観賞」です。"
+  },
+  {
+    "id": "dou_793",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：窓をカイホウして換気する ／ B：宿題からカイホウされる」",
+    "options": [
+      "A：開放　B：解放",
+      "A：解放　B：開放",
+      "A：快方　B：開放"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：開放　B：解放」です。"
+  },
+  {
+    "id": "dou_794",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "今日は朝から【改正】で、洗濯物がよく乾きそうだ。",
+      "ロケットの【機体】を点検して打ち上げに備える。",
+      "本棚にたくさんの本をきれいに【収納】する。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「今日は朝から【改正】で、洗濯物がよく乾きそうだ。」です。"
+  },
+  {
+    "id": "dou_795",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同音異義語（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "レモンの汁を調べたら強い【賛成】を示した。",
+      "クラシック音楽のコンサートへ行って演奏を【鑑賞】した。",
+      "入学したばかりのころの気持ちを思い出して【感傷】にひたる。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「レモンの汁を調べたら強い【賛成】を示した。」です。"
   }
 ]
