@@ -12654,5 +12654,363 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「写真に【映る】自分の笑顔を見てうれしくなる。」です。"
+  },
+  {
+    "id": "dou_896",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「壊れてしまった自転車のブレーキをナオす。」",
+    "options": [
+      "直",
+      "治",
+      "修",
+      "改"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「直」です。"
+  },
+  {
+    "id": "dou_897",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「薬を飲んでゆっくり休んだら、すっかり風邪がナオった。」",
+    "options": [
+      "治",
+      "直",
+      "修",
+      "改"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「治」です。"
+  },
+  {
+    "id": "dou_898",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「父は毎朝電車に乗って、都心の会社にツトめている。」",
+    "options": [
+      "勤",
+      "務",
+      "努"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「勤」です。"
+  },
+  {
+    "id": "dou_899",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「運動会の実行委員長という大切な役割をツトめる。」",
+    "options": [
+      "務",
+      "勤",
+      "努"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「務」です。"
+  },
+  {
+    "id": "dou_900",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「地域の環境を守るために、ゴミを減らすようツトめる。」",
+    "options": [
+      "努",
+      "勤",
+      "務"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「努」です。"
+  },
+  {
+    "id": "dou_901",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「夏休みに家族みんなで高い山にノボる。」",
+    "options": [
+      "登",
+      "上",
+      "昇"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「登」です。"
+  },
+  {
+    "id": "dou_902",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「重い荷物を持って、急な坂道をノボる。」",
+    "options": [
+      "上",
+      "登",
+      "昇"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「上」です。"
+  },
+  {
+    "id": "dou_903",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「東の空から真っ赤な太陽がノボってくる。」",
+    "options": [
+      "昇",
+      "登",
+      "上"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「昇」です。"
+  },
+  {
+    "id": "dou_904",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「部屋の模様をカえて、気分をリフレッシュする。」",
+    "options": [
+      "変",
+      "代",
+      "換",
+      "替"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「変」です。"
+  },
+  {
+    "id": "dou_905",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「風邪をひいたキャプテンにカわって、副キャプテンが挨拶する。」",
+    "options": [
+      "代",
+      "変",
+      "換",
+      "替"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「代」です。"
+  },
+  {
+    "id": "dou_906",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「言葉の表現を別のわかりやすい言葉に言いカえる。」",
+    "options": [
+      "換",
+      "変",
+      "代",
+      "替"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「換」です。"
+  },
+  {
+    "id": "dou_907",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「運動をして汗をかいたので、新しいシャツに着カえる。」",
+    "options": [
+      "替",
+      "変",
+      "代",
+      "換"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「替」です。"
+  },
+  {
+    "id": "dou_908",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「テストの間違えた問題を赤ペンでナオす。」",
+    "options": [
+      "直",
+      "治",
+      "修",
+      "改"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「直」です。"
+  },
+  {
+    "id": "dou_909",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「階段を駆けノボって三階の教室へ向かう。」",
+    "options": [
+      "上",
+      "登",
+      "昇"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「上」です。"
+  },
+  {
+    "id": "dou_910",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（文脈選択）",
+    "question": "次の文のカタカナに当てはまる最も適切な漢字を選びなさい。「新しい電池にカえて、懐中電灯がつくか確かめる。」",
+    "options": [
+      "替",
+      "変",
+      "代",
+      "換"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「替」です。"
+  },
+  {
+    "id": "dou_911",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：姿勢をナオす ／ B：けがをナオす」",
+    "options": [
+      "A：直　B：治",
+      "A：治　B：直",
+      "A：直　B：直"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：直　B：治」です。"
+  },
+  {
+    "id": "dou_912",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：銀行にツトめる ／ B：主役をツトめる」",
+    "options": [
+      "A：勤　B：務",
+      "A：務　B：勤",
+      "A：努　B：務"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：勤　B：務」です。"
+  },
+  {
+    "id": "dou_913",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：富士山にノボる ／ B：煙が空へノボる」",
+    "options": [
+      "A：登　B：昇",
+      "A：昇　B：登",
+      "A：上　B：登"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：登　B：昇」です。"
+  },
+  {
+    "id": "dou_914",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：計画をカえる ／ B：親にカわって出席する」",
+    "options": [
+      "A：変　B：代",
+      "A：代　B：変",
+      "A：換　B：替"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：変　B：代」です。"
+  },
+  {
+    "id": "dou_915",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（組み合わせ）",
+    "question": "次のA・Bに入る漢字の正しい組み合わせを選びなさい。「A：席をカえる ／ B：お金を両カえする」",
+    "options": [
+      "A：替　B：換",
+      "A：換　B：替",
+      "A：代　B：変"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「A：替　B：換」です。"
+  },
+  {
+    "id": "dou_916",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "歯医者さんに通って虫歯をきれいに【直す】。",
+      "乱れていた生活リズムを規則正しく【直す】。",
+      "体調管理に【努める】こともスポーツ選手の大切な仕事だ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「歯医者さんに通って虫歯をきれいに【直す】。」です。"
+  },
+  {
+    "id": "dou_917",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "姉は今年から市役所に【務める】ことになった。",
+      "学級会の議長を立派に【務める】ことができた。",
+      "早起きして山頂から【昇る】朝日を見た。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「姉は今年から市役所に【務める】ことになった。」です。"
+  },
+  {
+    "id": "dou_918",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "川の上流に向かって船で【登る】。",
+      "エベレストという世界一高い山に【登る】。",
+      "気温がぐんぐん【昇る】ので熱中症に注意する。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「川の上流に向かって船で【登る】。」です。"
+  },
+  {
+    "id": "dou_919",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "次の駅で急行電車に乗り【変える】。",
+      "気持ちを【変えて】新しい問題に挑戦する。",
+      "窓を開けて部屋の空気を入れ【換える】。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「次の駅で急行電車に乗り【変える】。」です。"
+  },
+  {
+    "id": "dou_920",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "同訓異字（誤字チェック）",
+    "question": "次の文のうち、太字（【　】内）の漢字の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "病気の父に【替えて】私が買い物に出かけた。",
+      "古くなったカーテンを新しいものに掛け【替える】。",
+      "季節が【変わる】と吹く風のにおいも変化する。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「病気の父に【替えて】私が買い物に出かけた。」です。"
   }
 ]
