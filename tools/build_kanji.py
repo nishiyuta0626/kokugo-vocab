@@ -129,8 +129,20 @@ def main():
             by_yomi[yomi] = (score, keb)
     out = [{"text": v[1], "yomi": y, "score": v[0], "nk": kanji_count(v[1])}
            for y, v in by_yomi.items() if len(v[1]) <= 4]
-    # 常用度 → 漢字の多い語(読み問題向き)の順
-    out.sort(key=lambda x: (x["score"], -x["nk"], x["text"]))
+    # 種類別に分けて混合: 二字熟語・訓読み・三字以上 (2:2:1)
+    pure = lambda x: x["nk"] == len(x["text"])
+    g2 = [x for x in out if pure(x) and x["nk"] == 2]
+    g3 = [x for x in out if pure(x) and x["nk"] >= 3]
+    gk = [x for x in out if not pure(x)]  # 送り仮名つき訓読み
+    for g in (g2, g3, gk):
+        g.sort(key=lambda x: (x["score"], x["text"]))
+    print(f"二字{len(g2)} / 三字以上{len(g3)} / 訓読み{len(gk)}")
+    out = []
+    while g2 or g3 or gk:
+        for g, m in ((g2, 2), (gk, 2), (g3, 1)):
+            for _ in range(m):
+                if g:
+                    out.append(g.pop(0))
     (BASE / "data" / "kanji_candidates.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     from collections import Counter
