@@ -12,6 +12,8 @@ const LS_OVERRIDE = "kv_item_override_v1";
 const LS_RESULTS = "kv_results_v1";
 const LS_SDN = "kv_sdn_v1";
 const SEC_SIZE = 50;
+// 全体通し番号のカテゴリ順(1〜漢字→慣用句→四字熟語→ことわざ)
+const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
 
 const ROOMS = [
   { key: "jisho", label: "辞書の部屋", icon: "📖",
@@ -82,8 +84,26 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
   c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 1800); }
-function cats() { return [...new Set(ITEMS.map(i => i.cat))]; }
+function cats() { // CAT_ORDERの順(存在するもののみ)
+  const have = new Set(ITEMS.map(i => i.cat));
+  return CAT_ORDER.filter(c => have.has(c))
+    .concat([...have].filter(c => !CAT_ORDER.includes(c)));
+}
 function byCat(cat) { return ITEMS.filter(i => !cat || i.cat === cat); }
+// 全体通し番号で50件ブロックを列挙(カテゴリをまたがない)
+function globalBlocks() {
+  const out = [];
+  let g = 1;
+  for (const c of cats()) {
+    const p = byCat(c);
+    for (let a = 0; a < p.length; a += SEC_SIZE) {
+      const blk = p.slice(a, a + SEC_SIZE);
+      out.push({ cat: c, sec: Math.floor(a / SEC_SIZE), gs: g, ge: g + blk.length - 1, blk });
+      g += blk.length;
+    }
+  }
+  return out;
+}
 function fmtTs(ts) {
   const d = new Date(ts);
   const p = (n) => String(n).padStart(2, "0");
@@ -122,6 +142,7 @@ function render() {
   else if (v === "quizrun") el.innerHTML = vQuizRun();
   else if (v === "quizend") el.innerHTML = vQuizEnd();
   else if (v === "card") el.innerHTML = vCard();
+  else if (v === "testpick") el.innerHTML = vTestPick();
   else if (v === "testsetup") el.innerHTML = vTestSetup();
   else if (v === "testrun") el.innerHTML = vTestRun();
   else if (v === "testend") el.innerHTML = vTestEnd();
@@ -182,58 +203,49 @@ function vCatPick() {
   </div>`;
 }
 
-// ---------- 共通: 番号範囲セットアップ ----------
-// preset chips: 50件単元 + 全範囲
-function presetChips(cat) {
-  const n = byCat(cat).length;
-  const chips = [];
-  for (let a = 1; a <= n; a += SEC_SIZE) {
-    const b = Math.min(a + SEC_SIZE - 1, n);
-    chips.push(`<button class="chip" data-act="preset" data-a="${a}" data-b="${b}">${a}〜${b}</button>`);
-  }
-  chips.push(`<button class="chip" data-act="preset" data-a="1" data-b="${n}">全範囲</button>`);
-  return `<div class="chips">${chips.join("")}</div>`;
-}
+// ---------- 共通 ----------
 function recentRows(kind, cat) {
-  const rows = RESULTS.filter(r => r.kind === kind && r.cat === cat).slice(-5).reverse()
+  const rows = RESULTS.filter(r => r.kind === kind && (!cat || r.cat === cat)).slice(-5).reverse()
     .map((r) => `<div class="rescard" data-act="rdetail" data-i="${RESULTS.indexOf(r)}">
       <span>No.${r.range[0]}-${r.range[1]}</span><b>${r.ok}/${r.n}</b>
       <span class="muted small">${fmtTs(r.ts)}</span></div>`).join("");
   return rows ? `<h3 class="mt">最近の${KIND_JP[kind]}結果</h3>${rows}` : "";
 }
-function masteryGrid(cat) {
-  const p = byCat(cat);
-  const tiles = [];
-  for (let a = 0; a < p.length; a += SEC_SIZE) {
-    const blk = p.slice(a, a + SEC_SIZE);
-    const s = blockStat(blk);
-    tiles.push(`<div class="tile ${s.cls}" data-act="tile" data-cat="${esc(cat)}" data-a="${a}">
-      <div class="muted small">${a + 1}-${a + blk.length}</div>
-      <div class="tile-n">${s.done}<span class="muted">/${blk.length}</span></div>
+// 全カテゴリの50件ブロックタイル(1ページ表示・全体通し番号)
+// act: タップ時の動作("tile"=残り確認 / "tblk"=テスト設定 / "selblk"=クイズ選択)
+function allBlockTiles(act, selSet) {
+  const blks = globalBlocks();
+  const parts = [];
+  let cur = "";
+  for (const b of blks) {
+    if (b.cat !== cur) { cur = b.cat; parts.push(`<h4 class="cathead">${esc(b.cat)}</h4><div class="tiles">`); }
+    const s = blockStat(b.blk);
+    const on = selSet && selSet.has(b.gs) ? " sel" : "";
+    parts.push(`<div class="tile ${s.cls}${on}" data-act="${act}"
+      data-cat="${esc(b.cat)}" data-sec="${b.sec}" data-gs="${b.gs}" data-ge="${b.ge}">
+      <div class="muted small">No.${b.gs}-${b.ge}</div>
+      <div class="tile-n">${s.done}<span class="muted">/${b.blk.length}</span></div>
       <div class="tile-l">${s.label}${s.weak ? ` / ✕${s.weak}` : ""}</div>
     </div>`);
+    const next = blks[blks.indexOf(b) + 1];
+    if (!next || next.cat !== cur) parts.push(`</div>`);
   }
-  return `<h3 class="mt">習得状況</h3><p class="muted small">タップで残りの語句を確認できます</p><div class="tiles">${tiles.join("")}</div>`;
+  return parts.join("");
 }
 
 // ---------- クイズの部屋 ----------
-let selBlocks = new Set(); // 選択中のブロック開始番号(1始まり)
+let selBlocks = new Set(); // 選択中ブロックの全体先頭番号(gs)
 function vQuizSetup() {
-  const cat = view.cat;
-  const n = byCat(cat).length;
-  const blkChips = [];
-  for (let a = 1; a <= n; a += SEC_SIZE) {
-    const b = Math.min(a + SEC_SIZE - 1, n);
-    const s = blockStat(byCat(cat).slice(a - 1, b));
-    blkChips.push(`<button class="chip blk ${selBlocks.has(a) ? "on" : ""} ${s.cls}"
-      data-act="selblk" data-a="${a}">No.${a}-${b}</button>`);
-  }
-  const selCnt = [...selBlocks].reduce((s2, a) =>
-    s2 + Math.min(a + SEC_SIZE - 1, n) - a + 1, 0);
+  const blks = globalBlocks();
+  const selCnt = [...selBlocks].reduce((s2, gs) => {
+    const b = blks.find(x => x.gs === gs);
+    return s2 + (b ? b.blk.length : 0);
+  }, 0);
   return `<div class="card">
     <h2>4択クイズを作る</h2>
-    <p class="muted">出題する枠をタップして選んでください(複数選択可)。</p>
-    <div class="chips">${blkChips.join("")}
+    <p class="muted">出題する枠をタップして選んでください(複数選択可・カテゴリまたぎOK)。</p>
+    ${allBlockTiles("selblk", selBlocks)}
+    <div class="chips">
       <button class="chip" data-act="selall">すべて選ぶ</button>
       <button class="chip" data-act="selnone">すべてはずす</button></div>
     <label class="f">出題対象</label>
@@ -255,23 +267,34 @@ function vQuizSetup() {
     <button class="bigbtn" id="q_go" ${selBlocks.size ? "" : "disabled"}>
       クイズを開始${selBlocks.size ? `（${selBlocks.size}枠・最大${selCnt}問）` : "（枠を選択）"}</button>
   </div>
-  ${recentRows("quiz", cat)}`;
+  ${recentRows("quiz")}`;
 }
 
 // ---------- テストの部屋 ----------
-function vTestSetup() {
-  const cat = view.cat;
-  const n = byCat(cat).length;
-  const power = view.room === "power";
+function vTestPick() { // 結果の部屋と同じ1ページ全タイル
   return `<div class="card">
-    <h2>${power ? "実力テスト" : "テストを始める"}</h2>
+    <h2>テストを始める</h2>
+    <p class="muted">範囲の枠をタップして選んでください。</p>
+    ${allBlockTiles("tblk")}
+  </div>
+  ${recentRows("test")}`;
+}
+function vTestSetup() {
+  const power = view.room === "power";
+  const blk = power ? null : ITEMS.slice(view.gs - 1, view.ge);
+  const n = power ? byCat(view.cat).length : blk.length;
+  return `<div class="card">
+    <h2>${power ? "実力テスト" : `テストを始める — No.${view.gs}-${view.ge}`}</h2>
     <p class="muted">${power
       ? "全範囲からランダム出題。点数に応じてsdnを獲得できます。"
-      : "選択範囲から出題されます。苦手の語句は復習として出ます。"}</p>
+      : `${esc(view.cat)} No.${view.gs}-${view.ge} から出題します。`}</p>
     <div class="numrow">
-      <div><label class="f">開始番号</label><input type="number" id="t_a" value="1" min="1"></div>
-      <div><label class="f">終了番号</label><input type="number" id="t_b" value="${power ? "" : n}" min="1" ${power ? "disabled" : ""}></div>
-      <div><label class="f">問題数</label><input type="number" id="t_n" value="${power ? 30 : 50}" min="4"></div>
+      <div><label class="f">問題数</label>
+      <select id="t_n">
+        <option>10</option><option>20</option><option>30</option>
+        <option ${n <= 50 && !power ? "selected" : ""} value="${n}">全部(${n})</option>
+        ${power ? '<option selected>30</option><option>50</option><option>100</option>' : ""}
+      </select></div>
     </div>
     <label class="f">出題形式</label>
     <select id="t_mode">
@@ -280,10 +303,9 @@ function vTestSetup() {
       <option value="y2t">読み → 語句を選ぶ</option>
     </select>
     <button class="bigbtn" id="t_go">テストを開始</button>
-    ${power ? "" : presetChips(cat)}
+    <div class="btnrow"><button class="ghost" data-act="quit">← 範囲選択へ</button></div>
   </div>
-  ${power ? "" : masteryGrid(cat)}
-  ${recentRows(power ? "power" : "test", cat)}`;
+  ${recentRows(power ? "power" : "test", view.cat)}`;
 }
 
 // ---------- 4択クイズ実行 ----------
@@ -426,13 +448,10 @@ function vTestEnd() {
 
 // ---------- 結果の部屋 ----------
 function vResult() {
-  const cat = view.cat || cats()[0];
   const total = ITEMS.length;
   const learned = ITEMS.filter(i => statusOf(i.id) !== "new").length;
   const mastered = ITEMS.filter(i => statusOf(i.id) === "master").length;
   const correct = Object.values(PROGRESS).reduce((a, r) => a + r.c, 0);
-  const chips = cats().map(c =>
-    `<button class="chip ${c === cat ? "on" : ""}" data-act="rcat" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
   const rows = RESULTS.slice().reverse().map((r, ri) => {
     const idx = RESULTS.length - 1 - ri;
     return `<div class="rescard" data-act="rdetail" data-i="${idx}">
@@ -441,11 +460,11 @@ function vResult() {
       <span class="muted small">${fmtTs(r.ts)}</span></div>`;
   }).join("");
   return `<div class="card">
-      <div class="btnrow" style="margin:0 0 6px">${chips}</div>
       <h3>進捗票（${SEC_SIZE}件ブロック）</h3>
-      <p class="muted">累計◯${correct}件 / 挑戦済み${learned}件（全${total}件）</p>
+      <p class="muted">累計◯${correct}件 / 挑戦済み${learned}件 / 克服${mastered}件（全${total}件）</p>
       <p class="muted">所有：<b class="sdn">${SDN} sdn</b></p>
-      ${masteryGrid(cat)}
+      <h3>習得状況</h3><p class="muted small">タップで残りの語句を確認できます</p>
+      ${allBlockTiles("tile")}
     </div>
     <h3>履歴</h3>${rows || "<div class='card muted'>まだ記録がありません。</div>"}`;
 }
@@ -545,14 +564,6 @@ function vData() {
   </div>`;
 }
 
-// ---------- 範囲から問題を取り出す ----------
-function rangePool(cat, a, b, filt) {
-  let p = byCat(cat).slice(a - 1, b);
-  if (filt === "weak") p = p.filter(i => statusOf(i.id) === "weak");
-  else if (filt === "new") p = p.filter(i => statusOf(i.id) === "new");
-  return p;
-}
-
 // ---------- イベント ----------
 document.addEventListener("click", (e) => {
   const nav = e.target.closest("[data-nav]");
@@ -569,49 +580,49 @@ document.addEventListener("click", (e) => {
     else if (k === "data") go("data");
     else if (k === "jisho") go("list", { room: "jisho" });
     else if (k === "result") go("result", { room: "result", cat: view.cat });
+    else if (k === "quiz") go("quizsetup", { room: "quiz" });
+    else if (k === "test") go("testpick", { room: "test" });
     else go("catpick", { room: k, allowAll: k === "power" });
     return;
   }
   const a = e.target.closest("[data-act]");
   if (a) {
     const act = a.dataset.act;
-    if (act === "cat") {
-      const room = view.room;
-      selBlocks.clear();
-      if (room === "quiz") go("quizsetup", { cat: a.dataset.cat, room });
-      else go("testsetup", { cat: a.dataset.cat || cats()[0], room });
-    }
-    else if (act === "preset") {
-      $(`#t_a`).value = a.dataset.a;
-      $(`#t_b`).value = a.dataset.b;
+    if (act === "cat") { // 実力テストのカテゴリ選択のみで使用
+      go("testsetup", { cat: a.dataset.cat || null, room: "power" });
     }
     else if (act === "selblk") {
-      const k = +a.dataset.a;
+      const k = +a.dataset.gs;
       if (selBlocks.has(k)) selBlocks.delete(k); else selBlocks.add(k);
       render();
     }
     else if (act === "selall") {
-      const n = byCat(view.cat).length;
-      for (let x = 1; x <= n; x += SEC_SIZE) selBlocks.add(x);
+      globalBlocks().forEach(b => selBlocks.add(b.gs));
       render();
     }
     else if (act === "selnone") { selBlocks.clear(); render(); }
-    else if (act === "tile") {
-      go("list", { room: "jisho", cat: a.dataset.cat, sec: Math.floor(+a.dataset.a / SEC_SIZE), kw: "", filt: "" });
+    else if (act === "tblk") {
+      go("testsetup", { room: "test", cat: a.dataset.cat,
+        sec: +a.dataset.sec, gs: +a.dataset.gs, ge: +a.dataset.ge });
     }
-    else if (act === "rcat") { view.cat = a.dataset.cat; render(); }
+    else if (act === "tile") {
+      go("list", { room: "jisho", cat: a.dataset.cat, sec: +a.dataset.sec, kw: "", filt: "" });
+    }
     else if (act === "quit") {
-      const room = view.room;
-      if (room === "quiz") go("quizsetup", { cat: (quiz || cardSet || {}).cat || cats()[0], room });
-      else go("catpick", { room, allowAll: room === "power" });
+      if (view.name === "testsetup") {
+        if (view.room === "power") go("catpick", { room: "power", allowAll: true });
+        else go("testpick", { room: "test" });
+      }
+      else if (view.room === "quiz" || view.name === "card") go("quizsetup", { room: "quiz" });
+      else if (view.room === "power") go("catpick", { room: "power", allowAll: true });
+      else go("testpick", { room: "test" });
     }
     else if (act === "tosetup") {
-      const room = view.room === "power" ? "power" : (test ? test.kind === "power" ? "power" : view.room : view.room);
-      if (room === "quiz" || view.name === "quizend" || view.name === "card") {
-        go("quizsetup", { cat: quiz ? quiz.cat : cats()[0], room: "quiz" });
-      } else {
-        go("testsetup", { cat: test ? test.cat : cats()[0], room: test && test.kind === "power" ? "power" : "test" });
-      }
+      if (view.name === "quizend" || view.name === "card" || view.room === "quiz") {
+        go("quizsetup", { room: "quiz" });
+      } else if (test && test.kind === "power") {
+        go("catpick", { room: "power", allowAll: true });
+      } else go("testpick", { room: "test" });
     }
     else if (act === "flip") { cardSet.flipped = !cardSet.flipped; render(); }
     else if (act === "skip") { cardSet.flipped = false; cardSet.idx++; render(); }
@@ -691,38 +702,41 @@ document.addEventListener("click", (e) => {
   if (e.target.id === "q_go") {
     if (!selBlocks.size) { toast("枠を選んでください"); return; }
     const mode = $("#q_mode").value;
-    const n = byCat(view.cat).length;
     const filt = $("#q_filt").value;
     const nQ = +$("#q_n").value || 20;
+    const blks = globalBlocks().filter(b => selBlocks.has(b.gs));
     let p = [];
-    for (const a of [...selBlocks].sort((x, y) => x - y)) {
-      p = p.concat(rangePool(view.cat, a, Math.min(a + SEC_SIZE - 1, n), filt));
+    for (const b of blks) {
+      let q = b.blk;
+      if (filt === "weak") q = q.filter(i => statusOf(i.id) === "weak");
+      else if (filt === "new") q = q.filter(i => statusOf(i.id) === "new");
+      p = p.concat(q);
     }
     if (mode === "card") {
       p = shuffle([...p]);
-      cardSet = { list: p, idx: 0, flipped: false, cat: view.cat };
+      cardSet = { list: p, idx: 0, flipped: false };
       if (!p.length) { toast("対象の項目がありません"); return; }
       go("card"); return;
     }
     p = shuffle([...p]).slice(0, nQ);
     if (p.length < 4) { toast("4件以上必要です"); return; }
-    const sorted = [...selBlocks].sort((x, y) => x - y);
+    const cs = [...new Set(blks.map(b => b.cat))];
     quiz = { list: p, idx: 0, mode, answers: [], judged: null,
-      pool: byCat(view.cat), cat: view.cat,
-      range: [sorted[0], Math.min(sorted[sorted.length - 1] + SEC_SIZE - 1, n)] };
+      pool: ITEMS, cat: cs.length === 1 ? cs[0] : "複数",
+      range: [blks[0].gs, blks[blks.length - 1].ge] };
     go("quizrun");
   }
   if (e.target.id === "t_go") {
     const mode = $("#t_mode").value;
     const power = view.room === "power";
-    const a1 = power ? 1 : Math.max(1, +$("#t_a").value || 1);
-    const b1 = power ? byCat(view.cat).length
-      : Math.min(byCat(view.cat).length, +$("#t_b").value || byCat(view.cat).length);
     const nQ = +$("#t_n").value || 50;
-    let p = shuffle([...rangePool(view.cat, a1, b1, "")]).slice(0, nQ);
+    const src = power ? byCat(view.cat || null) : ITEMS.slice(view.gs - 1, view.ge);
+    let p = shuffle([...src]).slice(0, nQ);
     if (p.length < 4) { toast("4件以上必要です"); return; }
     test = { list: p, idx: 0, mode, answers: [],
-      pool: byCat(view.cat), cat: view.cat, range: [a1, b1],
+      pool: power ? src : ITEMS,
+      cat: power ? (view.cat || "全カテゴリ") : view.cat,
+      range: power ? [1, src.length] : [view.gs, view.ge],
       kind: power ? "power" : "test" };
     go("testrun");
   }
@@ -798,6 +812,9 @@ async function boot() {
     return;
   }
   applyOverrides();
+  // 全体通し番号用にカテゴリ順で並べ替え
+  const rank = (c) => { const i = CAT_ORDER.indexOf(c); return i < 0 ? 99 : i; };
+  ITEMS.sort((x, y) => rank(x.cat) - rank(y.cat));
   render();
   if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
     navigator.serviceWorker.register("sw.js").catch(() => {});

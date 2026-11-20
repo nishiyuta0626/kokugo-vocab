@@ -149,6 +149,8 @@ label.f { display: block; font-size: 13px; color: var(--sub); margin: 10px 0 2px
 .tile.orange { background: #fde0b8; color: #b45309; }
 .tile.gray { background: #e8ecf1; color: #6b7280; }
 .tile:hover { filter: brightness(.96); }
+.tile.sel { outline: 3px solid var(--acc); outline-offset: -3px; }
+.cathead { margin: 12px 0 6px; font-size: 15px; }
 
 /* 最近の結果カード */
 .rescard {
