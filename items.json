@@ -16187,5 +16187,360 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「こんきょ」です。"
+  },
+  {
+    "id": "dou_1146",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「偉人の【生い立ち】を伝記で調べる。」",
+    "options": [
+      "お",
+      "い",
+      "う",
+      "は"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「お」です。"
+  },
+  {
+    "id": "dou_1147",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「洋服を作るための【生地】を選ぶ。」",
+    "options": [
+      "き",
+      "せい",
+      "しょう",
+      "なま"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「き」です。"
+  },
+  {
+    "id": "dou_1148",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「【一生】の思い出に残る素晴らしい旅行だった。」",
+    "options": [
+      "しょう",
+      "せい",
+      "い",
+      "う"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しょう」です。"
+  },
+  {
+    "id": "dou_1149",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「春になると庭の雑草がぐんぐん【生える】。」",
+    "options": [
+      "は",
+      "お",
+      "い",
+      "う"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「は」です。"
+  },
+  {
+    "id": "dou_1150",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「彼はまだ経験が浅くて、歌がとても【下手】だ。」",
+    "options": [
+      "へた",
+      "したて",
+      "げしゅ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「へた」です。"
+  },
+  {
+    "id": "dou_1151",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「相手に対して【下手】に出て丁寧に頼み込む。」",
+    "options": [
+      "したて",
+      "へた",
+      "げしゅ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「したて」です。"
+  },
+  {
+    "id": "dou_1152",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「急な坂道をゆっくりと【下る】。」",
+    "options": [
+      "くだ",
+      "さ",
+      "お",
+      "しも"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「くだ」です。"
+  },
+  {
+    "id": "dou_1153",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「伝統的なお祭りの【行事】に参加する。」",
+    "options": [
+      "ぎょう",
+      "こう",
+      "あん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ぎょう」です。"
+  },
+  {
+    "id": "dou_1154",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「夏休みに家族で北海道へ【旅行】に行く。」",
+    "options": [
+      "こう",
+      "ぎょう",
+      "あん"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「こう」です。"
+  },
+  {
+    "id": "dou_1155",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「修行のために各地を歩き回ることを【行脚】という。」",
+    "options": [
+      "あん",
+      "ぎょう",
+      "こう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「あん」です。"
+  },
+  {
+    "id": "dou_1156",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「手紙を【一通】書いてポストに入れる。」",
+    "options": [
+      "つう",
+      "っつう",
+      "とお"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「つう」です。"
+  },
+  {
+    "id": "dou_1157",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「駅前はたくさんの人が【行き交う】にぎやかな通りだ。」",
+    "options": [
+      "か",
+      "まじ",
+      "こう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「か」です。"
+  },
+  {
+    "id": "dou_1158",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「明るい【性格】の友達と毎日楽しく過ごす。」",
+    "options": [
+      "せい",
+      "しょう",
+      "さが"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「せい」です。"
+  },
+  {
+    "id": "dou_1159",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「彼とは【相性】がぴったり合ってすぐに仲良くなった。」",
+    "options": [
+      "しょう",
+      "せい",
+      "さが"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しょう」です。"
+  },
+  {
+    "id": "dou_1160",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同字の読み分け）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「テストの答えが【正直】に書かれている。」",
+    "options": [
+      "しょう",
+      "せい",
+      "ただ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しょう」です。"
+  },
+  {
+    "id": "dou_1161",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【生】活（せいかつ）",
+      "【生】徒（せいと）",
+      "一【生】懸命（いっしょうけんめい）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「一【生】懸命（いっしょうけんめい）」です。"
+  },
+  {
+    "id": "dou_1162",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【行】列（ぎょうれつ）",
+      "【行】動（こうどう）",
+      "銀【行】（ぎんこう）"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【行】列（ぎょうれつ）」です。"
+  },
+  {
+    "id": "dou_1163",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【正】解（せいかい）",
+      "【正】月（しょうがつ）",
+      "【正】確（せいかく）"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「【正】月（しょうがつ）」です。"
+  },
+  {
+    "id": "dou_1164",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【明】日（あした）",
+      "説【明】（せつめい）",
+      "発【明】（はつめい）"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【明】日（あした）」です。"
+  },
+  {
+    "id": "dou_1165",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【上】手（じょうず）",
+      "【上】昇（じょうしょう）",
+      "【上】着（うわぎ）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「【上】着（うわぎ）」です。"
+  },
+  {
+    "id": "dou_1166",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【今】回」の「今」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "【今】度",
+      "【今】日",
+      "【今】朝"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【今】度」です。"
+  },
+  {
+    "id": "dou_1167",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【合】計」の「合」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "【合】格",
+      "【合】図",
+      "場【合】"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【合】格」です。"
+  },
+  {
+    "id": "dou_1168",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【下】降」の「下」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "【下】記",
+      "【下】手",
+      "【下】着"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【下】記」です。"
+  },
+  {
+    "id": "dou_1169",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【大】学」の「大」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "【大】事",
+      "【大】人",
+      "【大】空"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【大】事」です。"
+  },
+  {
+    "id": "dou_1170",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【月】曜」の「月」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "毎【月】",
+      "【月】見",
+      "【月】日"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「毎【月】」です。"
   }
 ]
