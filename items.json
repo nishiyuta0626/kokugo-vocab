@@ -16542,5 +16542,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「毎【月】」です。"
+  },
+  {
+    "id": "dou_1196",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「新しい計画の【詳細】を資料にまとめる。」",
+    "options": [
+      "しょうさい",
+      "ようさい",
+      "じょうさい"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しょうさい」です。"
+  },
+  {
+    "id": "dou_1197",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「自分の考えを相手に【率直】に伝える。」",
+    "options": [
+      "そっちょく",
+      "りっちょく",
+      "そつじき"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「そっちょく」です。"
+  },
+  {
+    "id": "dou_1198",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「自然の【恩恵】を受けて作物が育つ。」",
+    "options": [
+      "おんけい",
+      "おんえ",
+      "いんけい"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「おんけい」です。"
+  },
+  {
+    "id": "dou_1199",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「約束の時間に遅れないよう【厳守】する。」",
+    "options": [
+      "げんしゅ",
+      "けんしゅ",
+      "げんじゅ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「げんしゅ」です。"
+  },
+  {
+    "id": "dou_1200",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「歴史上の出来事の【背景】を詳しく調べる。」",
+    "options": [
+      "はいけい",
+      "せけい",
+      "はいぎょう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「はいけい」です。"
+  },
+  {
+    "id": "dou_1201",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（音訓の識別）",
+    "question": "次の二字熟語のうち、「音読み＋音読み」の組み合わせになっているものを1つ選びなさい。",
+    "options": [
+      "読書",
+      "雨傘",
+      "本棚"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「読書」です。"
+  },
+  {
+    "id": "dou_1202",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（音訓の識別）",
+    "question": "次の二字熟語のうち、「訓読み＋訓読み」の組み合わせになっているものを1つ選びなさい。",
+    "options": [
+      "青空",
+      "青天",
+      "晴天"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「青空」です。"
+  },
+  {
+    "id": "dou_1203",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（音訓の識別）",
+    "question": "次の二字熟語のうち、「音読み＋訓読み（重箱読み）」になっているものを1つ選びなさい。",
+    "options": [
+      "台所",
+      "夕飯",
+      "山道"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「台所」です。"
+  },
+  {
+    "id": "dou_1204",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（音訓の識別）",
+    "question": "次の二字熟語のうち、「訓読み＋音読み（湯桶読み）」になっているものを1つ選びなさい。",
+    "options": [
+      "雨具",
+      "雨天",
+      "大雨"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「雨具」です。"
+  },
+  {
+    "id": "dou_1205",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（音訓の識別）",
+    "question": "次の二字熟語のうち、「音読み＋音読み」の組み合わせになっているものを1つ選びなさい。",
+    "options": [
+      "森林",
+      "手紙",
+      "花火"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「森林」です。"
+  },
+  {
+    "id": "dou_1206",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【木】曜日（もくようび）",
+      "【木】材（もくざい）",
+      "【木】陰（こかげ）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「【木】陰（こかげ）」です。"
+  },
+  {
+    "id": "dou_1207",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【日】記（にっき）",
+      "【日】光（にっこう）",
+      "休【日】（きゅうじつ）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「休【日】（きゅうじつ）」です。"
+  },
+  {
+    "id": "dou_1208",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【人】間（にんげん）",
+      "【人】気（にんき）",
+      "【人】口（じんこう）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「【人】口（じんこう）」です。"
+  },
+  {
+    "id": "dou_1209",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【大】切（たいせつ）",
+      "【大】会（たいかい）",
+      "【大】人（おとな）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「【大】人（おとな）」です。"
+  },
+  {
+    "id": "dou_1210",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（仲間はずれ探し）",
+    "question": "次のうち、太字の漢字の読み方が【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "【分】数（ぶんすう）",
+      "【分】解（ぶんかい）",
+      "【分】かる（わかる）"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「【分】かる（わかる）」です。"
+  },
+  {
+    "id": "dou_1211",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【作】文」の「作」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "【作】品",
+      "【作】業",
+      "動【作】"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【作】品」です。"
+  },
+  {
+    "id": "dou_1212",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【通】学」の「通」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "交【通】",
+      "【通】る",
+      "【通】う"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「交【通】」です。"
+  },
+  {
+    "id": "dou_1213",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「発【言】」の「言」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "【言】語",
+      "【言】う",
+      "伝【言】"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「【言】語」です。"
+  },
+  {
+    "id": "dou_1214",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【風】景」の「風」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "台【風】",
+      "【風】邪",
+      "北【風】"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「台【風】」です。"
+  },
+  {
+    "id": "dou_1215",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（同じ読み探し）",
+    "question": "次の「【金】曜日」の「金」と同じ読み方をするものを1つ選びなさい。",
+    "options": [
+      "料【金】",
+      "【金】持ち",
+      "お【金】"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「料【金】」です。"
+  },
+  {
+    "id": "dou_1216",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（誤読チェック）",
+    "question": "次のうち、太字（【　】内）の漢字の読み方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "友達に自分の気持ちを【率直（りっちょく）】に話した。",
+      "事件の【詳細（しょうさい）】を新聞で読む。",
+      "自然の【恩恵（おんけい）】に感謝して暮らす。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「友達に自分の気持ちを【率直（りっちょく）】に話した。」です。"
+  },
+  {
+    "id": "dou_1217",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（誤読チェック）",
+    "question": "次のうち、太字（【　】内）の漢字の読み方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "提出期限を【厳守（けんしゅ）】してレポートを出す。",
+      "物語の時代【背景（はいけい）】を理解して読む。",
+      "テストの点数を【平均（へいきん）】する。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「提出期限を【厳守（けんしゅ）】してレポートを出す。」です。"
+  },
+  {
+    "id": "dou_1218",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「新しい技術が社会に【普及】する。」",
+    "options": [
+      "ふきゅう",
+      "ふうきゅう",
+      "ぶきゅう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ふきゅう」です。"
+  },
+  {
+    "id": "dou_1219",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「自分の意見を【主張】するだけでなく、人の話も聞く。」",
+    "options": [
+      "しゅちょう",
+      "じゅちょう",
+      "しゅしょう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しゅちょう」です。"
+  },
+  {
+    "id": "dou_1220",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "漢字の読み（基本熟語）",
+    "question": "次の太字（【　】内）の漢字の正しい読み方を選びなさい。「相手の立場を【尊重】して話し合いを進める。」",
+    "options": [
+      "そんちょう",
+      "そんじゅう",
+      "ぞんちょう"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「そんちょう」です。"
   }
 ]
