@@ -921,8 +921,7 @@ function vList() {
     `<div class="listrow" data-act="edit" data-id="${it.id}" style="cursor:pointer">
       <span class="t">${esc(qt(it))}${STATUS_BADGE[statusOf(it.id)]}</span>
       <span class="y">${esc(it.sub || it.cat)}</span>
-      <span class="m"></span>
-      <button class="delx" data-act="hide" data-id="${it.id}" title="この項目を削除">✕</button></div>`).join("");
+      <span class="m"></span></div>`).join("");
   return `<div class="card">
     <div class="btnrow" style="margin-top:0">
       <select id="l_cat"><option value="">全カテゴリ</option>
