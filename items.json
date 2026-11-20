@@ -2188,5 +2188,365 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「温故知新（おんこちしん）」です。"
+  },
+  {
+    "id": "yoji_151",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「一挙両（　）」",
+    "options": [
+      "勝",
+      "利",
+      "得",
+      "益"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「得」で「一挙両得（いっきょりょうとく）」と書きます。"
+  },
+  {
+    "id": "yoji_152",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「疑心暗（　）」",
+    "options": [
+      "影",
+      "鬼",
+      "魔",
+      "雲"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「鬼」で「疑心暗鬼（ぎしんあんき）」と書きます。"
+  },
+  {
+    "id": "yoji_153",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「大同小（　）」",
+    "options": [
+      "違",
+      "差",
+      "異",
+      "別"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「異」で「大同小異（だいどうしょうい）」と書きます。"
+  },
+  {
+    "id": "yoji_154",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「四面（　）歌」",
+    "options": [
+      "悲",
+      "哀",
+      "楚",
+      "敵"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「楚」で「四面楚歌（しめんそか）」と書きます。"
+  },
+  {
+    "id": "yoji_155",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「単刀（　）入」",
+    "options": [
+      "直",
+      "即",
+      "速",
+      "急"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「直」で「単刀直入（たんとうちょくにゅう）」と書きます。"
+  },
+  {
+    "id": "yoji_156",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「油断大（　）」",
+    "options": [
+      "損",
+      "敵",
+      "敗",
+      "害"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「敵」で「油断大敵（ゆだんたいてき）」と書きます。"
+  },
+  {
+    "id": "yoji_157",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「四苦（　）苦」",
+    "options": [
+      "六",
+      "七",
+      "八",
+      "九"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「八」で「四苦八苦（しくはっく）」と書きます。"
+  },
+  {
+    "id": "yoji_158",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「起死回（　）」",
+    "options": [
+      "命",
+      "生",
+      "活",
+      "復"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「生」で「起死回生（きしかいせい）」と書きます。"
+  },
+  {
+    "id": "yoji_159",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「画竜点（　）」",
+    "options": [
+      "眼",
+      "目",
+      "睛",
+      "瞳"
+    ],
+    "answerIndex": 2,
+    "explanation": "正解は「睛」で「画竜点睛（がりょうてんせい）」と書きます。"
+  },
+  {
+    "id": "yoji_160",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "漢字穴埋め（別位置）",
+    "question": "（　）に入る漢字を選びなさい。\n「画蛇添（　）」",
+    "options": [
+      "手",
+      "足",
+      "尾",
+      "翼"
+    ],
+    "answerIndex": 1,
+    "explanation": "正解は「足」で「画蛇添足（がだてんそく）」と書きます。"
+  },
+  {
+    "id": "yoji_161",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「転校生とは同じアニメが好きだと分かり、すぐに（　）した。」",
+    "options": [
+      "意気投合",
+      "異口同音",
+      "以心伝心"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「意気投合（いきとうごう）」です。"
+  },
+  {
+    "id": "yoji_162",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「新しい校則の案については、クラスの中で（　）が巻き起こった。」",
+    "options": [
+      "賛否両論",
+      "満場一致",
+      "大同小異"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「賛否両論（さんぴりょうろん）」です。"
+  },
+  {
+    "id": "yoji_163",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「同じ目標を持つライバルと（　）しながら、毎日練習に励んでいる。」",
+    "options": [
+      "切磋琢磨",
+      "悪戦苦闘",
+      "試行錯誤"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「切磋琢磨（せっさたくま）」です。"
+  },
+  {
+    "id": "yoji_164",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「彼は（　）な性格で、レストランに行ってもメニューをなかなか決められない。」",
+    "options": [
+      "優柔不断",
+      "自由奔放",
+      "公明正大"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「優柔不断（ゆうじゅうふだん）」です。"
+  },
+  {
+    "id": "yoji_165",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「失敗してしまったが、気持ちを（　）させて次のテストに向けて勉強を始めた。」",
+    "options": [
+      "心機一転",
+      "朝令暮改",
+      "本末転倒"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「心機一転（しんきいってん）」です。"
+  },
+  {
+    "id": "yoji_166",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「彼は成績優秀なだけでなく運動神経も抜群で、まさに（　）の人物だ。」",
+    "options": [
+      "才色兼備",
+      "大器晩成",
+      "百戦錬磨"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「才色兼備（さいしょくけんび）」です。"
+  },
+  {
+    "id": "yoji_167",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「あと少しで車にぶつかるところだったが、間一髪で避けて（　）だった。」",
+    "options": [
+      "危機一髪",
+      "絶体絶命",
+      "九死一生"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「危機一髪（ききいっぱつ）」です。"
+  },
+  {
+    "id": "yoji_168",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「グラフにまとめたことで、どの学年が一番読書量が多いか（　）になった。」",
+    "options": [
+      "一目瞭然",
+      "五里霧中",
+      "半信半疑"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一目瞭然（いちもくりょうぜん）」です。"
+  },
+  {
+    "id": "yoji_169",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「最初は元気よくスタートしたものの、最後は疲れ切って（　）に終わった。」",
+    "options": [
+      "竜頭蛇尾",
+      "順風満帆",
+      "日進月歩"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「竜頭蛇尾（りゅうとうだび）」です。"
+  },
+  {
+    "id": "yoji_170",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "例文の空欄補充",
+    "question": "次の文の（　）に入る最も適切な四字熟語を選びなさい。「彼女は何事にも（　）取り組むので、クラスのみんなから信頼されている。」",
+    "options": [
+      "誠心誠意",
+      "傍若無人",
+      "付和雷同"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「誠心誠意（せいしんせいい）」です。"
+  },
+  {
+    "id": "yoji_171",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「過去の行いの善悪に応じて、それに見合った報いを受けること。」",
+    "options": [
+      "因果応報",
+      "自業自得",
+      "公明正大"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「因果応報（いんがおうほう）」です。"
+  },
+  {
+    "id": "yoji_172",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「何度も試したり失敗したりしながら、より良い方法を見つけ出すこと。」",
+    "options": [
+      "試行錯誤",
+      "悪戦苦闘",
+      "一進一退"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「試行錯誤（しこうさくご）」です。"
+  },
+  {
+    "id": "yoji_173",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「自分自身に問いかけ、自分でそれに答えること。」",
+    "options": [
+      "自問自答",
+      "一意専心",
+      "一心不乱"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「自問自答（じもんじとう）」です。"
+  },
+  {
+    "id": "yoji_174",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「将来の見通しが明るく、大きな希望に満ちあふれている様子。」",
+    "options": [
+      "前途洋々",
+      "意気揚々",
+      "天衣無縫"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「前途洋々（ぜんとようよう）」です。"
+  },
+  {
+    "id": "yoji_175",
+    "category": "yojijukugo",
+    "categoryName": "四字熟語",
+    "subCategory": "意味から選択",
+    "question": "次の意味を表す四字熟語を選びなさい。「この世のすべてのものは絶えず変化し、同じ状態にとどまらないこと。」",
+    "options": [
+      "諸行無常",
+      "千変万化",
+      "日進月歩"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「諸行無常（しょぎょうむじょう）」です。"
   }
 ]
