@@ -436,17 +436,27 @@ function makeChoices(it, mode, poolAll) {
 function qPrompt(it, mode) {
   if (mode === "m2t") return `<div class="q-prompt"><b>意味:</b> ${esc(it.meaning)}</div>`;
   if (mode === "t2y") return `<div class="q-surface">${esc(it.text)}</div><div class="center muted">読み方を選んでください</div>`;
+  if (mode === "tyin") return `<div class="q-surface">${esc(it.text)}</div><div class="center muted">読み方をひらがなで入力してください</div>`;
   return `<div class="q-surface">${esc(it.yomi)}</div><div class="center muted">この読みの語句を選んでください</div>`;
 }
+// 入力した読みを正規化(カタカナ→ひらがな・空白/括弧除去)
+function normYomi(s) {
+  return (s || "")
+    .replace(/[ァ-ヴ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60))
+    .replace(/[（(][^）)]*[）)]/g, "")
+    .replace(/[\s　]/g, "");
+}
 
-// 漢字カテゴリは「漢字→読み」の4択に自動切替(漢検式の読み問題)
-function itemMode(it, mode) { return it.cat === "漢字" ? "t2y" : mode; }
+// 漢字カテゴリは「漢字→読み入力」の記述式に自動切替
+function itemMode(it, mode) { return it.cat === "漢字" ? "tyin" : mode; }
 function vQuizRun() {
   const { list, idx, mode } = quiz;
   const it = list[idx];
   const imode = itemMode(it, mode);
-  const { options, answer } = makeChoices(it, imode, quiz.pool);
-  quiz.cur = { answer, options };
+  const { options, answer } = imode === "tyin"
+    ? { options: [], answer: it.yomi }
+    : makeChoices(it, imode, quiz.pool);
+  quiz.cur = { answer, options, userAns: null };
   const judged = quiz.judged;
   const opts = options.map((o, i) =>
     `<button class="choice" data-act="answer" data-i="${i}">${esc(o.v)}${o.yomi !== o.v ? `<span class="fyomi">${esc(o.yomi)}</span>` : ""}</button>`).join("");
@@ -465,9 +475,14 @@ function vQuizRun() {
       ${judged
         ? `<div class="judge ${judged.ok ? "ok" : "ng"}">${judged.ok ? "⭕" : "❌"}</div>
            <p class="center"><b>${esc(it.text)}</b>（${esc(it.yomi)}）</p>
-           ${qPrompt(it, imode)}
+           ${imode === "tyin"
+             ? `<div class="center muted">あなたの答え: ${esc(quiz.cur.userAns || "（未入力）")}</div>`
+             : qPrompt(it, imode)}
            <button class="bigbtn" data-act="nextq">${idx + 1 < list.length ? "次へ" : "結果を見る"}</button>`
-        : `${qPrompt(it, imode)}<div class="choices">${opts}</div>
+        : `${qPrompt(it, imode)}${imode === "tyin"
+            ? `<input id="ans_in" class="textin" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="ひらがなで入力" autofocus>
+               <button class="bigbtn" data-act="answer_in">こたえる</button>`
+            : `<div class="choices">${opts}</div>`}
            <div class="btnrow"><button class="ghost" data-act="quit">やめる</button></div>`}
     </div>${side}</div>`;
 }
@@ -529,7 +544,9 @@ function vTestRun() {
   const { list, idx, mode } = test;
   const it = list[idx];
   const imode = itemMode(it, mode);
-  const { options, answer } = makeChoices(it, imode, test.pool);
+  const { options, answer } = imode === "tyin"
+    ? { options: [], answer: it.yomi }
+    : makeChoices(it, imode, test.pool);
   test.cur = { answer, options };
   const opts = options.map((o, i) =>
     `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o.v)}${o.yomi !== o.v ? `<span class="fyomi">${esc(o.yomi)}</span>` : ""}</button>`).join("");
@@ -538,7 +555,10 @@ function vTestRun() {
       <div class="progress">${list.map((_, i) =>
         `<i class="${i < idx ? "f" : ""}"></i>`).join("")}</div>
       ${qPrompt(it, imode)}
-      <div class="choices">${opts}</div>
+      ${imode === "tyin"
+        ? `<input id="ans_in" class="textin" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="ひらがなで入力" autofocus>
+           <button class="bigbtn" data-act="tanswer_in">こたえる</button>`
+        : `<div class="choices">${opts}</div>`}
       <div class="btnrow"><button class="ghost" data-act="quit">やめる</button></div>
     </div>
     <div class="card side"><p class="muted">本番形式: 答えはテスト終了後にまとめて表示されます。</p></div>
@@ -866,9 +886,19 @@ document.addEventListener("click", (e) => {
         go("quizend");
       } else render();
     }
-    else if (act === "tanswer") {
-      const pick = test.cur.options[+a.dataset.i];
-      const ok = pick.v === test.cur.answer;
+    else if (act === "answer_in") {
+      const raw = $("#ans_in")?.value || "";
+      const ok = normYomi(raw) === normYomi(quiz.cur.answer);
+      quiz.cur.userAns = raw.trim();
+      quiz.judged = { ok };
+      quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
+      mark(quiz.list[quiz.idx].id, ok, "quiz");
+      render();
+    }
+    else if (act === "tanswer" || act === "tanswer_in") {
+      const ok = act === "tanswer"
+        ? test.cur.options[+a.dataset.i].v === test.cur.answer
+        : normYomi($("#ans_in")?.value || "") === normYomi(test.cur.answer);
       test.answers.push({ id: test.list[test.idx].id, ok });
       mark(test.list[test.idx].id, ok, test.kind);
       test.idx++;
@@ -1006,6 +1036,11 @@ document.addEventListener("change", (e) => {
 });
 document.addEventListener("input", (e) => {
   if (e.target.id === "l_kw") { view.kw = e.target.value; render(); }
+});
+document.addEventListener("keydown", (e) => { // 入力式でEnter=回答
+  if (e.key !== "Enter" || e.target.id !== "ans_in") return;
+  const btn = document.querySelector('[data-act="answer_in"],[data-act="tanswer_in"]');
+  if (btn) { e.preventDefault(); btn.click(); }
 });
 $("#backbtn").addEventListener("click", () => go("home"));
 $("#brand").addEventListener("click", () => go("home"));
