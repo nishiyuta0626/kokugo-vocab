@@ -210,3 +210,5 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 
 .stdmbar{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;border-radius:14px;padding:12px 16px;font-size:15px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(124,58,237,.25)}
 .stdmbar b{font-size:24px;font-weight:800}
+
+.fyomi{display:block;font-size:12px;color:#6b7280;font-weight:400;margin-top:3px;letter-spacing:.5px}

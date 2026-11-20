@@ -427,9 +427,11 @@ function vTestSetup() {
 function makeChoices(it, mode, poolAll) {
   const key = mode === "t2y" ? "yomi" : "text";
   const cand = shuffle(poolAll.filter(x => x.id !== it.id && x.cat === it.cat && x[key] && x[key] !== it[key]));
-  const picks = [it[key]];
-  for (const c of cand) { if (picks.length >= 4) break; if (!picks.includes(c[key])) picks.push(c[key]); }
-  return { options: shuffle(picks.slice(0, 4)), answer: it[key] };
+  const seen = new Set([it[key]]);
+  const picks = [it];
+  for (const c of cand) { if (picks.length >= 4) break; if (!seen.has(c[key])) { seen.add(c[key]); picks.push(c); } }
+  const options = shuffle(picks.slice(0, 4)).map(x => ({ v: x[key], yomi: x.yomi }));
+  return { options, answer: it[key] };
 }
 function qPrompt(it, mode) {
   if (mode === "m2t") return `<div class="q-prompt"><b>意味:</b> ${esc(it.meaning)}</div>`;
@@ -444,7 +446,7 @@ function vQuizRun() {
   quiz.cur = { answer, options };
   const judged = quiz.judged;
   const opts = options.map((o, i) =>
-    `<button class="choice" data-act="answer" data-i="${i}">${esc(o)}</button>`).join("");
+    `<button class="choice" data-act="answer" data-i="${i}">${esc(o.v)}<span class="fyomi">${esc(o.yomi)}</span></button>`).join("");
   const side = `<div class="card side">
       ${it.image ? `<img class="imgbox" src="${esc(it.image)}" alt="">` : ""}
       ${judged ? `
@@ -526,7 +528,7 @@ function vTestRun() {
   const { options, answer } = makeChoices(it, mode, test.pool);
   test.cur = { answer, options };
   const opts = options.map((o, i) =>
-    `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o)}</button>`).join("");
+    `<button class="choice" data-act="tanswer" data-i="${i}">${esc(o.v)}<span class="fyomi">${esc(o.yomi)}</span></button>`).join("");
   return `<div class="panes"><div class="card">
       <div class="muted">${test.kind === "power" ? "🏆 実力テスト" : "🖊️ テスト"}　${idx + 1} / ${list.length}　${esc(test.cat)}</div>
       <div class="progress">${list.map((_, i) =>
@@ -834,13 +836,13 @@ document.addEventListener("click", (e) => {
     }
     else if (act === "answer") {
       const pick = quiz.cur.options[+a.dataset.i];
-      const ok = pick === quiz.cur.answer;
+      const ok = pick.v === quiz.cur.answer;
       quiz.judged = { ok };
       quiz.answers.push({ id: quiz.list[quiz.idx].id, ok });
       mark(quiz.list[quiz.idx].id, ok, "quiz");
       document.querySelectorAll(".choice").forEach((b, i) => {
         const v = quiz.cur.options[i];
-        if (v === quiz.cur.answer) b.classList.add("hit");
+        if (v.v === quiz.cur.answer) b.classList.add("hit");
         else if (i === +a.dataset.i) b.classList.add("miss");
         b.disabled = true;
       });
@@ -862,7 +864,7 @@ document.addEventListener("click", (e) => {
     }
     else if (act === "tanswer") {
       const pick = test.cur.options[+a.dataset.i];
-      const ok = pick === test.cur.answer;
+      const ok = pick.v === test.cur.answer;
       test.answers.push({ id: test.list[test.idx].id, ok });
       mark(test.list[test.idx].id, ok, test.kind);
       test.idx++;
