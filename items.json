@@ -15137,5 +15137,355 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「訂正」です。"
+  },
+  {
+    "id": "dou_1071",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「自由」",
+    "options": [
+      "束縛",
+      "強制",
+      "禁止"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「束縛」です。"
+  },
+  {
+    "id": "dou_1072",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「賛成」",
+    "options": [
+      "反対",
+      "否定",
+      "拒否"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「反対」です。"
+  },
+  {
+    "id": "dou_1073",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「開始」",
+    "options": [
+      "終了",
+      "閉会",
+      "完了"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「終了」です。"
+  },
+  {
+    "id": "dou_1074",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「具体」",
+    "options": [
+      "抽象",
+      "空想",
+      "概念"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「抽象」です。"
+  },
+  {
+    "id": "dou_1075",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「生産」",
+    "options": [
+      "消費",
+      "浪費",
+      "使用"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「消費」です。"
+  },
+  {
+    "id": "dou_1076",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「輸入」",
+    "options": [
+      "輸出",
+      "発送",
+      "出荷"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「輸出」です。"
+  },
+  {
+    "id": "dou_1077",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「長所」",
+    "options": [
+      "短所",
+      "欠点",
+      "弱点"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「短所」です。"
+  },
+  {
+    "id": "dou_1078",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「増加」",
+    "options": [
+      "減少",
+      "縮小",
+      "低下"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「減少」です。"
+  },
+  {
+    "id": "dou_1079",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「天然」",
+    "options": [
+      "人工",
+      "化学",
+      "機械"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「人工」です。"
+  },
+  {
+    "id": "dou_1080",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（対義語選択）",
+    "question": "次の二字熟語の【対義語（反対の意味）】を1つ選びなさい。「未来」",
+    "options": [
+      "過去",
+      "現在",
+      "歴史"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「過去」です。"
+  },
+  {
+    "id": "dou_1081",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「結果」",
+    "options": [
+      "成果",
+      "原因",
+      "過程"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「成果」です。"
+  },
+  {
+    "id": "dou_1082",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「目的」",
+    "options": [
+      "目標",
+      "手段",
+      "方法"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「目標」です。"
+  },
+  {
+    "id": "dou_1083",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「理由」",
+    "options": [
+      "根拠",
+      "結果",
+      "結論"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「根拠」です。"
+  },
+  {
+    "id": "dou_1084",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「変化」",
+    "options": [
+      "変動",
+      "安定",
+      "維持"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「変動」です。"
+  },
+  {
+    "id": "dou_1085",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（類義語選択）",
+    "question": "次の二字熟語の【類義語（似た意味）】を1つ選びなさい。「意見」",
+    "options": [
+      "見解",
+      "質問",
+      "疑問"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「見解」です。"
+  },
+  {
+    "id": "dou_1086",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、上の字が下の字を【修飾する関係】（例：高山＝高い山）になっているものを1つ選びなさい。",
+    "options": [
+      "親友",
+      "左右",
+      "頭痛"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「親友」です。"
+  },
+  {
+    "id": "dou_1087",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、上の字が【主語】、下の字が【述語】の関係（例：日没＝日が没する）になっているものを1つ選びなさい。",
+    "options": [
+      "地震",
+      "読書",
+      "森林"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「地震」です。"
+  },
+  {
+    "id": "dou_1088",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、下の字が上の字の【目的語・対象】（例：読書＝書を読む）になっているものを1つ選びなさい。",
+    "options": [
+      "登山",
+      "雪国",
+      "昼夜"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「登山」です。"
+  },
+  {
+    "id": "dou_1089",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【似た意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "岩石",
+      "上下",
+      "降水"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「岩石」です。"
+  },
+  {
+    "id": "dou_1090",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（熟語の構成）",
+    "question": "次の二字熟語のうち、【反対の意味】の漢字が組み合わさってできているものを1つ選びなさい。",
+    "options": [
+      "往復",
+      "永久",
+      "大雨"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「往復」です。"
+  },
+  {
+    "id": "dou_1091",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（誤用チェック）",
+    "question": "次の文のうち、二字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "おこづかいを計画的に使って、お金をたくさん浪費した。",
+      "国民には教育を受ける権利と、勤労・納税の義務がある。",
+      "個人の主観だけでなく、客観的な意見も聞くべきだ。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「おこづかいを計画的に使って、お金をたくさん浪費した。」です。"
+  },
+  {
+    "id": "dou_1092",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（誤用チェック）",
+    "question": "次の文のうち、二字熟語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "自然の川の水を加工して作った、天然のジュースを飲む。",
+      "自分の長所を伸ばし、短所を補うように努力する。",
+      "試験の開始の合図とともに一斉に問題を解き始めた。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「自然の川の水を加工して作った、天然のジュースを飲む。」です。"
+  },
+  {
+    "id": "dou_1093",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「規則やルールによる（　）が厳しすぎると、のびのびとした自由な発想が生まれにくくなる。」",
+    "options": [
+      "束縛",
+      "秩序",
+      "維持"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「束縛」です。"
+  },
+  {
+    "id": "dou_1094",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・対義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「夏休みの宿題が予定どおりに（　）したので、残りの日はゆっくり遊べる。」",
+    "options": [
+      "完了",
+      "開始",
+      "中断"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「完了」です。"
+  },
+  {
+    "id": "dou_1095",
+    "category": "kanji",
+    "categoryName": "漢字",
+    "subCategory": "二字熟語（例文補充・類義）",
+    "question": "次の文の（　）に入る最も適切な二字熟語を選びなさい。「自分の主張を相手に納得してもらうためには、しっかりとした（　）を示す必要がある。」",
+    "options": [
+      "根拠",
+      "結果",
+      "感想"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「根拠」です。"
   }
 ]
