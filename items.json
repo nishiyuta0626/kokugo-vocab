@@ -7062,5 +7062,380 @@
     ],
     "answerIndex": 0,
     "explanation": "正解は「煙」で「火の無い所に煙は立たぬ」です。"
+  },
+  {
+    "id": "kan_506",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（頭・顔）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が広い」",
+    "options": [
+      "顔",
+      "目",
+      "口",
+      "耳"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「顔」で「顔が広い」です。"
+  },
+  {
+    "id": "kan_507",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（頭・顔）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）から火が出る」",
+    "options": [
+      "顔",
+      "目",
+      "口",
+      "鼻"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「顔」で「顔から火が出る」です。"
+  },
+  {
+    "id": "kan_508",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（頭・顔）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をひねる」",
+    "options": [
+      "首",
+      "頭",
+      "顔",
+      "肩"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「首」で「首をひねる」です。"
+  },
+  {
+    "id": "kan_509",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（頭・顔）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が低い」",
+    "options": [
+      "腰",
+      "頭",
+      "鼻",
+      "目"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「腰」で「腰が低い」です。"
+  },
+  {
+    "id": "kan_510",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（頭・顔）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を縦に振る」",
+    "options": [
+      "首",
+      "頭",
+      "顔",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「首」で「首を縦に振る」です。"
+  },
+  {
+    "id": "kan_511",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（目）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が回る」",
+    "options": [
+      "目",
+      "頭",
+      "首",
+      "気"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「目」で「目が回る」です。"
+  },
+  {
+    "id": "kan_512",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（目）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を丸くする」",
+    "options": [
+      "目",
+      "口",
+      "顔",
+      "鼻"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「目」で「目を丸くする」です。"
+  },
+  {
+    "id": "kan_513",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（目）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が高い」",
+    "options": [
+      "目",
+      "鼻",
+      "耳",
+      "口"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「目」で「目が高い」です。"
+  },
+  {
+    "id": "kan_514",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（目）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が利く」",
+    "options": [
+      "目",
+      "鼻",
+      "耳",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「目」で「目が利く」です。"
+  },
+  {
+    "id": "kan_515",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（目）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）の中に入れても痛くない」",
+    "options": [
+      "目",
+      "口",
+      "手",
+      "懐"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「目」で「目の中に入れても痛くない」です。"
+  },
+  {
+    "id": "kan_516",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（耳）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が痛い」",
+    "options": [
+      "耳",
+      "頭",
+      "胸",
+      "腹"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「耳」で「耳が痛い」です。"
+  },
+  {
+    "id": "kan_517",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（耳）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を疑う」",
+    "options": [
+      "耳",
+      "目",
+      "鼻",
+      "口"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「耳」で「耳を疑う」です。"
+  },
+  {
+    "id": "kan_518",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（耳）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が早い」",
+    "options": [
+      "耳",
+      "目",
+      "足",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「耳」で「耳が早い」です。"
+  },
+  {
+    "id": "kan_519",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（耳）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を傾ける」",
+    "options": [
+      "耳",
+      "首",
+      "頭",
+      "体"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「耳」で「耳を傾ける」です。"
+  },
+  {
+    "id": "kan_520",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（耳）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）にたこができる」",
+    "options": [
+      "耳",
+      "手",
+      "足",
+      "口"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「耳」で「耳にたこができる」です。"
+  },
+  {
+    "id": "kan_521",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（口）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が軽い」",
+    "options": [
+      "口",
+      "足",
+      "腰",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「口」で「口が軽い」です。"
+  },
+  {
+    "id": "kan_522",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（口）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が堅い」",
+    "options": [
+      "口",
+      "頭",
+      "顔",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「口」で「口が堅い」です。"
+  },
+  {
+    "id": "kan_523",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（口）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をそろえる」",
+    "options": [
+      "口",
+      "手",
+      "足",
+      "声"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「口」で「口をそろえる」です。"
+  },
+  {
+    "id": "kan_524",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（口）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）をすべらせる」",
+    "options": [
+      "口",
+      "舌",
+      "足",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「口」で「口をすべらせる」です。"
+  },
+  {
+    "id": "kan_525",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（口）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が肥える」",
+    "options": [
+      "口",
+      "舌",
+      "腹",
+      "目"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「口」で「口が肥える」です。"
+  },
+  {
+    "id": "kan_526",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（鼻）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が高い」",
+    "options": [
+      "鼻",
+      "目",
+      "腰",
+      "頭"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鼻」で「鼻が高い」です。"
+  },
+  {
+    "id": "kan_527",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（鼻）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）にかける」",
+    "options": [
+      "鼻",
+      "目",
+      "口",
+      "耳"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鼻」で「鼻にかける」です。"
+  },
+  {
+    "id": "kan_528",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（鼻）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）を明かす」",
+    "options": [
+      "鼻",
+      "顔",
+      "目",
+      "胸"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鼻」で「鼻を明かす」です。"
+  },
+  {
+    "id": "kan_529",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（鼻）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）につく」",
+    "options": [
+      "鼻",
+      "目",
+      "耳",
+      "口"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鼻」で「鼻につく」です。"
+  },
+  {
+    "id": "kan_530",
+    "category": "idiom",
+    "categoryName": "慣用句・ことわざ",
+    "subCategory": "慣用句穴埋め（鼻）",
+    "question": "（　）に入る適切な言葉を選びなさい。\n「（　）が利く」",
+    "options": [
+      "鼻",
+      "目",
+      "耳",
+      "手"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「鼻」で「鼻が利く」です。"
   }
 ]
