@@ -17942,5 +17942,355 @@
     ],
     "answerIndex": 2,
     "explanation": "正解は「魚」です。"
+  },
+  {
+    "id": "bun_1296",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「朝起きたら激しい雨が降っていた。（　）、今日の遠足は中止になった。」",
+    "options": [
+      "だから",
+      "しかし",
+      "つまり"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「だから」です。"
+  },
+  {
+    "id": "bun_1297",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「弟は野菜が嫌いだ。（　）、甘いお菓子は大好きだ。」",
+    "options": [
+      "しかし",
+      "したがって",
+      "なぜなら"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しかし」です。"
+  },
+  {
+    "id": "bun_1298",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「スーパーでリンゴとバナナを買った。（　）、牛乳も買った。」",
+    "options": [
+      "そして",
+      "ところが",
+      "ただし"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「そして」です。"
+  },
+  {
+    "id": "bun_1299",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「明日の持ち物は鉛筆と消しゴムだ。（　）、赤ペンも忘れないこと。」",
+    "options": [
+      "なお",
+      "または",
+      "それゆえ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「なお」です。"
+  },
+  {
+    "id": "bun_1300",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「公園へ行くときは、バスに乗る（　）自転車で行くかのどちらかだ。」",
+    "options": [
+      "または",
+      "しかも",
+      "すると"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「または」です。"
+  },
+  {
+    "id": "bun_1301",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「彼は毎日欠かさず練習を続けた。（　）、大会で優勝することができた。」",
+    "options": [
+      "その結果",
+      "それなのに",
+      "たとえば"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「その結果」です。"
+  },
+  {
+    "id": "bun_1302",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「天気予報では晴れと言っていた。（　）、午後から急に雨が降り出した。」",
+    "options": [
+      "ところが",
+      "したがって",
+      "つまり"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ところが」です。"
+  },
+  {
+    "id": "bun_1303",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「この博物館は小学生でも楽しめる。（　）、実際に触って体験できるコーナーが多いからだ。」",
+    "options": [
+      "なぜなら",
+      "だから",
+      "しかし"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「なぜなら」です。"
+  },
+  {
+    "id": "bun_1304",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「父は料理が上手だ。（　）、片付けも手際よくこなす。」",
+    "options": [
+      "しかも",
+      "けれども",
+      "あるいは"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しかも」です。"
+  },
+  {
+    "id": "bun_1305",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「哺乳類とは、子どもを母乳で育てる動物のことだ。（　）、イヌやネコ、クジラなどがいる。」",
+    "options": [
+      "たとえば",
+      "しかし",
+      "それゆえ"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「たとえば」です。"
+  },
+  {
+    "id": "bun_1306",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「彼はチームのエースであり、キャプテンでもある。（　）、チームの中心人物だ。」",
+    "options": [
+      "つまり",
+      "ところが",
+      "なぜなら"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「つまり」です。"
+  },
+  {
+    "id": "bun_1307",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「これで今日の会議の連絡は終わりです。（　）、次の話題に移りましょう。」",
+    "options": [
+      "では",
+      "なぜなら",
+      "しかし"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「では」です。"
+  },
+  {
+    "id": "bun_1308",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「この公園には自由に入ることができる。（　）、ペットを連れて入ることは禁止されている。」",
+    "options": [
+      "ただし",
+      "だから",
+      "そして"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ただし」です。"
+  },
+  {
+    "id": "bun_1309",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「カーテンを勢いよく開けた。（　）、まぶしい朝日が部屋いっぱいに差し込んだ。」",
+    "options": [
+      "すると",
+      "しかし",
+      "つまり"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「すると」です。"
+  },
+  {
+    "id": "bun_1310",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の空欄補充）",
+    "question": "次の文の（　）に入る最も適切な接続語を選びなさい。「明日はテストがある。（　）、今夜は早く寝て明日に備えよう。」",
+    "options": [
+      "したがって",
+      "けれども",
+      "たとえば"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「したがって」です。"
+  },
+  {
+    "id": "bun_1311",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の働き）",
+    "question": "次の接続語のうち、前の文と反対の内容をつなぐ「逆接」の働きをするものを1つ選びなさい。",
+    "options": [
+      "けれども",
+      "だから",
+      "および"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「けれども」です。"
+  },
+  {
+    "id": "bun_1312",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の働き）",
+    "question": "次の接続語のうち、前の文が原因・理由で、後ろの文が結果になる「順接」の働きをするものを1つ選びなさい。",
+    "options": [
+      "それゆえ",
+      "しかし",
+      "または"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「それゆえ」です。"
+  },
+  {
+    "id": "bun_1313",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の働き）",
+    "question": "次の接続語のうち、前の内容を言い換えたりまとめたりする働きをするものを1つ選びなさい。",
+    "options": [
+      "すなわち",
+      "ところが",
+      "しかも"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「すなわち」です。"
+  },
+  {
+    "id": "bun_1314",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の働き）",
+    "question": "次の接続語のうち、どちらか一方を選ぶ「選択」の働きをするものを1つ選びなさい。",
+    "options": [
+      "あるいは",
+      "そして",
+      "だから"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「あるいは」です。"
+  },
+  {
+    "id": "bun_1315",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語の働き）",
+    "question": "次の接続語のうち、話題を切り替える「転換」の働きをするものを1つ選びなさい。",
+    "options": [
+      "ところで",
+      "なぜなら",
+      "したがって"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「ところで」です。"
+  },
+  {
+    "id": "bun_1316",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語・仲間はずれ）",
+    "question": "次の接続語のうち、働きが【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "しかし",
+      "だから",
+      "したがって"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「しかし」です。"
+  },
+  {
+    "id": "bun_1317",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語・仲間はずれ）",
+    "question": "次の接続語のうち、働きが【他と異なるもの】を1つ選びなさい。",
+    "options": [
+      "つまり",
+      "そして",
+      "さらに"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「つまり」です。"
+  },
+  {
+    "id": "bun_1318",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語・誤用チェック）",
+    "question": "次の文のうち、太字（【　】内）の接続語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "一生懸命に練習した。【だから】、試合には負けてしまった。",
+      "彼は足が速い。【しかも】、持久力も抜群だ。",
+      "雨が降りそうだ。【したがって】、傘を持って出かけよう。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「一生懸命に練習した。【だから】、試合には負けてしまった。」です。"
+  },
+  {
+    "id": "bun_1319",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語・誤用チェック）",
+    "question": "次の文のうち、太字（【　】内）の接続語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "風邪をひいて熱が出た。【なぜなら】、学校を休むことにした。",
+      "この店は値段が安い。【ただし】、現金でしか支払えない。",
+      "宿題が早く終わった。【そこで】、好きな本を読むことにした。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「風邪をひいて熱が出た。【なぜなら】、学校を休むことにした。」です。"
+  },
+  {
+    "id": "bun_1320",
+    "category": "bunpo",
+    "categoryName": "国語文法",
+    "subCategory": "国語文法（接続語・誤用チェック）",
+    "question": "次の文のうち、太字（【　】内）の接続語の使い方が【間違っている】ものを1つ選びなさい。",
+    "options": [
+      "夏休みは海へ行く。【つまり】、山へキャンプに行く予定だ。",
+      "努力を続ければ必ず結果は出る。【すなわち】、あきらめないことが大切だ。",
+      "今日はとても寒い。【ところが】、弟は半袖で外へ飛び出していった。"
+    ],
+    "answerIndex": 0,
+    "explanation": "正解は「夏休みは海へ行く。【つまり】、山へキャンプに行く予定だ。」です。"
   }
 ]
