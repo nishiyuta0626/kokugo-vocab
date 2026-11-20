@@ -90,6 +90,12 @@ button:disabled { opacity: .45; cursor: default; }
 }
 .chip:hover { background: #dbe2ee; }
 .chip.on { background: var(--acc); color: #fff; }
+/* クイズ枠選択チップ(進捗色つき・複数選択) */
+.chip.blk.green { background: #bbf7d0; color: #166534; }
+.chip.blk.blue { background: #bfdbfe; color: #1e40af; }
+.chip.blk.orange { background: #fde0b8; color: #b45309; }
+.chip.blk.gray { background: #e8ecf1; color: #6b7280; }
+.chip.blk.on { outline: 3px solid var(--acc); }
 
 select, input[type="text"], input[type="number"], textarea {
   font: inherit; padding: 10px 12px; border: 1.5px solid var(--line);

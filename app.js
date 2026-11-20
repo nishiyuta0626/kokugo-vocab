@@ -199,21 +199,32 @@ function masteryGrid(cat) {
 }
 
 // ---------- クイズの部屋 ----------
+let selBlocks = new Set(); // 選択中のブロック開始番号(1始まり)
 function vQuizSetup() {
   const cat = view.cat;
   const n = byCat(cat).length;
+  const blkChips = [];
+  for (let a = 1; a <= n; a += SEC_SIZE) {
+    const b = Math.min(a + SEC_SIZE - 1, n);
+    const s = blockStat(byCat(cat).slice(a - 1, b));
+    blkChips.push(`<button class="chip blk ${selBlocks.has(a) ? "on" : ""} ${s.cls}"
+      data-act="selblk" data-a="${a}">No.${a}-${b}</button>`);
+  }
+  const selCnt = [...selBlocks].reduce((s2, a) =>
+    s2 + Math.min(a + SEC_SIZE - 1, n) - a + 1, 0);
   return `<div class="card">
     <h2>4択クイズを作る</h2>
-    <p class="muted">解答は4択。テストと同じく実施中は辞書・結果はロックされます。</p>
+    <p class="muted">出題する枠をタップして選んでください(複数選択可)。</p>
+    <div class="chips">${blkChips.join("")}
+      <button class="chip" data-act="selall">すべて選ぶ</button>
+      <button class="chip" data-act="selnone">すべてはずす</button></div>
     <label class="f">出題対象</label>
     <select id="q_filt">
-      <option value="">番号範囲からランダム</option>
+      <option value="">選択した枠からランダム</option>
       <option value="new">未学習のみ</option>
       <option value="weak">苦手のみ</option>
     </select>
     <div class="numrow">
-      <div><label class="f">開始番号</label><input type="number" id="q_a" value="1" min="1"></div>
-      <div><label class="f">終了番号</label><input type="number" id="q_b" value="${n}" min="1"></div>
       <div><label class="f">問題数</label><input type="number" id="q_n" value="20" min="4"></div>
     </div>
     <label class="f">出題形式</label>
@@ -223,8 +234,8 @@ function vQuizSetup() {
       <option value="y2t">読み → 語句を選ぶ</option>
       <option value="card">カードめくり(自学習)</option>
     </select>
-    <button class="bigbtn" id="q_go">クイズを開始</button>
-    ${presetChips(cat)}
+    <button class="bigbtn" id="q_go" ${selBlocks.size ? "" : "disabled"}>
+      クイズを開始${selBlocks.size ? `（${selBlocks.size}枠・最大${selCnt}問）` : "（枠を選択）"}</button>
   </div>
   ${recentRows("quiz", cat)}`;
 }
@@ -541,14 +552,25 @@ document.addEventListener("click", (e) => {
     const act = a.dataset.act;
     if (act === "cat") {
       const room = view.room;
+      selBlocks.clear();
       if (room === "quiz") go("quizsetup", { cat: a.dataset.cat, room });
       else go("testsetup", { cat: a.dataset.cat || cats()[0], room });
     }
     else if (act === "preset") {
-      const sfx = view.name === "quizsetup" ? "q" : "t";
-      $(`#${sfx}_a`).value = a.dataset.a;
-      $(`#${sfx}_b`).value = a.dataset.b;
+      $(`#t_a`).value = a.dataset.a;
+      $(`#t_b`).value = a.dataset.b;
     }
+    else if (act === "selblk") {
+      const k = +a.dataset.a;
+      if (selBlocks.has(k)) selBlocks.delete(k); else selBlocks.add(k);
+      render();
+    }
+    else if (act === "selall") {
+      const n = byCat(view.cat).length;
+      for (let x = 1; x <= n; x += SEC_SIZE) selBlocks.add(x);
+      render();
+    }
+    else if (act === "selnone") { selBlocks.clear(); render(); }
     else if (act === "tile") {
       go("list", { room: "jisho", cat: a.dataset.cat, sec: Math.floor(+a.dataset.a / SEC_SIZE), kw: "", filt: "" });
     }
@@ -642,12 +664,15 @@ document.addEventListener("click", (e) => {
     }
   }
   if (e.target.id === "q_go") {
+    if (!selBlocks.size) { toast("枠を選んでください"); return; }
     const mode = $("#q_mode").value;
-    const a1 = Math.max(1, +$("#q_a").value || 1);
-    const b1 = Math.min(byCat(view.cat).length, +$("#q_b").value || byCat(view.cat).length);
+    const n = byCat(view.cat).length;
     const filt = $("#q_filt").value;
     const nQ = +$("#q_n").value || 20;
-    let p = rangePool(view.cat, a1, b1, filt);
+    let p = [];
+    for (const a of [...selBlocks].sort((x, y) => x - y)) {
+      p = p.concat(rangePool(view.cat, a, Math.min(a + SEC_SIZE - 1, n), filt));
+    }
     if (mode === "card") {
       p = shuffle([...p]);
       cardSet = { list: p, idx: 0, flipped: false, cat: view.cat };
@@ -656,8 +681,10 @@ document.addEventListener("click", (e) => {
     }
     p = shuffle([...p]).slice(0, nQ);
     if (p.length < 4) { toast("4件以上必要です"); return; }
+    const sorted = [...selBlocks].sort((x, y) => x - y);
     quiz = { list: p, idx: 0, mode, answers: [], judged: null,
-      pool: byCat(view.cat), cat: view.cat, range: [a1, b1] };
+      pool: byCat(view.cat), cat: view.cat,
+      range: [sorted[0], Math.min(sorted[sorted.length - 1] + SEC_SIZE - 1, n)] };
     go("quizrun");
   }
   if (e.target.id === "t_go") {
