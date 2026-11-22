@@ -1443,7 +1443,7 @@ $("#brand").addEventListener("click", () => go("home"));
 
 // ---------- 筋トレ(Daily 4 Workouts) ----------
 const LS_WORKOUT = "kv_workout_v1";
-const WO_DEF = { targets: { pushups: 30, situps: 30, back: 30, handstand: 60 }, reminderTime: "", lastRemind: "", history: {} };
+const WO_DEF = { targets: { pushups: 30, situps: 30, back: 30, handstand: 60 }, reminderTime: "", lastRemind: "", stdm: 0, earnLog: [], adjusts: [], history: {} };
 const WO_META = [
   { k: "pushups", icon: "💪", label: "腕立て伏せ", unit: "回" },
   { k: "situps", icon: "🔥", label: "腹筋", unit: "回" },
@@ -1510,7 +1510,7 @@ function woTimerCommit(goal) {
   if (gained > 0) {
     const before = woMet(woToday());
     const t = woToday(); t.handstand = (t.handstand || 0) + gained; WO.history[todayStr()] = t; saveWorkout();
-    if (woMet(t) === 4 && before < 4) woCelebrate();
+    if (woMet(t) === 4 && before < 4) { woCelebrate(); woReward(); }
   }
   woT.phase = "idle"; woT.sec = 0;
   if (goal) { woBeep(); if (navigator.vibrate) navigator.vibrate([200, 100, 200]); }
@@ -1546,13 +1546,28 @@ function woCelebrate() {
     if (Date.now() - t0 < 2500) requestAnimationFrame(anim); else cv.remove();
   })();
 }
+// 筋トレstdmは国語stdmとは別に集計(BANKアプリ連携用)
+function woEarn(amount, label) {
+  WO.stdm = (WO.stdm || 0) + amount;
+  WO.earnLog = WO.earnLog || [];
+  WO.earnLog.push({ ts: new Date().toISOString(), day: todayStr(), amount, label });
+  saveWorkout();
+}
+// 全種目達成でstdm付与(1日1回のみ。N日目=2N stdm、31日目は1日目に戻る)
+function woReward() {
+  const t = woToday();
+  if (woMet(t) < 4 || t.rewarded) return;
+  t.rewarded = true; WO.history[todayStr()] = t; saveWorkout();
+  const cycle = ((woStreak() - 1) % 30) + 1;
+  woEarn(2 * cycle, `筋トレ達成(${cycle}日目)`);
+}
 // ---- 筋トレ画面 ----
 function vWorkout() {
   const t = woToday(), met = woMet(t), pct = woPct(t), streak = woStreak();
   const leftList = WO_META.filter(m => (t[m.k] || 0) < WO.targets[m.k])
     .map(m => `${m.label}${WO.targets[m.k] - (t[m.k] || 0)}${m.unit}`).join("、");
   const heat = [];
-  for (let i = 89; i >= 0; i--) {
+  for (let i = 29; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
     const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
     heat.push(`<i class="l${woMet(woDay(k))}" title="${k}"></i>`);
@@ -1571,6 +1586,8 @@ function vWorkout() {
         <div class="wo-bar"><i style="width:${pct}%"></i></div>
       </div>
       <p class="muted">今日の総合達成率 ${met}/4種目</p>
+      <p style="font-size:18px;font-weight:800;margin:4px 0">💰 筋stdm残高: ${WO.stdm || 0}</p>
+      ${met < 4 ? `<p class="muted small">今日全達成で <b>+${2 * ((streak % 30) + 1)} 筋stdm</b> もらえる！</p>` : ""}
     </div>
     ${WO_META.map(m => {
       const cur = t[m.k] || 0, tgt = WO.targets[m.k], ok = cur >= tgt, p = Math.min(100, Math.round(cur / tgt * 100));
@@ -1583,6 +1600,12 @@ function vWorkout() {
             <div class="wo-btns">
               ${woT.phase === "run" ? `<button data-act="wopause">⏸ 一時停止</button>` : `<button data-act="wostart">${woT.phase === "pause" ? "▶ 再開" : "▶ スタート"}</button>`}
               ${woT.sec > 0 || woT.phase !== "idle" ? `<button data-act="wocommit">✔ 記録して終了</button>` : ""}
+            </div>
+            <div class="wo-btns">
+              <button data-act="woadd" data-k="handstand" data-v="10">+10</button>
+              <button data-act="woadd" data-k="handstand" data-v="5">+5</button>
+              <button data-act="woadd" data-k="handstand" data-v="1">+1</button>
+              <button data-act="woadd" data-k="handstand" data-v="-1">-1</button>
             </div>`
           : `<div class="wo-btns">
               <button data-act="woadd" data-k="${m.k}" data-v="10">+10</button>
@@ -1605,13 +1628,13 @@ function vWorkout() {
       <p class="muted small">通知はアプリを開いている間に時刻を過ぎると届きます。</p>
     </div>
     <div class="card">
-      <h3>継続ヒートマップ(90日)</h3>
+      <h3>継続ヒートマップ(30日)</h3>
       <div class="wo-heat">${heat.join("")}</div>
     </div>
   </div>`;
 }
 function woCheckCelebrate(before) {
-  if (woMet(woToday()) === 4 && before < 4) woCelebrate();
+  if (woMet(woToday()) === 4 && before < 4) { woCelebrate(); woReward(); }
   woBadge();
 }
 // ---------- 起動 ----------
