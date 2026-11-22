@@ -22,7 +22,7 @@ let USER = localStorage.getItem(LS_USER) || "";
 // ユーザー別キー: 学習記録・結果・stdm・勉強時間・調整・50日プラン・獲得履歴は
 // ユーザーごとに完全独立。項目の修正(kv_item_override)と非表示(kv_hidden)は共有。
 const uk = k => `${k}__${USER}`;
-const USER_SCOPED = [LS_PROGRESS, LS_RESULTS, LS_stdm, LS_TIME, LS_ADJUST, LS_SCHED, LS_EARN, "kv_stdm_recalc_v1"];
+const USER_SCOPED = [LS_PROGRESS, LS_RESULTS, LS_stdm, LS_TIME, LS_ADJUST, LS_SCHED, LS_EARN, "kv_stdm_recalc_v1", "kv_workout_v1"];
 const SEC_SIZE = 50;
 // 全体通し番号のカテゴリ順(1〜漢字→慣用句→四字熟語→ことわざ)
 const CAT_ORDER = ["漢字", "慣用句", "四字熟語", "ことわざ"];
@@ -491,7 +491,7 @@ function vSchedCard() {
 
 // ---------- 描画 ----------
 function render() {
-  const inRoom = view.name !== "home" && view.name !== "data" && view.name !== "userselect";
+  const inRoom = view.name !== "home" && view.name !== "data" && view.name !== "userselect" && view.name !== "modeselect";
   const room = ROOMS.find(r => r.key === view.room);
   $("#backbtn").style.display = inRoom ? "" : "none";
   const lb = $("#logoutbtn");
@@ -500,7 +500,8 @@ function render() {
   $("#headtitle").textContent = inRoom
     ? (room ? `${room.icon} ${room.label}` : (view.name === "admin" ? "管理者"
       : view.name === "earnlog" ? "🪙 stdm履歴"
-      : (view.name === "result" || view.name === "resultdetail") ? "📊 結果・進捗" : ""))
+      : (view.name === "result" || view.name === "resultdetail") ? "📊 結果・進捗"
+      : view.name === "workout" ? "💪 筋トレ" : ""))
     : "";
   const el = $("#app");
   const v = view.name;
@@ -521,7 +522,10 @@ function render() {
   else if (v === "admin") el.innerHTML = vAdmin();
   else if (v === "earnlog") el.innerHTML = vEarnLog();
   else if (v === "userselect") el.innerHTML = vUserSelect();
+  else if (v === "modeselect") el.innerHTML = vModeSelect();
+  else if (v === "workout") el.innerHTML = vWorkout();
   animateStdm();
+  $("#wobtn").style.display = (USER && view.name !== "userselect" && view.name !== "modeselect" && view.name !== "workout") ? "" : "none";
 }
 const ADMIN_ONLY = new Set(["admin", "data"]);
 function go(name, params = {}) {
@@ -578,6 +582,14 @@ function vUserSelect() {
         onkeydown="if(event.key==='Enter')this.nextElementSibling.click()"
         style="width:8em;text-align:center;font-size:20px;padding:6px">
       <button class="primary" data-act="pinok">入室</button></div>` : ""}
+  </div>`;
+}
+function vModeSelect() {
+  return `<div class="card" style="text-align:center">
+    <div class="choices">
+      <button class="choice" data-act="mode" data-m="kokugo" style="font-size:20px">📚 国語の勉強をする！</button>
+      <button class="choice" data-act="mode" data-m="prores" style="font-size:20px">🤼 プロレスラーを目指す！</button>
+    </div>
   </div>`;
 }
 async function selectUser(u) {
@@ -1118,7 +1130,34 @@ document.addEventListener("click", (e) => {
     else if (act === "usel") {
       const u = a.dataset.u;
       if (u === "admin" && !view.pin) { view = { name: "userselect", pin: true }; render(); }
-      else if (confirm(`${u === "admin" ? "管理者" : "こはる"}で入室しますか？`)) selectUser(u);
+      else if (u === "admin") selectUser("admin");
+      else { view = { name: "modeselect" }; render(); }
+    }
+    else if (act === "mode") {
+      const m = a.dataset.m;
+      selectUser("koharu").then(() => { if (m === "prores") go("workout"); });
+    }
+    else if (act === "woadd") {
+      const before = woMet(woToday());
+      const t = woToday();
+      t[a.dataset.k] = Math.max(0, (t[a.dataset.k] || 0) + (+a.dataset.v));
+      WO.history[todayStr()] = t; saveWorkout();
+      woCheckCelebrate(before); render();
+    }
+    else if (act === "wostart") { woTimerStart(); render(); }
+    else if (act === "wopause") woTimerPause();
+    else if (act === "wocommit") woTimerCommit(false);
+    else if (act === "wosave") {
+      for (const m of WO_META) {
+        const v = +($(`#wo_t_${m.k}`)?.value || 0);
+        if (v > 0) WO.targets[m.k] = v;
+      }
+      WO.reminderTime = $("#wo_rem")?.value || "";
+      saveWorkout(); woBadge(); toast("保存しました"); render();
+    }
+    else if (act === "wonotif") {
+      if (!("Notification" in window)) { toast("この端末は通知に対応していません"); }
+      else Notification.requestPermission().then(p => toast(p === "granted" ? "通知を許可しました" : "通知が許可されませんでした"));
     }
     else if (act === "pinok") {
       const pv = ($("#pin_in")?.value || "").trim();
@@ -1393,6 +1432,7 @@ document.addEventListener("keydown", (e) => { // 入力式でEnter=回答
   if (btn) { e.preventDefault(); btn.click(); }
 });
 $("#backbtn").addEventListener("click", () => go("home"));
+$("#wobtn").addEventListener("click", () => go("workout"));
 $("#logoutbtn").addEventListener("click", () => {
   if (confirm("ログアウトしますか？")) {
     localStorage.removeItem(LS_USER); USER = "";
@@ -1401,6 +1441,179 @@ $("#logoutbtn").addEventListener("click", () => {
 });
 $("#brand").addEventListener("click", () => go("home"));
 
+// ---------- 筋トレ(Daily 4 Workouts) ----------
+const LS_WORKOUT = "kv_workout_v1";
+const WO_DEF = { targets: { pushups: 30, situps: 30, back: 30, handstand: 60 }, reminderTime: "", lastRemind: "", history: {} };
+const WO_META = [
+  { k: "pushups", icon: "💪", label: "腕立て伏せ", unit: "回" },
+  { k: "situps", icon: "🔥", label: "腹筋", unit: "回" },
+  { k: "back", icon: "🏋️", label: "背筋", unit: "回" },
+  { k: "handstand", icon: "🤸", label: "倒立", unit: "秒" },
+];
+let WO = null;
+function loadWorkout() {
+  WO = Object.assign(JSON.parse(JSON.stringify(WO_DEF)), loadJSON(uk(LS_WORKOUT), {}));
+  WO.targets = Object.assign({}, WO_DEF.targets, WO.targets || {});
+  WO.history = WO.history || {};
+}
+const saveWorkout = () => { localStorage.setItem(uk(LS_WORKOUT), JSON.stringify(WO)); cloudPushSoon(); };
+const woDay = ds => WO.history[ds] || { pushups: 0, situps: 0, back: 0, handstand: 0 };
+const woToday = () => woDay(todayStr());
+const woMet = d => WO_META.filter(m => (d[m.k] || 0) >= WO.targets[m.k]).length;
+const woPct = d => Math.round(WO_META.reduce((a, m) => a + Math.min(1, (d[m.k] || 0) / WO.targets[m.k]), 0) / 4 * 100);
+function woStreak() {
+  let n = 0; const d = new Date();
+  if (woMet(woToday()) < 4) d.setDate(d.getDate() - 1);
+  for (;;) {
+    const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    if (WO.history[k] && woMet(WO.history[k]) === 4) { n++; d.setDate(d.getDate() - 1); } else break;
+  }
+  return n;
+}
+function woBadge() {
+  const left = 4 - woMet(woToday());
+  try {
+    if (left > 0 && navigator.setAppBadge) navigator.setAppBadge(left);
+    else if (navigator.clearAppBadge) navigator.clearAppBadge();
+  } catch { }
+}
+// ---- 倒立タイマー ----
+const woT = { phase: "idle", sec: 0, prep: 0, iv: null }; // idle/prep/run/pause
+function woBeep() {
+  try {
+    const c = new (window.AudioContext || window.webkitAudioContext)();
+    const o = c.createOscillator(), g = c.createGain();
+    o.connect(g); g.connect(c.destination); o.frequency.value = 880; g.gain.value = .25;
+    o.start(); o.stop(c.currentTime + .5);
+  } catch { }
+}
+function woTimerRender() { const e = $("#wo_timer"); if (e) e.textContent = woT.phase === "prep" ? `用意…${woT.prep}` : `${woT.sec}秒`; }
+function woTimerStart() {
+  if (woT.phase === "prep" || woT.phase === "run") return;
+  if (woT.phase === "pause") woT.phase = "run";
+  else { woT.phase = "prep"; woT.prep = 3; woT.sec = 0; }
+  clearInterval(woT.iv);
+  woT.iv = setInterval(() => {
+    if (woT.phase === "prep") { woT.prep--; if (woT.prep <= 0) woT.phase = "run"; }
+    else if (woT.phase === "run") {
+      woT.sec++;
+      if (woT.sec >= WO.targets.handstand) { woTimerCommit(true); return; }
+    }
+    woTimerRender();
+  }, 1000);
+  woTimerRender();
+}
+function woTimerPause() { if (woT.phase === "run") { woT.phase = "pause"; clearInterval(woT.iv); render(); } }
+function woTimerCommit(goal) {
+  clearInterval(woT.iv);
+  const gained = woT.sec;
+  if (gained > 0) {
+    const before = woMet(woToday());
+    const t = woToday(); t.handstand = (t.handstand || 0) + gained; WO.history[todayStr()] = t; saveWorkout();
+    if (woMet(t) === 4 && before < 4) woCelebrate();
+  }
+  woT.phase = "idle"; woT.sec = 0;
+  if (goal) { woBeep(); if (navigator.vibrate) navigator.vibrate([200, 100, 200]); }
+  if (view.name === "workout") render();
+}
+// ---- 通知・リマインド ----
+function woReminderTick() {
+  if (!WO || !WO.reminderTime || !("Notification" in window) || Notification.permission !== "granted") return;
+  const now = new Date();
+  const hm = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+  if (hm >= WO.reminderTime && WO.lastRemind !== todayStr() && woMet(woToday()) < 4) {
+    WO.lastRemind = todayStr(); saveWorkout();
+    const left = WO_META.filter(m => (woToday()[m.k] || 0) < WO.targets[m.k]).map(m => m.label).join("・");
+    new Notification("💪 今日の筋トレがまだです！", { body: `残り: ${left}` });
+  }
+}
+// ---- 紙吹雪 ----
+function woCelebrate() {
+  const cv = document.createElement("canvas");
+  cv.id = "wo-confetti"; document.body.appendChild(cv);
+  const x = cv.getContext("2d"); cv.width = innerWidth; cv.height = innerHeight;
+  const cols = ["#f59e0b", "#22c55e", "#4f46e5", "#ef4444", "#eab308", "#ec4899"];
+  const ps = Array.from({ length: 120 }, () => ({
+    x: Math.random() * cv.width, y: -20 - Math.random() * cv.height * .4,
+    w: 6 + Math.random() * 6, h: 8 + Math.random() * 8,
+    c: cols[Math.random() * cols.length | 0], v: 2 + Math.random() * 3,
+    r: Math.random() * 6.28, vr: (Math.random() - .5) * .3,
+  }));
+  const t0 = Date.now();
+  (function anim() {
+    x.clearRect(0, 0, cv.width, cv.height);
+    for (const p of ps) { p.y += p.v; p.r += p.vr; x.save(); x.translate(p.x, p.y); x.rotate(p.r); x.fillStyle = p.c; x.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); x.restore(); }
+    if (Date.now() - t0 < 2500) requestAnimationFrame(anim); else cv.remove();
+  })();
+}
+// ---- 筋トレ画面 ----
+function vWorkout() {
+  const t = woToday(), met = woMet(t), pct = woPct(t), streak = woStreak();
+  const leftList = WO_META.filter(m => (t[m.k] || 0) < WO.targets[m.k])
+    .map(m => `${m.label}${WO.targets[m.k] - (t[m.k] || 0)}${m.unit}`).join("、");
+  const heat = [];
+  for (let i = 89; i >= 0; i--) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const k = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    heat.push(`<i class="l${woMet(woDay(k))}" title="${k}"></i>`);
+  }
+  return `<div class="wo-wrap">
+    ${met === 4
+      ? `<div class="wo-alert done">🎉 今日のノルマ完全達成！</div>`
+      : `<div class="wo-alert warn">⚠️ 今日のノルマ未達成！残り: ${leftList}</div>`}
+    <div class="card wo-streak">
+      <div class="big">🔥 連続 ${streak} 日達成中！</div>
+      <div class="wo-ring" style="margin-top:8px">
+        <div style="width:56px;height:56px;border-radius:50%;flex:none;
+          background:conic-gradient(#22c55e ${pct}%,#e5e7eb 0);display:grid;place-items:center">
+          <div style="width:42px;height:42px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-weight:800">${pct}%</div>
+        </div>
+        <div class="wo-bar"><i style="width:${pct}%"></i></div>
+      </div>
+      <p class="muted">今日の総合達成率 ${met}/4種目</p>
+    </div>
+    ${WO_META.map(m => {
+      const cur = t[m.k] || 0, tgt = WO.targets[m.k], ok = cur >= tgt, p = Math.min(100, Math.round(cur / tgt * 100));
+      return `<div class="card wo-card${ok ? " clear" : ""}">
+        <h3>${m.icon} ${m.label}</h3>
+        <div class="wo-num">${cur}<small> / ${tgt}${m.unit}</small></div>
+        <div class="wo-prog"><i style="width:${p}%"></i></div>
+        ${m.k === "handstand"
+          ? `<div class="wo-timer" id="wo_timer">${woT.phase === "prep" ? `用意…${woT.prep}` : `${woT.sec}秒`}</div>
+            <div class="wo-btns">
+              ${woT.phase === "run" ? `<button data-act="wopause">⏸ 一時停止</button>` : `<button data-act="wostart">${woT.phase === "pause" ? "▶ 再開" : "▶ スタート"}</button>`}
+              ${woT.sec > 0 || woT.phase !== "idle" ? `<button data-act="wocommit">✔ 記録して終了</button>` : ""}
+            </div>`
+          : `<div class="wo-btns">
+              <button data-act="woadd" data-k="${m.k}" data-v="10">+10</button>
+              <button data-act="woadd" data-k="${m.k}" data-v="5">+5</button>
+              <button data-act="woadd" data-k="${m.k}" data-v="1">+1</button>
+              <button data-act="woadd" data-k="${m.k}" data-v="-1">-1</button>
+            </div>`}
+      </div>`;
+    }).join("")}
+    <div class="card">
+      <h3>設定</h3>
+      <div class="wo-set">
+        ${WO_META.map(m => `<label>${m.label}<br><input id="wo_t_${m.k}" type="number" min="1" value="${WO.targets[m.k]}"> ${m.unit}</label>`).join("")}
+      </div>
+      <div class="wo-set" style="margin-top:10px">
+        <label>リマインド時刻 <input id="wo_rem" type="time" value="${WO.reminderTime || ""}"></label>
+        <button class="primary" data-act="wosave">保存</button>
+        <button class="ghost" data-act="wonotif">🔔 通知を許可</button>
+      </div>
+      <p class="muted small">通知はアプリを開いている間に時刻を過ぎると届きます。</p>
+    </div>
+    <div class="card">
+      <h3>継続ヒートマップ(90日)</h3>
+      <div class="wo-heat">${heat.join("")}</div>
+    </div>
+  </div>`;
+}
+function woCheckCelebrate(before) {
+  if (woMet(woToday()) === 4 && before < 4) woCelebrate();
+  woBadge();
+}
 // ---------- 起動 ----------
 async function boot() {
   if (new URLSearchParams(location.search).has("reset")) {
@@ -1433,6 +1646,7 @@ function loadUserState() {
   SCHED = loadJSON(uk(LS_SCHED), { start: "", base: 0, items: {}, days: {} });
   SCHED.items = SCHED.items || {}; SCHED.days = SCHED.days || {}; SCHED.prepOk = SCHED.prepOk || {};
   EARN = loadJSON(uk(LS_EARN), []);
+  loadWorkout();
 }
 function loadSharedState() {
   OVERRIDES = loadJSON(LS_OVERRIDE, {});
@@ -1449,7 +1663,7 @@ async function cloudPush() {
     const r = await fetch(SYNC_URL, { method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ user: USER, data: {
         progress: PROGRESS, results: RESULTS, stdm, study,
-        adjusts: ADJUSTS, sched: SCHED, earn: EARN } }) });
+        adjusts: ADJUSTS, sched: SCHED, earn: EARN, workout: WO } }) });
     if (!r.ok) return;
     remoteTs.user = (await r.json()).updated_at || remoteTs.user;
     cloudDirty = false;
@@ -1486,6 +1700,7 @@ async function cloudPull() {
     if (d.adjusts != null) put(LS_ADJUST, d.adjusts);
     if (d.sched != null) put(LS_SCHED, d.sched);
     if (d.earn != null) put(LS_EARN, d.earn);
+    if (d.workout != null) put(LS_WORKOUT, d.workout);
     return true;
   } catch { return false; }
 }
@@ -1503,10 +1718,13 @@ async function cloudPullShared() {
 }
 // ログイン時: リモート→localStorage。リモートが空ならローカルをpush(初回移行)
 async function cloudInit() {
-  const gotU = await cloudPull();
+  loadUserState(); loadSharedState();          // localStorage→変数
+  const gotU = await cloudPull();              // リモート→localStorage
   const gotS = await cloudPullShared();
-  if (!gotU) await cloudPush();
-  if (!gotS) await cloudPushShared();
+  if (gotU) loadUserState();                   // リモート反映を変数にも
+  else await cloudPush();                      // リモート空ならローカルをpush
+  if (gotS) loadSharedState();
+  else await cloudPushShared();
 }
 // 定期ポーリング: 他端末の変更を拾う
 async function cloudTick() {
@@ -1549,6 +1767,7 @@ async function startSession() {
     localStorage.setItem(uk("kv_stdm_recalc_v1"), "1");
   }
   lastStdmShown = stdm; // 初回表示はアニメなし
+  woBadge();
   if (study.day !== todayStr()) { study.day = todayStr(); study.sec = 0; }
   if (!wiredOnce) {
     wiredOnce = true;
@@ -1559,6 +1778,7 @@ async function startSession() {
     window.addEventListener("focus", () => { winFocused = true; lastActivity = Date.now(); });
     window.addEventListener("pagehide", () => saveStudy());
     setInterval(cloudTick, 10000);
+    setInterval(woReminderTick, 30000);
   }
   try {
     ITEMS = await (await fetch("items.json")).json();

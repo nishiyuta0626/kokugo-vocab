@@ -39,6 +39,47 @@ body {
   padding: 4px 10px; font-size: 13px; cursor: pointer; border-radius: 8px;
 }
 #logoutbtn:hover { background: rgba(255,255,255,.15); }
+#wobtn {
+  margin-left: auto;
+  background: transparent; color: #fff;
+  border: 1px solid rgba(255,255,255,.6);
+  padding: 4px 10px; font-size: 16px; cursor: pointer; border-radius: 8px;
+}
+#wobtn:hover { background: rgba(255,255,255,.15); }
+#logoutbtn { margin-left: 8px; }
+
+/* ---------- 筋トレ ---------- */
+.wo-wrap { display: grid; gap: 12px; }
+.wo-streak { text-align: center; }
+.wo-streak .big { font-size: 30px; font-weight: 800; }
+.wo-ring { display: flex; align-items: center; gap: 12px; }
+.wo-ring svg { flex: none; }
+.wo-bar { flex: 1; height: 12px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.wo-bar i { display: block; height: 100%; background: linear-gradient(90deg,#22c55e,#4ade80); border-radius: 99px; transition: width .4s; }
+.wo-alert { border-radius: var(--radius); padding: 10px 14px; font-weight: 700; }
+.wo-alert.warn { background: #fff1f0; border: 1px solid #fca5a5; color: #b91c1c; }
+.wo-alert.done { background: #ecfdf5; border: 1px solid #86efac; color: #15803d; }
+.wo-card { border: 2px solid var(--line); border-radius: var(--radius); padding: 14px; transition: box-shadow .3s, border-color .3s; }
+.wo-card.clear { border-color: #f59e0b; box-shadow: 0 0 12px #fbbf24aa; }
+.wo-card h3 { margin: 0 0 6px; }
+.wo-prog { height: 10px; background: var(--line); border-radius: 99px; overflow: hidden; margin: 6px 0; }
+.wo-prog i { display: block; height: 100%; background: var(--acc); border-radius: 99px; transition: width .3s; }
+.wo-num { font-size: 26px; font-weight: 800; }
+.wo-num small { font-size: 13px; color: var(--sub); font-weight: 400; }
+.wo-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.wo-btns button { flex: 1; min-width: 56px; padding: 10px 0; font-size: 17px; font-weight: 700;
+  border: 1px solid var(--line); border-radius: 10px; background: #f8fafc; cursor: pointer; }
+.wo-btns button:active { background: #e0e7ff; }
+.wo-timer { font-variant-numeric: tabular-nums; font-size: 34px; font-weight: 800; text-align: center; }
+.wo-heat { display: grid; grid-template-columns: repeat(auto-fill, 14px); gap: 3px; }
+.wo-heat i { width: 14px; height: 14px; border-radius: 3px; background: #e5e7eb; }
+.wo-heat i.l1 { background: #bbf7d0; }
+.wo-heat i.l2 { background: #4ade80; }
+.wo-heat i.l3 { background: #16a34a; }
+.wo-heat i.l4 { background: #15803d; }
+.wo-set { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.wo-set input { width: 70px; padding: 4px 6px; border: 1px solid var(--line); border-radius: 8px; }
+#wo-confetti { position: fixed; inset: 0; pointer-events: none; z-index: 99; }
 main { max-width: 760px; margin: 0 auto; padding: 14px; }
 
 .card {
